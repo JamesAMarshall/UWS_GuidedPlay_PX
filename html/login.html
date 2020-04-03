@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    <head>
+        <title>Guided Play Learning Garden</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guided Play</title>
-</head>
-<body>
-        <h1>Log In Page</h1>
-</body>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Font Style-->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Walter+Turncoat" />
+    </head>
+    
+    <body style = "background: url(Images/landing.jpg)">
+        <div align="center">
+            WELCOME TO GUIDED LEARNING GARDEN:</br>
+            CHILD-USER FRIENDLY APPLICATION
+        </div>
+        </br>
+        
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                    <form action="#">
+                            <h1>Create Account</h1>
+                            <input type="text" placeholder="Username" />
+                            <input type="password" placeholder="Password" />
+                            <button>Sign Up</button>
+                    </form>
+            </div>
+            <div class="form-container sign-in-container">
+                    <form action="#">
+                            <h1>Sign in</h1>
+                            <input type="username" placeholder="Username" />
+                            <input type="password" placeholder="Password" />
+                            <a href="#">Forgot your password?</a>
+                            <button>Sign In</button>
+                    </form>
+            </div>
+            <div class="overlay-container">
+                    <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                    <h1>Welcome Back!</h1>
+                                    <p>To keep connected with us please login with your personal info</p>
+                                    <button class="ghost" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                    <h1>Hello, Friend!</h1>
+                                    <p>Enter your personal details and start journey with us</p>
+                                    <button class="ghost" id="signUp">Sign Up</button>
+                            </div>
+                    </div>
+            </div>
+        </div>
+        
+        <script src="js/myScript.js"></script>
+    </body>
 </html>

@@ -5,51 +5,60 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <!-- Font Style-->
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Walter+Turncoat" />
+
     </head>
     
-    <body style = "background: url(Images/landing.jpg)">
-        <div align="center">
-            WELCOME TO GUIDED LEARNING GARDEN:</br>
-            CHILD-USER FRIENDLY APPLICATION
-        </div>
-        </br>
-        
+    <body>
+    
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                    <form action="#">
-                            <h1>Create Account</h1>
+                    <form method="post" action="#">
+                            <h1>Sign Up</h1>
+                            <input type="DOB" placeholder="Date of Birth" />
+                            <input type="Gender" placeholder="Gender" />
                             <input type="text" placeholder="Username" />
                             <input type="password" placeholder="Password" />
+                            <input type="cpassword" placeholder="Confirm Password" />
                             <button>Sign Up</button>
                     </form>
             </div>
             <div class="form-container sign-in-container">
                     <form action="#">
-                            <h1>Sign in</h1>
-                            <input type="username" placeholder="Username" />
-                            <input type="password" placeholder="Password" />
-                            <a href="#">Forgot your password?</a>
-                            <button>Sign In</button>
+                        
+                                <h1>Log In</h1>
+                                <input type="username" id= "uname" placeholder="Username" />
+                                <input type="password" id= "password" placeholder="Password" />
+                                <a href="#">Forgot your password?</a>
+                                <button class="button">Log In</button></br>
+                                <button class="ghost" id="signUp">Sign Up</button>
+   
                     </form>
             </div>
+
             <div class="overlay-container">
                     <div class="overlay">
                             <div class="overlay-panel overlay-left">
                                     <h1>Welcome Back!</h1>
                                     <p>To keep connected with us please login with your personal info</p>
-                                    <button class="ghost" id="signIn">Sign In</button>
+                                    <button class="ghost" id="LogIn">Return</button>
                             </div>
                             <div class="overlay-panel overlay-right">
-                                    <h1>Hello, Friend!</h1>
-                                    <p>Enter your personal details and start journey with us</p>
-                                    <button class="ghost" id="signUp">Sign Up</button>
+                           
+                     <h1>Welcome To Guided Play</h1>
+                        <p>A Green Space Experience</p>
                             </div>
                     </div>
             </div>
+
         </div>
         
         <script src="js/myScript.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+

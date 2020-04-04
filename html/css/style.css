@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 }
 
+
 body {
 	background: #f6f5f7;
 	display: flex;
@@ -37,7 +38,7 @@ span {
 }
 
 a {
-	color: #333;
+	color: black;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
@@ -46,7 +47,9 @@ a {
 button {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+        border-style: solid;
+        border-color: #222;
+	background-color: #9ACD32;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -65,7 +68,7 @@ button:focus {
 }
 
 button.ghost {
-	background-color: transparent;
+	background-color:#20B2AA;
 	border-color: #FFFFFF;
 }
 
@@ -159,9 +162,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #20B2AA;
+	background: -webkit-linear-gradient(to right, #20B2AA, #20B2AA);
+	background: linear-gradient(to , #20B2AA, #20B2AA);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -204,6 +207,7 @@ input {
 .overlay-right {
 	right: 0;
 	transform: translateX(0);
+        
 }
 
 .container.right-panel-active .overlay-right {

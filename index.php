@@ -37,9 +37,12 @@
 
         <br>
 
-        <label for="">account type</label>
-        <input type="text">
-
+        <label for="accountType">account type</label>
+        <select id="accountType" name="accountType">
+                <option value="student">Student</option>
+                <option value="teacher">Teachers</option>
+                <option value="community">Community</option>
+        </select>
         <br>
 
         <h2>Sign Up</h2>

@@ -5,7 +5,12 @@
             var username2 = document.getElementById("sname");
             var password = document.getElementById("pass");
             var date = document.getElementById("dob2");
+			var gender = document.getElementById("male");
+			var gender = document.getElementById("female");
 
+			
+			
+			
             if(!LoginUsername_validation(username)){
                valid = false;
             }
@@ -15,16 +20,31 @@
               if(!SignupUsername_validation(username2)){
                valid = false;
             }
+			
+			if(!gender_validation(gender)){
+				valid = false;
+			}
             if(!checkDate(date)) {
                 valid = false;
             }
-
+			
+			
             return valid;
 
 
 
         }
+		/*select radio button*/
+		function checkGender(){
+			var radio1 = document.getElementById('male').checked;
+			var radio2 = document.getElementById('female').checked;
+			if((radio1=="")&&(radio2=="")){
+			
+				return false;
+			}
 
+			return true;
+		}
 
         /*checks textbox empty */
         function checkRequired(val) { 
@@ -35,17 +55,27 @@
                 }
                 return true;
         }
-
+		/* checks gender */
+		function gender_validation(gender){
+		        if(checkGender(gender)){
+                        document.getElementById('genderError').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('genderError').style.display = "inline-block";
+                        return false;
+                }
+		}
 
         /*checks login username */
         function LoginUsername_validation(username) 
         { 
                 if(checkRequired(username)){
-                        document.getElementById('username2Error').style.display = "none";
+                        document.getElementById('usernameError').style.display = "none";
                         return true;
                 }
                 else {
-                        document.getElementById('username2Error').style.display = "inline-block";
+                        document.getElementById('usernameError').style.display = "inline-block";
                         return false;
                 }
         }
@@ -65,11 +95,11 @@
         function SignupUsername_validation(username2) 
         { 
                 if(checkRequired(username2)){
-                        document.getElementById('usernameError').style.display = "none";
+                        document.getElementById('username2Error').style.display = "none";
                         return true;
                 }
                 else {
-                        document.getElementById('usernameError').style.display = "inline-block";
+                        document.getElementById('username2Error').style.display = "inline-block";
                         return false;
                 }
         }
@@ -99,4 +129,3 @@
                 document.getElementById('dobError').style.display = "inline-block";
                 return false;
         }
-

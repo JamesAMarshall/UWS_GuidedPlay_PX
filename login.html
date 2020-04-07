@@ -61,10 +61,10 @@ and open the template in the editor.
                 
                 <br/>
                 <label for="password">password</label>
-                <input type="text" id="pwd" name="pwd1"/>
+                <input type="text" id="pwd1" name="pwd1"/>
                 <br/>
                 <label for="password">confirm password</label>
-                <input type="text" id="pwd" name="pwd2"/>
+                <input type="text" id="pwd2" name="pwd2"/>
                 <br/>
                 
                 
@@ -76,17 +76,21 @@ and open the template in the editor.
                 
                 
                 <label for="dateofbirth">date of birth</label>
-		<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
-		<span class="error-message" id="dobError">Date of Birth required</span>
-		<span class="error-message" id="dobFormatError">Check date format</span>
-		<span class="error-message" id="dobInputError">Check date input</span>
+				<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
+				<span class="error-message" id="dobError">Date of Birth required</span>
+				<span class="error-message" id="dobFormatError">Check date format</span>
+				<span class="error-message" id="dobInputError">Check date input</span>
                 <br/>
                 
                 <label for="gender">gender</label>
-                <input type="radio" name="male" id="male">
+                <input type="radio" name="gender" id="male">
                 <label for="male">male</label>
-                <input type="radio" name="female" id="female">
+                <input type="radio" name="gender" id="female">
                 <label for="female">female</label>
+				<span class="error-message" id="genderError"> Please Select a gender</span>
+				<br>
+				
+				
                 
                 <br/><br/>
                 <input type="submit" value="Sign Up">
@@ -106,7 +110,11 @@ and open the template in the editor.
             var username2 = document.getElementById("sname");
             var password = document.getElementById("pass");
             var date = document.getElementById("dob2");
-
+			var gender = document.getElementById("male");
+			var gender = document.getElementById("female");
+			
+			
+			
             if(!LoginUsername_validation(username)){
                valid = false;
             }
@@ -116,16 +124,32 @@ and open the template in the editor.
               if(!SignupUsername_validation(username2)){
                valid = false;
             }
+			
+			if(!gender_validation(gender)){
+				valid = false;
+			}
             if(!checkDate(date)) {
                 valid = false;
             }
-
+			
+			
             return valid;
 
 
 
         }
 
+		/*select radio button*/
+		function checkGender(){
+			var radio1 = document.getElementById('male').checked;
+			var radio2 = document.getElementById('female').checked;
+			if((radio1=="")&&(radio2=="")){
+			
+				return false;
+			}
+
+			return true;
+		}
 
         /*checks textbox empty */
         function checkRequired(val) { 
@@ -136,17 +160,27 @@ and open the template in the editor.
                 }
                 return true;
         }
-
+		/* checks gender */
+		function gender_validation(gender){
+		        if(checkGender(gender)){
+                        document.getElementById('genderError').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('genderError').style.display = "inline-block";
+                        return false;
+                }
+		}
 
         /*checks login username */
         function LoginUsername_validation(username) 
         { 
                 if(checkRequired(username)){
-                        document.getElementById('username2Error').style.display = "none";
+                        document.getElementById('usernameError').style.display = "none";
                         return true;
                 }
                 else {
-                        document.getElementById('username2Error').style.display = "inline-block";
+                        document.getElementById('usernameError').style.display = "inline-block";
                         return false;
                 }
         }
@@ -166,11 +200,11 @@ and open the template in the editor.
         function SignupUsername_validation(username2) 
         { 
                 if(checkRequired(username2)){
-                        document.getElementById('usernameError').style.display = "none";
+                        document.getElementById('username2Error').style.display = "none";
                         return true;
                 }
                 else {
-                        document.getElementById('usernameError').style.display = "inline-block";
+                        document.getElementById('username2Error').style.display = "inline-block";
                         return false;
                 }
         }
@@ -200,8 +234,8 @@ and open the template in the editor.
                 document.getElementById('dobError').style.display = "inline-block";
                 return false;
         }
-
-
+		
+		
       </script>
     
 </html>

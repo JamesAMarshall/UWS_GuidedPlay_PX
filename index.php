@@ -17,12 +17,12 @@
                 <a href="html/home_admin.html">Admin Home</a>
         </nav>
 
-        <!-- Welcome to our homepage: <?php echo $_SERVER['HTTP_HOST']; ?> -->
+        Welcome to our homepage: <?php echo $_SERVER['HTTP_HOST']; ?>
         
         <br>
 
         <p>
-                <?php include "php/main.php"; ?>
+                <?php include "php/requests/login.php"; ?>
         </p>
 
         <h2>Log In</h2>

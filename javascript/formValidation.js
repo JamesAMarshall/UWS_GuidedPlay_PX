@@ -7,44 +7,67 @@
             var date = document.getElementById("dob2");
 			var gender = document.getElementById("male");
 			var gender = document.getElementById("female");
-
 			
-			
+			var a = document.getElementById("pwd1").value;
+			var b = document.getElementById("pwd2").value;
 			
             if(!LoginUsername_validation(username)){
                valid = false;
             }
+			
             if(!LoginPassword_validation(password)){
                 valid = false;
             }
-              if(!SignupUsername_validation(username2)){
+			
+            if(!SignupUsername_validation(username2)){
                valid = false;
             }
 			
 			if(!gender_validation(gender)){
 				valid = false;
 			}
+			
+			
             if(!checkDate(date)) {
                 valid = false;
             }
 			
 			
-            return valid;
-
-
-
-        }
+			if(!confirmpassword_validation(a)){
+				valid = false;
+			}
+			
+			if(!confirmpassword_validation(b)){
+				valid = false;
+			}
+	
+			return valid;
+		}
+		
+		/*check password*/
+		function confirmpassword_validation(){
+		
+			var password = document.getElementById("pwd1").value;
+			var confirmPassword = document.getElementById("pwd2").value;
+			if (password != confirmPassword) {
+				document.getElementById('pwd2Error').style.display = "inline-block";
+				return false;
+			}
+			document.getElementById('pwd2Error').style.display = "none";
+			return true;
+		}
+		
 		/*select radio button*/
 		function checkGender(){
 			var radio1 = document.getElementById('male').checked;
 			var radio2 = document.getElementById('female').checked;
 			if((radio1=="")&&(radio2=="")){
-			
 				return false;
 			}
 
 			return true;
 		}
+		
 
         /*checks textbox empty */
         function checkRequired(val) { 
@@ -55,6 +78,8 @@
                 }
                 return true;
         }
+		
+		
 		/* checks gender */
 		function gender_validation(gender){
 		        if(checkGender(gender)){
@@ -103,6 +128,8 @@
                         return false;
                 }
         }
+		
+
         /*check dob format*/
         function checkDate(inputText) 
         {

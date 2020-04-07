@@ -24,14 +24,19 @@ and open the template in the editor.
         <br/>
         <form action ="#" method="post" id="post-form" onsubmit="return validateForm(this);">
         <h2>Log In</h2>
+		<p>
+		<span class="required">*</span>Required field
+		</p>
             <div>
                 <label for="username">username</label>
                 <input type="text" id="uname" name="uname"/>
+				<span class="required">*</span>
                 <span class="error-message" id="usernameError">username required</span>
                 <br/>
                 
                 <label for="password">password</label>
                 <input type="text" id="pass" name="pass"/>
+				<span class="required">*</span>
                 <span class="error-message" id="passwordError">password required</span>
                 <br/>
                 
@@ -41,6 +46,7 @@ and open the template in the editor.
             <div>
                 <label for="accountType">account type</label>
                     <select id="accountType" name="accountType" height="50px">
+						<option value="default"selected disabled></option>
                         <option value="student">Student</option>
                         <option value="teacher">Teachers</option>
                         <option value="community">Community</option>
@@ -52,31 +58,31 @@ and open the template in the editor.
                 <input type="submit" value="Log In">
             </div>
   
-      
+		
         <h2>Sign Up</h2>
             <div>
                 <label for="username">username</label>
                 <input type="text" id="sname" name="sname"/>
+				<span class="required">*</span>
                 <span class="error-message" id="username2Error">username required</span>
-                
+                  
                 <br/>
+				
                 <label for="password">password</label>
-                <input type="text" id="pwd1" name="pwd1"/>
-                <br/>
+                <input type="password" id="pwd1" />
+				<span class="required">*</span>
+				<br>			
                 <label for="password">confirm password</label>
-                <input type="text" id="pwd2" name="pwd2"/>
-                <br/>
-                
-                
+                <input type="password" id="pwd2"/>
+				<span class="required">*</span>
+				<span class="error-message" id="pwd2Error">Password do not matched</span>
 
-                
-                <label for="dateofbirth">date of birth</label>
-                <input type="date" id="dob" name="dob"/>
                 <br/>
                 
-                
+                                        
                 <label for="dateofbirth">date of birth</label>
 				<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
+				<span class="required">*</span>
 				<span class="error-message" id="dobError">Date of Birth required</span>
 				<span class="error-message" id="dobFormatError">Check date format</span>
 				<span class="error-message" id="dobInputError">Check date input</span>
@@ -87,6 +93,7 @@ and open the template in the editor.
                 <label for="male">male</label>
                 <input type="radio" name="gender" id="female">
                 <label for="female">female</label>
+				<span class="required">*</span>
 				<span class="error-message" id="genderError"> Please Select a gender</span>
 				<br>
 				
@@ -113,43 +120,66 @@ and open the template in the editor.
 			var gender = document.getElementById("male");
 			var gender = document.getElementById("female");
 			
-			
+			var a = document.getElementById("pwd1").value;
+			var b = document.getElementById("pwd2").value;
 			
             if(!LoginUsername_validation(username)){
                valid = false;
             }
+			
             if(!LoginPassword_validation(password)){
                 valid = false;
             }
-              if(!SignupUsername_validation(username2)){
+			
+            if(!SignupUsername_validation(username2)){
                valid = false;
             }
 			
 			if(!gender_validation(gender)){
 				valid = false;
 			}
+			
+			
             if(!checkDate(date)) {
                 valid = false;
             }
 			
 			
-            return valid;
-
-
-
-        }
-
+			if(!confirmpassword_validation(a)){
+				valid = false;
+			}
+			
+			if(!confirmpassword_validation(b)){
+				valid = false;
+			}
+	
+			return valid;
+		}
+		
+		/*check password*/
+		function confirmpassword_validation(){
+		
+			var password = document.getElementById("pwd1").value;
+			var confirmPassword = document.getElementById("pwd2").value;
+			if (password != confirmPassword) {
+				document.getElementById('pwd2Error').style.display = "inline-block";
+				return false;
+			}
+			document.getElementById('pwd2Error').style.display = "none";
+			return true;
+		}
+		
 		/*select radio button*/
 		function checkGender(){
 			var radio1 = document.getElementById('male').checked;
 			var radio2 = document.getElementById('female').checked;
 			if((radio1=="")&&(radio2=="")){
-			
 				return false;
 			}
 
 			return true;
 		}
+		
 
         /*checks textbox empty */
         function checkRequired(val) { 
@@ -160,6 +190,8 @@ and open the template in the editor.
                 }
                 return true;
         }
+		
+		
 		/* checks gender */
 		function gender_validation(gender){
 		        if(checkGender(gender)){
@@ -208,6 +240,8 @@ and open the template in the editor.
                         return false;
                 }
         }
+		
+
         /*check dob format*/
         function checkDate(inputText) 
         {

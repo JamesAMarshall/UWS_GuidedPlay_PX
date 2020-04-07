@@ -10,3 +10,6 @@
 	margin-right: 5px;
 	text-align: center;
 }
+
+.required {
+  color: red;

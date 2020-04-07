@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home Page</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="../css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/theme.css">
+  <script src="../js/formValidation.js"></script>
+</head>
+    <body>
+		<header id="header" class="fixed-top">
+		<div class="container d-flex">
+        <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html">Welcome to Guided Play</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+	  <form action ="#" method="post" id="post-form" onsubmit="return validateForm(this);">
+        <nav class="nav-menu d-none d-lg-block">
+        <ul>
+			<li class="active"><a href="../index.php">Home</a></li>		
+			<li> <a href="../html/home_student.html">Student Home</a></li>	
+			<li> <a href="../html/home_teacher.html">Teacher Home</a></li>	
+			<li> <a href="../html/home_researcher.html">Researcher Home</a></li>	
+			<li> <a href="../html/home_admin.html">Admin Home</a></li>	
+			<li class="get-started"><a href="login.html">Sign Out</a></li>
+		</ul>
+        </nav>
+        <br/>
+		<br/>
+		<br/>
+		<h2>Log In</h2>
+		<p>
+		<span class="required">*</span>Required field
+		</p>
+            <div>
+                <label for="username">username</label>
+                <input type="text" id="uname" name="uname"/>
+				<span class="required">*</span>
+                <span class="error-message" id="usernameError">username required</span>
+                <br/>
+                
+                <label for="password">password</label>
+                <input type="password" id="pass" name="pass"/>
+				<span class="required">*</span>
+                <span class="error-message" id="passwordError">password required</span>
+                <br/>
+
+            </div>
+            <div>
+                <label for="accountType">account type</label>
+                    <select id="accountType" name="accountType" height="50px">
+						<option value="default"selected disabled></option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teachers</option>
+                        <option value="community">Community</option>
+                        <option value="admin">Administrator</option>
+                        <option value="reseacher">Researcher</option>
+                    </select>
+                
+                <br/>
+                <input type="submit" value="Log In">
+				<br/>
+				<br/>
+            </div>
+
+		
+        <h2>Sign Up</h2>
+		<br/>
+            <div>
+                <label for="username">username</label>
+                <input type="text" id="sname" name="sname"/>
+				<span class="required">*</span>
+                <span class="error-message" id="username2Error">username required</span>
+                  
+                <br/>
+				
+                <label for="password">password</label>
+                <input type="password" id="pwd1" />
+				<span class="required">*</span>
+				<br>			
+                <label for="password">confirm password</label>
+                <input type="password" id="pwd2"/>
+				<span class="required">*</span>
+				<span class="error-message" id="pwd2Error">Password do not matched</span>
+
+                <br/>
+                
+                                        
+                <label for="dateofbirth">date of birth</label>
+				<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
+				<span class="required">*</span>
+				<span class="error-message" id="dobError">Date of Birth required</span>
+				<span class="error-message" id="dobFormatError">Check date format</span>
+				<span class="error-message" id="dobInputError">Check date input</span>
+                <br/>
+                
+                <label for="gender">gender</label>
+                <input type="radio" name="gender" id="male">
+                <label for="male">male</label>
+                <input type="radio" name="gender" id="female">
+                <label for="female">female</label>
+				<span class="required">*</span>
+				<span class="error-message" id="genderError"> Please Select a gender</span>
+				<br>
+				
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>    
+
+      </body>
+           
+      <script type="text/javascript">
+	  function validateForm() 
+        {
+            var valid = true;
+            var username = document.getElementById("uname");
+            var username2 = document.getElementById("sname");
+            var password = document.getElementById("pass");
+            var date = document.getElementById("dob2");
+			var gender = document.getElementById("male");
+			var gender = document.getElementById("female");
+			
+			var a = document.getElementById("pwd1").value;
+			var b = document.getElementById("pwd2").value;
+			
+            if(!LoginUsername_validation(username)){
+               valid = false;
+            }
+			
+            if(!LoginPassword_validation(password)){
+                valid = false;
+            }
+			
+            if(!SignupUsername_validation(username2)){
+               valid = false;
+            }
+			
+			if(!gender_validation(gender)){
+				valid = false;
+			}
+			
+			
+            if(!checkDate(date)) {
+                valid = false;
+            }
+			
+			
+			if(!confirmpassword_validation(a)){
+				valid = false;
+			}
+			
+			if(!confirmpassword_validation(b)){
+				valid = false;
+			}
+	
+			return valid;
+		}
+		
+		/*check password*/
+		function confirmpassword_validation(){
+		
+			var password = document.getElementById("pwd1").value;
+			var confirmPassword = document.getElementById("pwd2").value;
+			if (password != confirmPassword) {
+				document.getElementById('pwd2Error').style.display = "inline-block";
+				return false;
+			}
+			document.getElementById('pwd2Error').style.display = "none";
+			return true;
+		}
+		
+		/*select radio button*/
+		function checkGender(){
+			var radio1 = document.getElementById('male').checked;
+			var radio2 = document.getElementById('female').checked;
+			if((radio1=="")&&(radio2=="")){
+				return false;
+			}
+
+			return true;
+		}
+		
+
+        /*checks textbox empty */
+        function checkRequired(val) { 
+                var val_len = val.value.length;
+                if (val_len == 0 || val.value ==  null) {
+                        val.focus();
+                        return false;
+                }
+                return true;
+        }
+		
+		
+		/* checks gender */
+		function gender_validation(gender){
+		        if(checkGender(gender)){
+                        document.getElementById('genderError').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('genderError').style.display = "inline-block";
+                        return false;
+                }
+		}
+
+        /*checks login username */
+        function LoginUsername_validation(username) 
+        { 
+                if(checkRequired(username)){
+                        document.getElementById('usernameError').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('usernameError').style.display = "inline-block";
+                        return false;
+                }
+        }
+        /* checks login password */
+        function LoginPassword_validation(password) 
+        { 
+                if(checkRequired(password)){
+                        document.getElementById('passwordError').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('passwordError').style.display = "inline-block";
+                        return false;
+                }
+        }
+        /* check signup username */
+        function SignupUsername_validation(username2) 
+        { 
+                if(checkRequired(username2)){
+                        document.getElementById('username2Error').style.display = "none";
+                        return true;
+                }
+                else {
+                        document.getElementById('username2Error').style.display = "inline-block";
+                        return false;
+                }
+        }
+		
+
+        /*check dob format*/
+        function checkDate(inputText) 
+        {
+                var checkText = /^\d{2}\/\d{2}\/\d{4}$/; //defines the format of XX/XX/XXXX (X = numbers 0 - 9)
+                var date = inputText.value;
+                document.getElementById('dobInputError').style.display = "none";
+                if(checkRequired(inputText)){
+                        document.getElementById('dobError').style.display = "none";
+
+                        if(inputText.value.match(checkText)){
+                                numbers = date.split('/');
+                                document.getElementById('dobFormatError').style.display = "none";
+                                if(numbers[0] > 0 && numbers[0] <= 31 && numbers[1] > 0 && numbers[1] <= 12 && numbers[2] > 1900) { //checks for correct dates where day is 1 - 31, month 1-12 and year is > 19000
+                                        return true;
+                                }
+                                inputText.focus();
+                                document.getElementById('dobInputError').style.display = "inline-block";
+                                return false;
+                        }
+                        inputText.focus();
+                        document.getElementById('dobFormatError').style.display = "inline-block";
+                        return false;
+                }
+                document.getElementById('dobError').style.display = "inline-block";
+                return false;
+        }
+		
+		
+      </script>
+    
+</html>

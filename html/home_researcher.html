@@ -6,32 +6,47 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Researcher Page</title>
+        <title>Researcher HomePage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/homePage.css">
+        
+	  <!-- Vendor CSS Files -->
+	  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
+	  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
+	  <link href="../vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+	  <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+	  <link href="../vendor/aos/aos.css" rel="stylesheet">
+	  
+	<!-- Template Main CSS File -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+  
     </head>
     <body>
-      <h1>Researcher Page</h1>
-        <nav>
-                <a href="../index.php">Home</a>
-                <a href="home_student.html">Student Home</a>
-                <a href="home_teacher.html">Teacher Home</a>
-                <a href="home_researcher.html">Researcher Home</a>
-                <a href="home_admin.html">Admin Home</a>
+	
+		<nav class="nav-menu d-none d-lg-block">
+        <ul>
+			<li><a href="../index.php">Home</a></li>		
+			<li><a href="../html/home_student.html">Student Home</a></li>	
+			<li><a href="../html/home_teacher.html">Teacher Home</a></li>	
+			<li class="active"><a href="../html/home_researcher.html">Researcher Home</a></li>	
+			<li><a href="../html/home_admin.html">Admin Home</a></li>	
+		</ul>
         </nav>
-
+		
+		<div class="heading">
+            <h1>Researcher Home Page</h1>
+            <a class="btn btn-outline-success" id="rcorners2" href="../html/login.html" >&nbsp;</a>
+            <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
+            <a class="btn btn-outline-success" id="rcorners1" href="../html/researcher_uploadData.html">Upload Data</a>
+            <a class="btn btn-outline-success" id="rcorners1" href="../html/researcher_Database.html">Database</a>
+            <p>Welcome to Guided Play- A Green Space Experience</p>
         
-        <h1>Logo + Heading</h1>
-        <a href="setting.html">Settings</a>
-        <a href="">User Id</a>
-        <a href="researcher_uploadData.html">Upload Data</a>
-        <a href="researcher_Database.html">Database</a>
-
-
-        <br><br>
-
-        <button>View Light Data</button>
-        <button>View Temperature Data</button>
-        <button>View Demographic Data</button>
+        </div>
+        
+      
     </body>
 </html>

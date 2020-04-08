@@ -44,6 +44,7 @@ if (mysqli_num_rows($result) > 0)
 }   
 else 
 {
+        header("location: ../../index");
         echo "0 results";
 }
 

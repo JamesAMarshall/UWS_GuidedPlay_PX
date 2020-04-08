@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Guided Play</title>
+        <script src="js/formValidation.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
         
 </head>
 <body>
@@ -21,50 +23,77 @@
         
         <br>
 
-        <p>
+        <!-- <p>
                 <?php include "php/requests/login.php"; ?>
-        </p>
-
+        </p> -->
+        <form action ="php/requests/login.php" method="post" id="post-form" >
         <h2>Log In</h2>
+                <div>
+                        <label for="username">username</label>
+                        <input type="text" id="uname" name="uname"/>
+                        <span class="error-message" id="usernameError">username required</span>
+                        <br/>
+                        
+                        <label for="password">password</label>
+                        <input type="text" id="pass" name="pass"/>
+                        <span class="error-message" id="passwordError">password required</span>
+                        <br/>
+                        <br/><br/>
+                        <input type="submit" value="Log In" name="submit">
+                </div>
+        </form>
 
-        <label for="">username</label>
-        <input type="text">
-        
-        <label for="">password</label>
-        <input type="password">
-
-        <button>Log In</button>
-
-        <br>
-
-        <label for="accountType">account type</label>
-        <select id="accountType" name="accountType">
-                <option value="student">Student</option>
-                <option value="teacher">Teachers</option>
-                <option value="community">Community</option>
-        </select>
-        <br>
-
+        <form action ="#" method="post" id="post-form" onsubmit="return validateForm(this);">
+      
         <h2>Sign Up</h2>
+            <div>
 
-        <label for="">username</label>
-        <input type="text">
-        <br>
-        <label for="">password</label>
-        <input type="password">
-<br>
-        <label for="">confirm password</label>
-        <input type="password">
-<br>
-        <label for="">date of birth</label>
-        <input type="text">
-<br>
-        <label for="">gender</label>
-        <input type="text">
+                <label for="accountType">account type</label>
+                <select id="accountType" name="accountType" height="50px">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teachers</option>
+                        <option value="community">Community</option>
+                        <option value="admin">Administrator</option>
+                        <option value="reseacher">Researcher</option>
+                </select>
+                        
 
+                <label for="username">username</label>
+                <input type="text" id="sname" name="sname"/>
+                <span class="error-message" id="username2Error">username required</span>
+                
+                <br/>
+                <label for="password">password</label>
+                <input type="text" id="pwd" name="pwd1"/>
+                <br/>
+                <label for="password">confirm password</label>
+                <input type="text" id="pwd" name="pwd2"/>
+                <br/>
+                
+                <label for="dateofbirth">date of birth</label>
+                <input type="date" id="dob" name="dob"/>
+                <br/>
+                
+                
+                <label for="dateofbirth">date of birth</label>
+		<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
+		<span class="error-message" id="dobError">Date of Birth required</span>
+		<span class="error-message" id="dobFormatError">Check date format</span>
+		<span class="error-message" id="dobInputError">Check date input</span>
+                <br/>
+                
+                <label for="gender">gender</label>
+                <input type="radio" name="male" id="male">
+                <label for="male">male</label>
+                <input type="radio" name="female" id="female">
+                <label for="female">female</label>
+                
+                <br/><br/>
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>    
 
-
-        <button>Sign Up</button>
+      </body>
 
         
         

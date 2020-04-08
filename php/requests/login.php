@@ -1,5 +1,15 @@
 <?php
 
+
+if (isset($_POST["submit"])) {
+        $accountUsername =  $_POST["uname"];
+        $accountPassword =  $_POST["pass"];
+}
+
+
+echo  $accountUsername;
+echo $accountPassword;
+
 $servername = "localhost";
 $username = "pa2004";
 $password = "DwAjdDyI5pXTjq1";
@@ -18,18 +28,18 @@ else{
 // $sql = "SELECT * FROM pa2004_Accounts";
 // $result = mysqli_query($conn, $sql);
 
-$accountUsername = 'test';
-$accountPassword = 'test';
 
 $sql = "SELECT username, password FROM pa2004_Accounts WHERE username = '$accountUsername' AND password = '$accountPassword'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) 
 {
-        echo "results found";
-
-        while($row = mysqli_fetch_assoc($result)) {
-                echo "username: " . $row["username"]. " - password: " . $row["password"]. "<br>";
+        $count = mysqli_num_rows($result);
+        if($count == 1){
+                header("location: ../../html/home_student");
+        }
+        else{
+                echo "multiple results returned";
         }
 }   
 else 

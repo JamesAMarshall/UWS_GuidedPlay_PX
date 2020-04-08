@@ -8,6 +8,28 @@
 </head>
 <body>
         <button onclick="goBack()">Go Back</button>
-        <h1>Make Observation</h1>
+        <h1>Create Observation</h1>
+
+        <form action="/?????.php" method="POST">
+                <fieldset>
+                        <label for="q1">Example Question 1 / ?</label><br>
+                        <input type="q1" id="q1" name="q1"><br>
+        
+                        <label for="q2">Example Question 2?</label><br>
+                        <input type="text" id="q2" name="q2"><br>
+        
+                        <p>What was the weather like?</p>
+                        <input type="radio" id="sunny" name="weather" value="sunny">
+                        <label for="sunny">Sunny</label><br>
+                        
+                        <input type="radio" id="cloudy" name="weather" value="cloudy">
+                        <label for="cloudy">Cloudy</label><br>
+                        
+                        <input type="radio" id="rainy" name="weather" value="rainy">
+                        <label for="rainy">Rainy</label>        
+                </fieldset>
+
+                <input type="submit" value="Submit">
+        </form> 
 </body>
 </html>

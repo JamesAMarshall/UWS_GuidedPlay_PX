@@ -1,53 +1,100 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Database</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/homePage.css">
-        
-	  <!-- Vendor CSS Files -->
-	  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
-	  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
-	  <link href="../vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
-	  <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-	  <link href="../vendor/aos/aos.css" rel="stylesheet">
-	  
-	<!-- Template Main CSS File -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-  
-    </head>
-    <body>
-	
-		<nav class="nav-menu d-none d-lg-block">
-        <ul>
-			<li><a href="../index.php">Home</a></li>		
-			<li><a href="../html/home_student.html">Student Home</a></li>	
-			<li><a href="../html/home_teacher.html">Teacher Home</a></li>	
-			<li><a href="../html/home_researcher.html">Researcher Home</a></li>	
-			<li><a href="../html/home_admin.html">Admin Home</a></li>	
-		</ul>
-        </nav>
-        <div class="heading">
-            <h1>Researcher Database</h1>
-            <a class="btn btn-outline-success" id="rcorners2" href="../html/login.html" >&nbsp;</a>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
-        </div>
-        
-        
-        <button class= "button" onclick="goBack()">Return Previous Page</button>
-    
-        <script src="../js/main.js"></script>  
-		
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database</title>
+<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- researcher database css-->
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/homepage.css">
+<link rel="stylesheet" type="text/css" href="../css/database.css">
+<script src="../js/main.js"></script>
+<script src="../js/table.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+	<!--Navigation menu-->
+
+		<br>
+		<br>
+		<br>
+		<div class= "container">
+			<h1>Researcher Database</h1>
+			<a class="btn btn-outline-light" id="roundbutton" href="#">User ID</a><li>
+			<br>
+			<p>Welcome to Guided Play- A Green Space Experience</p>
+			<button button class="btn btn-success" onclick="goBack()">Go Back</button>
+			<br/>
+			<div class="row-content">
+				<div class="col-sm-4 gridbox">
+					<p><b>Database Request</b></p>
+					<label for="tname">Table name:</label>
+					<input type="text" id="tname" align= "center" name="tname">
+					<br>
+					<label for="columns">Columns:</label>
+					<input type="text" id="columns" align= "center"name="columns">
+				</div>
+				
+				<div class="col-sm-7 gridbox">
+					<p><b>Display Table</b></p>
+					<table class="table">    
+						<thead class="thead-dark">
+							<tr>
+							  <th scope="col">#</th>
+							  <th scope="col">UserID</th>
+							  <th scope="col">UserType</th>
+							  <th scope="col">Password</th>
+							  <th scope="col">ResetPassword</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							  <th scope="row">1</th>
+							  <td>Mark0123</td>
+							  <td>Student</td>
+							  <td>***********</td>
+							  <td>mark432154!</td>
+							</tr>
+							<tr>
+							  <th scope="row">2</th>
+							  <td>Jacob4132</td>
+							  <td>Admin</td>
+							  <td>***********</td>
+							  <td>Jacob@min32</td>
+							</tr>
+							<tr>
+							  <th scope="row">3</th>
+							  <td>Larry7564</td>
+							  <td>Researcher</td>
+							  <td>************</td>
+							  <td>@twitter1523</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br/><br/><br/>
+			</div>	
+		</div>			 
+		<br>
+	</div>
 		        
       
-    </body>
+</body>
 </html>

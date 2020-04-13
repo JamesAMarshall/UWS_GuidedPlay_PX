@@ -1,61 +1,75 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Teacher HomePage</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/homePage.css">
-        
-	  <!-- Vendor CSS Files -->
-	  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
-	  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
-	  <link href="../vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
-	  <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-	  <link href="../vendor/aos/aos.css" rel="stylesheet">
-	  
-	<!-- Template Main CSS File -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/theme.css">
-  
-    </head>
-    <body>
-	
-		<nav class="nav-menu d-none d-lg-block">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher HomePage</title>
+<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- manage class javascript/ css -->
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
+<link rel="stylesheet" type="text/css" href="../css/homepage.css">
+<script src="../js/manage.js"></script>
+
+</head>
+<body>
+    <div class="container">
+	<!--Navigation menu-->
+		<nav class="nav-menu">
         <ul>
 			<li><a href="../index.php">Home</a></li>		
-			<li> <a href="../html/home_student.html">Student Home</a></li>	
-			<li class="active"> <a href="../html/home_teacher.html">Teacher Home</a></li>	
-			<li> <a href="../html/home_researcher.html">Researcher Home</a></li>	
+			<li><a href="../html/home_student.html">Student Home</a></li>	
+			<li><a href="../html/home_teacher.html">Teacher Home</a></li>	
+			<li><a href="../html/home_researcher.html">Researcher Home</a></li>	
 			<li><a href="../html/home_admin.html">Admin Home</a></li>	
 		</ul>
         </nav>
-        <div class="heading">
-            <h1>Teacher Home Page</h1>
-            <a class="btn btn-outline-success" id="rcorners2" href="../html/login.html" >&nbsp;</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="../html/researcher_uploadData.html">Upload Data</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="../html/researcher_Database.html">Database</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="../html/researcher_admin_manageResearchers">Manage Researchers</a>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
-        </div>
-        
-        <div class="subheading">
-            <a class="btn btn-outline-success" id="rowheading" href="../html/teacher_manageClasses.html">Manage Classes</a>
-        </div>
-        <div>
-            <a class="btn btn-outline-success" id="rowheading" href="../html/researcher_admin_manageResearchers.html">View Demographic Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="../html/researcher_admin_manageResearchers.html">View Temperature Data</a>
-        </div>
-        
-		
+		<br>
+		<br>
+		<br>
+		<div class= "container">
+			<h1>Teacher Home Page</h1>
+			<a class="btn btn-outline-light" id="roundbutton" href="#">User ID</a><li>
+			<a class="btn btn-outline-light" id="roundbutton" href="../html/teacher_manageClasses.html">Manage classes</a><li>
+			<br>
+			<p>Welcome to Guided Play- A Green Space Experience</p>
+			<br/>
+			<div class="row-content">
+				<div class="col-sm-5 gridbox">
+				  <p><b>View Moisture Data</b></p>
+				</div>
+				
+				<div class="col-sm-5 gridbox">
+				  <p><b>View Demographic Data</b></p>
+				</div>
+				<br/><br/><br/>
+				
+				<div class="row-content">
+					<div class="col-sm-5 gridbox">
+						<p><b>View Temperature Data</b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		 
+		<br>
+       
+	</div>
 		        
       
-    </body>
+</body>
 </html>

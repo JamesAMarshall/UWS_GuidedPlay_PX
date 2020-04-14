@@ -1,117 +1,129 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>Log In Page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/theme.css">
-        <script src="/javascript/formValidation.js"></script>
-    </head>
-    <body>
-        <h1>Home Page</h1>
-        <nav>
-                <a href="index.php">Home</a>
-                <a href="html/home_student.html">Student Home</a>
-                <a href="html/home_teacher.html">Teacher Home</a>
-                <a href="html/home_researcher.html">Researcher Home</a>
-                <a href="html/home_admin.html">Admin Home</a>
-        </nav>
-        <br/>
-		
-		
-        <!-- Welcome to our homepage: <?php echo $_SERVER['HTTP_HOST']; ?> -->
-        <br>
-        <p>
-			<?php include "php/main.php"; ?>
-        </p>
-		
-		
-		
-		
-		
-        <!--<form action ="#" method="post" id="post-form" onsubmit="return validateForm(this);">-->
-        <h2>Log In</h2>
-            <div>
-                <label for="username">username</label>
-                <input type="text" id="uname" name="uname"/>
-                <span class="error-message" id="usernameError">username required</span>
-                <br/>
-                
-                <label for="password">password</label>
-                <input type="text" id="pass" name="pass"/>
-                <span class="error-message" id="passwordError">password required</span>
-                <br/>
-                
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-         
-            </div>
+  <title>Home Page</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/theme.css">
+  <script src="js/formValidation.js"></script>
+</head>
+    <body>
+
+
+        <h1 class="text-light"><a href="index.html">Welcome to Guided Play</a></h1>
+        
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="index.php">Home</a></li>		
+                <li> <a href="html/home_school.html">School Home</a></li>	
+                <li> <a href="html/home_research.html">Research Home</a></li>	
+            </ul>
+        </nav>
+
+        <br>
+
+		<!-- <span class="required">*</span><span>Required field</span> -->
+        
+        <br>
+
+        <h2>Log In</h2>
+        <form action="" method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
             <div>
+                <label for="logIn_username">username</label>
+                <input type="text" id="logIn_username" name="uname"/>
+				<span class="required">*</span>
+                <span class="error-message" id="LogIn_username_error">username required</span>
+
+                <br>
+
+                <label for="logIn_password">password</label>
+                <input type="password" id="logIn_password" name="pass"/>
+				<span class="required">*</span>
+                <span class="error-message" id="logIn_password_error">password required</span>
+
+                <br>
+                
+                <input type="submit" value="Log In" name="logIn_submit">
+            </div>
+        </form>
+
+
+
+
+
+
+        <form action ="" method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
+        <h2>Sign Up</h2>
+		<br/>
+            <div>
+                <label for="signUp_username">username</label>
+                <input type="text" id="signUp_username" name="sname"/>
+				<span class="required">*</span>
+                <span class="error-message" id="signUp_username_error">username required</span>
+                  
+                <br/>
+				
+                <label for="signUp_password">password</label>
+                <input type="password" id="signUp_password" />
+                <span class="required">*</span>
+                <span class="error-message" id="signUp_passowrd_error">Password do not matched</span>
+                
+                <br>		
+                	
+                <label for="signUp_confirmPassowrd">confirm password</label>
+                <input type="password" id="signUp_confirmPassowrd"/>
+				<span class="required">*</span>
+				<span class="error-message" id="signUp_confirmPassowrd_error">Password do not matched</span>
+
+                <br/>
+                
+                <!-- FIX: Dont have drop down, change account management -->
                 <label for="accountType">account type</label>
-                    <select id="accountType" name="accountType" height="50px">
+                <select id="accountType" name="accountType" height="50px">
+                        <option value="default"selected disabled></option>
                         <option value="student">Student</option>
                         <option value="teacher">Teachers</option>
                         <option value="community">Community</option>
                         <option value="admin">Administrator</option>
                         <option value="reseacher">Researcher</option>
-                    </select>
+                </select>
                 
-                <br/><br/>
-                <input type="submit" value="Log In">
-            </div>
-  
-      
-        <h2>Sign Up</h2>
-            <div>
-                <label for="username">username</label>
-                <input type="text" id="sname" name="sname"/>
-                <span class="error-message" id="username2Error">username required</span>
-                
-                <br/>
-                <label for="password">password</label>
-                <input type="text" id="pwd" name="pwd1"/>
-                <br/>
-                <label for="password">confirm password</label>
-                <input type="text" id="pwd" name="pwd2"/>
-                <br/>
-                
-                
+                <br>
 
+                <!-- Validate as Age not  -->
+                <label for="signUp_age">age</label>
+				<input type="text" id="signUp_age" name="age"/>
+				<span class="required">*</span>
+				<span class="error-message" id="signUp_age_error">Date of Birth required</span>
                 
-                <label for="dateofbirth">date of birth</label>
-                <input type="date" id="dob" name="dob"/>
                 <br/>
                 
+                <label for="signUp_gender">gender</label>
+                <input type="radio" name="gender" id="signUp_male">
+                <label for="signUp_male">male</label>
+                <input type="radio" name="gender" id="signUp_female">
+                <label for="signUp_female">female</label>
+				<span class="required">*</span>
+				<span class="error-message" id="signUp_gender_error"> Please Select a gender</span>
                 
-                <label for="dateofbirth">date of birth</label>
-				<input type="text" id="dob2" name="dob2" placeholder="DD/MM/YYYY"/>
-				<span class="error-message" id="dobError">Date of Birth required</span>
-				<span class="error-message" id="dobFormatError">Check date format</span>
-				<span class="error-message" id="dobInputError">Check date input</span>
-                <br/>
-                
-                <label for="gender">gender</label>
-                <input type="radio" name="male" id="male">
-                <label for="male">male</label>
-                <input type="radio" name="female" id="female">
-                <label for="female">female</label>
-                
-                <br/><br/>
-                <input type="submit" value="Sign Up">
+                <br>
+				
+                <input type="submit" value="Sign Up" name="signUp_submit">
             </div>
         </form>    
 
       </body>
-      
-      
-
-      
-      <script type="text/javascript">
-       
-      </script>
     
 </html>

@@ -18,6 +18,7 @@
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/theme.css">
   <script src="js/formValidation.js"></script>
+
 </head>
     <body>
 
@@ -78,14 +79,14 @@
                 <label for="signUp_password">password</label>
                 <input type="password" id="signUp_password" />
                 <span class="required">*</span>
-                <span class="error-message" id="signUp_passowrd_error">Password do not matched</span>
+                <span class="error-message" id="signUp_password_error">Password do not match</span>
                 
                 <br>		
                 	
-                <label for="signUp_confirmPassowrd">confirm password</label>
-                <input type="password" id="signUp_confirmPassowrd"/>
+                <label for="signUp_confirmPassword">confirm password</label>
+                <input type="password" id="signUp_confirmPassword"/>
 				<span class="required">*</span>
-				<span class="error-message" id="signUp_confirmPassowrd_error">Password do not matched</span>
+				<span class="error-message" id="signUp_confirmPassword_error">Password do not match</span>
 
                 <br/>
                 
@@ -102,7 +103,7 @@
                 
                 <br>
 
-                <!-- Validate as Age not  -->
+                <!-- Validate as Age not DOB-->
                 <label for="signUp_age">age</label>
 				<input type="text" id="signUp_age" name="age"/>
 				<span class="required">*</span>

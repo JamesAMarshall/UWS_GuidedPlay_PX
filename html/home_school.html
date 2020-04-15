@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Student HomePage</title>
+        <title>School Homepage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/homePage.css">
         
-        <!-- Vendor CSS Files -->
-        <link href=".. /bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/style.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../css/theme.css">
+        <!-- Styling -->
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                    <!-- <link rel="stylesheet" type="text/css" href="../css/homePage.css"> -->
+                    <!-- <link href="../css/style.css" rel="stylesheet">
+                    <link rel="stylesheet" type="text/css" href="../css/theme.css"> -->
     </head>
     <body>
 
-        <div class="heading">
-            <h1>Home Page</h1>
-            <a class="btn btn-outline-success" id="rcorners2" href="" >&nbsp;</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Submit Observation</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Manage Classes</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Upload Data</a>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
+        <!-- pt-sm-5 is top padding -->
+        <div class="container pt-sm-5">
+            <div class="row">
+                <div class="col sm-7"><h1>School Homepage</h1></div>
+                <div class="col sm-5">
+                    <nav class="nav-menu pt-sm-3">
+                        <a href="">User ID</a>
+                        <a href="">Submit Observation</a>
+                        <a href="">Manage Classes</a>
+                        <a href="">Upload Data</a>
+                   </nav>
+                </div>
+            </div>
         </div>
-        
-        <div class="subheading">
-            <a class="btn btn-outline-success" id="rowheading" href="">View Light Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Demographic Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Temperature Data</a>
+
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col"><a href="">View Light Data</a></div>
+                <div class="col"><a href="">View Demographic Data</a></div>
+                <div class="w-100"></div>
+                <div class="col"><a href="">View Temperature Data</a></div>    
+            </div>
         </div>
 
     </body>

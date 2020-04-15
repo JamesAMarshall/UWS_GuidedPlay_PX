@@ -112,7 +112,7 @@ function gender_validation(gender){
         }
 }
 
-/*check dob format*/
+/*check dob format - to scrap :( */
 function checkDate(inputText) 
 {
         var checkText = /^\d{2}\/\d{2}\/\d{4}$/; //defines the format of XX/XX/XXXX (X = numbers 0 - 9)

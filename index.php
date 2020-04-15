@@ -39,12 +39,12 @@
         <br>
 
         <h2>Log In</h2>
-        <form action="" method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
+        <form method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
             <div>
                 <label for="logIn_username">username</label>
                 <input type="text" id="logIn_username" name="uname"/>
 				<span class="required">*</span>
-                <span class="error-message" id="LogIn_username_error">username required</span>
+                <span class="error-message" id="logIn_username_error">username required</span>
 
                 <br>
 
@@ -64,7 +64,7 @@
 
 
 
-        <form action ="" method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
+        <form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
         <h2>Sign Up</h2>
 		<br/>
             <div>
@@ -78,14 +78,14 @@
                 <label for="signUp_password">password</label>
                 <input type="password" id="signUp_password" />
                 <span class="required">*</span>
-                <span class="error-message" id="signUp_passowrd_error">Password do not matched</span>
+                <span class="error-message" id="signUp_password_error">Password do not matched</span>
                 
                 <br>		
                 	
-                <label for="signUp_confirmPassowrd">confirm password</label>
-                <input type="password" id="signUp_confirmPassowrd"/>
+                <label for="signUp_confirmPassword">confirm password</label>
+                <input type="password" id="signUp_confirmPassword"/>
 				<span class="required">*</span>
-				<span class="error-message" id="signUp_confirmPassowrd_error">Password do not matched</span>
+				<span class="error-message" id="signUp_confirmPassword_error">Password do not matched</span>
 
                 <br/>
                 

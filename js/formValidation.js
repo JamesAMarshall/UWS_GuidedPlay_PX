@@ -2,18 +2,13 @@
 
 function validateLogInForm() 
 {
-     var valid = false;
-     var username = document.getElementById("uname");
-     var password = document.getElementById("pass");
+     var valid = true;      
 
-     defaultValidation(username, 'username');            
-     defaultValidation(password, 'password');            
-
-     if(!LoginUsername_validation(username)){
+     if(!defaultValidation("logIn_username")){
         valid = false;
      }
                  
-     if(!LoginPassword_validation(password)){
+     if(!defaultValidation("logIn_password")){
          valid = false;
      }
 
@@ -22,102 +17,61 @@ function validateLogInForm()
 
 function validateSignUpForm() 
 {
-        var valid = false;
-        var username = document.getElementById("uname");
-        var username2 = document.getElementById("sname");
-        var password = document.getElementById("pass");
-        var date = document.getElementById("dob2");
-        var gender = document.getElementById("male");
-        var gender = document.getElementById("female");
-        
-        var a = document.getElementById("pwd1").value;
-        var b = document.getElementById("pwd2").value;
-                
-        if(!SignupUsername_validation(username2)){
-        valid = false;
-        }
-                
-        if(!gender_validation(gender)){
-                valid = false;
-        }
-                
-                
-        if(!checkDate(date)) {
-                valid = false;
-        }
-                
-                
-        if(!confirmpassword_validation(a)){
-                valid = false;
-        }
-        
-        if(!confirmpassword_validation(b)){
-                valid = false;
-        }
+        var valid = true;
+		var signuppass = document.getElementById("signUp_password");
 
+        if(!defaultValidation("signUp_username")){
+            valid = false;
+        }
+                
+        if(!checkGender()){
+            valid = false;
+        }
+		
+		if(!ageInput()){
+			valid = false;
+		}
+		
+		if(!checkPassword(signuppass)){
+			valid = false;
+		}
+		
+		if(!confirmpassword_validation()){
+			valid = false;
+		}	
+        
         return valid;
 }
 
-
-function defaultValidation(inputField, string) 
+/*Dont add or change anything*/
+function defaultValidation(elementId) 
 { 
-        if(checkRequired(inputField)){
-                document.getElementById(string).style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById(string).style.display = "inline-block";
-                return false;
-        }
-}
-
-
- /*checks login username */
- function LoginUsername_validation(username) 
- { 
-         if(checkRequired(username)){
-                 document.getElementById('usernameError').style.display = "none";
-                 return true;
-         }
-         else {
-                 document.getElementById('usernameError').style.display = "inline-block";
-                 return false;
-         }
- }
- /* checks login password */
- function LoginPassword_validation(password) 
- { 
-         if(checkRequired(password)){
-                 document.getElementById('passwordError').style.display = "none";
-                 return true;
-         }
-         else {
-                 document.getElementById('passwordError').style.display = "inline-block";
-                 return false;
-         }
- }
- 		
-/*check password*/
-function confirmpassword_validation(){
-
-        var password = document.getElementById("pwd1").value;
-        var confirmPassword = document.getElementById("pwd2").value;
-        if (password != confirmPassword) {
-                document.getElementById('pwd2Error').style.display = "inline-block";
-                return false;
-        }
-        document.getElementById('pwd2Error').style.display = "none";
+    var input = document.getElementById(elementId);
+    var error = document.getElementById(elementId + "_error");
+    if(checkRequired(input)){
+        error.style.display = "none";
         return true;
+    }
+    else {
+        error.style.display = "inline-block";
+        return false;
+    }
 }
-        
+
+
+
+ 	 
 /*select radio button*/
 function checkGender(){
-        var radio1 = document.getElementById('male').checked;
-        var radio2 = document.getElementById('female').checked;
+        var radio1 = document.getElementById('signUp_male').checked;
+        var radio2 = document.getElementById('signUp_female').checked;
+        var error = document.getElementById('signUp_gender_error');
+        
         if((radio1=="")&&(radio2=="")){
-                return false;
+            error.style.display = "inline-block";
+            return false;
         }
-
+        error.style.display = "none";
         return true;
 }
 
@@ -129,6 +83,50 @@ function checkRequired(val) {
                 return false;
         }
         return true;
+}
+
+/*check password between 6~20*/
+function checkPassword(inputTxt)
+{
+	var paswd= /^(?=.*[0-9])(?=.*[a-zA-Z])(?=\S+$).{6,20}$/;
+	var signup_paswd = inputTxt.value;
+	var paswdError = document.getElementById('signUp_password_error');
+	
+	if(!inputTxt.value.match(paswd)){
+		paswdError.style.display = "block";
+		return false;
+	}
+		paswdError.style.display = "none";
+		return true;
+	
+} 
+
+/*check re-enter password match*/
+function confirmpassword_validation(){
+	var password = document.getElementById("signUp_password").value;
+	var confirmPassword = document.getElementById("signUp_confirmPassword").value;
+    var cpError = document.getElementById('signUp_confirmPassword_error');
+	
+	if (password != confirmPassword) {
+			cpError.style.display = "block";
+			return false;
+	}
+	cpError.style.display = "none";
+	return true;
+}
+
+/*check age*/
+function ageInput(){
+	var age = document.getElementById("signUp_age").value;
+	var ageInputError = document.getElementById('signUp_age_error');
+	
+	if (isNaN(age) || age < 15 || age > 100) {
+		ageInputError.style.display = "inline-block";
+		return false;
+	}
+
+		ageInputError.style.display = "none";
+		return true;
 }
              
 /* checks gender */
@@ -143,43 +141,8 @@ function gender_validation(gender){
         }
 }
 
-/*checks login username */
-function LoginUsername_validation(username) 
-{ 
-        if(checkRequired(username)){
-                document.getElementById('usernameError').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('usernameError').style.display = "inline-block";
-                return false;
-        }
-}
 
-/* checks login password */
-function LoginPassword_validation(password) 
-{ 
-        if(checkRequired(password)){
-                document.getElementById('passwordError').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('passwordError').style.display = "inline-block";
-                return false;
-        }
-}
-/* check signup username */
-function SignupUsername_validation(username2) 
-{ 
-        if(checkRequired(username2)){
-                document.getElementById('username2Error').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('username2Error').style.display = "inline-block";
-                return false;
-        }
-}
+
 
 /*check dob format*/
 function checkDate(inputText) 

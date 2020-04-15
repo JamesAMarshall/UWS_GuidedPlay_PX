@@ -2,18 +2,13 @@
 
 function validateLogInForm() 
 {
-     var valid = false;
-     var username = document.getElementById("uname");
-     var password = document.getElementById("pass");
+     var valid = true;      
 
-     defaultValidation(username, 'username');            
-     defaultValidation(password, 'password');            
-
-     if(!LoginUsername_validation(username)){
+     if(!defaultValidation("logIn_username")){
         valid = false;
      }
                  
-     if(!LoginPassword_validation(password)){
+     if(!defaultValidation("logIn_password")){
          valid = false;
      }
 
@@ -22,102 +17,76 @@ function validateLogInForm()
 
 function validateSignUpForm() 
 {
-        var valid = false;
-        var username = document.getElementById("uname");
-        var username2 = document.getElementById("sname");
-        var password = document.getElementById("pass");
-        var date = document.getElementById("dob2");
-        var gender = document.getElementById("male");
-        var gender = document.getElementById("female");
+        var valid = true;
         
-        var a = document.getElementById("pwd1").value;
-        var b = document.getElementById("pwd2").value;
-                
-        if(!SignupUsername_validation(username2)){
-        valid = false;
+
+        if(!defaultValidation("signUp_username")){
+            valid = false;
         }
                 
-        if(!gender_validation(gender)){
-                valid = false;
-        }
-                
-                
-        if(!checkDate(date)) {
-                valid = false;
-        }
-                
-                
-        if(!confirmpassword_validation(a)){
-                valid = false;
-        }
-        
-        if(!confirmpassword_validation(b)){
-                valid = false;
+        if(!confirmpassword_validation()){
+            valid = false;
         }
 
+        if(!checkGender()){
+            valid = false;
+        }
+        
         return valid;
 }
 
 
-function defaultValidation(inputField, string) 
+function defaultValidation(elementId) 
 { 
-        if(checkRequired(inputField)){
-                document.getElementById(string).style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById(string).style.display = "inline-block";
-                return false;
-        }
+    var input = document.getElementById(elementId);
+    var error = document.getElementById(elementId + "_error");
+
+    if(checkRequired(input)){
+        error.style.display = "none";
+        return true;
+    }
+    else {
+        error.style.display = "inline-block";
+        return false;
+    }
 }
 
-
- /*checks login username */
- function LoginUsername_validation(username) 
- { 
-         if(checkRequired(username)){
-                 document.getElementById('usernameError').style.display = "none";
-                 return true;
-         }
-         else {
-                 document.getElementById('usernameError').style.display = "inline-block";
-                 return false;
-         }
- }
- /* checks login password */
- function LoginPassword_validation(password) 
- { 
-         if(checkRequired(password)){
-                 document.getElementById('passwordError').style.display = "none";
-                 return true;
-         }
-         else {
-                 document.getElementById('passwordError').style.display = "inline-block";
-                 return false;
-         }
- }
- 		
 /*check password*/
 function confirmpassword_validation(){
 
-        var password = document.getElementById("pwd1").value;
-        var confirmPassword = document.getElementById("pwd2").value;
-        if (password != confirmPassword) {
-                document.getElementById('pwd2Error').style.display = "inline-block";
-                return false;
-        }
-        document.getElementById('pwd2Error').style.display = "none";
-        return true;
+    var password = document.getElementById("signUp_password");
+    var confirmPassword = document.getElementById("signUp_confirmPassword");
+    var pError = document.getElementById('signUp_password_error');
+    var cpError = document.getElementById('signUp_confirmPassword_error');
+
+    if(!defaultValidation("signUp_password")){
+        return false;
+    }
+    if(!defaultValidation("signUp_confirmPassword")){
+        return false;
+    }
+
+    if (password.value != confirmPassword.value) {
+           pError.style.display = "inline-block";
+            return false;
+    }
+    
+    cpError.style.display = "none";
+    
+    return true;
 }
-        
+ 	 
 /*select radio button*/
 function checkGender(){
-        var radio1 = document.getElementById('male').checked;
-        var radio2 = document.getElementById('female').checked;
+        var radio1 = document.getElementById('signUp_male').checked;
+        var radio2 = document.getElementById('signUp_female').checked;
+        var error = document.getElementById('signUp_gender_error');
+        
         if((radio1=="")&&(radio2=="")){
-                return false;
+            error.style.display = "inline-block";
+            return false;
         }
-
+        error.style.display = "none";
         return true;
 }
 
@@ -139,44 +108,6 @@ function gender_validation(gender){
         }
         else {
                 document.getElementById('genderError').style.display = "inline-block";
-                return false;
-        }
-}
-
-/*checks login username */
-function LoginUsername_validation(username) 
-{ 
-        if(checkRequired(username)){
-                document.getElementById('usernameError').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('usernameError').style.display = "inline-block";
-                return false;
-        }
-}
-
-/* checks login password */
-function LoginPassword_validation(password) 
-{ 
-        if(checkRequired(password)){
-                document.getElementById('passwordError').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('passwordError').style.display = "inline-block";
-                return false;
-        }
-}
-/* check signup username */
-function SignupUsername_validation(username2) 
-{ 
-        if(checkRequired(username2)){
-                document.getElementById('username2Error').style.display = "none";
-                return true;
-        }
-        else {
-                document.getElementById('username2Error').style.display = "inline-block";
                 return false;
         }
 }

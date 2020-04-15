@@ -1,24 +1,22 @@
+<?php include('../php/requests/session.php'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Student HomePage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/homePage.css">
         
-        <!-- Vendor CSS Files -->
+        <!-- CSS -->
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- Template Main CSS File -->
-        <link href="../css/style.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../css/theme.css">
 
-        <!-- Resources -->
+        <!-- JS -->
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
         <script src="https://www.amcharts.com/lib/4/charts.js"></script>
         <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
         
         <script src="../js/graphExample.js"></script>   
+        <script src="../js/uploadFile.js"></script> 
+        <script src="../js/modules/papaparse.js"></script> 
 
         <style>
             #chartdiv {
@@ -29,8 +27,9 @@
   
     </head>
     <body>
+    <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
         <div class="heading">
-            <h1>Home Page</h1>
+        <h2><a href = "../php/requests/logout.php">Sign Out</a></h2>
             <a class="btn btn-outline-success" id="rcorners2" href="" >&nbsp;</a>
             <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
             <a class="btn btn-outline-success" id="rcorners1" href="">Upload Data</a>
@@ -45,6 +44,17 @@
             <a class="btn btn-outline-success" id="rowheading" href="">View Temperature Data</a>
         </div>
         
+        <div>
+            <h2>Upload Data</h2>
+            <form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
+                    <label for="myfile">Select a file:</label>
+                    <input type="file" id="myfile" name="myfile"> 
+                    <input type="submit" name="submit" id="submit">
+            </form>
+
+            <p id="demo"></p>
+        </div>
+
         <div id="chartdiv"></div>
     </body>
 </html>

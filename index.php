@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home Page</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+        <title>Home Page</title>
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords"> 
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/theme.css">
-  <script src="js/formValidation.js"></script>
-</head>
+        <!-- CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- JS -->
+        <script src="js/formValidation.js"></script>
+
+    </head>
     <body>
 
-
-        <h1 class="text-light"><a href="index.html">Welcome to Guided Play</a></h1>
+        <h1 class="text-light"><a href="index.php">Welcome to Guided Play</a></h1>
         
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active"><a href="index.php">Home</a></li>		
-                <li> <a href="html/home_school.html">School Home</a></li>	
-                <li> <a href="html/home_research.html">Research Home</a></li>	
+                <li> <a href="html/home_school.php">School Home</a></li>	
+                <li> <a href="html/home_research.php">Research Home</a></li>	
             </ul>
         </nav>
 
@@ -39,7 +37,7 @@
         <br>
 
         <h2>Log In</h2>
-        <form method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
+        <form action="php/requests/login.php" method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
             <div>
                 <label for="logIn_username">username</label>
                 <input type="text" id="logIn_username" name="uname"/>
@@ -58,10 +56,6 @@
                 <input type="submit" value="Log In" name="logIn_submit">
             </div>
         </form>
-
-
-
-
 
 
         <form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
@@ -123,6 +117,8 @@
                 <input type="submit" value="Sign Up" name="signUp_submit">
             </div>
         </form>    
+
+        <h2><a href = "php/requests/logout.php">Sign Out</a></h2>
 
       </body>
     

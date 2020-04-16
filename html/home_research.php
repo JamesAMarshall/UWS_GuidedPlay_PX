@@ -64,6 +64,7 @@
             <p id="demo"></p>
         </div>
 
+
 		<div id="chartdiv"></div>
 		
 		<div class= "container">
@@ -117,6 +118,9 @@
 				<br/><br/><br/>
 			</div>	
 		</div>			 
+
+		<?php include('../php/requests/getData.php'); ?>
+
 
     </body>
 </html>

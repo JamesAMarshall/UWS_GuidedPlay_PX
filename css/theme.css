@@ -1,27 +1,18 @@
-/*------------------------------------------------------------------
-[ Error Message ]*/
 .error-message {
     display:none;
-    color: #c80000; /*red text*/
-    padding: 1px;	
-    text-align: center;
-	background-color: white;
-	border: 1px solid #c80000;
-	position: relative;
-	width: fit-content;
-	z-index: 1;
-	margin-bottom: 10px;
-	font-family: Poppins-Medium;
+    color: white;
+    border: 1px solid black;
+    background-color: #141459;
+    padding: 1px;
+    border-radius: 3px;
+    width: fit-content;
+	width: 200px;
+    margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
 }
 
-/*------------------------------------------------------------------
-[ toggle hide and show content ]*/
-#sign{
-	display:none;
-}
-
-/*------------------------------------------------------------------
-[ asterisk ]*/
 .required {
   color: red;
-} 
+  
+  

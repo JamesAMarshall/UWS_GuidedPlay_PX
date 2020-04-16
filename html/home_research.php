@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Student HomePage</title>
+        <title>Research HomePage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- CSS -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/database.css">
+		<!-- <link rel="stylesheet" type="text/css" href="../css/database.css"> -->
 		
 		
 
@@ -21,7 +21,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 		<script src="../js/main.js"></script>
-		<script src="../js/table.js"></script>
+
 
         <script src="../js/graphExample.js"></script>   
         <script src="../js/uploadFile.js"></script> 
@@ -68,7 +68,7 @@
 		<div id="chartdiv"></div>
 		
 		<div class= "container">
-			<div class="row-content">
+			<div class="row">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>
 					<label for="tname">Table name:</label>

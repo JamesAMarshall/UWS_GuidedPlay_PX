@@ -16,6 +16,8 @@
 
         <!-- JS -->
         <script src="js/formValidation.js"></script>
+		<script src="js/toggle.js"></script>
+
 
     </head>
     <body>
@@ -58,7 +60,7 @@
         </form>
 
         <h2>Sign Up</h2>
-        <form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
+        <form action="php/requests/signup.php" method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
                 <label for="signUp_username">username</label>
                 <input type="text" id="signUp_username" name="sname"/>
 				<span class="required">*</span>
@@ -67,7 +69,7 @@
                 <br/>
 				
                 <label for="signUp_password">password</label>
-                <input type="password" id="signUp_password" />
+                <input type="password" id="signUp_password" name="pass" />
                 <span class="required">*</span>
                 <span class="error-message" id="signUp_password_error">Password do not matched</span>
                 
@@ -80,25 +82,13 @@
 
                 <br/>
                 
-                <!-- FIX: Dont have drop down, change account management -->
-                <label for="accountType">account type</label>
-                <select id="accountType" name="accountType" height="50px">
-                        <option value="default"selected disabled></option>
-                        <option value="student">Student</option>
-                        <option value="teacher">Teachers</option>
-                        <option value="community">Community</option>
-                        <option value="admin">Administrator</option>
-                        <option value="reseacher">Researcher</option>
-                </select>
-                
                 <br>
 
-                <!-- Validate as Age not  -->
-                <label for="signUp_age">age</label>
+				<label for="signUp_age">Age</label>
 				<input type="text" id="signUp_age" name="age"/>
 				<span class="required">*</span>
-				<span class="error-message" id="signUp_age_error">Date of Birth required</span>
-                
+				<span class="error-message" id="signUp_age_error">Enter Age between 15~100</span>
+	
                 <br/>
                 
                 <label for="signUp_gender">gender</label>

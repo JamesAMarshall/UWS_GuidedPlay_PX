@@ -78,7 +78,67 @@ and open the template in the editor.
             <button>Remove</button>
             
         </div>
-		        
+		
+		<div class="table-wrapper">
+		
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h1><b>Manage Class</b></h1></div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+			<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
+					<input class="form-control" id="myInput" type="text" placeholder="Search..">
+					<br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+						<th>Grade</th>
+                        <th>Class</th>
+						<th>Last Login</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>Stacie0321</td>
+						<td>H</td>
+						<td>3B</td>
+                        <td>01/04/2020 5:00p.m</td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Peter110532</td>
+						<td>HD</td>
+						<td>4A</td>
+                        <td>12/04/2020 3:00p.m</td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fran11932</td>
+						<td>D</td>
+						<td>2D</td>
+                        <td>15/02/2020 1:00p.m</td>
+                        <td>
+							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>      
+                </tbody>
+            </table>
+        </div>
       
     </body>
 </html>

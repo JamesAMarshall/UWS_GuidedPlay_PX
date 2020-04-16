@@ -22,23 +22,24 @@
 
         <h1 class="text-light"><a href="index.php">Welcome to Guided Play</a></h1>
         
-        <nav class="nav-menu d-none d-lg-block">
+        <nav class="nav-menu">
             <ul>
-                <li class="active"><a href="index.php">Home</a></li>		
-                <li> <a href="html/home_school.php">School Home</a></li>	
-                <li> <a href="html/home_research.php">Research Home</a></li>	
+                <li>
+					<a href="index.php">Home</a>
+				</li>		
+                <li> 
+					<a href="html/home_school.php">School Home</a>
+				</li>	
+                <li> 
+					<a href="html/home_research.php">Research Home</a>
+				</li>	
             </ul>
         </nav>
 
-        <br>
-
-		<!-- <span class="required">*</span><span>Required field</span> -->
-        
-        <br>
 
         <h2>Log In</h2>
         <form action="php/requests/login.php" method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
-            <div>
+
                 <label for="logIn_username">username</label>
                 <input type="text" id="logIn_username" name="uname"/>
 				<span class="required">*</span>
@@ -54,14 +55,10 @@
                 <br>
                 
                 <input type="submit" value="Log In" name="logIn_submit">
-            </div>
         </form>
 
-
-        <form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
         <h2>Sign Up</h2>
-		<br/>
-            <div>
+        <form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
                 <label for="signUp_username">username</label>
                 <input type="text" id="signUp_username" name="sname"/>
 				<span class="required">*</span>
@@ -115,7 +112,6 @@
                 <br>
 				
                 <input type="submit" value="Sign Up" name="signUp_submit">
-            </div>
         </form>    
 
         <h2><a href = "php/requests/logout.php">Sign Out</a></h2>

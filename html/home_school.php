@@ -35,7 +35,7 @@
 
         <div>
             <h2>Upload Data</h2>
-            <form method="post" enctype="multipart/form-data" action="javascript:ProcessFile()" onsubmit="return ValidateInput()">
+            <form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
                     <label for="myfile">Select a file:</label>
                     <input type="file" id="myfile" name="myfile"> 
                     <input type="submit" name="submit" id="submit">

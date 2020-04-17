@@ -38,7 +38,6 @@
             </ul>
         </nav>
 
-
         <h2>Log In</h2>
         <form action="php/requests/login.php" method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
 

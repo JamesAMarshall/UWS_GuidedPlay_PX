@@ -71,7 +71,7 @@
 					<label class="col-sm-2 col-form-label" for="signUp_username">username<span class="required">*</span></label>
 					<div class="col-sm-8">
 						<input class="form-control" type="text" id="signUp_username" name="sname"/>
-						<span class="invalid-feedback" id="signUp_username_error">username required</span>
+						<span class="invalid-feedback" id="signUp_username_error">Username required</span>
 					</div>
 				</div>
 
@@ -79,7 +79,7 @@
 					<label class="col-sm-2 col-form-label" for="signUp_password">password<span class="required">*</span></label>
 					<div class="col-sm-8">
 						<input class="form-control" type="password" id="signUp_password" name="pass" />
-						<span class="invalid-feedback" id="signUp_password_error">Password do not matched</span>
+						<span class="invalid-feedback" id="signUp_password_error">password must be within 6~20 characters (at least 1 uppercase & 1 numeric)</span>
 					</div>
 				</div>
 

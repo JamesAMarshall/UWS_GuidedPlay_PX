@@ -10,6 +10,8 @@
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href="../css/main.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
+
 
 
 		<!-- JS -->

@@ -18,33 +18,36 @@ function validateLogInForm()
 function validateSignUpForm() 
 {
         var valid = true;
-        
+		var signuppass = document.getElementById("signUp_password");
 
         if(!defaultValidation("signUp_username")){
             valid = false;
         }
                 
-        if(!confirmpassword_validation()){
-            valid = false;
-        }
-
         if(!checkGender()){
             valid = false;
-		}
+        }
 		
 		if(!ageInput()){
-            valid = false;
-        }
+			valid = false;
+		}
+		
+		if(!checkPassword(signuppass)){
+			valid = false;
+		}
+		
+		if(!confirmpassword_validation()){
+			valid = false;
+		}	
         
         return valid;
 }
 
-
+/*Dont add or change anything*/
 function defaultValidation(elementId) 
 { 
     var input = document.getElementById(elementId);
     var error = document.getElementById(elementId + "_error");
-
     if(checkRequired(input)){
         error.style.display = "none";
         return true;
@@ -55,30 +58,8 @@ function defaultValidation(elementId)
     }
 }
 
-/*check password*/
-function confirmpassword_validation(){
 
-    var password = document.getElementById("signUp_password");
-    var confirmPassword = document.getElementById("signUp_confirmPassword");
-    var pError = document.getElementById('signUp_password_error');
-    var cpError = document.getElementById('signUp_confirmPassword_error');
 
-    if(!defaultValidation("signUp_password")){
-        return false;
-    }
-    if(!defaultValidation("signUp_confirmPassword")){
-        return false;
-    }
-
-    if (password.value != confirmPassword.value) {
-           pError.style.display = "inline-block";
-            return false;
-    }
-    
-    cpError.style.display = "none";
-    
-    return true;
-}
  	 
 /*select radio button*/
 function checkGender(){
@@ -103,6 +84,50 @@ function checkRequired(val) {
         }
         return true;
 }
+
+/*check password between 6~20*/
+function checkPassword(inputTxt)
+{
+	var paswd= /^(?=.*[0-9])(?=.*[a-zA-Z])(?=\S+$).{6,20}$/;
+	var signup_paswd = inputTxt.value;
+	var paswdError = document.getElementById('signUp_password_error');
+	
+	if(!inputTxt.value.match(paswd)){
+		paswdError.style.display = "block";
+		return false;
+	}
+		paswdError.style.display = "none";
+		return true;
+	
+} 
+
+/*check re-enter password match*/
+function confirmpassword_validation(){
+	var password = document.getElementById("signUp_password").value;
+	var confirmPassword = document.getElementById("signUp_confirmPassword").value;
+    var cpError = document.getElementById('signUp_confirmPassword_error');
+	
+	if (password != confirmPassword) {
+			cpError.style.display = "block";
+			return false;
+	}
+	cpError.style.display = "none";
+	return true;
+}
+
+/*check age*/
+function ageInput(){
+	var age = document.getElementById("signUp_age").value;
+	var ageInputError = document.getElementById('signUp_age_error');
+	
+	if (isNaN(age) || age < 15 || age > 100) {
+		ageInputError.style.display = "inline-block";
+		return false;
+	}
+
+		ageInputError.style.display = "none";
+		return true;
+}
              
 /* checks gender */
 function gender_validation(gender){
@@ -116,15 +141,32 @@ function gender_validation(gender){
         }
 }
 
-function ageInput(){
-	var age = document.getElementById("signUp_age").value;
-	var ageInputError = document.getElementById('signUp_age_error');
-	
-	if (isNaN(age) || age < 15 || age > 100) {
-		ageInputError.style.display = "inline-block";
-		return false;
-	}
 
-		ageInputError.style.display = "none";
-		return true;
+
+
+/*check dob format*/
+function checkDate(inputText) 
+{
+        var checkText = /^\d{2}\/\d{2}\/\d{4}$/; //defines the format of XX/XX/XXXX (X = numbers 0 - 9)
+        var date = inputText.value;
+        document.getElementById('dobInputError').style.display = "none";
+        if(checkRequired(inputText)){
+                document.getElementById('dobError').style.display = "none";
+
+                if(inputText.value.match(checkText)){
+                        numbers = date.split('/');
+                        document.getElementById('dobFormatError').style.display = "none";
+                        if(numbers[0] > 0 && numbers[0] <= 31 && numbers[1] > 0 && numbers[1] <= 12 && numbers[2] > 1900) { //checks for correct dates where day is 1 - 31, month 1-12 and year is > 19000
+                                return true;
+                        }
+                        inputText.focus();
+                        document.getElementById('dobInputError').style.display = "inline-block";
+                        return false;
+                }
+                inputText.focus();
+                document.getElementById('dobFormatError').style.display = "inline-block";
+                return false;
+        }
+        document.getElementById('dobError').style.display = "inline-block";
+        return false;
 }

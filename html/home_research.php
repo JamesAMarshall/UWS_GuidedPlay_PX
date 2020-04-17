@@ -9,7 +9,11 @@
         <!-- CSS -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/main.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
+		<!-- <link rel="stylesheet" type="text/css" href="../css/homePage.css"> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+		
 
         <!-- JS -->
         <script src="https://www.amcharts.com/lib/4/core.js"></script>

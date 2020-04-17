@@ -127,11 +127,11 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="signUp_age class="col-sm-2 col-form-label">
+                        <label for="signUp_age" class="col-sm-2 col-form-label">
                             Age in years<span class="required">*</span>
                         </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="signUp_age_error" placeholder="Age">
+                            <input type="text" class="form-control" id="signUp_age" placeholder="Age">
                             <div class="invalid-feedback" id="signUp_age_error">Please enter your age.</div>
                         </div>
                     </div>
@@ -141,13 +141,13 @@
                           <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                           <div class="col-sm-10">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="signUp_male" id="signUp_male" value="option1">
+                                    <input class="form-check-input" type="radio" name="signUp_gender" id="signUp_male" value="option1">
                                     <label class="form-check-label" for="signUp_male">
                                         Male
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="signUp_female" id="signUp_female" value="option2">
+                                    <input class="form-check-input" type="radio" name="signUp_gender" id="signUp_female" value="option2">
                                     <label class="form-check-label" for="signUp_female">
                                         Female
                                     </label>

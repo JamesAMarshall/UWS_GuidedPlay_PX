@@ -44,6 +44,6 @@ tbody th:focus::before {
   top: 0;
   left: -5000px;
   position: absolute;  
-  width: 10000px;
+  width: 100%
   z-index: -1;
 }

@@ -9,7 +9,7 @@
         <meta content="" name="keywords"> 
 
         <!--CSS -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/theme.css">
 		
         <!-- JS -->
@@ -19,17 +19,28 @@
     </head>
     <body>
 
-    <div class="container">
-        <div class="pt-sm-10"> 
-            <h1 class="text-light"><a href="index.php">Welcome to Guided Play</a></h1>
-            <nav class="nav-menu">
-				<ul>
-					<li><a href="index.php">Home</a></li>		
-					<li><a href="html/home_school.php">School Home</a></li>	
-					<li><a href="html/home_research.php">Research Home</a></li>
-					<li><a href="php/requests/logout.php">Sign Out</a></li>
-				</ul>
-            </nav>
+    <div class="container pt-sm-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1><a href="index.php">Welcome to Guided Play</a></h1>
+            </div>
+
+            <div class="col-sm-6 pt-sm-2">
+                <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/home_school.php">School Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="html/home_research.php">Research Home</a>
+                    </li>
+					  <li class="nav-item">
+                        <a class="nav-link" href="php/requests/logout.php">Sign out</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 	

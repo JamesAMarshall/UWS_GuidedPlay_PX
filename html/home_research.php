@@ -10,7 +10,9 @@
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../css/database.css">
 		<link rel="stylesheet" type="text/css" href="../css/homePage.css">
+		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		
 
         <!-- JS -->
@@ -20,10 +22,11 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+		
+		<script src="../js/manageResearcher.js"></script>
 		<script src="../js/main.js"></script>
 		<script src="../js/table.js"></script>
-
+		
         <script src="../js/graphExample.js"></script>   
         <script src="../js/uploadFile.js"></script> 
         <script src="../js/modules/papaparse.js"></script> 
@@ -74,60 +77,132 @@
 			</div>
 			
         </div>
-
-		<!-- Database Table -->
+		<!-- manage researcher admin features-->
 		<div class= "container">
-			<br/>
-			<h2>Database</h2>
-			<div class="row-content">
-				<div class="col-sm-4 gridbox">
-					<p><b>Database Request</b></p>
-					<label for="tname">Table name:</label>
-					<input type="text" id="tname" align= "center" name="tname">
-					<br>
-					<label for="columns">Columns:</label>
-					<input type="text" id="columns" align= "center"name="columns">
+		<h2>Manage Researcher</h2>
+			<div class="table-wrapper">
+					<div class="table-title">
+					<div class="col">
+						<div class="row-sm-5">
+							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+						</div>
+					</div>
 				</div>
-				
-				<div class="col-sm-7 gridbox">
-					<p><b>Display Table</b></p>
-					<table class="table">    
-						<thead class="thead-dark">
-							<tr>
-							  <th scope="col">#</th>
-							  <th scope="col">UserID</th>
-							  <th scope="col">UserType</th>
-							  <th scope="col">Password</th>
-							  <th scope="col">ResetPassword</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-							  <th scope="row">1</th>
-							  <td>Mark0123</td>
-							  <td>Student</td>
-							  <td>***********</td>
-							  <td>mark432154!</td>
-							</tr>
-							<tr>
-							  <th scope="row">2</th>
-							  <td>Jacob4132</td>
-							  <td>Admin</td>
-							  <td>***********</td>
-							  <td>Jacob@min32</td>
-							</tr>
-							<tr>
-							  <th scope="row">3</th>
-							  <td>Larry7564</td>
-							  <td>Researcher</td>
-							  <td>************</td>
-							  <td>@twitter1523</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>	
-		</div>			 
+				<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
+				<input class="form-control" id="myInput" type="text" placeholder="Search..">
+				<br/>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>User ID</th>
+							<th>User Type</th>
+							<th>Password</th>
+							<th>Reset Password</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						<tr>
+							<td>Mark0123</td>
+							<td>Student</td>
+							<td>***********</td>
+							<td>mark432154!</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Jacob4132</td>
+							<td>Admin</td>
+							<td>***********</td>
+							<td>Jacob@min32</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Larry7564</td>
+							<td>Researcher</td>
+							<td>************</td>
+							<td>@twitter1523</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>      
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<!-- Database Table -->
+		
+		<div class= "container">
+		<h2>Database</h2>
+			<div class="table-wrapper">
 
+			<p><b>Database Request</b></p>
+			<label for="tname">Table:</label>
+			<input type="text" id="table_name" align= "center"name="table_name">
+			<br>
+			<label for="columns">Columns:</label>
+			<input type="text" id="columns" align= "center"name="columns">
+
+				<br/>
+				<table class="table table-bordered">
+					<thead class="thead-dark">
+						<tr>
+							<th>User ID</th>
+							<th>User Type</th>
+							<th>Password</th>
+							<th>Reset Password</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						<tr>
+							<td>Mark0123</td>
+							<td>Student</td>
+							<td>***********</td>
+							<td>mark432154!</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Jacob4132</td>
+							<td>Admin</td>
+							<td>***********</td>
+							<td>Jacob@min32</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Larry7564</td>
+							<td>Researcher</td>
+							<td>************</td>
+							<td>@twitter1523</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>      
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	
     </body>
 </html>

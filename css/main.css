@@ -1,0 +1,15 @@
+#chartdiv1 {
+	width: 50%;
+	height: 500px;
+}
+
+#chartdiv2 {
+	width: 50%;
+	height: 500px;
+}
+
+
+/* toggling display on and off */
+.display {
+	display: none;
+}

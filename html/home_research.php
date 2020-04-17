@@ -9,7 +9,6 @@
         <!-- CSS -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/main.css" rel="stylesheet">
-		
 
         <!-- JS -->
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -35,20 +34,27 @@
 			<p>A Green Space Experience</p>
             <a href = "../php/requests/logout.php">Sign Out</a>
             <p>User ID</p>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Submit Observation</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Manage Classes</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Upload Data</a>
+            <a class="btn btn-outline-success"  href="">Submit Observation</a>
+            <a class="btn btn-outline-success"  href="">Manage Classes</a>
+            <a class="btn btn-outline-success"  href="">Upload Data</a>
         </div>
         
 		<hr>
 
-        <div>
-            <h2>Upload Data</h2>
-            <form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
-                    <label for="myfile">Select a file:</label>
-                    <input type="file" id="myfile" name="myfile"> 
-                    <input type="submit" name="submit" id="submit">
-            </form>
+        <div class="container-fluid">
+			<h2 class="col">Upload Data</h2>
+			<div class="input-group mb-3 col-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Upload Data</span>
+				</div>
+				<div class="custom-file">
+					<form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
+						<input type="file" class="custom-file-input" id="inputGroupFile01" id="myfile" name="myfile">
+						<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+					</form>
+				</div>
+				<input class="btn btn-primary col-md-auto" type="submit" name="submit" id="submit">
+			</div>
 
             <p id="demo"></p>
         </div>
@@ -58,15 +64,15 @@
 		<!-- <div id="chartdiv1"></div> -->
 		<div id="chartdiv2"></div>
 		
-		<div class= "container">
-			<div class="row">
+		<div class= "container-fluid">
+			<div class="row col-3">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>
-					<label for="tname">Table name:</label>
-					<input type="text" id="tname" align="center" name="tname">
+					<label class="col-form-label" for="tname">Table name:</label>
+					<input class="form-control" type="text" id="tname" align="center" name="tname">
 					<br>
-					<label for="columns">Columns:</label>
-					<input type="text" id="columns" align="center"name="columns">
+					<label class="col-form-label" for="columns">Columns:</label>
+					<input class="form-control" type="text" id="columns" align="center"name="columns">
 				</div>
 				
 				<div class="col-sm-7 gridbox">

@@ -7,3 +7,33 @@
 	width: 50%;
 	height: 500px;
 }
+
+
+#submitObservation{
+	display: none;
+}
+
+#manageClasses{
+	display: none;
+}
+
+#uploadDataSchool{
+	display: none;
+}
+
+#uploadDataResearch{
+	display: none;
+}
+
+#viewDatabase{
+	display: none;
+}
+
+#chartdiv2{
+	display: none;
+}
+
+
+#manageResearchers{
+	display: none;
+}

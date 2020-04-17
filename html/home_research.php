@@ -27,6 +27,7 @@
         <script src="../js/graphExampleTest.js"></script>   
         <!-- <script src="../js/graphExample.js"></script>    -->
         <script src="../js/uploadFile.js"></script> 
+        <script src="../js/pageHiding.js"></script> 
         <script src="../js/modules/papaparse.js"></script> 
 
     </head>
@@ -38,15 +39,16 @@
 			<p>A Green Space Experience</p>
             <a href = "../php/requests/logout.php">Sign Out</a>
             <p>User ID</p>
-            <a class="btn btn-outline-success"  href="">Submit Observation</a>
-            <a class="btn btn-outline-success"  href="">Manage Classes</a>
-            <a class="btn btn-outline-success"  href="">Upload Data</a>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="UploadResearch();">Upload Data</button>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="Database();">View Database</button>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="ManageResearchers();">Manage Researchers</button>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="Graph();">Graph Data</button>
         </div>
         
 		</div>
 
 
-        <div class="container" id="uploadData">
+        <div class="container" id="uploadDataResearch">
 			<h2 class="">Upload Data</h2>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
@@ -66,7 +68,7 @@
 
 
 
-		<div class= "container" id="manageResearcher">
+		<div class= "container" id="manageResearchers">
 		<h2>Manage Researcher</h2>
 			<div class="table-wrapper">
 					<div class="table-title">
@@ -133,7 +135,7 @@
 		<!-- <div id="chartdiv1"></div> -->
 		<div class="container" id="chartdiv2"></div>
 		
-		<div class= "container" id="database">
+		<div class= "container" id="viewDatabase">
 			<div class="row col">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>

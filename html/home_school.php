@@ -9,6 +9,8 @@
         <!-- Css -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="../css/main.css" rel="stylesheet">
+
 
 		<!-- JS -->
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,6 +19,8 @@
         <script src="../js/uploadFile.js"></script> 
 		<script src="../js/modules/papaparse.js"></script> 
 		<script src="../js/manage.js"></script>
+        <script src="../js/pageHiding.js"></script> 
+
         
     </head>
     <body>
@@ -28,16 +32,17 @@
 			<p>A Green Space Experience</p>
             <a href = "../php/requests/logout.php">Sign Out</a>
             <p>User ID</p>
-            <a class="btn btn-outline-success" href="">Submit Observation</a>
-            <a class="btn btn-outline-success" href="">Manage Classes</a>
-            <a class="btn btn-outline-success" href="">Upload Data</a>
+
+            <button class="btn btn-outline-success" id="rcorners1" onclick="Observation();">Submit Observation</button>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="ManageClass();">Manage Classes</button>
+            <button class="btn btn-outline-success" id="rcorners1" onclick="UploadSchool();">Upload Data</button>
         </div>
 		</div>
 
 
-		<hr>
+		
 
-        <div id="uploadData" class="container">
+        <div id="uploadDataSchool" class="container">
 			<h2 class="col">Upload Data</h2>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
@@ -55,9 +60,9 @@
             <p id="demo"></p>
         </div>
 		
-		<hr>
+		
 
-		<form id="studentObservation" class="container" action="" method="POST">            
+		<form id="submitObservation" class="container" action="" method="POST">            
                         <p>When did your observation happen?</p>       
                         <label for="date">Enter a date:</label>
                         <input type="date" id="date" name="date">
@@ -101,7 +106,7 @@
                         <input type="submit" value="Submit Observation">
         </form>  
 
-		<hr>
+		
 
 		<div class="table-wrapper container" id="manageClasses">
 		

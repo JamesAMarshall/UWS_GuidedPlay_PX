@@ -20,6 +20,8 @@
         
     </head>
     <body>
+		<div class="container">
+		
         <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
         <div class="heading">
             <h1>Home Page</h1>
@@ -30,12 +32,14 @@
             <a class="btn btn-outline-success" href="">Manage Classes</a>
             <a class="btn btn-outline-success" href="">Upload Data</a>
         </div>
+		</div>
+
 
 		<hr>
 
-        <div class="container-fluid">
+        <div id="uploadData" class="container">
 			<h2 class="col">Upload Data</h2>
-			<div class="input-group mb-3 col-3">
+			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text">Upload Data</span>
 				</div>
@@ -53,7 +57,7 @@
 		
 		<hr>
 
-		<form action="" method="POST">            
+		<form id="studentObservation" class="container" action="" method="POST">            
                         <p>When did your observation happen?</p>       
                         <label for="date">Enter a date:</label>
                         <input type="date" id="date" name="date">
@@ -99,7 +103,7 @@
 
 		<hr>
 
-		<div class="table-wrapper">
+		<div class="table-wrapper container" id="manageClasses">
 		
 			<div class="table-title">
 				<div class="row">

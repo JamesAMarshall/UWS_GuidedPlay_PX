@@ -9,6 +9,7 @@
         <!-- CSS -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
         <!-- JS -->
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -18,8 +19,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-		<script src="../js/main.js"></script>
 
+		<script src="../js/manageResearcher.js"></script>
+		<script src="../js/main.js"></script>
+		<script src="../js/table.js"></script>
 
         <script src="../js/graphExampleTest.js"></script>   
         <!-- <script src="../js/graphExample.js"></script>    -->
@@ -28,7 +31,8 @@
 
     </head>
     <body>
-	<h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
+		<div class="container">
+		<h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
         <div class="heading">
             <h1>Home Page</h1>
 			<p>A Green Space Experience</p>
@@ -39,11 +43,12 @@
             <a class="btn btn-outline-success"  href="">Upload Data</a>
         </div>
         
-		<hr>
+		</div>
 
-        <div class="container-fluid">
-			<h2 class="col">Upload Data</h2>
-			<div class="input-group mb-3 col-3">
+
+        <div class="container" id="uploadData">
+			<h2 class="">Upload Data</h2>
+			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text">Upload Data</span>
 				</div>
@@ -59,13 +64,77 @@
             <p id="demo"></p>
         </div>
 
-		<hr>
+
+
+		<div class= "container" id="manageResearcher">
+		<h2>Manage Researcher</h2>
+			<div class="table-wrapper">
+					<div class="table-title">
+					<div class="col">
+						<div class="row-sm-5">
+							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+						</div>
+					</div>
+				</div>
+				<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
+				<input class="form-control" id="myInput" type="text" placeholder="Search..">
+				<br/>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>User ID</th>
+							<th>User Type</th>
+							<th>Password</th>
+							<th>Reset Password</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						<tr>
+							<td>Mark0123</td>
+							<td>Student</td>
+							<td>***********</td>
+							<td>mark432154!</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Jacob4132</td>
+							<td>Admin</td>
+							<td>***********</td>
+							<td>Jacob@min32</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Larry7564</td>
+							<td>Researcher</td>
+							<td>************</td>
+							<td>@twitter1523</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>      
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
 
 		<!-- <div id="chartdiv1"></div> -->
-		<div id="chartdiv2"></div>
+		<div class="container" id="chartdiv2"></div>
 		
-		<div class= "container-fluid">
-			<div class="row col-3">
+		<div class= "container" id="database">
+			<div class="row col">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>
 					<label class="col-form-label" for="tname">Table name:</label>
@@ -115,6 +184,8 @@
 				<br/><br/><br/>
 			</div>	
 		</div>			
+
+
 
     </body>
 </html>

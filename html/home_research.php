@@ -8,20 +8,7 @@
         
         <!-- CSS -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<!-- <link href="../css/main.css" rel="stylesheet"> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../css/database.css"> -->
-		
-		<style>
-		#chartdiv1 {
-			width: 50%;
-			height: 500px;
-		}
-
-		#chartdiv2 {
-			width: 50%;
-			height: 500px;
-		}
-		</style>
+		<link href="../css/main.css" rel="stylesheet">
 		
 
         <!-- JS -->
@@ -42,23 +29,19 @@
 
     </head>
     <body>
-    <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
+	<h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
         <div class="heading">
-        	<h2><a href = "../php/requests/logout.php">Sign Out</a></h2>
-            <a class="btn btn-outline-success" id="rcorners2" href="" >&nbsp;</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
+            <h1>Home Page</h1>
+			<p>A Green Space Experience</p>
+            <a href = "../php/requests/logout.php">Sign Out</a>
+            <p>User ID</p>
+            <a class="btn btn-outline-success" id="rcorners1" href="">Submit Observation</a>
+            <a class="btn btn-outline-success" id="rcorners1" href="">Manage Classes</a>
             <a class="btn btn-outline-success" id="rcorners1" href="">Upload Data</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Database</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="">Manage Researchers</a>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
         </div>
         
-        <div class="subheading">
-            <a class="btn btn-outline-success" id="rowheading" href="">View Light Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Demographic Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Temperature Data</a>
-        </div>
-        
+		<hr>
+
         <div>
             <h2>Upload Data</h2>
             <form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
@@ -70,6 +53,7 @@
             <p id="demo"></p>
         </div>
 
+		<hr>
 
 		<!-- <div id="chartdiv1"></div> -->
 		<div id="chartdiv2"></div>

@@ -1,126 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 body {
 	background: #f6f5f7;
 	display: flex;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-        margin: 20px;
+	height: 100%;
+    margin: 20px;
 }
 
-h1{
-       padding: 10px;
-       height: auto;
-       display: inline-block;
-}
-h1, p, #rcorners1, #rcorners2 {
-font-family: 'Roboto Condensed',serif;
-}
-h2 {
-	text-align: center;
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	font-family: Poppins-Regular;
 }
 
 p {
-        padding: 10px;
-        display: flex;
-	font-size: 20px;
-	letter-spacing: 0.5px;
-        height: auto;
-        
-}
-a {
-	color: black;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
+	font-family: Poppins-Regular;
+	color: #666666;
 }
 
-div.heading, .subheading, boxes{
-    display: inline;
-}
-div.subheading{
-    
+ul, li {
+	margin: 0px;
+	list-style-type: none;
 }
 
-/* buttons design*/
-#rcorners1{
-   border-radius: 20px;
-   padding: 10px;
+
+/* round nav bar*/
+#roundbutton{
+   border: 1px solid #9acd32;
+   border-radius: 25px;
+   background-color: #9acd32;
+   margin: 10px;
+   padding: 5px 12px;
    width: fit-content;
-   height: auto;
-   display: inline;
+   display:block;
    float:right;
-   margin: 20px;
    text-align: center;
-   
+   color:white;
+   font-family: "Open Sans", sans-serif;
+   font-weight: 600;
+  
 }
 
-#rcorners2{
-   border-radius: 20px;
-   padding: 10px;
-   width: 50px;
-   height: auto;
-   display: inline;
-   float:right;
-   margin: 20px;
-   text-align: center;
-   
-}
-
-/*subheading*/
-#rowheading{
-   border-radius: 20px;
-   padding: 10px;
-   width: fit-content;
-   height: auto;
-   display: inline-block;
-   float:left;
-   text-align: center;
-   margin-left: 10px;
-   margin-right: 500px;
-   margin-bottom: 300px;
-}
-
-#grade{
-    margin-left: 10px;
-    display: inline;
-    text-align: left;
-    margin-right: 100px;
-    width: 25%;
-    
-}
-#class{
-
-    display: inline;
-    text-align: left;
-    width: 25%;
-
-    
-}
-
-/*return previous page*/
-.button {
-   border-radius: 20px;
-   padding: 10px;
-   width: fit-content;
-   height: auto;
-   display: inline;
-   float:right;
-   margin: 20px;
-   text-align: center;
-   cursor: pointer;
-   outline: none;
-   width: 15%;
-    
-}
-
-div.userID{
-    margin-top: 50px;
-    margin-left: 10px;
-    text-align: left;
-    margin-right: 100px;
-    width: 50%;
-}
 
 @media (max-width: 630px) {
   body {

@@ -9,8 +9,7 @@
         <!-- Css -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
-		
+
 		<!-- JS -->
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -24,20 +23,15 @@
         <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
         <div class="heading">
             <h1>Home Page</h1>
-            <h2><a href = "../php/requests/logout.php">Sign Out</a></h2>
-            <a class="btn btn-outline-success" id="rcorners2" href="" >&nbsp;</a>
-            <a class="btn btn-outline-success" id="rcorners1" href="#">User ID</a>
+			<p>A Green Space Experience</p>
+            <a href = "../php/requests/logout.php">Sign Out</a>
+            <p>User ID</p>
             <a class="btn btn-outline-success" id="rcorners1" href="">Submit Observation</a>
             <a class="btn btn-outline-success" id="rcorners1" href="">Manage Classes</a>
             <a class="btn btn-outline-success" id="rcorners1" href="">Upload Data</a>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
         </div>
-        
-        <div class="subheading">
-            <a class="btn btn-outline-success" id="rowheading" href="">View Light Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Demographic Data</a>
-            <a class="btn btn-outline-success" id="rowheading" href="">View Temperature Data</a>
-        </div>
+
+		<hr>
 
         <div>
             <h2>Upload Data</h2>
@@ -50,6 +44,8 @@
             <p id="demo"></p>
 		</div>
 		
+		<hr>
+
 		<form action="" method="POST">            
                         <p>When did your observation happen?</p>       
                         <label for="date">Enter a date:</label>
@@ -93,6 +89,8 @@
 
                         <input type="submit" value="Submit Observation">
         </form>  
+
+		<hr>
 
 		<div class="table-wrapper">
 		

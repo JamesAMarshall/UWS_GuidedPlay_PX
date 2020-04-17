@@ -5,7 +5,8 @@
     background-color: #141459;
     padding: 1px;
     border-radius: 3px;
-    width: 200px;
+    width: fit-content;
+	width: 200px;
     margin-left: 5px;
 	margin-right: 5px;
 	text-align: center;
@@ -13,3 +14,5 @@
 
 .required {
   color: red;
+  
+  

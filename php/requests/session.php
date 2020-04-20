@@ -1,18 +1,20 @@
 <?php
-   include('config.php');
-   session_start();
-   
-   $user_check = $_SESSION['username'];
-   
-   $ses_sql = mysqli_query($db,"SELECT username FROM pa2004_Accounts WHERE username = '$user_check' ");
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-   mysqli_close($db);
+	include("../includes/connection.php");
+	include("../includes/sql.php");
+	include("../includes/startSession.php");
 
-   $login_session = $row['username'];
-   
-   if(!isset($_SESSION['username'])){
-        session_unset(); 
-        header("location: ../../index.php");
-        die();
-   }
+	$userToCheck = $_SESSION['username'];
+
+	$result = sql_Query("SELECT username FROM pa2004_Accounts WHERE username = '$userToCheck' ");
+	$row = sql_GetAssociativeRow($result);
+
+	$userSession = $row['username'];
+
+	if(!isset($_SESSION['username'])){
+		session_unset(); 
+		header("location: ../../index.php");
+		die();
+	}
+
+	include("../includes/close.php");
 ?>

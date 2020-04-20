@@ -21,97 +21,91 @@
         <script src="../js/uploadFile.js"></script> 
 		<script src="../js/modules/papaparse.js"></script> 
 		<script src="../js/manage.js"></script>
-        <script src="../js/pageHiding.js"></script> 
+        <script src="../js/main.js"></script> 
+
 
         
     </head>
     <body>
 		<div class="container">
-		
-        <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
-        <div class="heading">
-            <h1>Home Page</h1>
-			<p>A Green Space Experience</p>
-            <a href = "../php/requests/logout.php">Sign Out</a>
-            <p>User ID</p>
+			<h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
+			<div class="heading">
+				<h1>Home Page</h1>
+				<p>A Green Space Experience</p>
+				<a href = "../php/requests/logout.php">Sign Out</a>
+				<p>User ID</p>
 
-            <button class="btn btn-outline-success" id="rcorners1" onclick="Observation();">Submit Observation</button>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="ManageClass();">Manage Classes</button>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="UploadSchool();">Upload Data</button>
-        </div>
+				<button class="btn btn-outline-success" id="rcorners1" onclick="Observation();">Submit Observation</button>
+				<button class="btn btn-outline-success" id="rcorners1" onclick="ManageClass();">Manage Classes</button>
+				<button class="btn btn-outline-success" id="rcorners1" onclick="UploadSchool();">Upload Data</button>
+			</div>
 		</div>
 
 
-		
-
-        <div id="uploadDataSchool" class="container">
-			<h2 class="col">Upload Data</h2>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">Upload Data</span>
-				</div>
+        <div class="container" id="uploadDataSchool">
+			<h2 class="">Upload Data</h2>
+			<div class="input-group">
 				<div class="custom-file">
-					<form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
-						<input type="file" class="custom-file-input" id="inputGroupFile01" id="myfile" name="myfile">
-						<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-					</form>
+					<input type="file" class="custom-file-input" id="CSVFileInput">
+					<label class="custom-file-label" for="CSVFileInput">Choose file</label>
 				</div>
-				<input class="btn btn-primary col-md-auto" type="submit" name="submit" id="submit">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+				</div>
 			</div>
-
             <p id="demo"></p>
         </div>
-		
-		
 
-		<form id="submitObservation" class="container" action="" method="POST">            
-                        <p>When did your observation happen?</p>       
-                        <label for="date">Enter a date:</label>
-                        <input type="date" id="date" name="date">
+		<div id="submitObservation" class="container">
+			<span>Form needs to be redone and fleshed out</span>
+			<!-- <form  class="container" action="" method="POST">            
+				<p>When did your observation happen?</p>       
+				<label for="date">Enter a date:</label>
+				<input type="date" id="date" name="date">
 
-                        <p><b>On this day...</b></p>
+				<p><b>On this day...</b></p>
 
-                        <p>What was the weather like?</p>
-                        <input type="radio" id="sunny" name="weather" value="sunny">
-                        <label for="sunny">Sunny</label><br>
-                        
-                        <input type="radio" id="cloudy" name="weather" value="cloudy">
-                        <label for="cloudy">Cloudy</label><br>
-                        
-                        <input type="radio" id="rainy" name="weather" value="rainy">
-                        <label for="rainy">Rainy</label> 
-                        
-                        <p>Did you see any pollinators?</p>
-                        <input type="radio" id="yes" name="see_pol" value="yes">
-                        <label for="yes">Yes</label><br>
+				<p>What was the weather like?</p>
+				<input type="radio" id="sunny" name="weather" value="sunny">
+				<label for="sunny">Sunny</label><br>
+				
+				<input type="radio" id="cloudy" name="weather" value="cloudy">
+				<label for="cloudy">Cloudy</label><br>
+				
+				<input type="radio" id="rainy" name="weather" value="rainy">
+				<label for="rainy">Rainy</label> 
+				
+				<p>Did you see any pollinators?</p>
+				<input type="radio" id="yes" name="see_pol" value="yes">
+				<label for="yes">Yes</label><br>
 
-                        <input type="radio" id="no" name="see_pol" value="no">
-                        <label for="no">No</label><br>
+				<input type="radio" id="no" name="see_pol" value="no">
+				<label for="no">No</label><br>
 
-                
-                        <p>What pollinators did you see?</p>
-                        <input type="checkbox" id="birds" name="birds" value="birds">
-                        <label for="birds"> Birds</label><br>
 
-                        <input type="checkbox" id="butterflies" name="butterflies" value="butterflies">
-                        <label for="butterflies">Butterflies</label><br>
+				<p>What pollinators did you see?</p>
+				<input type="checkbox" id="birds" name="birds" value="birds">
+				<label for="birds"> Birds</label><br>
 
-                        <input type="checkbox" id="bees" name="bees" value="bees">
-                        <label for="bees">Bees</label><br>
+				<input type="checkbox" id="butterflies" name="butterflies" value="butterflies">
+				<label for="butterflies">Butterflies</label><br>
 
-                        <input type="checkbox" id="other" name="other" value="other">
-                        <label for="other">Other</label><br>
+				<input type="checkbox" id="bees" name="bees" value="bees">
+				<label for="bees">Bees</label><br>
 
-                        <p><label for="notes">Enter notes about your observation:</label></p>
-                        <textarea name="message" rows="10" cols="30"></textarea><br>
+				<input type="checkbox" id="other" name="other" value="other">
+				<label for="other">Other</label><br>
 
-                        <input type="submit" value="Submit Observation">
-        </form>  
+				<p><label for="notes">Enter notes about your observation:</label></p>
+				<textarea name="message" rows="10" cols="30"></textarea><br>
 
+				<input type="submit" value="Submit Observation">
+			</form>   -->
+		</div>
 		
 
 		<div class="table-wrapper container" id="manageClasses">
-		
+			<span>Hiding Table for now while PHP is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-8"><h1><b>Manage Class</b></h1></div>

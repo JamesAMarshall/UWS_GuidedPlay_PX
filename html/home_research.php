@@ -10,28 +10,24 @@
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/main.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
-		<!-- <link rel="stylesheet" type="text/css" href="../css/homePage.css"> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-		
 
         <!-- JS -->
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
         <script src="https://www.amcharts.com/lib/4/charts.js"></script>
         <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../js/modules/jquery-3.5.0.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
 		<script src="../js/manageResearcher.js"></script>
-		<script src="../js/main.js"></script>
 		<script src="../js/table.js"></script>
 
         <script src="../js/graphExampleTest.js"></script>   
-        <!-- <script src="../js/graphExample.js"></script>    -->
         <script src="../js/uploadFile.js"></script> 
-        <script src="../js/pageHiding.js"></script> 
+        <script src="../js/main.js"></script> 
         <script src="../js/modules/papaparse.js"></script> 
 
     </head>
@@ -54,26 +50,23 @@
 
         <div class="container" id="uploadDataResearch">
 			<h2 class="">Upload Data</h2>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">Upload Data</span>
-				</div>
+			<div class="input-group">
 				<div class="custom-file">
-					<form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
-						<input type="file" class="custom-file-input" id="inputGroupFile01" id="myfile" name="myfile">
-						<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-					</form>
+					<input type="file" class="custom-file-input" id="CSVFileInput">
+					<label class="custom-file-label" for="CSVFileInput">Choose file</label>
 				</div>
-				<input class="btn btn-primary col-md-auto" type="submit" name="submit" id="submit">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+				</div>
 			</div>
-
             <p id="demo"></p>
         </div>
 
 
 
 		<div class= "container" id="manageResearchers">
-		<h2>Manage Researcher</h2>
+			<h2>Manage Researcher</h2>
+			<span>Hiding Table for now while PHP is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
 			<div class="table-wrapper">
 					<div class="table-title">
 					<div class="col">
@@ -140,7 +133,8 @@
 		<div class="container" id="chartdiv2"></div>
 		
 		<div class= "container" id="viewDatabase">
-			<div class="row col">
+			<span>Hiding Table for now while PHP and Html interface is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
+			<!-- <div class="row col">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>
 					<label class="col-form-label" for="tname">Table name:</label>
@@ -188,7 +182,7 @@
 					</table>
 				</div>
 				<br/><br/><br/>
-			</div>	
+			</div>	 -->
 		</div>			
 
 

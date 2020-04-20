@@ -1,5 +1,6 @@
 function UploadFile(){
-	var fileInput = document.querySelector("#myfile");
+	console.log("hello");
+	var fileInput = document.querySelector("#CSVFileInput");
 	
 	Papa.parse(fileInput.files[0], {
 		complete: function(results) {

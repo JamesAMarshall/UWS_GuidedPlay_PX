@@ -1,46 +1,35 @@
 <?php
-	include("../includes/connection.php");
-	include("../includes/sql.php");
-	include("../includes/startSession.php");
-   
+	include_once($_SERVER['DOCUMENT_ROOT'] ."/php/includes/displayErrors.php");
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
+
+	// 1. Connect To Database
+	// 2. Start a session
+	
+	// 3. Check for POST data
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$myusername = mysqli_real_escape_string($db,$_POST["username"]);
+		$mypassword = mysqli_real_escape_string($db,$_POST["password"]); 
 
-		$myusername = mysqli_real_escape_string($db,$_POST["uname"]);
-		$mypassword = mysqli_real_escape_string($db,$_POST["pass"]); 
-
-		echo "Post[uname] = " . $myusername . "<br>";
-		echo "Post[pass] = " . $mypassword . "<br>";
-		
-		$result = sql_Query("SELECT username, accountType FROM pa2004_Accounts WHERE username = '$myusername' AND password = '$mypassword'");
-		$row = mysqli_fetch_assoc($result);
-		
-		$active = $row['active'];
+		$sql = "SELECT username, accountType FROM pa2004_Accounts WHERE username = '$myusername' AND password = '$mypassword'";
+		$result = mysqli_query($db, $sql);
 		$count = mysqli_num_rows($result);
-		
-		echo "Count = " . $count . "<br>";
+		$row = mysqli_fetch_assoc($result);
 
-		// If result matched $myusername and $mypassword, table row must be 1 row
-		
-		if($count == 1) {
+		if($count == 1) 
+		{
+			session_start();
+			debug("Session started", $output);
 
-			$_SESSION['username'] = $myusername;
-			$_SESSION['accountType'] = $row["accountType"];
+			$_SESSION['user'] = $myusername;
+			$_SESSION['accountType'] = $row["accountType"];	
 
-			if($_SESSION['accountType'] < 3)
-			{
-				header("location: ../../html/home_school.php");
-			}
-
-			if($_SESSION['accountType'] > 2 && $_SESSION['accountType'] < 5 )
-			{
-				header("location: ../../html/home_research.php");
-			}
-
+			$output['result'] = $_SESSION['accountType'];
 		} 
-		else {
-			$error = "Your Login Name or Password is invalid";
-			include("../includes/endSession.php");
+		else 
+		{
+			error("Your Login Name or Password is invalid", $output);
 		}
-   }
-   include("../includes/close.php");
+   	}
+	sendOutput($output);
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/close.php");
 ?>

@@ -1,5 +1,12 @@
 <?php
-	include("../includes/connection.php");
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
+	if($_SESSION['accountType'] != "1" || $_SESSION['accountType'] != "3" || $_SESSION['accountType'] != "4") 
+	{
+		error("Invalid Session accountType", $output); 
+		sendOutput($output); 	
+		exit; 
+	}
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
 
 	if (isset($_POST["file"])) {
 			$file =  $_POST["file"];
@@ -13,7 +20,7 @@
 
 		$arrlength2 = count($data[$i]);
 
-		$deviceId = -999;
+		$deviceId = -111;
 		$plotNum = $data[$i][0];
 		$dateTime = $data[$i][1];
 		$temp = $data[$i][2];
@@ -28,10 +35,12 @@
 				VALUES ('$deviceId', '$plotNum', '$dateTime', '$temp', '$intensity', '$couplerDetached', '$couplerAttached', '$hostConnected', '$stopped', '$endOfFile')";
 
 		if ($db->query($sql) === TRUE) {
-			// echo "New record created successfully";
+			debug("New record created successfully", $output);
 		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
+			error($sql . $db->error, $output);
 		}
 	}
-include("../includes/close.php");
+	sendOutput($output);
+
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/close.php");
 ?>

@@ -1,10 +1,17 @@
-<?php include('../php/requests/session.php'); ?>
+<!-- <script>
+	var obj = JSON.parse('<?php include_once($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php"); ?>');
+	obj.debug = obj.debug.replace(/<br>/gi,"\n"); 
+	console.log(obj.debug);
+	console.log(obj.result);
+</script> -->
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Student HomePage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
         <!-- Css -->
 		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +25,7 @@
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		
+		<script src="../js/phpManager.js"></script> 
         <script src="../js/uploadFile.js"></script> 
 		<script src="../js/modules/papaparse.js"></script> 
 		<script src="../js/manage.js"></script>
@@ -32,7 +40,7 @@
 			<div class="heading">
 				<h1>Home Page</h1>
 				<p>A Green Space Experience</p>
-				<a href = "../php/requests/logout.php">Sign Out</a>
+				<button class="btn" onclick="Logout()">Sign out</button>
 				<p>User ID</p>
 
 				<button class="btn btn-outline-success" id="rcorners1" onclick="Observation();">Submit Observation</button>
@@ -57,8 +65,17 @@
         </div>
 
 		<div id="submitObservation" class="container">
+
+			<h2>Student Observation</h2>
 			<span>Form needs to be redone and fleshed out</span>
-			<!-- <form  class="container" action="" method="POST">            
+
+			<p></p>
+
+
+
+			
+			<!-- 
+			<form  class="container" action="" method="POST">            
 				<p>When did your observation happen?</p>       
 				<label for="date">Enter a date:</label>
 				<input type="date" id="date" name="date">
@@ -100,68 +117,78 @@
 				<textarea name="message" rows="10" cols="30"></textarea><br>
 
 				<input type="submit" value="Submit Observation">
-			</form>   -->
+			</form>   
+			-->
 		</div>
 		
 
-		<div class="table-wrapper container" id="manageClasses">
+		<div class=" container" id="manageClasses">
+		
+			<h2>Manage Classes</h2>
 			<span>Hiding Table for now while PHP is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
-			<div class="table-title">
-				<div class="row">
-					<div class="col-sm-8"><h1><b>Manage Class</b></h1></div>
-					<div class="col-sm-4">
-						<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+
+			<p id="output_manageClasses"></p>
+			<button onclick="ManageClasses('output_manageClasses')">Get Classes</button>
+			<!-- 		
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-sm-8"><h1><b>Manage Class</b></h1></div>
+						<div class="col-sm-4">
+							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
-			<input class="form-control" id="myInput" type="text" placeholder="Search..">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>User ID</th>
-						<th>Grade</th>
-						<th>Class</th>
-						<th>Last Login</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody id="myTable">
-					<tr>
-						<td>Stacie0321</td>
-						<td>H</td>
-						<td>3B</td>
-						<td>01/04/2020 5:00p.m</td>
-						<td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-							<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-							<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>Peter110532</td>
-						<td>HD</td>
-						<td>4A</td>
-						<td>12/04/2020 3:00p.m</td>
-						<td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-							<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-							<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>Fran11932</td>
-						<td>D</td>
-						<td>2D</td>
-						<td>15/02/2020 1:00p.m</td>
-						<td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-							<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-							<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-						</td>
-					</tr>      
-				</tbody>
-			</table>
+				<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
+				<input class="form-control" id="myInput" type="text" placeholder="Search..">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>User ID</th>
+							<th>Grade</th>
+							<th>Class</th>
+							<th>Last Login</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						<tr>
+							<td>Stacie0321</td>
+							<td>H</td>
+							<td>3B</td>
+							<td>01/04/2020 5:00p.m</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Peter110532</td>
+							<td>HD</td>
+							<td>4A</td>
+							<td>12/04/2020 3:00p.m</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Fran11932</td>
+							<td>D</td>
+							<td>2D</td>
+							<td>15/02/2020 1:00p.m</td>
+							<td>
+								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+							</td>
+						</tr>      
+					</tbody>
+				</table>
+			</div> 
+			-->
 	</div>
 
 

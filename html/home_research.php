@@ -1,4 +1,9 @@
-<?php include('../php/requests/session.php'); ?>
+<!-- <script>
+	var obj = JSON.parse('<?php include_once($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php"); ?>');
+	obj.debug = obj.debug.replace(/<br>/gi,"\n"); 
+	console.log(obj.debug);
+	console.log(obj.result);
+</script> -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,15 +22,11 @@
         <script src="https://www.amcharts.com/lib/4/charts.js"></script>
         <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 		
-		<script src="../js/modules/jquery-3.5.0.min.js"></script>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-		<script src="../js/manageResearcher.js"></script>
-		<script src="../js/table.js"></script>
-
         <script src="../js/graphExampleTest.js"></script>   
+        <script src="../js/phpManager.js"></script>   
         <script src="../js/uploadFile.js"></script> 
         <script src="../js/main.js"></script> 
         <script src="../js/modules/papaparse.js"></script> 
@@ -37,7 +38,7 @@
         <div class="heading">
             <h1>Home Page</h1>
 			<p>A Green Space Experience</p>
-            <a href = "../php/requests/logout.php">Sign Out</a>
+			<button class="btn" onclick="Logout()">Sign out</button>
             <p>User ID</p>
             <button class="btn btn-outline-success" id="rcorners1" onclick="UploadResearch();">Upload Data</button>
             <button class="btn btn-outline-success" id="rcorners1" onclick="Database();">View Database</button>
@@ -63,10 +64,19 @@
         </div>
 
 
-
 		<div class= "container" id="manageResearchers">
 			<h2>Manage Researcher</h2>
 			<span>Hiding Table for now while PHP is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
+			
+			<p id="output_manageUsers">
+			
+			</p>
+
+			<button onclick="ManageUsers('output_manageUsers')">Get Users</button>
+
+
+			
+			<!--
 			<div class="table-wrapper">
 					<div class="table-title">
 					<div class="col">
@@ -125,16 +135,21 @@
 					</tbody>
 				</table>
 			</div>
+			-->
 		</div>
 
 
-
-		<!-- <div id="chartdiv1"></div> -->
 		<div class="container" id="chartdiv2"></div>
-		
+
+
 		<div class= "container" id="viewDatabase">
+			<h2>Database Interface</h2>
 			<span>Hiding Table for now while PHP and Html interface is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
-			<!-- <div class="row col">
+			
+			<p></p>
+			
+			<!--
+			 <div class="row col">
 				<div class="col-sm-4 gridbox">
 					<p><b>Database Request</b></p>
 					<label class="col-form-label" for="tname">Table name:</label>
@@ -182,7 +197,8 @@
 					</table>
 				</div>
 				<br/><br/><br/>
-			</div>	 -->
+			</div>	
+			-->
 		</div>			
 
 

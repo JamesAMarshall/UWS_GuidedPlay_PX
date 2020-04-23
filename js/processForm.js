@@ -13,12 +13,28 @@ function ProcessLogIn()
 
 	var formData = new FormData();
 	formData.append("username", username);
-	formData.append("password", username);
+	formData.append("password", password);
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() 
 	{
-		if (this.readyState == 4 && this.status == 200) {}
+		if (this.readyState == 4 && this.status == 200) {
+			var obj = logResponseText(xhttp.responseText);
+
+			switch (obj.result) {
+				case "0":
+				case "1":
+					window.location.assign("../html/home_school.php");
+					break;
+				case "3":
+				case "4":
+					window.location.assign("../html/home_research.php");
+					break;
+				default:
+					break;
+			}
+		}
+
 	};
 	xhttp.open("POST", "../php/requests/login.php", true);
 	xhttp.send(formData);
@@ -40,25 +56,26 @@ function ProcessSignUp()
 
 	var username = document.getElementById("signUp_username").value;
 	var password = document.getElementById("signUp_password").value;
-	var confirmPassword = document.getElementById("signUp_confirmPassword").value;
 	var age = document.getElementById("signUp_age").value;
 	var gender = GetGenderData("signUp_gender");
 
 	var formData = new FormData();
 	formData.append("username", username);
-	formData.append("password", username);
-	formData.append("age", username);
-	formData.append("gender", username);
+	formData.append("password", password);
+	formData.append("age", age);
+	formData.append("gender", gender);
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() 
 	{
-		if (this.readyState == 4 && this.status == 200) {}
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			document.getElementById("output").innerHTML = xhttp.responseText;
+		}
 	};
-	xhttp.open("POST", "../php/requests/sigup.php", true);
+	xhttp.open("POST", "../php/requests/signup.php", true);
 	xhttp.send(formData);
 }
-
 
 // function ProcessUpload(){}
 // function ProcessObservation(){}

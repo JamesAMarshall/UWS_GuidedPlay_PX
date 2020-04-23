@@ -7,6 +7,14 @@ function goBack() {
 	window.history.back()
 }
 
+function logResponseText(responseText){
+	var obj = JSON.parse(responseText);
+	console.log(obj.debug.replace(/<br>/gi,"\n"));
+	console.log(obj.result);
+	return obj;
+}
+
+
 //------------------------------------------
 // Page element hiding functions
 {

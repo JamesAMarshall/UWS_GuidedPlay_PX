@@ -17,7 +17,8 @@
 
         <!-- JS -->
         <script src="js/processForm.js"></script>
-		<script src="js/toggle.js"></script>
+        <script src="js/phpManager.js"></script>
+        <script src="js/main.js"></script>
 
 
     </head>
@@ -26,7 +27,7 @@
 		<div class="container col-4">
 			<div class="row">
 					<h1 class="col"><a href="index.php">Welcome to Guided Play</a></h1>
-				<a class="col-align-self-end col-3 col-form-label" href = "php/requests/logout.php">Sign Out</a>
+				<!-- <button class="col-align-self-end col-3 btn" onclick="Logout()">Sign out</button> -->
 			</div>
 		</div>
 
@@ -140,6 +141,8 @@
 			<!-- </form> -->
 		</div>
 		
+		<span id="output"></span>
+
 		</body>
     
 </html>

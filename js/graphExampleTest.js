@@ -3,32 +3,40 @@ am4core.ready(function() {
 
 // Create chart instance
 var chart = am4core.create("chartdiv2", am4charts.XYChart);
-// var myObj;
-// var xmlhttp = new XMLHttpRequest();
-// xmlhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-// 	console.log(this.responseText);
-//     chart.data = JSON.parse(this.responseText);
-//   }
-// };
-// xmlhttp.open("GET", "../php/requests/graphData.php", true);
-// xmlhttp.send(); 
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+	var myObj;
+	if(this.responseText)
+	{
+		myObj = logResponseText(this.responseText);
+		chart.data = (myObj) ? myObj.result : null;
+	}
+	else
+	{
+		console.error("Graph data not set due to invalid responseText");
+	}
+}
+};
+xmlhttp.open("GET", "../php/requests/get_lightTempData.php", true);
+xmlhttp.send(); 
 
 // console.log(chart.data);
 
 // Set up data source
-chart.dataSource.url = "../php/requests/graphData.php";
-chart.dataSource.parser = new am4core.JSONParser();
-chart.dataSource.parser.options.useColumnNames = true;
-chart.dataSource.load();
-chart.dataSource.events.on("done", function(ev) {
-  // Data loaded and parsed
-  console.log(ev.target.data);
-  console.log("Success");
-});
-chart.dataSource.events.on("error", function(ev) {
-  console.log("Oopsy! Something went wrong");
-});
+// chart.dataSource.url = "../php/requests/graphData.php";
+// chart.dataSource.parser = new am4core.JSONParser();
+// chart.dataSource.parser.options.useColumnNames = true;
+// chart.dataSource.load();
+// chart.dataSource.events.on("done", function(ev) {
+//   // Data loaded and parsed
+// //   console.log(ev.target.data);
+//   console.log("Success");
+// });
+// chart.dataSource.events.on("error", function(ev) {
+//   console.log("Oopsy! Something went wrong");
+// });
 
 
 // Set input format for the dates

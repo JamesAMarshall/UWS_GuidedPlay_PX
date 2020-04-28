@@ -21,7 +21,7 @@
 			debug("Session started", $output);
 
 			$_SESSION['user'] = $myusername;
-			$_SESSION['accountType'] = $row["accountType"];	
+			$_SESSION['accountType'] = $row['accountType'];	
 
 			$output['result'] = $_SESSION['accountType'];
 		} 

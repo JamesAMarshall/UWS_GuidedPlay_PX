@@ -1,6 +1,6 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
-	if($_SESSION['accountType'] != "1" || $_SESSION['accountType'] != "3" || $_SESSION['accountType'] != "4") 
+	if($_SESSION['accountType'] != 1 && $_SESSION['accountType'] != 3 && $_SESSION['accountType'] != 4) 
 	{
 		error("Invalid Session accountType", $output); 
 		sendOutput($output); 	
@@ -31,8 +31,19 @@
 		$stopped = $data[$i][7];
 		$endOfFile = $data[$i][8];
 
-		$sql = "INSERT INTO `pa2004_LightTempData`(`deviceId`, `plotNumber`, `dateTime`, `temp`, `intensity`, `couplerDetached`, `couplerAttached`, `hostConnected`, `stopped`, `endOfFile`)
-				VALUES ('$deviceId', '$plotNum', '$dateTime', '$temp', '$intensity', '$couplerDetached', '$couplerAttached', '$hostConnected', '$stopped', '$endOfFile')";
+
+		// if($couplerDetached == '')$couplerDetached = 'NULL';
+		// if($couplerAttached == '')$couplerDetached = 'NULL';
+		// if($hostConnected == '')$couplerDetached = 'NULL';
+		// if($stopped == '')$couplerDetached = 'NULL';
+		// if($endOfFile == '')$couplerDetached = 'NULL';
+
+		$user = $_SESSION['user'];
+
+		// $sql = "INSERT INTO pa2004_LightTempData(deviceId, username, plotNumber, dateTime, temp, intensity, couplerDetached, couplerAttached, hostConnected, stopped, endOfFile) VALUES ($deviceId,'test',$plotNum,0,$temp,$intensity, '$couplerDetached', '$couplerAttached', '$hostConnected', '$stopped', '$endOfFile')";
+
+		$sql = "INSERT INTO pa2004_LightTempData(`deviceId`, `username`, `plotNumber`, `dateTime`, `temp`, `intensity`, `couplerDetached`, `couplerAttached`, `hostConnected`, `stopped`, `endOfFile`) VALUES ('$deviceId','test','$plotNum',0,'$temp','$intensity', '$couplerDetached', '$couplerAttached', '$hostConnected', '$stopped', '$endOfFile')";
+
 
 		if ($db->query($sql) === TRUE) {
 			debug("New record created successfully", $output);

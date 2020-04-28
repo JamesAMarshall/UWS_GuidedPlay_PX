@@ -1,51 +1,45 @@
-<!-- <script>
-	var obj = JSON.parse('<?php include_once($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php"); ?>');
-	obj.debug = obj.debug.replace(/<br>/gi,"\n"); 
-	console.log(obj.debug);
-	console.log(obj.result);
-</script> -->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Research HomePage</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- CSS -->
-		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/main.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-        <!-- JS -->
-        <script src="https://www.amcharts.com/lib/4/core.js"></script>
-        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="" name="descriptison">
+		<meta content="" name="keywords">
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>Research Page</title>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.1.1/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.20/css/dataTables.bootstrap4.min.css"/>	
+		
 
-        <script src="../js/graphExampleTest.js"></script>   
-        <script src="../js/phpManager.js"></script>   
-        <script src="../js/uploadFile.js"></script> 
-        <script src="../js/main.js"></script> 
-        <script src="../js/modules/papaparse.js"></script> 
 
     </head>
-    <body>
+    <body onload="SetupResearchPage()">
+
 		<div class="container">
-		<h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
-        <div class="heading">
-            <h1>Home Page</h1>
-			<p>A Green Space Experience</p>
-			<button class="btn" onclick="Logout()">Sign out</button>
-            <p>User ID</p>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="UploadResearch();">Upload Data</button>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="Database();">View Database</button>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="ManageResearchers();">Manage Researchers</button>
-            <button class="btn btn-outline-success" id="rcorners1" onclick="Graph();">Graph Data</button>
-        </div>
-        
+			<div class="heading">
+				<h1>Research Page</h1>
+				<button class="btn" onclick="Logout()">Sign out</button>
+				<p>User ID</p>
+				<button class="btn btn-outline-success" id="button_upload" onclick="UploadResearch();">Upload Data</button>
+				<button class="btn btn-outline-success" id="button_research" onclick="Database();">View Database</button>
+				<button class="btn btn-outline-success" id="button_manageResearchers" onclick="ManageResearchers();">Manage Researchers</button>
+				<button class="btn btn-outline-success" id="button_graph" onclick="Graph();">Graph Data</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<button onclick="Table_TempData()">CLICK</button>
+			<table onload="Table_TempData()" id="example" class="display" style="width:100%">
+			<thead>
+				<tr>
+					<th>plotNumber</th>
+					<th>temp</th>
+				</tr>
+			</thead>
+
+			</table>
 		</div>
 
 
@@ -73,73 +67,11 @@
 			</p>
 
 			<button onclick="ManageUsers('output_manageUsers')">Get Users</button>
-
-
-			
-			<!--
-			<div class="table-wrapper">
-					<div class="table-title">
-					<div class="col">
-						<div class="row-sm-5">
-							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
-						</div>
-					</div>
-				</div>
-				<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
-				<input class="form-control" id="myInput" type="text" placeholder="Search..">
-				<br/>
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>User ID</th>
-							<th>User Type</th>
-							<th>Password</th>
-							<th>Reset Password</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody id="myTable">
-						<tr>
-							<td>Mark0123</td>
-							<td>Student</td>
-							<td>***********</td>
-							<td>mark432154!</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Jacob4132</td>
-							<td>Admin</td>
-							<td>***********</td>
-							<td>Jacob@min32</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Larry7564</td>
-							<td>Researcher</td>
-							<td>************</td>
-							<td>@twitter1523</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>      
-					</tbody>
-				</table>
-			</div>
-			-->
 		</div>
 
 
-		<div class="container" id="chartdiv2"></div>
+		<div class="container" id="chartdiv2">
+		</div>
 
 
 		<div class= "container" id="viewDatabase">
@@ -147,61 +79,28 @@
 			<span>Hiding Table for now while PHP and Html interface is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
 			
 			<p></p>
-			
-			<!--
-			 <div class="row col">
-				<div class="col-sm-4 gridbox">
-					<p><b>Database Request</b></p>
-					<label class="col-form-label" for="tname">Table name:</label>
-					<input class="form-control" type="text" id="tname" align="center" name="tname">
-					<br>
-					<label class="col-form-label" for="columns">Columns:</label>
-					<input class="form-control" type="text" id="columns" align="center"name="columns">
-				</div>
-				
-				<div class="col-sm-7 gridbox">
-					<p><b>Display Table</b></p>
-					<table class="table">    
-						<thead class="thead-dark">
-							<tr>
-							  <th scope="col">#</th>
-							  <th scope="col">UserID</th>
-							  <th scope="col">UserType</th>
-							  <th scope="col">Password</th>
-							  <th scope="col">ResetPassword</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-							  <th scope="row">1</th>
-							  <td>Mark0123</td>
-							  <td>Student</td>
-							  <td>***********</td>
-							  <td>mark432154!</td>
-							</tr>
-							<tr>
-							  <th scope="row">2</th>
-							  <td>Jacob4132</td>
-							  <td>Admin</td>
-							  <td>***********</td>
-							  <td>Jacob@min32</td>
-							</tr>
-							<tr>
-							  <th scope="row">3</th>
-							  <td>Larry7564</td>
-							  <td>Researcher</td>
-							  <td>************</td>
-							  <td>@twitter1523</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<br/><br/><br/>
-			</div>	
-			-->
 		</div>			
 
+	</body>
 
+		<!-- JS -->
+		<!-- Libraries -->
+		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
 
-    </body>
+		<!-- CDN Libraries -->
+		<!-- Graph Lib -->
+		<script src="https://www.amcharts.com/lib/4/core.js"></script>
+		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		
+		<!-- Our Code -->
+		<script src="../js/graph.js"></script>   
+		<script src="../js/phpManager.js"></script>   
+		<script src="../js/main.js"></script> 
+		<script src="../js/tables.js"></script> 
+
 </html>

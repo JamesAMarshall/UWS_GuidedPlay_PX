@@ -1,6 +1,6 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
-	if($_SESSION['accountType'] != "1" /* Add teacher Admin*/) 
+	if($_SESSION['accountType'] != 1 /* Add teacher Admin*/) 
 	{
 		error("Invalid Session accountType", $output); 
 		sendOutput($output); 	

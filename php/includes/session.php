@@ -11,9 +11,10 @@
 	else
 	{
 		error("Invalid session. Redirect to login page", $output);
+		$output['session'] = array("accountType"=> "null", "loggedIn"=>false);
 		session_unset(); 
 		session_destroy();
 		debug("session destroyed", $output);
-		header("Location: ../../index.php");
+		// header("Location: ../../index.php");
 	}
 ?>

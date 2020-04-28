@@ -1,6 +1,6 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
-	if($_SESSION['accountType'] != "4") 
+	if($_SESSION['accountType'] != 4) 
 	{
 		error("Invalid Session accountType", $output); 
 		sendOutput($output); 	

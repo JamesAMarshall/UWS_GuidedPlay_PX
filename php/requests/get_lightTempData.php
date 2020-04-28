@@ -1,6 +1,6 @@
 <?php 
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
-	if($_SESSION['accountType'] != "4" && $_SESSION['accountType'] != "3") 
+	if($_SESSION['accountType'] != 4 && $_SESSION['accountType'] != 3) 
 	{
 		error("Invalid Session accountType", $output); 
 		sendOutput($output); 	
@@ -19,6 +19,10 @@
 	else {
 		error("0 results", $output);
 	}
-	sendOutput($output);
+
+	$count = mysqli_num_rows($result);
+
+	$temp = array('data' => $output['result']);
+	echo json_encode($temp);
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/close.php");
 ?>

@@ -8,7 +8,7 @@
 	}
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
 
-	$sql = "SELECT * FROM pa2004_Classes";	
+	$sql = "SELECT username, lastLoggedIn FROM pa2004_Accounts WHERE accountType = 0";	
 	debug("Get Users: SQL: ". $sql, $output);
 
 	$result = mysqli_query($db, $sql);

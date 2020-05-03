@@ -10,9 +10,11 @@
 		
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.1.1/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.20/css/dataTables.bootstrap4.min.css"/>	
-		
+		<!-- <link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.20/css/dataTables.bootstrap4.min.css"/>	 -->
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
 
     </head>
     <body onload="SetupResearchPage()">
@@ -29,18 +31,7 @@
 			</div>
 		</div>
 
-		<div class="container">
-			<button onclick="Table_TempData()">CLICK</button>
-			<table onload="Table_TempData()" id="example" class="display" style="width:100%">
-			<thead>
-				<tr>
-					<th>plotNumber</th>
-					<th>temp</th>
-				</tr>
-			</thead>
 
-			</table>
-		</div>
 
 
         <div class="container" id="uploadDataResearch">
@@ -87,8 +78,8 @@
 		<!-- Libraries -->
 		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="../libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+		<!-- <script type="text/javascript" src="../libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script> -->
+		<!-- <script type="text/javascript" src="../libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
 		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
 
 		<!-- CDN Libraries -->

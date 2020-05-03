@@ -31,9 +31,11 @@ function logResponseText(responseText){
 				{
 					switch (obj.session.accountType) {
 						case "0":
+							document.body.style.visibility = "visible";
 							HideElement("button_manageClasses");
 							break;
 						case "1":
+							document.body.style.visibility = "visible";
 							break;
 						default:
 							break;
@@ -62,9 +64,11 @@ function logResponseText(responseText){
 				{
 					switch (obj.session.accountType) {
 						case "3":
+							document.body.style.visibility = "visible";
 							HideElement("button_manageResearchers");
 							break;
 						case "4":
+							document.body.style.visibility = "visible";
 							break;
 						default:
 							break;

@@ -9,8 +9,14 @@
 		<title>School Page</title>
 
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.1.1/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.20/css/dataTables.bootstrap4.min.css"/>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.1.1/css/bootstrap.min.css"/> -->
+		<!-- <link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.20/css/dataTables.bootstrap4.min.css"/> -->
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
         
     </head>
 	<body onload="SetupSchoolPage()">
@@ -27,7 +33,7 @@
 			</div>
 		</div>
 
-		
+
         <div class="container" id="uploadDataSchool">
 			<h2 class="">Upload Data</h2>
 			<div class="input-group">
@@ -104,20 +110,101 @@
 		<div class=" container" id="manageClasses">
 		
 			<h2>Manage Classes</h2>
-			<span>Hiding Table for now while PHP is implemented. Also consideration needs to be made with if jquery search and table manager is needed, does it complicate things</span>		
 
 			<p id="output_manageClasses"></p>
-			<button onclick="ManageClasses('output_manageClasses')">Get Classes</button>
+
+
+
+			<div>
+				<div id="toolbar">
+					<!-- <button id="remove" class="btn btn-danger" disabled>
+						<i class="glyphicon glyphicon-remove"></i> Delete
+					</button> -->
+					<button id="logAll" class="btn btn-primary">
+						Log Selected
+					</button>
+				</div>
+
+
+				<table
+				id="students"
+				data-toolbar="#toolbar"
+				data-search="true"
+				data-show-refresh="true"
+				data-show-toggle="false"
+				data-show-fullscreen="false"
+				data-show-columns="false"
+				data-show-columns-toggle-all="false"
+				data-detail-view="false"
+				data-show-export="true"
+				data-click-to-select="true"
+				data-detail-formatter="detailFormatter"
+				data-minimum-count-columns="1"
+				data-show-pagination-switch="false"
+				data-pagination="false"
+				data-only-info-pagination="false"
+				data-id-field="id"
+				data-page-list="[10, 25, 50, 100, all]"
+				data-show-footer="false"
+				data-side-pagination="client"
+				
+				data-response-handler="responseHandler">
+				</table>
+			</div>
+
+			<div>
+				<div id="toolbar2">
+					<!-- <button id="remove" class="btn btn-danger" disabled>
+						<i class="glyphicon glyphicon-remove"></i> Delete
+					</button> -->
+					<button id="logAll2" class="btn btn-primary">
+						Log Selected
+					</button>
+				</div>
+
+				<table
+				id="classes"
+				data-toolbar="#toolbar2"
+				data-search="true"
+				data-show-refresh="true"
+				data-show-toggle="false"
+				data-show-fullscreen="false"
+				data-show-columns="false"
+				data-show-columns-toggle-all="false"
+				data-detail-view="false"
+				data-show-export="true"
+				data-click-to-select="true"
+				data-detail-formatter="detailFormatter"
+				data-minimum-count-columns="1"
+				data-show-pagination-switch="false"
+				data-pagination="false"
+				data-only-info-pagination="false"
+				data-id-field="id"
+				data-page-list="[10, 25, 50, 100, all]"
+				data-show-footer="false"
+				data-side-pagination="client"
+				data-response-handler="responseHandler">
+				</table>
+			</div>
+
 		</div>
 
 	</body>
 
 		<!-- JS -->
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   	 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    	<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
 		<!-- Libraries -->
-		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="../libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="../libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script>
+		<!-- <script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script> -->
+		<!-- <script type="text/javascript" src="../libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script> -->
+		<!-- <script type="text/javascript" src="../libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script> -->
+		<!-- <script type="text/javascript" src="../libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
 		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
 		
 		<!-- Our Code -->

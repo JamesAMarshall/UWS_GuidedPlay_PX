@@ -133,6 +133,12 @@ function logResponseText(responseText){
 		thingToHide.style.display  = "block";
 	}
 
+	function SwitchToSignUp()
+	{
+		HideElement("login");
+		ShowElement("signup");
+	}
+
 	// School page functions
 	function Observation(){
 		HideElement("manageClasses");

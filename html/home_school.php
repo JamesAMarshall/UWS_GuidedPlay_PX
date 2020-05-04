@@ -16,26 +16,36 @@
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 		<!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css"> -->
 
-		<!-- <link rel="stylesheet" type="text/css" href="../css/main.css"/> -->
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
         
     </head>
 	<body onload="SetupSchoolPage()">
 	
-		<div class="container">
-			<div class="heading">
-				<h1>School Page</h1>
-				<button class="btn" onclick="Logout()">Sign out</button>
-				<p>User ID</p>
+	<main>
+		<header class="container mt-5">
+			<h1>School Page</h1>
 
-				<button class="btn btn-primary" id="button_observation" onclick="Observation();">Submit Observation</button>
-				<button class="btn btn-primary" id="button_manageClasses" onclick="ManageClass();">Manage Classes</button>
-				<button class="btn btn-primary" id="button_upload" onclick="UploadSchool();">Upload Data</button>
+			<nav class="navbar navbar-expand-sm p-0">
+			<div class="navbar-collapse collapse">
+				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();">Submit Observation</button>
+				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();">Manage Classes</button>
+				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();">Upload Data</button>
 			</div>
-		</div>
+
+			<div class="nav justify-content-end navbar-collapse collapse">	
+				<span class="mr-2">User ID</span>
+				<button class="btn btn-secondary" onclick="Logout()">Sign out</button>				
+			</div>
+		</nav>
+		</header>
 
 
-        <div class="container" id="uploadDataSchool">
-			<h2 class="">Upload Data</h2>
+
+		
+
+		<section class="container startHidden mt-2" id="uploadDataSchool">
+			<h2>View Data</h2>	
+			<h3>Upload Data</h3>
 			<div class="input-group">
 				<div class="custom-file">
 					<input type="file" class="custom-file-input" id="CSVFileInput">
@@ -45,75 +55,70 @@
 					<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
 				</div>
 			</div>
-            <p id="demo"></p>
-        </div>
+			<p id="demo"></p>
+		</section>
 
-
-		<div id="submitObservation" class="container">
-
-			<h2>Student Observation</h2>
-			<span>Form needs to be redone and fleshed out</span>
-
-			<p></p>
-
-
-
-			
-			<!-- 
-			<form  class="container" action="" method="POST">            
-				<p>When did your observation happen?</p>       
-				<label for="date">Enter a date:</label>
-				<input type="date" id="date" name="date">
-
-				<p><b>On this day...</b></p>
-
-				<p>What was the weather like?</p>
-				<input type="radio" id="sunny" name="weather" value="sunny">
-				<label for="sunny">Sunny</label><br>
-				
-				<input type="radio" id="cloudy" name="weather" value="cloudy">
-				<label for="cloudy">Cloudy</label><br>
-				
-				<input type="radio" id="rainy" name="weather" value="rainy">
-				<label for="rainy">Rainy</label> 
-				
-				<p>Did you see any pollinators?</p>
-				<input type="radio" id="yes" name="see_pol" value="yes">
-				<label for="yes">Yes</label><br>
-
-				<input type="radio" id="no" name="see_pol" value="no">
-				<label for="no">No</label><br>
-
-
-				<p>What pollinators did you see?</p>
-				<input type="checkbox" id="birds" name="birds" value="birds">
-				<label for="birds"> Birds</label><br>
-
-				<input type="checkbox" id="butterflies" name="butterflies" value="butterflies">
-				<label for="butterflies">Butterflies</label><br>
-
-				<input type="checkbox" id="bees" name="bees" value="bees">
-				<label for="bees">Bees</label><br>
-
-				<input type="checkbox" id="other" name="other" value="other">
-				<label for="other">Other</label><br>
-
-				<p><label for="notes">Enter notes about your observation:</label></p>
-				<textarea name="message" rows="10" cols="30"></textarea><br>
-
-				<input type="submit" value="Submit Observation">
-			</form>   
-			-->
-		</div>
 		
 
-		<div class=" container" id="manageClasses">
+		<section class="container startHidden mt-4" id="submitObservation">
+			<h2>Observation</h2>	
+			<div>
+				<span>Form needs to be redone and fleshed out</span>
+
+				<!-- 
+				<form  class="container" action="" method="POST">            
+					<p>When did your observation happen?</p>       
+					<label for="date">Enter a date:</label>
+					<input type="date" id="date" name="date">
+
+					<p><b>On this day...</b></p>
+
+					<p>What was the weather like?</p>
+					<input type="radio" id="sunny" name="weather" value="sunny">
+					<label for="sunny">Sunny</label><br>
+					
+					<input type="radio" id="cloudy" name="weather" value="cloudy">
+					<label for="cloudy">Cloudy</label><br>
+					
+					<input type="radio" id="rainy" name="weather" value="rainy">
+					<label for="rainy">Rainy</label> 
+					
+					<p>Did you see any pollinators?</p>
+					<input type="radio" id="yes" name="see_pol" value="yes">
+					<label for="yes">Yes</label><br>
+
+					<input type="radio" id="no" name="see_pol" value="no">
+					<label for="no">No</label><br>
+
+
+					<p>What pollinators did you see?</p>
+					<input type="checkbox" id="birds" name="birds" value="birds">
+					<label for="birds"> Birds</label><br>
+
+					<input type="checkbox" id="butterflies" name="butterflies" value="butterflies">
+					<label for="butterflies">Butterflies</label><br>
+
+					<input type="checkbox" id="bees" name="bees" value="bees">
+					<label for="bees">Bees</label><br>
+
+					<input type="checkbox" id="other" name="other" value="other">
+					<label for="other">Other</label><br>
+
+					<p><label for="notes">Enter notes about your observation:</label></p>
+					<textarea name="message" rows="10" cols="30"></textarea><br>
+
+					<input type="submit" value="Submit Observation">
+				</form>   
+				-->
+			</div>
+		</section>
+
 		
-			<h2>Manage Classes</h2>
+
+		<section class="container startHidden mt-4" id="manageClasses">
+			<h2>Manage Classes</h2>	
 
 			<p id="output_manageClasses"></p>
-
-
 
 			<div>
 				<div id="toolbar">
@@ -125,31 +130,7 @@
 					</button>
 				</div>
 
-
-				<table
-				id="students"
-				data-toolbar="#toolbar"
-				data-search="true"
-				data-show-refresh="true"
-				data-show-toggle="false"
-				data-show-fullscreen="false"
-				data-show-columns="false"
-				data-show-columns-toggle-all="false"
-				data-detail-view="false"
-				data-show-export="true"
-				data-click-to-select="true"
-				data-detail-formatter="detailFormatter"
-				data-minimum-count-columns="1"
-				data-show-pagination-switch="false"
-				data-pagination="false"
-				data-only-info-pagination="false"
-				data-id-field="id"
-				data-page-list="[10, 25, 50, 100, all]"
-				data-show-footer="false"
-				data-side-pagination="client"
-				
-				data-response-handler="responseHandler">
-				</table>
+				<table id="students"></table>
 			</div>
 
 			<div>
@@ -162,32 +143,16 @@
 					</button>
 				</div>
 
-				<table
-				id="classes"
-				data-toolbar="#toolbar2"
-				data-search="true"
-				data-show-refresh="true"
-				data-show-toggle="false"
-				data-show-fullscreen="false"
-				data-show-columns="false"
-				data-show-columns-toggle-all="false"
-				data-detail-view="false"
-				data-show-export="true"
-				data-click-to-select="true"
-				data-detail-formatter="detailFormatter"
-				data-minimum-count-columns="1"
-				data-show-pagination-switch="false"
-				data-pagination="false"
-				data-only-info-pagination="false"
-				data-id-field="id"
-				data-page-list="[10, 25, 50, 100, all]"
-				data-show-footer="false"
-				data-side-pagination="client"
-				data-response-handler="responseHandler">
-				</table>
+				<table id="classes"></table>
 			</div>
+		</section>
 
-		</div>
+		
+
+		<section class="container startHidden my-4">
+			<h2>Manage School</h2>	
+		</section>
+	</main>
 
 	</body>
 

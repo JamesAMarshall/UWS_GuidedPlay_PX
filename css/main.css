@@ -19,3 +19,23 @@ hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 #login{}
 
 #signup{ display: none;}
+
+
+
+
+
+i.fa-trash{
+	color: red;
+}
+
+th i.fa-trash{
+	color: black;
+}
+
+i.fa-minus{
+	color: red;
+}
+
+th i.fa-minus{
+	color: black;
+}

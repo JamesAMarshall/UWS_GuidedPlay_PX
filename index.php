@@ -9,6 +9,8 @@
 		<title>Home</title>
 
 		<link rel="stylesheet" type="text/css" href="libs/Bootstrap-4-4.4.1/css/bootstrap.min.css"/>
+
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
     </head>
@@ -59,7 +61,15 @@
 	
 			
 			<div class="container" id="signup">
-				<h2>Sign Up</h2>
+				
+				<div class="d-flex">
+					<button class="btn btn-primary-outline" onclick="SwitchToLogin()">
+						<i class="fa fa-chevron-left"></i>
+					</button>
+					<h2>Sign Up</h2>
+				</div>
+
+
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label" for="signUp_username">Username<span class="required">*</span></label>
 					<div class="col-sm-8">
@@ -84,15 +94,15 @@
 					</div>
 				</div>
 	
-				<div class="form-group row">
+				<!-- <div class="form-group row">
 					<label class="col-sm-2 col-form-label" for="signUp_age">Age<span class="required">*</span></label>
 					<div class="col-sm-8">
 						<input class="form-control" type="text" id="signUp_age" name="age"/>
 						<span class="invalid-feedback" id="signUp_age_error">Enter Age between 5-110</span>
 					</div>
-				</div>
+				</div> -->
 	
-				<div class="form-group row">
+				<!-- <div class="form-group row">
 					<legend class="col-form-label col-sm-2 pt-0">Gender<span class="required">*</span></legend>
 					<div class="col-sm-10">
 						<div class="form-check form-check-inline">
@@ -114,7 +124,7 @@
 						<span class="invalid-feedback" id="signUp_gender_error">Please enter your gender.</span>
 					</div>
 				</div>
-	
+	 			-->
 				<div class="form-group row">
 					<div class="col-sm-10">
 						<button class="btn btn-primary" onclick="ProcessSignUp()">SignUp</button>
@@ -123,8 +133,6 @@
 				
 			</div>
 			
-			
-
 			<span id="output"></span>
 			
 		</div>

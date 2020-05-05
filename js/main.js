@@ -1,6 +1,20 @@
 var accountType = 0;
 
 //------------------------------------------
+// Search dropdown
+
+$(document).ready(function(){
+	$("#listSearch").on("keyup", function() {
+	  var value = $(this).val().toLowerCase();
+	  document.getElementById('table_selection').innerHTML =  $(this).val();
+	  $("#myList li").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	  });
+	});
+  });
+
+
+//------------------------------------------
 // Generic functions
 
 function goBack() {
@@ -139,6 +153,12 @@ function logResponseText(responseText){
 		ShowElement("signup");
 	}
 
+	function SwitchToLogin()
+	{
+		HideElement("signup");
+		ShowElement("login");
+	}
+
 	// School page functions
 	function Observation(){
 		HideElement("manageClasses");
@@ -162,28 +182,28 @@ function logResponseText(responseText){
 	function UploadResearch(){
 		ShowElement("uploadDataResearch");
 		HideElement("viewDatabase");
-		HideElement("chartdiv2");
+		HideElement("graphOverview");
 		HideElement("manageResearchers");
 	}
 
 	function Database(){
 		HideElement("uploadDataResearch");
 		ShowElement("viewDatabase");
-		HideElement("chartdiv2");
+		HideElement("graphOverview");
 		HideElement("manageResearchers");
 	}
 
 	function ManageResearchers(){
 		HideElement("uploadDataResearch");
 		HideElement("viewDatabase");
-		HideElement("chartdiv2");
+		HideElement("graphOverview");
 		ShowElement("manageResearchers");
 	}
 
 	function Graph(){
 		HideElement("uploadDataResearch");
 		HideElement("viewDatabase");
-		ShowElement("chartdiv2");
+		ShowElement("graphOverview");
 		HideElement("manageResearchers");
 	}
 }

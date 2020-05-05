@@ -9,7 +9,7 @@
 
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
 
-	$sql = "SELECT plotNumber, temp FROM pa2004_LightTempData";
+	$sql = "SELECT * FROM pa2004_LightTempData";
 	$result = mysqli_query($db, $sql);
 
 	if (mysqli_num_rows($result) > 0) {

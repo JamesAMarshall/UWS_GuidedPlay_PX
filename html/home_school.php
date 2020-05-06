@@ -73,52 +73,8 @@
 			<div id="observation_collapse" class="collapse">
 				<div>
 					<span>Form needs to be redone and fleshed out</span>
+					<!-- PUT OBSERVATION HERE -->
 
-					<!-- 
-					<form  class="container" action="" method="POST">            
-						<p>When did your observation happen?</p>       
-						<label for="date">Enter a date:</label>
-						<input type="date" id="date" name="date">
-
-						<p><b>On this day...</b></p>
-
-						<p>What was the weather like?</p>
-						<input type="radio" id="sunny" name="weather" value="sunny">
-						<label for="sunny">Sunny</label><br>
-						
-						<input type="radio" id="cloudy" name="weather" value="cloudy">
-						<label for="cloudy">Cloudy</label><br>
-						
-						<input type="radio" id="rainy" name="weather" value="rainy">
-						<label for="rainy">Rainy</label> 
-						
-						<p>Did you see any pollinators?</p>
-						<input type="radio" id="yes" name="see_pol" value="yes">
-						<label for="yes">Yes</label><br>
-
-						<input type="radio" id="no" name="see_pol" value="no">
-						<label for="no">No</label><br>
-
-
-						<p>What pollinators did you see?</p>
-						<input type="checkbox" id="birds" name="birds" value="birds">
-						<label for="birds"> Birds</label><br>
-
-						<input type="checkbox" id="butterflies" name="butterflies" value="butterflies">
-						<label for="butterflies">Butterflies</label><br>
-
-						<input type="checkbox" id="bees" name="bees" value="bees">
-						<label for="bees">Bees</label><br>
-
-						<input type="checkbox" id="other" name="other" value="other">
-						<label for="other">Other</label><br>
-
-						<p><label for="notes">Enter notes about your observation:</label></p>
-						<textarea name="message" rows="10" cols="30"></textarea><br>
-
-						<input type="submit" value="Submit Observation">
-					</form>   
-					-->
 				</div>
 			</div>
 

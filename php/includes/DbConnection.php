@@ -11,10 +11,10 @@
 	
 	if (!$db) 
 	{
-		die("Connection failed: " . mysqli_connect_error());
+		die("Connection failed to pa2004: " . mysqli_connect_error());
 	}
 	else
 	{
-		debug("Connection succeded", $output);
+		debug("Connection succeded to pa2004", $output);
 	}
 ?>

@@ -3,8 +3,8 @@
 
 	// Currently causes and error if run by itself instead of included in another php
 
-	if($db){
-		mysqli_close($db);
+	if($shared_db){
+		mysqli_close($shared_db);
 	}
 
 	debug("connection closed", $output);

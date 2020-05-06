@@ -39,8 +39,8 @@
 		</header>
 
 
-		<section class="container startHidden mt-2" id="uploadDataSchool">
-			<div class="d-flex">	
+		<section class="container startHidden mt-2 collapse" id="uploadDataSchool">
+			<!-- <div class="d-flex">	
 				<h2 class="flex-grow-1">Upload</h2>	
 				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#upload_collapse" aria-expanded="false" aria-controls="upload_collapse">
 					<i class="fa fa-chevron-down"></i>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
             	<p id="demo"></p>
-			</div>
+			</div> -->
 		</section>
 
 		

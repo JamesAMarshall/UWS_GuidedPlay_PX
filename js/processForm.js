@@ -24,19 +24,22 @@ function ProcessLogIn()
 			switch (obj.result) {
 				case "0":
 				case "1":
-					window.location.assign("../html/home_school.php");
+					// window.location.assign("../html/home_school.php");
+					window.location.assign("../html/choose_page.php");
 					break;
 				case "3":
 				case "4":
-					window.location.assign("../html/home_research.php");
+					// window.location.assign("../html/home_research.php");
+					window.location.assign("../html/choose_page.php");
 					break;
 				default:
+					window.location.assign("../html/choose_page.php");
 					break;
 			}
 		}
 
 	};
-	xhttp.open("POST", "../php/requests/login.php", true);
+	xhttp.open("POST", "../php/requests/sharedLogin.php", true);
 	xhttp.send(formData);
 }
 

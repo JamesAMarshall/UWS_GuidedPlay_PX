@@ -19,6 +19,20 @@ function Logout()
 	xhttp.send();
 }
 
+function GoToPa2004()
+{
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() 
+	{
+		if (this.readyState == 4 && this.status == 200) 
+		{
+		
+		}
+	};
+	xhttp.open("GET", "../php/requests/get_classes.php", true);
+	xhttp.send();
+}
+
 function ManageClasses()
 {
 	var xhttp = new XMLHttpRequest();

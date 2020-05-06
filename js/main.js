@@ -3,15 +3,15 @@ var accountType = 0;
 //------------------------------------------
 // Search dropdown
 
-$(document).ready(function(){
-	$("#listSearch").on("keyup", function() {
-	  var value = $(this).val().toLowerCase();
-	  document.getElementById('table_selection').innerHTML =  $(this).val();
-	  $("#myList li").filter(function() {
-		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	  });
-	});
-  });
+// $(document).ready(function(){
+// 	$("#listSearch").on("keyup", function() {
+// 	  var value = $(this).val().toLowerCase();
+// 	  document.getElementById('table_selection').innerHTML =  $(this).val();
+// 	  $("#myList li").filter(function() {
+// 		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+// 	  });
+// 	});
+//   });
 
 
 //------------------------------------------
@@ -32,6 +32,7 @@ function logResponseText(responseText){
 //------------------------------------------
 // Page Setup functions
 {
+	
 	function SetupSchoolPage()
 	{
 		var xhttp = new XMLHttpRequest();

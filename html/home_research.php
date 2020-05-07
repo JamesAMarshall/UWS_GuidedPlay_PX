@@ -1,208 +1,187 @@
-<?php include('../php/requests/session.php'); ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Researcher HomePage</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- CSS -->
-		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/database.css">
-		<link rel="stylesheet" type="text/css" href="../css/homePage.css">
-		<link rel="stylesheet" type="text/css" href="../css/manageclass.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="" name="descriptison">
+		<meta content="" name="keywords">
 		
+		<title>Research Page</title>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.4.1/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../libs/BootstrapTables/css/bootstrap-table.min.css"/>
 
-        <!-- JS -->
-        <script src="https://www.amcharts.com/lib/4/core.js"></script>
-        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		
-		<script src="../js/manageResearcher.js"></script>
-		<script src="../js/main.js"></script>
-		<script src="../js/table.js"></script>
-		
-        <script src="../js/graphExample.js"></script>   
-        <script src="../js/uploadFile.js"></script> 
-        <script src="../js/modules/papaparse.js"></script> 
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
-        <style>
-            #chartdiv {
-                width: 100%;
-                height: 500px;
-            }
-        </style>
-	
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+
     </head>
-    <body>
+	<body onload="SetupResearchPage()">
 	
-	    <div class="container">
-			<div class="pt-sm-5"> 
-                <h1 class="text-light"><a href="../index.php">Welcome to Guided Play</a></h1>
-				<h2 class="text-light"><a href = "../php/requests/logout.php">Sign Out</a></h2>
+	<main>
+		<header class="container mt-5">
+			<h1>Research Page</h1>
+
+			<nav class="navbar navbar-expand-sm p-0">
+			<div class="navbar-collapse collapse">
+			<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadResearch();">Upload Data</button>
+			<button class="btn btn-primary mr-1" id="button_research" onclick="Database();">View Database</button>
+			<button class="btn btn-primary mr-1" id="button_manageResearchers" onclick="ManageResearchers();">Manage Researchers</button>
+			<button class="btn btn-primary mr-1" id="button_graph" onclick="Graph();">Graph Data</button>
 			</div>
-		</div>
-        <div class="container">
-            <a class="btn btn-outline-success" id="roundbutton" href="#">User ID</a>
-            <a class="btn btn-outline-success" id="roundbutton" href="">Upload Data</a>
-            <a class="btn btn-outline-success" id="roundbutton" href="">Database</a>
-            <a class="btn btn-outline-success" id="roundbutton" href="">Manage Researchers</a>
-			<br/>
-            <p>Welcome to Guided Play- A Green Space Experience</p>
-			<br/>
-            <a class="btn btn-outline-success" href="">View Light Data</a>
-            <a class="btn btn-outline-success" href="">View Demographic Data</a>
-            <a class="btn btn-outline-success" href="">View Temperature Data</a>
-        </div>
-        
+
+			<div class="nav justify-content-end navbar-collapse collapse">	
+				<span class="mr-2">User ID</span>
+				<button class="btn btn-secondary" onclick="Logout()">Sign out</button>				
+			</div>
+		</nav>
+		</header>
 		
-		<!-- Upload Data -->
-        <div class="container">
-		    <h2>Upload Data</h2>
-            <form method="post" enctype="multipart/form-data" action="javascript:UploadFile()" onsubmit="return ValidateInput()">
-                    <label for="myfile">Select a file:</label>
-                    <input type="file" id="myfile" name="myfile"> 
-                    <input type="submit" name="submit" id="submit">
-            </form>
-			<div class="row-content">
-					<div class="col-sm-12">
-						<p id="demo"></p>
-					<div id="chartdiv"></div>
-					</div>
+
+		<section class="container startHidden mt-2" id="uploadDataResearch">
+			<div class="d-flex">	
+				<h2 class="flex-grow-1">Upload</h2>	
+				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#upload_collapse" aria-expanded="false" aria-controls="upload_collapse">
+					<i class="fa fa-chevron-down"></i>
+				</button>
 			</div>
-			
-        </div>
-		<!-- manage researcher admin features-->
-		<div class= "container">
-		<h2>Manage Researcher</h2>
-			<div class="table-wrapper">
-					<div class="table-title">
-					<div class="col">
-						<div class="row-sm-5">
-							<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
-						</div>
+
+			<div id="upload_collapse" class="collapse">
+				<div class="input-group">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="CSVFileInput">
+						<label class="custom-file-label" for="CSVFileInput">Choose file</label>
+					</div>
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
 					</div>
 				</div>
-				<p>Type something in the input field to search the table for userID, grade or class etc:</p>  
-				<input class="form-control" id="myInput" type="text" placeholder="Search..">
-				<br/>
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>User ID</th>
-							<th>User Type</th>
-							<th>Password</th>
-							<th>Reset Password</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody id="myTable">
-						<tr>
-							<td>Mark0123</td>
-							<td>Student</td>
-							<td>***********</td>
-							<td>mark432154!</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Jacob4132</td>
-							<td>Admin</td>
-							<td>***********</td>
-							<td>Jacob@min32</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Larry7564</td>
-							<td>Researcher</td>
-							<td>************</td>
-							<td>@twitter1523</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>      
-					</tbody>
-				</table>
+            	<p id="demo"></p>
 			</div>
-		</div>
-		
-		<!-- Database Table -->
-		
-		<div class= "container">
-		<h2>Database</h2>
-			<div class="table-wrapper">
+		</section>
 
-			<p><b>Database Request</b></p>
-			<label for="tname">Table:</label>
-			<input type="text" id="table_name" align= "center"name="table_name">
-			<br>
-			<label for="columns">Columns:</label>
-			<input type="text" id="columns" align= "center"name="columns">
+		
 
-				<br/>
-				<table class="table table-bordered">
-					<thead class="thead-dark">
-						<tr>
-							<th>User ID</th>
-							<th>User Type</th>
-							<th>Password</th>
-							<th>Reset Password</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody id="myTable">
-						<tr>
-							<td>Mark0123</td>
-							<td>Student</td>
-							<td>***********</td>
-							<td>mark432154!</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Jacob4132</td>
-							<td>Admin</td>
-							<td>***********</td>
-							<td>Jacob@min32</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Larry7564</td>
-							<td>Researcher</td>
-							<td>************</td>
-							<td>@twitter1523</td>
-							<td>
-								<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-								<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-								<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-							</td>
-						</tr>      
-					</tbody>
-				</table>
+		<section class="container startHidden mt-4" id="viewDatabase">
+			<h3>Database and Export</h3>
+			<hr>
+			<!-- <div class="row">
+				<div class="col-4">
+					<div class="container">
+						<h4>Interface</h4>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<div class="input-group">
+									<span class="input-group-text" id="">Table</span>
+								</div>
+							</div>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option value="" selected hidden>Choose</option>
+								<option value="b">School</option>
+								<option value="c">LightTemp</option>
+								<option value="d">Classes</option>
+							</select>
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<div class="input-group">
+									<span class="input-group-text" id="">Table</span>
+								</div>
+							</div>
+							<input type="text" class="form-control" aria-label="Text input with dropdown button">
+						</div>
+						
+						
+			
+
+
+					</div>
+				</div>
+				<div class="col">
+					<div class="container">
+						<h4>Table</h4>
+					</div>
+				</div>
+			</div> -->
+
+			<div id="" class="">
+				<div id="toolbar_lightTemp">
+					<!-- <button id="logAll" class="btn btn-primary">Log Selected</button> -->
+				</div>
+
+				<table id="lightTemp"></table>	
 			</div>
-		</div>
 
-	
-    </body>
+		</section>
+		
+		
+
+		<section class="container startHidden mt-4" id="graphOverview">
+			<div class="d-flex">	
+				<h3 class="flex-grow-1">Graph Overview</h3>	
+				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#graph_collapse" aria-expanded="false" aria-controls="graph_collapse">
+					<i class="fa fa-chevron-down"></i>
+				</button>
+			</div>
+			<div id="graph_collapse" class="collapse">
+				<div class="container" id="chartdiv2"></div>
+			</div>
+		</section>
+
+		
+		
+		<section class="container startHidden my-4" id="manageResearchers">
+			<div class="d-flex">	
+				<h3 class="flex-grow-1">Manage Researchers</h3>	
+				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#accounts_collapse" aria-expanded="false" aria-controls="accounts_collapse">
+					<i class="fa fa-chevron-down"></i>
+				</button>
+			</div>
+			<div id="accounts_collapse" class="collapse">
+				<div id="toolbar_research_accounts">
+					<!-- <button id="logAll" class="btn btn-primary">Log Selected</button> -->
+				</div>
+
+				<table id="research_accounts"></table>	
+			</div>
+
+
+
+
+		</section>
+
+	</main>
+	</body>
+
+		<!-- JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../libs/Bootstrap-4-4.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/extensions/export/bootstrap-table-export.min.js"></script>
+		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
+
+		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+   	 	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    	<!-- <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script> -->
+		<!-- <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script> -->
+
+		<!-- CDN Libraries -->
+		<!-- Graph Lib -->
+		<script src="https://www.amcharts.com/lib/4/core.js"></script>
+		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		
+		<!-- Our Code -->
+		<script src="../js/graph.js"></script>   
+		<script src="../js/phpManager.js"></script>   
+		<script src="../js/main.js"></script> 
+		<script src="../js/tables.js"></script> 
+
 </html>

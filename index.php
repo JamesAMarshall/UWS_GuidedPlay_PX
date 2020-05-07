@@ -1,137 +1,173 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-        <title>Home Page</title>
-        <meta content="" name="descriptison">
-        <meta content="" name="keywords"> 
-
-        <!--CSS -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/theme.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="" name="descriptison">
+		<meta content="" name="keywords">
 		
-        <!-- JS -->
-        <script src="js/formValidation.js"></script>
-		
+		<title>Home</title>
+
+		<link rel="stylesheet" type="text/css" href="libs/Bootstrap-4-4.4.1/css/bootstrap.min.css"/>
+
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
     </head>
     <body>
 
-    <div class="container pt-sm-5">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1><a href="index.php">Welcome to Guided Play</a></h1>
-            </div>
-
-            <div class="col-sm-6 pt-sm-2">
-                <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/home_school.php">School Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="html/home_research.php">Research Home</a>
-                    </li>
-					  <li class="nav-item">
-                        <a class="nav-link" href="php/requests/logout.php">Sign out</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-	
-    <div class="container">
-        <div class="row">
-
-			<div class="col">
-				<h2>Log In</h2>
-				<form method="post" id="logIn-form" onsubmit="return validateLogInForm(this);">
-					<div>
-						<label for="logIn_username">Username</label>
-						<input type="text" id="logIn_username" name="uname"/>
-						<span class="required">*</span>
-						<span class="error-message" id="logIn_username_error">Username required</span>
-
-						<br>
-
-						<label for="logIn_password">Password</label>
-						<input type="password" id="logIn_password" name="pass"/>
-						<span class="required">*</span>
-						<span class="error-message" id="logIn_password_error">Password Required</span>
-
-						<br>
-							
-						<button type="submit" class="btn btn-outline-success">Log In</button>
-						<br/><br/>
-							
-						</div>
-					</form>
-					
-				<form method="post" id="signUp-form" onsubmit="return validateSignUpForm(this);">
-					<h2>Sign Up</h2>
-					<div>
-						<label for="signUp_username">Username</label>
-						<input type="text" id="signUp_username" name="sname"/>
-						<span class="required">*</span>
-						<span class="error-message" id="signUp_username_error">Username required</span>
-							
-						<br/>
-						<!-- signup password-->
-						<label for="signUp_password">Password</label>
-						<input type="password" id="signUp_password" />
-						<span class="required">*</span>
-						<br>	
-						<span class="error-message" id="signUp_password_error">password must be within 6~20 characters (at least 1 uppercase & 1 numeric)</span>
+	<main  class="vh-100 d-flex align-content-center flex-wrap">
+		<div id="main_index" class="container col-9">
+			<div class="container">
+				<div class="row">
+						<h1 class="col">Welcome To G.E.E.S.E</h1>
+				</div>
+			</div>
 			
-								
-						<!--confirm password-->
-						<label for="signUp_confirmPassword">Confirm Password</label>
-						<input type="password" id="signUp_confirmPassword"/>
-						<span class="required">*</span>
-						<span class="error-message" id="signUp_confirmPassword_error">Passwords do not match</span>
-
-						<br/>
-							
-						<!-- FIX: Dont have drop down, change account management
-						<label for="accountType">Account Type</label>
-						<select id="accountType" name="accountType" height="50px">
-								<option value="default"selected disabled></option>
-								<option value="student">Student</option>
-								<option value="teacher">Teachers</option>
-								<option value="community">Community</option>
-								<option value="admin">Administrator</option>
-								<option value="reseacher">Researcher</option>
-						</select>
-
-						<br>
-						-->
-						<!-- age -->
-						<label for="signUp_age">Age</label>
-						<input type="text" id="signUp_age" name="age"/>
-						<span class="required">*</span>
-						<span class="error-message" id="signUp_age_error">Enter Age between 15~100</span>
-							
-						<br>
-							
-						<label for="signUp_gender">Gender</label>
-						<input type="radio" name="gender" id="signUp_male">
-						<label for="signUp_male">Male</label>
-						<input type="radio" name="gender" id="signUp_female">
-						<label for="signUp_female">Female</label>
-						<span class="required">*</span>
-						<span class="error-message" id="signUp_gender_error"> Pick a gender</span>
-							
-						<br>
-						<button type="submit" class="btn btn-outline-success">Sign Up</button>
-						<br>
+	
+			
+		<div class="container" id="login">
+			<div class="row">
+				<div class="col-sm">
+					<div class="login100-pic js-tilt " data-tilt>
+						<img src="images/GEESE2.gif" alt="IMG">
 					</div>
-				</form>
-			</div>   
+				</div>
+				<div class="col-sm">
+					<h2>Log In</h2>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="logIn_username" >Username<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input class="form-control" type="text" id="logIn_username" name="uname" placeholder="Username"/>
+							<span class="invalid-feedback" id="logIn_username_error">Username required</span>
+						</div>
+					</div>
+		
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="logIn_password">Password<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input  class="form-control" type="password" id="logIn_password" name="pass" placeholder="Password"/>
+							<span class="invalid-feedback" id="logIn_password_error">Password must be within 6~20 characters (at least 1 uppercase & 1 numeric)</span>
+						</div>
+					</div>
+		
+					<div class="form-group row">
+						<div class="col-sm-10">
+							<button class="btn btn-primary" onclick="ProcessLogIn()">LogIn</button>
+							<button class="btn btn-primary" onclick="SwitchToSignUp()">SignUp</button>
+						</div>
+					</div>
+				</div>	
+				<!-- 
+	
+					NOTE:
+					When you stop using form tags and submit via button onClick, pressing enter on the last
+					field no longer submits the form.
+	
+					-->
+			</div>
+		</div>
+			<div class="container" id="signup">
+			<div class="row">
+				<div class="col-sm">
+						<div class="login100-pic js-tilt " data-tilt>
+						<img src="images/GEESE2.gif" alt="IMG">
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="d-flex">
+						<button class="btn btn-primary-outline" onclick="SwitchToLogin()">
+							<i class="fa fa-chevron-left"></i>
+						</button>
+						<h2>Sign Up</h2>
+					</div>
 
-      </body>
-    
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="signUp_username">Username<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input class="form-control" type="text" id="signUp_username" name="sname"/>
+							<span class="invalid-feedback" id="signUp_username_error">Username required</span>
+						</div>
+					</div>
+		
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="signUp_password">Password<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input class="form-control" type="password" id="signUp_password" name="pass" />
+							<span class="invalid-feedback" id="signUp_password_error">Password must be within 6~20 characters (at least 1 uppercase & 1 numeric)</span>
+						</div>
+					</div>
+		
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="signUp_confirmPassword">Confirm password<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input class="form-control" type="password" id="signUp_confirmPassword"/>
+							<span class="invalid-feedback" id="signUp_confirmPassword_error">Password do not matched</span>
+						</div>
+					</div>
+		
+					<!-- <div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="signUp_age">Age<span class="required">*</span></label>
+						<div class="col-sm-8">
+							<input class="form-control" type="text" id="signUp_age" name="age"/>
+							<span class="invalid-feedback" id="signUp_age_error">Enter Age between 5-110</span>
+						</div>
+					</div> -->
+		
+					<!-- <div class="form-group row">
+						<legend class="col-form-label col-sm-2 pt-0">Gender<span class="required">*</span></legend>
+						<div class="col-sm-10">
+							<div class="form-check form-check-inline">
+								<input class="form-check-input signUp_gender" type="radio" name="signUp_gender" id="signUp_male" value="male">
+								<label class="form-check-label" for="signUp_male">Male</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input signUp_gender" type="radio" name="signUp_gender" id="signUp_female" value="female">
+								<label class="form-check-label" for="signUp_female">Female</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input signUp_gender" type="radio" name="signUp_gender" id="signUp_other" value="other">
+								<label class="form-check-label" for="signUp_other">Other</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input signUp_gender" type="radio" name="signUp_gender" id="signUp_notSay" value="notSay">
+								<label class="form-check-label" for="signUp_notSay">Rather not say</label>
+							</div>
+							<span class="invalid-feedback" id="signUp_gender_error">Please enter your gender.</span>
+						</div>
+					</div>
+					-->
+					<div class="form-group row">
+						<div class="col-sm-10">
+							<button class="btn btn-primary" onclick="ProcessSignUp()">SignUp</button>
+						</div>
+					</div>
+					
+				</div>
+				
+				<span id="output"></span>
+			</div>
+		</div>
+	</main>
+
+	</body>
+		<!-- JS -->
+		<!-- Libraries -->
+		<!-- <script type="text/javascript" src="libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script> -->
+		<!-- <script type="text/javascript" src="libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script> -->
+		<!-- <script type="text/javascript" src="libs/DataTables-1.10.20/js/jquery.dataTables.min.js"></script> -->
+		<!-- <script type="text/javascript" src="libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
+
+		<!-- Our Code -->
+		<script src="js/processForm.js"></script>
+		<script src="js/phpManager.js"></script>
+		<script src="js/main.js"></script>
+		
+		<!---tilt image -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/tilt.jquery.min.js"></script>
+
+
+
 </html>

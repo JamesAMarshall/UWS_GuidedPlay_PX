@@ -16,6 +16,9 @@
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/observation.css"/>
+		<!-- icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
     </head>
 	<body onload="SetupSchoolPage()">
@@ -26,9 +29,9 @@
 
 			<nav class="navbar navbar-expand-sm p-0">
 			<div class="navbar-collapse collapse">
-				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();">Submit Observation</button>
-				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();">Manage Classes</button>
-				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();">Upload Data</button>
+				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();"><i class="fa fa-tasks" aria-hidden="true"></i> Submit Observation</button>
+				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();"><i class="fas fa-users"></i> Manage Classes</button>
+				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();"><i class="fas fa-file-upload"></i> Upload Data</button>
 			</div>
 
 			<div class="nav justify-content-end navbar-collapse collapse">	
@@ -71,10 +74,62 @@
 				</button>
 			</div>
 			<div id="observation_collapse" class="collapse">
-				<div>
-					<span>Form needs to be redone and fleshed out</span>
-					<!-- PUT OBSERVATION HERE -->
-
+				<h4>1. How was the weather today?</h4>
+				<div class="slider">
+					<input id="sunny" type="radio" name="weather">
+					<label for="sunny">
+						<img src="../images/sunny.png">
+						<br>
+						Bright and sunny
+					</label>
+					<input id="partCloudy" type="radio" name="weather">
+					<label for="partCloudy">
+						<img src="../images/partlycloud.png">
+						<br>
+						Party cloudy
+					</label>
+					<input id="cloudy" type="radio" name="weather">
+						<label for="cloudy">
+						<img src="../images/cloudy.png">
+						<br>
+						Cloudy
+					</label>
+					<input id="vcloudy" type="radio" name="weather" checked>
+						<label for="vcloudy">
+						<img src="../images/verycloudy.png">
+						<br>
+						Very cloudy
+					</label>
+					<input id="fullovercast" type="radio" name="weather">
+						<label for="fullovercast">
+						<img src="../images/overcast.png">
+						<br>
+						Full overcast
+					</label>
+				</div>
+				<div class="slider">
+					<input id="vhot" type="radio" name="degree">
+					<label for="vhot">Very hot</label>
+					<input id="somewhat hot" type="radio" name="degree">
+					<label for="somewhat hot">Somewhat hot</label>
+					<input id="warm" type="radio" name="degree" checked >
+					<label for="warm">Warm</label>
+					<input id="cool" type="radio" name="degree">
+					<label for="cool">Cool</label>
+					<input id="cold" type="radio" name="degree">
+					<label for="cold">Cold</label>
+				</div>
+				<div class="slider">
+					<input id="nowind" type="radio" name="wind">
+					<label for="nowind">No wind</label>
+					<input id="breeze" type="radio" name="wind">
+					<label for="breeze">Slight breeze</label>
+					<input id="moderate" type="radio" name="wind" checked >
+					<label for="moderate">Moderate wind</label>
+					<input id="slight windy" type="radio" name="wind">
+					<label for="slight windy">Slight windy</label>
+					<input id="very windy" type="radio" name="wind">
+					<label for="very windy">Very windy</label>
 				</div>
 			</div>
 

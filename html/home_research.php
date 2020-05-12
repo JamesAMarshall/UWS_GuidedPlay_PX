@@ -16,7 +16,9 @@
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
-
+		
+		<!-- icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 	<body onload="SetupResearchPage()">
 	
@@ -26,10 +28,10 @@
 
 			<nav class="navbar navbar-expand-sm p-0">
 			<div class="navbar-collapse collapse">
-			<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadResearch();">Upload Data</button>
-			<button class="btn btn-primary mr-1" id="button_research" onclick="Database();">View Database</button>
-			<button class="btn btn-primary mr-1" id="button_manageResearchers" onclick="ManageResearchers();">Manage Researchers</button>
-			<button class="btn btn-primary mr-1" id="button_graph" onclick="Graph();">Graph Data</button>
+			<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadResearch();"><i class="fas fa-file-upload"></i> Upload Data</button>
+			<button class="btn btn-primary mr-1" id="button_research" onclick="Database();"><i class="fas fa-database"></i> View Database</button>
+			<button class="btn btn-primary mr-1" id="button_manageResearchers" onclick="ManageResearchers();"><i class="fas fa-tasks"></i> Manage Researchers</button>
+			<button class="btn btn-primary mr-1" id="button_graph" onclick="Graph();"><i class="far fa-chart-bar"></i> Graph Data</button>
 			</div>
 
 			<div class="nav justify-content-end navbar-collapse collapse">	

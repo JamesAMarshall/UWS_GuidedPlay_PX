@@ -12,6 +12,7 @@ hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 	background: rgba(255,255,255,.2);
 	box-shadow:0 5px 15px rgba(0,0,0,.5);
 
+
 }
 
 #main_index{
@@ -26,13 +27,33 @@ hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 
 
 body{
-	background-image:url(../images/background.jpg);
+	/*background-image:url(../images/landing.jpg);*/
 	background-size:cover;
 	background-attachment:fixed;
 	font-family: 'Caveat Brush', cursive;
 	font-size: 20px;
+    background: linear-gradient(-135deg,#205072, #329D9C, #56C596,#F9C449) fixed;
+	background-repeat: no-repeat;
 }
 
+.btn-primary{
+}
+.btn-primary:hover{
+	text-shadow: 2px 2px 4px black;
+	box-shadow: 5px 5px 10px gray;
+
+}
+
+/*------------------------------------------------------------------
+[ ERROR MESSAGE ]*/
+.invalid-feedback{
+	color: #c80000;
+    padding: 1px;
+	background-color: white;
+	border: 1px solid #c80000;
+	border-radius: 5px;
+	text-align: center;	
+}
 
 i.fa-trash{
 	color: red;
@@ -52,12 +73,25 @@ th i.fa-minus{
 
 
 /*------------------------------------------------------------------
-[  ]*/
+[ GEESE LOGO  ]*/
 .login100-pic {
-  width: 350px;
+  width: 200px;
 }
 
 .login100-pic img {
-  max-width: 100%;
-  margin: 0 60px;
+  max-width: 75%;
+ 
 }
+
+/*------------------------------------------------------------------
+[ MEDIA QUERIES  ]*/
+@media (min-width: 950px) { 
+	.login100-pic{
+		 width:250px;
+	}
+	.login100-pic img {
+	  max-width: 100%;
+	  margin: 0 10px;
+	}
+}
+

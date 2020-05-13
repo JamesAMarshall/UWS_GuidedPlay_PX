@@ -78,33 +78,33 @@
 				<div class="slider">
 					<input id="sunny" type="radio" name="weather">
 					<label for="sunny">
-						<img src="../images/sunny.png">
+						<img src="../images/observation/weather/sunny.png">
 						<br>
 						Bright and sunny
 					</label>
 					<input id="partCloudy" type="radio" name="weather">
 					<label for="partCloudy">
-						<img src="../images/partlycloud.png">
+						<img src="../images/observation/weather/partlycloud.png">
 						<br>
 						Party cloudy
 					</label>
 					<input id="cloudy" type="radio" name="weather">
 						<label for="cloudy">
-						<img src="../images/cloudy.png">
+						<img src="../images/observation/weather/cloudy.png">
 						<br>
 						Cloudy
 					</label>
 					<input id="vcloudy" type="radio" name="weather" checked>
 						<label for="vcloudy">
-						<img src="../images/verycloudy.png">
+						<img src="../images/observation/weather/rainy.png">
 						<br>
-						Very cloudy
+						Rainy
 					</label>
 					<input id="fullovercast" type="radio" name="weather">
 						<label for="fullovercast">
-						<img src="../images/overcast.png">
+						<img src="../images/observation/weather/stormy.png">
 						<br>
-						Full overcast
+						Stormy
 					</label>
 				</div>
 				<div class="slider">

@@ -28,11 +28,15 @@ img{
   transition: color .5s;
 }
 .slider label:hover {
+  font-size: 1.2em;
   color: white;
+  text-shadow: 2px 2px 4px black;
  /* text-decoration: underline;*/
 }
 .slider input:checked + label {
+	font-size: 1.2em;
   color: white;
+  text-shadow: 1px 1px 1px black;
 }
 .slider label:last-of-type::after {
   display: block;

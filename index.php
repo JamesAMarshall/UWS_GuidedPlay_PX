@@ -21,7 +21,8 @@
 		<div id="main_index" class="container col-7">
 			<div class="container">
 				<div class="row">
-						<h1 class="col">Welcome To G.E.E.S.E</h1>
+						<h1 class="col">Welcome To Greenscapes. Environment. Experience. Survey. and Experiments</h1>
+						
 				</div>
 			</div>
 			

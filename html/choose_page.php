@@ -25,11 +25,13 @@
 	
 		<div class="container col-7">
 			<div class="overlay-panel overlay-left" onclick="location.href='../php/requests/directAccount'">
-				<h1>Sensor Data</h1>
+				<img class="image1" src="../images/choosePage/data.png">
+					<h1>Garden Data</h1>
 			</div>
 			
 			<div class="overlay-panel overlay-right" onClick="location.href='../html/home_school.php'">
-				<h1>Demo Survey</h1>
+				<img class="image1" src="../images/choosePage/survey.png">
+				<h1>Survey</h1>
 
 			</div>
 		</div>

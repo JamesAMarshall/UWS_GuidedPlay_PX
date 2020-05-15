@@ -173,73 +173,73 @@
 				<div class="container icon boxes checkbox">
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/honeybee.png">
+						<img src="../images/observation/species/honeybee.png" class="img-thumbnail">
 						<br>
 						Honey Bee
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/nativebee.jpg">
+						<img src="../images/observation/species/nativebee.jpg" class="img-thumbnail">
 						<br>
 						Native Bee
 					</label>
 					<label>
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/bird.jpg">
+						<img src="../images/observation/species/bird.jpg" class="img-thumbnail">
 						<br>
 						Bird
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/wasp.jpg">
+						<img src="../images/observation/species/wasp.jpg" class="img-thumbnail">
 						<br>
 						Wasp
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/moth.jpg">
+						<img src="../images/observation/species/moth.jpg" class="img-thumbnail">
 						<br>
 						Moth
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/butterfly.jpg">
+						<img src="../images/observation/species/butterfly.jpg" class="img-thumbnail">
 						<br>
 						Butterfly
 					</label>
 					<label>
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/lizard.jpg">
+						<img src="../images/observation/species/lizard.jpg" class="img-thumbnail">
 						<br>
 						Lizard
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/flyingfox.jpg">
+						<img src="../images/observation/species/flyingfox.jpg" class="img-thumbnail">
 						<br>
 						Flying fox
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/fruitbat.jpg">
+						<img src="../images/observation/species/fruitbat.jpg" class="img-thumbnail">
 						<br>
 						Fruit bat
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/possum.jpg">
+						<img src="../images/observation/species/possum.jpg" class="img-thumbnail">
 						<br>
 						Possum
 					</label>
 					<label>
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/beetle.jpg">
+						<img src="../images/observation/species/beetle.jpg" class="img-thumbnail">
 						<br>
 						Beetle
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/species/fly.jpg">
+						<img src="../images/observation/species/fly.jpg" class="img-thumbnail">
 						<br>
 						Fly
 					</label>					
@@ -249,25 +249,25 @@
 				<div class="container icon boxes checkbox">
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/plant/saladgreen.jpg">
+						<img src="../images/observation/plant/saladgreen.jpg" class="img-thumbnail">
 						<br>
 						Salad greens
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/plant/roots.jpg">
+						<img src="../images/observation/plant/roots.jpg" class="img-thumbnail">
 						<br>
 						Root crops
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/plant/herb.jpg">
+						<img src="../images/observation/plant/herb.jpg" class="img-thumbnail">
 						<br>
 						Herb
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="creature" value="honeybee">
-						<img src="../images/observation/plant/fruit.jpg">
+						<img src="../images/observation/plant/fruit.jpg" class="img-thumbnail">
 						<br>
 						Fruits
 					</label>
@@ -293,31 +293,31 @@
 				<div class="container icon boxes slider">
 					<input id="alwaysSun" type="radio" name="plants">
 					<label for="alwaysSun">
-						<img src="../images/observation/weather/sunny.png">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
 						<br>
 						Always in sun
 					</label>
 					<input id="mostlySun" type="radio" name="plants">
 					<label for="mostlySun">
-						<img src="../images/observation/weather/partlycloud.png">
+						<img src="../images/observation/weather/partlycloud.png" class="img-thumbnail">
 						<br>
 						Mostly in sun
 					</label>
 					<input id="half" type="radio" name="plants">
 						<label for="half">
-						<img src="../images/observation/weather/cloudy.png">
+						<img src="../images/observation/weather/cloudy.png" class="img-thumbnail">
 						<br>
 						Half sun, half shade
 					</label>
 					<input id="mostlyShade" type="radio" name="plants" checked>
 						<label for="mostlyShade">
-						<img src="../images/observation/weather/rainy.png">
+						<img src="../images/observation/weather/rainy.png" class="img-thumbnail">
 						<br>
 						Mostly in shade
 					</label>
 					<input id="alwaysShade" type="radio" name="plants">
 						<label for="alwaysShade">
-						<img src="../images/observation/weather/stormy.png">
+						<img src="../images/observation/weather/stormy.png" class="img-thumbnail">
 						<br>
 						Always in shade
 					</label>
@@ -325,64 +325,107 @@
 
 
 			<!---->
-				<h4>Which 2 plants are the healthiest? [should restruct to 2 choices]</h4>
+				<h4>Which 2 plants are the healthiest? [should restrict to 2 choices]</h4>
 				<div class="container icon boxes checkbox">
 					<label class="fourCol">
 						<input type="checkbox" name="plant">
-						<img src="../images/observation/plant/saladgreen.jpg">
+						<img src="../images/observation/plant/saladgreen.jpg" class="img-thumbnail">
 						<br>
 						Salad greens
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="plant">
-						<img src="../images/observation/plant/roots.jpg">
+						<img src="../images/observation/plant/roots.jpg" class="img-thumbnail">
 						<br>
 						Root crops
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="plant">
-						<img src="../images/observation/plant/herb.jpg">
+						<img src="../images/observation/plant/herb.jpg" class="img-thumbnail">
 						<br>
-						Herb
+						Herbs
 					</label>
 					<label class="fourCol">
 						<input type="checkbox" name="plant">
-						<img src="../images/observation/plant/fruit.jpg">
+						<img src="../images/observation/plant/fruit.jpg" class="img-thumbnail">
 						<br>
 						Fruits
 					</label>
 				</div>
 			<!---->
-				<h4>What are the 2 main reasons [PLANT A, PLANT B, not repeatable - A & B only] is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				<h4>What are the 2 main reasons PLANT A is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
 				<div class="container icon boxes checkbox">
-					<label class="fourCol">
-						<input type="checkbox" name="creature">
-						<img src="../images/observation/weather/sunny.png">
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
 						<br>
 						The amount of sunlight it got
 					</label>
-					<label class="fourCol">
-						<input type="checkbox" name="creature" >
-						<img src="../images/observation/weather/sunny.png">
+					<label>
+						<input type="checkbox" name="plantA" >
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
 						<br>
 						The wind it got
 						
-					</label class="fourCol">
+					</label>
 					<label>
-						<input type="checkbox" name="creature">
-						<img src="../images/observation/weather/sunny.png">
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
 						<br>
 						The nutrients in the soil
 					</label>
-					<label class="fourCol">
-						<input type="checkbox" name="creature">
-						<img src="../images/observation/weather/sunny.png">
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
 						<br>
 						The time when it got sunlight
 					</label>
-					
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The water in the soil
+					</label>
+				</div>
+				<h4>What are the 2 main reasons PLANT B is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				<div class="container icon boxes checkbox">
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The amount of sunlight it got
+					</label>
+					<label>
+						<input type="checkbox" name="plantB" >
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The wind it got
+						
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The nutrients in the soil
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The time when it got sunlight
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png" class="img-thumbnail">
+						<br>
+						The water in the soil
+					</label>
 				</div>
 			</div>
+			</div>
+			
+							
+
 
 		</section>
 

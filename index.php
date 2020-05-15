@@ -55,7 +55,7 @@
 					</div>
 		
 					<div class="form-group row">
-						<div class="col-sm-10">
+						<div class="col-sm-10" align="right">
 							<button class="btn btn-primary" onclick="ProcessLogIn()">Log In</button>
 							<button class="btn btn-primary" onclick="SwitchToSignUp()">Sign Up</button>
 						</div>

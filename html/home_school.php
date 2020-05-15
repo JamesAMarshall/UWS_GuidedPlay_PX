@@ -74,13 +74,14 @@
 				</button>
 			</div>
 			<div id="observation_collapse" class="collapse">
-				<h4>1. How was the weather today?</h4>
-				<div class="slider">
+			<!---->
+				<h4>Today's the weather was...</h4>
+				<div class="container icon boxes slider">
 					<input id="sunny" type="radio" name="weather">
 					<label for="sunny">
 						<img src="../images/observation/weather/sunny.png">
 						<br>
-						Bright and sunny
+						Sunny
 					</label>
 					<input id="partCloudy" type="radio" name="weather">
 					<label for="partCloudy">
@@ -94,42 +95,292 @@
 						<br>
 						Cloudy
 					</label>
-					<input id="vcloudy" type="radio" name="weather" checked>
-						<label for="vcloudy">
+					<input id="rainy" type="radio" name="weather" checked>
+						<label for="rainy">
 						<img src="../images/observation/weather/rainy.png">
 						<br>
 						Rainy
 					</label>
-					<input id="fullovercast" type="radio" name="weather">
-						<label for="fullovercast">
+					<input id="stormy" type="radio" name="weather">
+						<label for="stormy">
 						<img src="../images/observation/weather/stormy.png">
 						<br>
 						Stormy
 					</label>
 				</div>
-				<div class="slider">
-					<input id="vhot" type="radio" name="degree">
-					<label for="vhot">Very hot</label>
-					<input id="somewhat hot" type="radio" name="degree">
-					<label for="somewhat hot">Somewhat hot</label>
+
+				<div class="container icon boxes slider">
+					<input id="hot" type="radio" name="degree">
+					<label for="hot">
+						<img src="../images/observation/weather/hot.png">
+						Hot
+					</label>
+					
+					<input id="abit hot" type="radio" name="degree">
+					<label for="abit hot">
+						<img src="../images/observation/weather/littlehot.png">
+						<br>
+						A bit hot
+					</label>
 					<input id="warm" type="radio" name="degree" checked >
-					<label for="warm">Warm</label>
-					<input id="cool" type="radio" name="degree">
-					<label for="cool">Cool</label>
+					<label for="warm">
+						<img src="../images/observation/weather/warm.png">
+						Warm
+					</label>
+					<input id="abit cold" type="radio" name="degree">
+					<label for="abit cold">
+						<img src="../images/observation/weather/littlecold.png">
+						<br>
+						A bit cold
+					</label>
 					<input id="cold" type="radio" name="degree">
-					<label for="cold">Cold</label>
+					<label for="cold">
+					<img src="../images/observation/weather/cold.png">
+					Cold
+					</label>
 				</div>
-				<div class="slider">
+				<div class="container icon boxes slider">
 					<input id="nowind" type="radio" name="wind">
-					<label for="nowind">No wind</label>
-					<input id="breeze" type="radio" name="wind">
-					<label for="breeze">Slight breeze</label>
-					<input id="moderate" type="radio" name="wind" checked >
-					<label for="moderate">Moderate wind</label>
-					<input id="slight windy" type="radio" name="wind">
-					<label for="slight windy">Slight windy</label>
+					<label for="nowind">
+					<img src="../images/observation/weather/wind1.png">
+					<br>
+					No wind
+					</label>
+					<input id="little" type="radio" name="wind">
+					<label for="little">
+					<img src="../images/observation/weather/wind2.png">
+					<br>
+					A little wind
+					</label>
+					<input id="windy" type="radio" name="wind" checked >
+					<label for="windy">
+					<img src="../images/observation/weather/wind3.png">
+					Windy
+					</label>
 					<input id="very windy" type="radio" name="wind">
-					<label for="very windy">Very windy</label>
+					<label for="very windy">
+					<img src="../images/observation/weather/wind4.png">
+					Very windy
+					</label>
+					<input id="extreme" type="radio" name="wind">
+					<label for="extreme">
+					<img src="../images/observation/weather/wind5.png">
+					Extremely windy
+					</label>
+				</div>
+			<!---->
+				<h4>The plants were visited by a:</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/honeybee.png">
+						<br>
+						Honey Bee
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/nativebee.jpg">
+						<br>
+						Native Bee
+					</label>
+					<label>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/bird.jpg">
+						<br>
+						Bird
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/wasp.jpg">
+						<br>
+						Wasp
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/moth.jpg">
+						<br>
+						Moth
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/butterfly.jpg">
+						<br>
+						Butterfly
+					</label>
+					<label>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/lizard.jpg">
+						<br>
+						Lizard
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/flyingfox.jpg">
+						<br>
+						Flying fox
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/fruitbat.jpg">
+						<br>
+						Fruit bat
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/possum.jpg">
+						<br>
+						Possum
+					</label>
+					<label>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/beetle.jpg">
+						<br>
+						Beetle
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/fly.jpg">
+						<br>
+						Fly
+					</label>					
+				</div>
+			<!---->
+				<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/saladgreen.jpg">
+						<br>
+						Salad greens
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/roots.jpg">
+						<br>
+						Root crops
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/herb.jpg">
+						<br>
+						Herb
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/fruit.jpg">
+						<br>
+						Fruits
+					</label>
+				</div>
+			<!---->	
+				<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
+				<div class="container icon rangeslider">
+					  <div class="range">
+						<input class="myslider" type="range" min="1" max="5" steps="1" value="1">
+					  </div>
+
+					  <label class= "range-labels">
+						<button type= "button" class="btn btn-info range-labels">A tiny amount </button>
+						<button type= "button" class="btn btn-info range-labels">Like a small snack</button>
+						<button type= "button" class="btn btn-info range-labels">Like a big snack </button>
+						<button type= "button" class="btn btn-info range-labels">like a small meal </button>
+						<button type= "button" class="btn btn-info range-labels"> like a big meal </button>
+					  </label>
+
+				</div>
+			<!---->
+				<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
+				<div class="container icon boxes slider">
+					<input id="alwaysSun" type="radio" name="plants">
+					<label for="alwaysSun">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						Always in sun
+					</label>
+					<input id="mostlySun" type="radio" name="plants">
+					<label for="mostlySun">
+						<img src="../images/observation/weather/partlycloud.png">
+						<br>
+						Mostly in sun
+					</label>
+					<input id="half" type="radio" name="plants">
+						<label for="half">
+						<img src="../images/observation/weather/cloudy.png">
+						<br>
+						Half sun, half shade
+					</label>
+					<input id="mostlyShade" type="radio" name="plants" checked>
+						<label for="mostlyShade">
+						<img src="../images/observation/weather/rainy.png">
+						<br>
+						Mostly in shade
+					</label>
+					<input id="alwaysShade" type="radio" name="plants">
+						<label for="alwaysShade">
+						<img src="../images/observation/weather/stormy.png">
+						<br>
+						Always in shade
+					</label>
+				</div>
+
+
+			<!---->
+				<h4>Which 2 plants are the healthiest? [should restruct to 2 choices]</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/saladgreen.jpg">
+						<br>
+						Salad greens
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/roots.jpg">
+						<br>
+						Root crops
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/herb.jpg">
+						<br>
+						Herb
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/fruit.jpg">
+						<br>
+						Fruits
+					</label>
+				</div>
+			<!---->
+				<h4>What are the 2 main reasons [PLANT A, PLANT B, not repeatable - A & B only] is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="creature">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The amount of sunlight it got
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" >
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The wind it got
+						
+					</label class="fourCol">
+					<label>
+						<input type="checkbox" name="creature">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The nutrients in the soil
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The time when it got sunlight
+					</label>
+					
 				</div>
 			</div>
 
@@ -214,7 +465,8 @@
 		
 		<!-- Our Code -->
 		<script src="../js/phpManager.js"></script> 
+		
+		<script src="../js/tables.js"></script>
+		<script src="../js/range_slider.js"></script>
 		<script src="../js/main.js"></script> 
-		<script src="../js/tables.js"></script> 
-
 </html>

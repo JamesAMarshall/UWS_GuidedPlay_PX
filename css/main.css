@@ -35,8 +35,6 @@ body{
 	background-repeat: no-repeat;*/
 }
 
-.btn-primary{
-}
 .btn-primary:hover{
 	text-shadow: 2px 2px 4px black;
 	box-shadow: 5px 5px 10px gray;
@@ -83,7 +81,7 @@ th i.fa-minus{
 }
 
 /*------------------------------------------------------------------
-[ MEDIA QUERIES  ]*/
+[ MEDIA QUERIES ]*/
 @media (min-width: 950px) { 
 	.login100-pic{
 		 width:250px;

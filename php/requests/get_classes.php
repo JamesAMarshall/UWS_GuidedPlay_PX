@@ -8,7 +8,7 @@
 	}
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
 
-	$sql = "SELECT * FROM pa2004_Classes";	
+	$sql = "SELECT * FROM pa2004_Classes INNER JOIN pa2004_StudentToClass ON pa2004_Classes.classId = pa2004_StudentToClass.classId";	
 	debug("Get Users: SQL: ". $sql, $output);
 
 	$result = mysqli_query($db, $sql);

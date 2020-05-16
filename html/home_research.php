@@ -48,14 +48,31 @@
 				</button>
 			</div>
 
-			<div id="upload_collapse" class="collapse">
-				<div class="input-group">
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" id="CSVFileInput">
-						<label class="custom-file-label" for="CSVFileInput">Choose file</label>
+			<div id="upload_collapse" class="">
+
+
+				<div class="form-row">
+					<div class="form-group col-4">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Device ID</span>
+							</div>
+							<input id="input_classId" type="text" class="form-control" aria-describedby="basic-addon1">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" type="submit" onclick="">Create New Device</button>
+							</div>				
+						</div>
 					</div>
-					<div class="input-group-append">
-						<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+					<div class="form-group col">
+						<div class="input-group">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="CSVFileInput">
+								<label class="custom-file-label" for="CSVFileInput">Choose file</label>
+							</div>
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+							</div>
+						</div>
 					</div>
 				</div>
             	<p id="demo"></p>
@@ -182,6 +199,7 @@
 		<script src="../js/graph.js"></script>   
 		<script src="../js/phpManager.js"></script>   
 		<script src="../js/main.js"></script> 
+		<script>page = "research";</script>
 		<script src="../js/tables.js"></script> 
 
 </html>

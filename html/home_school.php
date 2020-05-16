@@ -28,7 +28,7 @@
 			<div class="navbar-collapse collapse">
 				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();">Submit Observation</button>
 				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();">Manage Classes</button>
-				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();">Upload Data</button>
+				<button class="btn btn-primary mr-1" id="button_upload" onclick="ManageAccounts();">Manage Accounts</button>
 			</div>
 
 			<div class="nav justify-content-end navbar-collapse collapse">	
@@ -39,8 +39,8 @@
 		</header>
 
 
-		<section class="container startHidden mt-2 collapse" id="uploadDataSchool">
-			<!-- <div class="d-flex">	
+		<!-- <section class="container startHidden mt-2 collapse" id="uploadDataSchool">
+			<div class="d-flex">	
 				<h2 class="flex-grow-1">Upload</h2>	
 				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#upload_collapse" aria-expanded="false" aria-controls="upload_collapse">
 					<i class="fa fa-chevron-down"></i>
@@ -58,8 +58,8 @@
 					</div>
 				</div>
             	<p id="demo"></p>
-			</div> -->
-		</section>
+			</div>
+		</section> -->
 
 		
 
@@ -86,47 +86,95 @@
 
 			<div class="d-flex">
 				<h2 class="flex-grow-1">Manage Classes</h2>	
-				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#classes_collapse" aria-expanded="false" aria-controls="classes_collapse">
+				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#classes_collapse" aria-expanded="true" aria-controls="classes_collapse">
 					<i class="fa fa-chevron-down"></i>
 				</button>
 			</div>
 
-			<div id="classes_collapse" class="collapse">
-				<div>
-					<div class="d-flex align-items-end flex-column">
-						<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#students_collapse" aria-expanded="false" aria-controls="students_collapse">
-							<i class="fa fa-chevron-down"></i>
-						</button>
-					</div>
-					<div id="students_collapse" class="collapse" >
-							<div id="toolbar_students">
-								<h2>Students</h2>
-								<!-- <button id="" class="btn btn-primary">Log Selected</button> -->
+			<div id="classes_collapse" class="">
+
+					<div class="form-row">
+						<div class="form-group col">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Class</span>
+								</div>
+								<input id="input_classId" type="text" class="form-control mr-sm-2" aria-describedby="basic-addon1">
+								<button class="btn btn-primary my-2 my-sm-0" type="submit" onclick="GetClass()">Get Class</button>
 							</div>
-
-							<table id="students"></table>
+						</div>
+						<div class="form-group col">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Grade</span>
+								</div>
+								<input type="text" class="form-control" aria-describedby="basic-addon1" readonly>
+							</div>
+						</div>
 					</div>
-				</div>
+					<div class="form-row">
+						<div class="form-group col">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Teacher</span>
+								</div>
+								<input type="text" class="form-control" aria-describedby="basic-addon1" readonly>
+							</div>
+						</div>
+						<div class="form-group col">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Class</span>
+								</div>
+								<input id="input-classname" type="text" class="form-control  mr-sm-2" aria-describedby="basic-addon1">
+								<button class="btn btn-primary my-2 my-sm-0" type="submit" onclick="NewClass()">New Class</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col mb-0">
+							<div class="input-group">
+								<input id="search_students" class="form-control mr-sm-2" type="search" placeholder="Search Students" aria-label="Search">
+								<button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="FilterStudents()">Search</button>
+							</div>
+						</div>
+					</div>
 
-				<div>
+					<div id="students_collapse" class="collapse">
+							<!-- <div id="toolbar_students">
+							</div> -->
+							<table data-show-header="false" id="students"></table>
+					</div>
+
 					<div id="toolbar_classes">
-						<button id="" class="btn btn-primary">Create New Class</button>
 					</div>
-
 					<table id="classes"></table>
-				</div>
+
 			</div>
 		</section>
 
 		
 
-		<section class="container startHidden my-4" id="manageSchool">
+		<section class="container startHidden my-4" id="manageAccounts">
 			<div class="d-flex">
 				<h2 class="flex-grow-1">Manage School</h2>	
 				<button class="btn btn-primary-outline btn-sm" type="button" data-toggle="collapse" data-target="#accounts_collapse" aria-expanded="false" aria-controls="accounts_collapse">
 					<i class="fa fa-chevron-down"></i>
 				</button>
 			</div>
+
+			<!-- <div class="dropdown input-group">
+				<span class="input-group-text" id="">Set Account Type</span>
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</div>
+			</div> -->
+
 			<div id="accounts_collapse" class="collapse">
 				<div id="toolbar_school_accounts">
 					<h2>Accounts</h2>
@@ -160,6 +208,8 @@
 		<!-- Our Code -->
 		<script src="../js/phpManager.js"></script> 
 		<script src="../js/main.js"></script> 
+		<script> page = "school"; </script>
 		<script src="../js/tables.js"></script> 
+
 
 </html>

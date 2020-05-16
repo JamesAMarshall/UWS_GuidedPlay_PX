@@ -20,7 +20,17 @@ hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 
 #signup{ display: none;}
 
+div#students_collapse input.search-input{
+	display: none;
+}
 
+div#students_collapse .fixed-table-toolbar{
+	display: none;
+}
+
+.redLink{
+	
+}
 
 
 a.large{

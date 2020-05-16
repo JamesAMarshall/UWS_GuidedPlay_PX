@@ -1,60 +1,23 @@
 /* body{ visibility: hidden; } */
 /* .startHidden{ display: none; } */
 
-/*  START OF EUNICE'S CSS FOR CHECKBOX AND RADIO INPUTS  */
-
-/* Hiding radio and checkbox */
-[type=radio] { 
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-	text-align: center;
-}
-
-[type=checkbox] { 
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-	text-align: center;
-}
-
-  
-/* Image styles */
-[type=radio] + img {
-	cursor: pointer;
-}
-
-[type=checkbox] + img {
-	cursor: pointer;
-}
-  
-/* Checked styles */
-  [type=radio]:checked + img {
-	outline: 3px solid rgb(0, 221, 66);
-}
-
-  [type=checkbox]:checked + img {
-	outline: 3px solid rgb(0, 221, 66);
-}
-
-/* END OF EUNICE'S CSS FOR CHECKBOX AND RADIO INPUTS  */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 
 .container{
-	border: 2px solid #d2d2d2;
+	border: 1px solid #d2d2d2;
 	border-radius: 5px;
 	padding: 15px;
+	background: rgba(255,255,255,.8);
+	box-shadow:0 5px 15px rgba(0,0,0,.5);
+
+
 }
 
 #main_index{
 	border: 2px solid #d2d2d2;
 	border-radius: 5px;
-	padding: 15px;
 }
 
 #login{}
@@ -62,13 +25,32 @@ hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 #signup{ display: none;}
 
 
-
-
-a.large{
-	width: 100px;
-	height: 100px;
+body{
+	background-image:url(../images/landscape.png);
+	background-size:cover;
+	background-attachment:fixed;
+	font-family: 'Caveat Brush', cursive;
+	font-size: 20px;
+    /*background: linear-gradient(-135deg,#205072, #329D9C, #56C596,#F9C449) fixed;
+	background-repeat: no-repeat;*/
 }
 
+.btn-primary:hover{
+	text-shadow: 2px 2px 4px black;
+	box-shadow: 5px 5px 10px gray;
+
+}
+
+/*------------------------------------------------------------------
+[ ERROR MESSAGE ]*/
+.invalid-feedback{
+	color: #c80000;
+    padding: 1px;
+	background-color: white;
+	border: 1px solid #c80000;
+	border-radius: 5px;
+	text-align: center;	
+}
 
 i.fa-trash{
 	color: red;
@@ -85,3 +67,28 @@ i.fa-minus{
 th i.fa-minus{
 	color: black;
 }
+
+
+/*------------------------------------------------------------------
+[ GEESE LOGO  ]*/
+.login100-pic {
+  width: 200px;
+}
+
+.login100-pic img {
+  max-width: 75%;
+ 
+}
+
+/*------------------------------------------------------------------
+[ MEDIA QUERIES ]*/
+@media (min-width: 950px) { 
+	.login100-pic{
+		 width:250px;
+	}
+	.login100-pic img {
+	  max-width: 100%;
+	  margin: 0 10px;
+	}
+}
+

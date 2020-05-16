@@ -16,6 +16,9 @@
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/observation.css"/>
+		<!-- icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
     </head>
 	<body onload="SetupSchoolPage()">
@@ -26,14 +29,14 @@
 
 			<nav class="navbar navbar-expand-sm p-0">
 			<div class="navbar-collapse collapse">
-				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();">Submit Observation</button>
-				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();">Manage Classes</button>
-				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();">Upload Data</button>
+				<button class="btn btn-primary mr-1" id="button_observation" onclick="Observation();"><i class="fa fa-tasks" aria-hidden="true"></i> Submit Observation</button>
+				<button class="btn btn-primary mr-1" id="button_manageClasses" onclick="ManageClass();"><i class="fas fa-users"></i> Manage Classes</button>
+				<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadSchool();"><i class="fas fa-file-upload"></i> Upload Data</button>
 			</div>
 
 			<div class="nav justify-content-end navbar-collapse collapse">	
 				<span class="mr-2">User ID</span>
-				<button class="btn btn-secondary" onclick="Logout()">Sign out</button>				
+				<button class="btn btn-secondary" onclick="Logout()">Sign Out</button>				
 			</div>
 		</nav>
 		</header>
@@ -70,397 +73,366 @@
 					<i class="fa fa-chevron-down"></i>
 				</button>
 			</div>
-
 			<div id="observation_collapse" class="collapse">
-				<div>
-					<!-- THIS IS THE START OF THE OBSERVATION FORM -->
-					<p>Today, the weather was...</p>
-					<table>
-						<!-- GENERAL WEATHER -->
-						<tr>
-							<td>
-								<label>
-									<input type="radio" name="weather" value="sunny">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Sunny</p>
+			<!---->
+				<h4>Today's the weather was...</h4>
+				<div class="container icon boxes slider">
+					<input id="sunny" type="radio" name="weather">
+					<label for="sunny">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						Sunny
+					</label>
+					<input id="partCloudy" type="radio" name="weather">
+					<label for="partCloudy">
+						<img src="../images/observation/weather/partlycloud.png">
+						<br>
+						Party cloudy
+					</label>
+					<input id="cloudy" type="radio" name="weather">
+						<label for="cloudy">
+						<img src="../images/observation/weather/cloudy.png">
+						<br>
+						Cloudy
+					</label>
+					<input id="rainy" type="radio" name="weather" checked>
+						<label for="rainy">
+						<img src="../images/observation/weather/rainy.png">
+						<br>
+						Rainy
+					</label>
+					<input id="stormy" type="radio" name="weather">
+						<label for="stormy">
+						<img src="../images/observation/weather/stormy.png">
+						<br>
+						Stormy
+					</label>
+				</div>
 
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="weather" value="partlyCloudy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">A bit cloudy</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="weather" value="cloudy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Cloudy</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="weather" value="rainy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Rainy</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="weather" value="stormy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Stormy</p>
-
-								</label>
-							</td>
-						</tr>
-						<!-- TEMPERATURE -->
-						<tr>
-							<td>
-								<label>
-									<input type="radio" name="temp" value="hot">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Hot</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="temp" value="bitHot">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">A bit hot</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="temp" value="warm">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Warm</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="temp" value="bitCold">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">A bit cold</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="temp" value="cold">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Cold</p>
-
-								</label>
-							</td>
-						</tr>
-						<!-- WIND -->
-						<tr>
-							<td>
-								<label>
-									<input type="radio" name="wind" value="noWind">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">No wind</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="wind" value="littleWind">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">A little wind</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="wind" value="windy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Windy</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="wind" value="veryWindy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Very windy</p>
-
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="radio" name="wind" value="extremelyWindy">
-									<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-									<p style="text-align:center">Extremely windy</p>
-
-								</label>
-							</td>
-						</tr>
-    				</table>
-
-					<p>Did any creatures visit the plants today?</p>
-					<label>
-						<input type="radio" name="visit" value="yes">
-						<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-						<p style="text-align:center">Yes!</p>
+				<div class="container icon boxes slider">
+					<input id="hot" type="radio" name="degree">
+					<label for="hot">
+						<img src="../images/observation/weather/hot.png">
+						<br>
+						Hot
+					</label>
+					
+					<input id="bitHot" type="radio" name="degree">
+					<label for="bitHot">
+						<img src="../images/observation/weather/littlehot.png">
+						<br>
+						A bit hot
+					</label>
+					<input id="warm" type="radio" name="degree" checked >
+					<label for="warm">
+						<img src="../images/observation/weather/warm.png">
+						<br>
+						Warm
+					</label>
+					<input id="bitCold" type="radio" name="degree">
+					<label for="bitCold">
+						<img src="../images/observation/weather/littlecold.png">
+						<br>
+						A bit cold
+					</label>
+					<input id="cold" type="radio" name="degree">
+					<label for="cold">
+						<img src="../images/observation/weather/cold.png">
+						<br>
+						Cold
+					</label>
+				</div>
+				<div class="container icon boxes slider">
+					<input id="noWind" type="radio" name="wind">
+					<label for="noWind">
+					<img src="../images/observation/weather/wind1.png">
+					<br>
+					No wind
+					</label>
+					<input id="little" type="radio" name="wind">
+					<label for="little">
+					<img src="../images/observation/weather/wind2.png">
+					<br>
+					A little wind
+					</label>
+					<input id="windy" type="radio" name="wind" checked >
+					<label for="windy">
+					<img src="../images/observation/weather/wind3.png">
+					<br>
+					Windy
+					</label>
+					<input id="veryWindy" type="radio" name="wind">
+					<label for="veryWindy">
+					<img src="../images/observation/weather/wind4.png">
+					<br>
+					Very windy
+					</label>
+					<input id="extreme" type="radio" name="wind">
+					<label for="extreme">
+					<img src="../images/observation/weather/wind5.png">
+					<br>
+					Extremely windy
+					</label>
+				</div>
+			<!---->
+				<h4>The plants were visited by a:</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/honeybee.png">
+						<br>
+						Honey Bee
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/nativebee.jpg">
+						<br>
+						Native Bee
 					</label>
 					<label>
-						<input type="radio" name="visit" value="no">
-						<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-						<p style="text-align:center">Not today!</p>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/bird.jpg">
+						<br>
+						Bird
 					</label>
-				
-					<p>The plants were visited by a:</p>
-					<table>
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="honeybee">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Honeybee</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="nativeBee">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Native Bee</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="bird">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Bird</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="wasp">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Wasp</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="moth">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Moth</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="butterfly">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Butterfly</p>
-								</label>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="fly">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Fly</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="lizard">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Lizard</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="flyingFox">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Flying fox</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="fruitBat">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Fruit bat</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="creature" value="possum">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Possum</p>
-								</label>
-							</td>
-
-							<td>
-								<label>
-								<input type="checkbox" name="creature" value="beetle">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Beetle</p>
-								</label>
-							</td>
-						</tr>
-					</table>
-
-					<p>Which plants did [CREATURE 1, CREATURE 2... repeatable] visit?</p>
-					<table>
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" name="plantSpecies" value="salad">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Salad greens</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="plantSpecies" value="root">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Root crops</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="plantSpecies" value="herbs">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Herbs</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="plantSpecies" value="fruit">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Fruits</p>
-								</label>
-							</td>
-						</tr>	
-					</table>
-
-					<p>Are any plants ready for harvest?</p>
-					<label>
-						<input type="radio" name="ready" value="yes">
-						<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-						<p style="text-align:center">Yes!</p>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/wasp.jpg">
+						<br>
+						Wasp
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/moth.jpg">
+						<br>
+						Moth
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/butterfly.jpg">
+						<br>
+						Butterfly
 					</label>
 					<label>
-						<input type="radio" name="ready" value="no">
-						<img src="http://placehold.it/120x120/0bf/fff&text=Image">
-						<p style="text-align:center">Not yet!</p>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/lizard.jpg">
+						<br>
+						Lizard
 					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/flyingfox.jpg">
+						<br>
+						Flying fox
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/fruitbat.jpg">
+						<br>
+						Fruit bat
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/possum.jpg">
+						<br>
+						Possum
+					</label>
+					<label>
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/beetle.jpg">
+						<br>
+						Beetle
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/species/fly.jpg">
+						<br>
+						Fly
+					</label>					
+				</div>
+			<!---->
+				<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/saladgreen.jpg">
+						<br>
+						Salad greens
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/roots.jpg">
+						<br>
+						Root crops
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/herb.jpg">
+						<br>
+						Herb
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="creature" value="honeybee">
+						<img src="../images/observation/plant/fruit.jpg">
+						<br>
+						Fruits
+					</label>
+				</div>
+			<!---->	
+				<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
+				<div class="container icon rangeslider">
+					  <div class="range">
+						<input class="myslider" type="range" min="1" max="5" steps="1" value="1">
+					  </div>
 
-					<p>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</p>
-					<label for="harvest">A tiny amount / Like a small snack / Like a big snack / Like a small meal / Like a big meal</label>
-					<input type="range" class="custom-range" min="0" max="4" id="harvest">
+					  <label class= "range-labels">
+						<button type= "button" class="btn btn-info range-labels">A tiny amount </button>
+						<button type= "button" class="btn btn-info range-labels">Like a small snack</button>
+						<button type= "button" class="btn btn-info range-labels">Like a big snack </button>
+						<button type= "button" class="btn btn-info range-labels">like a small meal </button>
+						<button type= "button" class="btn btn-info range-labels"> like a big meal </button>
+					  </label>
 
-					<p>Where did [PLANT 1, PLANT 2... repeatable] grow?</p>
-					<label for="whereGrow">Always in sun / Mostly in sun / Half sun, half shade / Mostly in shade / Always in shade</label>
-					<input type="range" class="custom-range" min="0" max="4" id="whereGrow">
+				</div>
+			<!---->
+				<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
+				<div class="container icon boxes slider">
+					<input id="alwaysSun" type="radio" name="plants">
+					<label for="alwaysSun">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						Always in sun
+					</label>
+					<input id="mostlySun" type="radio" name="plants">
+					<label for="mostlySun">
+						<img src="../images/observation/weather/partlycloud.png">
+						<br>
+						Mostly in sun
+					</label>
+					<input id="half" type="radio" name="plants">
+						<label for="half">
+						<img src="../images/observation/weather/cloudy.png">
+						<br>
+						Half sun, half shade
+					</label>
+					<input id="mostlyShade" type="radio" name="plants" checked>
+						<label for="mostlyShade">
+						<img src="../images/observation/weather/rainy.png">
+						<br>
+						Mostly in shade
+					</label>
+					<input id="alwaysShade" type="radio" name="plants">
+						<label for="alwaysShade">
+						<img src="../images/observation/weather/stormy.png">
+						<br>
+						Always in shade
+					</label>
+				</div>
 
-					<p>Which 2 plants are the healthiest? [SHOULD RESTRICT TO 2 CHOICES]</p>
-					<table>
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" name="healthiest" value="salad">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Salad greens</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="healthiest" value="root">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Root crops</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="healthiest" value="herbs">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Herbs</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="healthiest" value="fruit">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Fruits</p>
-								</label>
-							</td>
-						</tr>	
-					</table>
 
-					<p>
-						What are the 2 main reasons [PLANT A, PLANT B, not repeatable - A&B only] is healthy?
-						[SHOULD RESTRICT TO 2 REASONS PER PLANT]
-					</p>
-					<table>
-						<tr>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="1">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">The amount of sunlight it got</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="2">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">The time when it got sunlight</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="3">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">The nutrients in the soil</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="4">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">The wind it got</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="5">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">The water in the soil</p>
-								</label>
-							</td>
-							<td>
-								<label>
-									<input type="checkbox" name="reason" value="6">
-									<img src="http://placehold.it/120x120/b0f/fff&text=Image">
-									<p style="text-align:center">Other</p>
-								</label>
-							</td>
-						</tr>	
-					</table>
-
-					<input class="btn btn-primary" type="submit" value="Submit">
-					<!-- THIS IS THE END OF THE OBSERVATION FORM-->
-				</div> 
+			<!---->
+				<h4>Which 2 plants are the healthiest? [should restrict to 2 choices]</h4>
+				<div class="container icon boxes checkbox">
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/saladgreen.jpg">
+						<br>
+						Salad greens
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/roots.jpg">
+						<br>
+						Root crops
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/herb.jpg">
+						<br>
+						Herbs
+					</label>
+					<label class="fourCol">
+						<input type="checkbox" name="plant">
+						<img src="../images/observation/plant/fruit.jpg">
+						<br>
+						Fruits
+					</label>
+				</div>
+			<!---->
+				<h4>What are the 2 main reasons PLANT A is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				<div class="container icon boxes checkbox">
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The amount of sunlight it got
+					</label>
+					<label>
+						<input type="checkbox" name="plantA" >
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The wind it got
+						
+					</label>
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The nutrients in the soil
+					</label>
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The time when it got sunlight
+					</label>
+					<label>
+						<input type="checkbox" name="plantA">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The water in the soil
+					</label>
+				</div>
+				<h4>What are the 2 main reasons PLANT B is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				<div class="container icon boxes checkbox">
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The amount of sunlight it got
+					</label>
+					<label>
+						<input type="checkbox" name="plantB" >
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The wind it got
+						
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The nutrients in the soil
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The time when it got sunlight
+					</label>
+					<label>
+						<input type="checkbox" name="plantB">
+						<img src="../images/observation/weather/sunny.png">
+						<br>
+						The water in the soil
+					</label>
+				</div>
 			</div>
+			</div>
+			
+							
+
+
 		</section>
 
 		
@@ -542,7 +514,8 @@
 		
 		<!-- Our Code -->
 		<script src="../js/phpManager.js"></script> 
+		
+		<script src="../js/tables.js"></script>
+		<script src="../js/range_slider.js"></script>
 		<script src="../js/main.js"></script> 
-		<script src="../js/tables.js"></script> 
-
 </html>

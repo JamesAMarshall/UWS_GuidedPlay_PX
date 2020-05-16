@@ -135,6 +135,18 @@ function logResponseText(responseText){
 }
 
 //------------------------------------------
+// Limit selection of checkboxes
+
+$("input[name=plant]").change(function(){
+    var max= 2;
+    if( $("input[name=plant]:checked").length == max ){
+        $("input[name=plant]").attr('disabled', 'disabled');
+        $("input[name=plant]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=plant]").removeAttr('disabled');
+    }
+})
+//------------------------------------------
 // Page element hiding functions
 {
 	// Base functions

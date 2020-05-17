@@ -27,9 +27,16 @@ function previousQuestion(currentQuestion, previousQuestion) {
     ShowElement(previousQuestion);
 }
 
+function skipQuestion(currentQuestion, specificQuestion){
+	HideElement(currentQuestion);
+    ShowElement(specificQuestion);
+}
+
+
 function submitForm() {
     alert("End of form! Data from all inputs should go to database.");
 }
+
 
 
 

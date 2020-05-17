@@ -192,7 +192,7 @@
 					</div>
 					<br>
 					<div class="progressButtons" id="nextButton">
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q1','q2');">Next</button>
+						<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q1','q2');">Next</button>
 					</div>
 				</div>
 			<!--QUESTION 2 -->
@@ -207,16 +207,20 @@
 							Yes
 						</label>
 						<label class="space" for ="novisit">
-							<input id="novisit" type="radio" name="visit">
+							<input id="novisit" type="radio" name="visit" onclick="skipQuestion('q2','q5')">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
-						</label>
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
+						</div>
 					</div>
 				</div>
 			<!--QUESTION 3 -->
@@ -297,9 +301,14 @@
 						</label>					
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
+						</div>						
 					</div>
 				</div>
 			<!--QUESTION 4 -->	
@@ -332,9 +341,14 @@
 						</label>
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
+						</div>						
 					</div>
 				</div>
 			<!--QUESTION 5 -->
@@ -348,16 +362,21 @@
 							Yes
 						</label>
 						<label class="space" for ="notReady">
-							<input id="notReady" type="radio" name="harvestReady">
+							<input id="notReady" type="radio" name="harvestReady" onclick="skipQuestion('q5','q8')">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
 						</label>
 					</div>		
-					<br>			
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
+					<br>
+				<!-- back and next button-->					
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
+						</div>						
 					</div>
 				</div>
 			<!--QUESTION 6 -->
@@ -390,10 +409,16 @@
 						</label>
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
+						</div>						
 					</div>
+
 				</div>
 			<!--QUESTION 7 -->
 				<div id="q7">
@@ -472,9 +497,14 @@
 					</div>
 					<br/>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
+						</div>						
 					</div>
 				</div>
 			<!--QUESTION 8 -->
@@ -507,9 +537,15 @@
 						</label>
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
+							
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
+						</div>						
 					</div>
 				</div>
 			<!--QUESTION 9-->
@@ -548,11 +584,17 @@
 							The water in the soil
 						</label>
 					</div>
-					<br>					
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
-					</div>
+					<br>
+				<!-- back and next button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
+							
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
+						</div>						
+					</div>					
 				</div>
 			<!--QUESTION 10-->
 				<div id="q10">
@@ -591,16 +633,21 @@
 						</label>
 					</div>
 					<br>
-					<div class="progressButtons">
-						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
-						<button type="button" class="btn btn-success btn-lg" onclick="submitForm()">Submit</button>
-					</div>
+				<!-- next and submit button-->
+					<div class="form-group row progressButtons">
+						<div class="col-md-6">
+						<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
+							
+						</div>
+						<div class="col-md-6">
+						<button type="button" class="btn btn-outline-success btn-lg" onclick="submitForm()">Submit</button>
+						</div>						
+					</div>	
 				</div>
 
 			<!--END OF OBSERVATION FORM-->
-			</div>		
-							
-
+			</div>	
+			
 		</section>
 
 		

@@ -8,12 +8,9 @@
   
 }
 
-.thumbs input[type="radio"] {
-  display: none;
-}
 
 .thumbs label:hover {
-  font-size: 20px;
+  font-size: 25px;
   color: rgba(40,168,99);
 }
 
@@ -66,7 +63,7 @@ img {
   padding: 5px;
   width:170px;
   height:170px;
-
+  position: static;
 }
 
 /*------------------------------------------------------------------
@@ -156,6 +153,26 @@ img {
 .progressButtons{
 	float: middle;
 	text-align: center;
+	justify-content: space between;
+}
+
+.btn-outline-success{
+	font-size: 50px;
+	width: auto;
+	border-radius: 25px;
+}
+.btn-outline-secondary{
+	font-size: 50px;
+	width: auto;
+	border-radius: 25px;
+}
+
+.button {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
 }
 
 /*----------------------------------------

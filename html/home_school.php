@@ -211,8 +211,9 @@
 							<br>
 							Not today
 						</label>
+						<br>
 					</div>
-					<br/>
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q2','q1')">Back</button>
 						<button onclick="nextQuestion('q2','q3')">Next</button>
@@ -296,7 +297,7 @@
 							Fly
 						</label>					
 					</div>
-					
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q3','q2')">Back</button>
 						<button onclick="nextQuestion('q3','q4')">Next</button>
@@ -331,6 +332,7 @@
 							Fruits
 						</label>
 					</div>
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q4','q3')">Back</button>
 						<button onclick="nextQuestion('q4','q5')">Next</button>
@@ -339,7 +341,7 @@
 			<!--QUESTION 5 -->
 				<div id="q5">
 					<h4>Were any plants ready for harvest today?</h4>
-					<div class="container icon boxes radioButton">
+					<div class="container icon radioButton thumbs">
 						<label for ="ready">
 							<input id="ready" type="radio" name="harvestReady">
 							<img src="../images/observation/thumbUp.jpg">
@@ -352,7 +354,8 @@
 							<br>
 							Not today
 						</label>
-					</div>					
+					</div>		
+					<br>			
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q5','q4')">Back</button>
 						<button onclick="nextQuestion('q5','q6')">Next</button>
@@ -387,7 +390,7 @@
 							Fruits
 						</label>
 					</div>
-							
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q6','q5')">Back</button>
 						<button onclick="nextQuestion('q6','q7')">Next</button>
@@ -469,7 +472,7 @@
 						</div>
 					</div>
 					<br/>
-						
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q7','q6')">Back</button>
 						<button onclick="nextQuestion('q7','q8')">Next</button>
@@ -504,7 +507,7 @@
 							Fruits
 						</label>
 					</div>
-
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q8','q7')">Back</button>
 						<button onclick="nextQuestion('q8','q9')">Next</button>
@@ -546,7 +549,7 @@
 							The water in the soil
 						</label>
 					</div>
-					
+					<br>					
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q9','q8')">Back</button>
 						<button onclick="nextQuestion('q9','q10')">Next</button>
@@ -588,7 +591,7 @@
 							The water in the soil
 						</label>
 					</div>
-						
+					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q10','q9')">Back</button>
 						<button onclick="submitForm()">Submit</button>

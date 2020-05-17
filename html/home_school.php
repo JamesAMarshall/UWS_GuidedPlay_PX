@@ -288,25 +288,25 @@
 					<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
-							<input type="checkbox" name="visitedPlants" value="1">
+							<input type="checkbox" name="visitedPlants">
 							<img src="../images/observation/plant/saladgreen.jpg">
 							<br>
 							Salad greens
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="visitedPlants" value="2">
+							<input type="checkbox" name="visitedPlants">
 							<img src="../images/observation/plant/roots.jpg">
 							<br>
 							Root crops
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="visitedPlants" value="3">
+							<input type="checkbox" name="visitedPlants">
 							<img src="../images/observation/plant/herb.jpg">
 							<br>
 							Herbs
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="visitedPlants" value="4">
+							<input type="checkbox" name="visitedPlants">
 							<img src="../images/observation/plant/fruit.jpg">
 							<br>
 							Fruits
@@ -364,49 +364,67 @@
 
 				<div id="q7">
 					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
-					<div class="container icon rangeslider">
-						<div class="range">
-							<input class="myslider" type="range" min="1" max="5" steps="1" value="1">
-						</div>
-
-						<label class= "range-labels">
-							<button type= "button" class="btn btn-info range-labels">A tiny amount </button>
-							<button type= "button" class="btn btn-info range-labels">Like a small snack</button>
-							<button type= "button" class="btn btn-info range-labels">Like a big snack </button>
-							<button type= "button" class="btn btn-info range-labels">like a small meal </button>
-							<button type= "button" class="btn btn-info range-labels"> like a big meal </button>
+					<div class="container icon boxes slider">
+						<input id="tinyAmount" type="radio" name="harvest">
+						<label for="tinyAmount">
+							<img src="../images/observation/meal/tinyAmount.jpg">
+							<br>
+							A tiny amount
+						</label>
+						<input id="smallSnack" type="radio" name="harvest">
+						<label for="smallSnack">
+							<img src="../images/observation/meal/smallSnack.jpg">
+							<br>
+							Like a small snack
+						</label>
+						<input id="bigSnack" type="radio" name="harvest">
+							<label for="bigSnack">
+							<img src="../images/observation/meal/bigSnack.jpg">
+							<br>
+							Like a big snack
+						</label>
+						<input id="smallMeal" type="radio" name="harvest" checked>
+							<label for="smallMeal">
+							<img src="../images/observation/meal/smallMeal.jpg">
+							<br>
+							Like a small meal
+						</label>
+						<input id="bigMeal" type="radio" name="harvest">
+							<label for="bigMeal">
+							<img src="../images/observation/meal/bigMeal.jpg">
+							<br>
+							Like a big meal
 						</label>
 					</div>
-
 					<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
 					<div class="container icon boxes slider">
 						<input id="alwaysSun" type="radio" name="plantLocation">
 						<label for="alwaysSun">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/environment/alwaysInSun.jpg">
 							<br>
 							Always in sun
 						</label>
 						<input id="mostlySun" type="radio" name="plantLocation">
 						<label for="mostlySun">
-							<img src="../images/observation/weather/partlycloud.png">
+							<img src="../images/observation/environment/mostlyInSun.jpg">
 							<br>
 							Mostly in sun
 						</label>
 						<input id="half" type="radio" name="plantLocation">
 							<label for="half">
-							<img src="../images/observation/weather/cloudy.png">
+							<img src="../images/observation/environment/halfShade.jpg">
 							<br>
 							Half sun, half shade
 						</label>
 						<input id="mostlyShade" type="radio" name="plantLocation" checked>
 							<label for="mostlyShade">
-							<img src="../images/observation/weather/rainy.png">
+							<img src="../images/observation/environment/mostlyInShade.jpg">
 							<br>
 							Mostly in shade
 						</label>
 						<input id="alwaysShade" type="radio" name="plantLocation">
 							<label for="alwaysShade">
-							<img src="../images/observation/weather/stormy.png">
+							<img src="../images/observation/environment/alwaysInShade.jpg">
 							<br>
 							Always in shade
 						</label>
@@ -448,32 +466,32 @@
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantA">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/sunlightPlant.jpg">
 							<br>
 							The amount of sunlight it got
 						</label>
 						<label>
 							<input type="checkbox" name="plantA" >
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/windPlant.jpg">
 							<br>
 							The wind it got
 							
 						</label>
 						<label>
 							<input type="checkbox" name="plantA">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/nutrientPlant.jpg">
 							<br>
 							The nutrients in the soil
 						</label>
 						<label>
 							<input type="checkbox" name="plantA">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/timePlant.jpg">
 							<br>
 							The time when it got sunlight
 						</label>
 						<label>
 							<input type="checkbox" name="plantA">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/waterPlant.jpg">
 							<br>
 							The water in the soil
 						</label>
@@ -483,32 +501,32 @@
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantB">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/sunlightPlant.jpg">
 							<br>
 							The amount of sunlight it got
 						</label>
 						<label>
 							<input type="checkbox" name="plantB" >
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/windPlant.jpg">
 							<br>
 							The wind it got
 							
 						</label>
 						<label>
 							<input type="checkbox" name="plantB">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/nutrientPlant.jpg">
 							<br>
 							The nutrients in the soil
 						</label>
 						<label>
 							<input type="checkbox" name="plantB">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/timePlant.jpg">
 							<br>
 							The time when it got sunlight
 						</label>
 						<label>
 							<input type="checkbox" name="plantB">
-							<img src="../images/observation/weather/sunny.png">
+							<img src="../images/observation/location/waterPlant.jpg">
 							<br>
 							The water in the soil
 						</label>
@@ -607,7 +625,6 @@
 		<!-- Our Code -->
 		<script src="../js/phpManager.js"></script> 
 		<script src="../js/tables.js"></script>
-		<script src="../js/range_slider.js"></script>
 		<script src="../js/main.js"></script> 
 		<script src="../js/observation.js"></script> 		
 </html>

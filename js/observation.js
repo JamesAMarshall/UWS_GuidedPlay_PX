@@ -7,16 +7,35 @@ function loadQuestion1() {
     HideElement("q2");
 }
 
+
+
+
+
 function nextQuestion() {
-    alert("Hello! I am an alert box!");
-    // HideElement("q1");
-    // ShowElement("q2");
+    HideElement("q1");
+    ShowElement("q2");
 }
+
+
+
+
+
 
 function previousQuestion() {
     
 }
 
+
+function submitForm() {
+    
+}
+
+
+
+
+
+
+//////
 
 <script>
     <button onclick="nextQuestion()">Next</button>

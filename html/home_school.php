@@ -82,130 +82,145 @@
 
 			<div id="observation_collapse" class="collapse">
 			<!--BEGINNING OF OBSERVATION FORM-->
-
+			<!--QUESTION 1 -->
 				<div id="q1">
 					<h4>Today's the weather was...</h4>
-					<div class="container icon boxes slider">
-						<input id="sunny" type="radio" name="weather">
-						<label for="sunny">
-							<img src="../images/observation/weather/sunny.png">
-							<br>
-							Sunny
-						</label>
-						<input id="partCloudy" type="radio" name="weather">
-						<label for="partCloudy">
-							<img src="../images/observation/weather/partlycloud.png">
-							<br>
-							Partly cloudy
-						</label>
-						<input id="cloudy" type="radio" name="weather">
-							<label for="cloudy">
-							<img src="../images/observation/weather/cloudy.png">
-							<br>
-							Cloudy
-						</label>
-						<input id="rainy" type="radio" name="weather" checked>
-							<label for="rainy">
-							<img src="../images/observation/weather/rainy.png">
-							<br>
-							Rainy
-						</label>
-						<input id="stormy" type="radio" name="weather">
-							<label for="stormy">
-							<img src="../images/observation/weather/stormy.png">
-							<br>
-							Stormy
-						</label>
-						<div id="progressButtons">
-						<button onclick="nextQuestion()">Next</button>
+					<div class="container icon">
+						<div class=" boxes slider">
+							<input id="sunny" type="radio" name="weather">
+							<label for="sunny">
+								<img src="../images/observation/weather/sunny.png">
+								<br>
+								Sunny
+							</label>
+							<input id="partlyCloudy" type="radio" name="weather">
+							<label for="partlyCloudy">
+								<img src="../images/observation/weather/partlycloud.png">
+								<br>
+								Partly cloudy
+							</label>
+							<input id="cloudy" type="radio" name="weather">
+								<label for="cloudy">
+								<img src="../images/observation/weather/cloudy.png">
+								<br>
+								Cloudy
+							</label>
+							<input id="rainy" type="radio" name="weather" checked>
+								<label for="rainy">
+								<img src="../images/observation/weather/rainy.png">
+								<br>
+								Rainy
+							</label>
+							<input id="stormy" type="radio" name="weather">
+								<label for="stormy">
+								<img src="../images/observation/weather/stormy.png">
+								<br>
+								Stormy
+							</label>
+						</div>	
+					</div>					
+					<br>
+					<div class="container icon">
+						<div class=" boxes slider">
+							<input id="hot" type="radio" name="degree">
+							<label for="hot">
+								<img src="../images/observation/weather/hot.png">
+								<br>
+								Hot
+							</label>
+							
+							<input id="bitHot" type="radio" name="degree">
+							<label for="bitHot">
+								<img src="../images/observation/weather/littlehot.png">
+								<br>
+								A bit hot
+							</label>
+							<input id="warm" type="radio" name="degree" checked >
+							<label for="warm">
+								<img src="../images/observation/weather/warm.png">
+								<br>
+								Warm
+							</label>
+							<input id="bitCold" type="radio" name="degree">
+							<label for="bitCold">
+								<img src="../images/observation/weather/littlecold.png">
+								<br>
+								A bit cold
+							</label>
+							<input id="cold" type="radio" name="degree">
+							<label for="cold">
+								<img src="../images/observation/weather/cold.png">
+								<br>
+								Cold
+							</label>
 						</div>
 					</div>
-
-					<div class="container icon boxes slider">
-						<input id="hot" type="radio" name="degree">
-						<label for="hot">
-							<img src="../images/observation/weather/hot.png">
+					<br>
+					<div class="container icon">
+						<div class="boxes slider">
+							<input id="noWind" type="radio" name="wind">
+							<label for="noWind">
+							<img src="../images/observation/weather/wind1.png">
 							<br>
-							Hot
-						</label>
-						
-						<input id="bitHot" type="radio" name="degree">
-						<label for="bitHot">
-							<img src="../images/observation/weather/littlehot.png">
+							No wind
+							</label>
+							<input id="little" type="radio" name="wind">
+							<label for="little">
+							<img src="../images/observation/weather/wind2.png">
 							<br>
-							A bit hot
-						</label>
-						<input id="warm" type="radio" name="degree" checked >
-						<label for="warm">
-							<img src="../images/observation/weather/warm.png">
+							A little wind
+							</label>
+							<input id="windy" type="radio" name="wind" checked >
+							<label for="windy">
+							<img src="../images/observation/weather/wind3.png">
 							<br>
-							Warm
-						</label>
-						<input id="bitCold" type="radio" name="degree">
-						<label for="bitCold">
-							<img src="../images/observation/weather/littlecold.png">
+							Windy
+							</label>
+							<input id="veryWindy" type="radio" name="wind">
+							<label for="veryWindy">
+							<img src="../images/observation/weather/wind4.png">
 							<br>
-							A bit cold
-						</label>
-						<input id="cold" type="radio" name="degree">
-						<label for="cold">
-							<img src="../images/observation/weather/cold.png">
+							Very windy
+							</label>
+							<input id="extreme" type="radio" name="wind">
+							<label for="extreme">
+							<img src="../images/observation/weather/wind5.png">
 							<br>
-							Cold
-						</label>
+							Extremely windy
+							</label>
+						</div>
 					</div>
-					<div class="container icon boxes slider">
-						<input id="noWind" type="radio" name="wind">
-						<label for="noWind">
-						<img src="../images/observation/weather/wind1.png">
-						<br>
-						No wind
-						</label>
-						<input id="little" type="radio" name="wind">
-						<label for="little">
-						<img src="../images/observation/weather/wind2.png">
-						<br>
-						A little wind
-						</label>
-						<input id="windy" type="radio" name="wind" checked >
-						<label for="windy">
-						<img src="../images/observation/weather/wind3.png">
-						<br>
-						Windy
-						</label>
-						<input id="veryWindy" type="radio" name="wind">
-						<label for="veryWindy">
-						<img src="../images/observation/weather/wind4.png">
-						<br>
-						Very windy
-						</label>
-						<input id="extreme" type="radio" name="wind">
-						<label for="extreme">
-						<img src="../images/observation/weather/wind5.png">
-						<br>
-						Extremely windy
-						</label>
-					</div>
+					<br>
+						<div class="progressButtons">
+							<button onclick="nextQuestion()">Next</button>
+						</div>
+					<br>
 				</div>
-
+			<!--QUESTION 2 -->
 				<div id="q2">
-					<h4>Did any creatures visit the plants today? PLEASE DO ROW OF 2</h4>
-					<div class="container icon boxes">
-						<input id="yesvisit" type="radio" name="visit">
-						<label for="yes">
-							<img src="../images/observation/weather/sunny.png">
+					<h4>Did any creatures visit the plants today?</h4>
+					<div class="container icon radioButton">
+						<label for ="yesvisit">
+							<input id="yesvisit" type="radio" name="visit">
+							<img src="../images/observation/thumbUp.jpg">
 							<br>
-							Yes (thumbs up pic)
+							Yes
 						</label>
-						<input id="no" type="radio" name="visit">
-						<label for="novisit">
-							<img src="../images/observation/weather/partlycloud.png">
+						<label for ="novisit">
+							<input id="novisit" type="radio" name="visit">
+							<img src="../images/observation/thumbDown.jpg">
 							<br>
-							Not today (thumbs down pic)
+							Not today
 						</label>
 					</div>
+					<br/>
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
 				</div>
-
+			<!--QUESTION 3 -->
 				<div id="q3">
 					<h4>The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
@@ -282,8 +297,14 @@
 							Fly
 						</label>					
 					</div>
+					
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br>
 				</div>
-				
+			<!--QUESTION 4 -->	
 				<div id="q4">
 					<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
@@ -312,26 +333,36 @@
 							Fruits
 						</label>
 					</div>
-				</div>
-
-				<div id="q5">
-					<h4>Were any plants ready for harvest today? PLEASE DO ROW OF 2</h4>
-					<div class="container icon boxes">
-						<input id="ready" type="radio" name="harvestReady">
-						<label for="yes">
-							<img src="../images/observation/weather/sunny.png">
-							<br>
-							Yes (thumbs up pic)
-						</label>
-						<input id="notReady" type="radio" name="harvestReady">
-						<label for="novisit">
-							<img src="../images/observation/weather/partlycloud.png">
-							<br>
-							Not today (thumbs down pic)
-						</label>
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
 					</div>
+					<br/>
 				</div>
-
+		<!--QUESTION 5 -->
+				<div id="q5">
+					<h4>Were any plants ready for harvest today?</h4>
+					<div class="container icon boxes radioButton">
+						<label for ="ready">
+							<input id="ready" type="radio" name="harvestReady">
+							<img src="../images/observation/thumbUp.jpg">
+							<br>
+							Yes
+						</label>
+						<label for ="notReady">
+							<input id="notReady" type="radio" name="harvestReady">
+							<img src="../images/observation/thumbDown.jpg">
+							<br>
+							Not today
+						</label>
+					</div>					
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
+				</div>
+			<!--QUESTION 6 -->
 				<div id="q6">
 					<h4>Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
@@ -360,77 +391,102 @@
 							Fruits
 						</label>
 					</div>
+					
+							
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
 				</div>
-
+		<!--QUESTION 7 -->
 				<div id="q7">
 					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
-					<div class="container icon boxes slider">
-						<input id="tinyAmount" type="radio" name="harvest">
-						<label for="tinyAmount">
-							<img src="../images/observation/meal/tinyAmount.jpg">
-							<br>
-							A tiny amount
-						</label>
-						<input id="smallSnack" type="radio" name="harvest">
-						<label for="smallSnack">
-							<img src="../images/observation/meal/smallSnack.jpg">
-							<br>
-							Like a small snack
-						</label>
-						<input id="bigSnack" type="radio" name="harvest">
-							<label for="bigSnack">
-							<img src="../images/observation/meal/bigSnack.jpg">
-							<br>
-							Like a big snack
-						</label>
-						<input id="smallMeal" type="radio" name="harvest" checked>
-							<label for="smallMeal">
-							<img src="../images/observation/meal/smallMeal.jpg">
-							<br>
-							Like a small meal
-						</label>
-						<input id="bigMeal" type="radio" name="harvest">
-							<label for="bigMeal">
-							<img src="../images/observation/meal/bigMeal.jpg">
-							<br>
-							Like a big meal
-						</label>
+					<div class="container icon">
+						<div class=" boxes slider">
+							<input id="tinyAmount" type="radio" name="harvest">
+							<label for="tinyAmount">
+								<img src="../images/observation/meal/tinyAmount.jpg">
+								<br>
+								A tiny amount
+							</label>
+							<input id="smallSnack" type="radio" name="harvest">
+							<label for="smallSnack">
+								<img src="../images/observation/meal/smallSnack.jpg">
+								<br>
+								Like a small snack
+							</label>
+							<input id="bigSnack" type="radio" name="harvest">
+								<label for="bigSnack">
+								<img src="../images/observation/meal/bigSnack.jpg">
+								<br>
+								Like a big snack
+							</label>
+							<input id="smallMeal" type="radio" name="harvest" checked>
+								<label for="smallMeal">
+								<img src="../images/observation/meal/smallMeal.jpg">
+								<br>
+								Like a small meal
+							</label>
+							<input id="bigMeal" type="radio" name="harvest">
+								<label for="bigMeal">
+								<img src="../images/observation/meal/bigMeal.jpg">
+								<br>
+								Like a big meal
+							</label>
+						</div>
 					</div>
+						<br/>
+						<div class="progressButtons">
+							<button onclick="previousQuestion()">Back</button>
+							<button onclick="nextQuestion()">Next</button>
+						</div>
+						<br/>
+						
 					<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
-					<div class="container icon boxes slider">
-						<input id="alwaysSun" type="radio" name="plantLocation">
-						<label for="alwaysSun">
-							<img src="../images/observation/environment/alwaysInSun.jpg">
-							<br>
-							Always in sun
-						</label>
-						<input id="mostlySun" type="radio" name="plantLocation">
-						<label for="mostlySun">
-							<img src="../images/observation/environment/mostlyInSun.jpg">
-							<br>
-							Mostly in sun
-						</label>
-						<input id="half" type="radio" name="plantLocation">
-							<label for="half">
-							<img src="../images/observation/environment/halfShade.jpg">
-							<br>
-							Half sun, half shade
-						</label>
-						<input id="mostlyShade" type="radio" name="plantLocation" checked>
-							<label for="mostlyShade">
-							<img src="../images/observation/environment/mostlyInShade.jpg">
-							<br>
-							Mostly in shade
-						</label>
-						<input id="alwaysShade" type="radio" name="plantLocation">
-							<label for="alwaysShade">
-							<img src="../images/observation/environment/alwaysInShade.jpg">
-							<br>
-							Always in shade
-						</label>
+					<div class="container icon">
+						<div class=" boxes slider">
+							<input id="alwaysSun" type="radio" name="plantLocation">
+							<label for="alwaysSun">
+								<img src="../images/observation/environment/alwaysInSun.jpg">
+								<br>
+								Always in sun
+							</label>
+							<input id="mostlySun" type="radio" name="plantLocation">
+							<label for="mostlySun">
+								<img src="../images/observation/environment/mostlyInSun.jpg">
+								<br>
+								Mostly in sun
+							</label>
+							<input id="half" type="radio" name="plantLocation">
+								<label for="half">
+								<img src="../images/observation/environment/halfShade.jpg">
+								<br>
+								Half sun, half shade
+							</label>
+							<input id="mostlyShade" type="radio" name="plantLocation" checked>
+								<label for="mostlyShade">
+								<img src="../images/observation/environment/mostlyInShade.jpg">
+								<br>
+								Mostly in shade
+							</label>
+							<input id="alwaysShade" type="radio" name="plantLocation">
+								<label for="alwaysShade">
+								<img src="../images/observation/environment/alwaysInShade.jpg">
+								<br>
+								Always in shade
+							</label>
+						</div>
 					</div>
+					<br/>
+						
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
 				</div>
-
+			<!--QUESTION 8 -->
 				<div id="q8">
 					<h4>Which 2 plants are the healthiest?</h4>
 					<div class="container icon boxes checkbox">
@@ -459,8 +515,14 @@
 							Fruits
 						</label>
 					</div>
-				</div>
 
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
+				</div>
+		<!--QUESTION 9-->
 				<div id="q9">
 					<h4>What are the 2 main reasons PLANT A is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
 					<div class="container icon boxes checkbox">
@@ -496,6 +558,12 @@
 							The water in the soil
 						</label>
 					</div>
+					
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="nextQuestion()">Next</button>
+					</div>
+					<br/>
 
 					<h4>What are the 2 main reasons PLANT B is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
 					<div class="container icon boxes checkbox">
@@ -531,17 +599,17 @@
 							The water in the soil
 						</label>
 					</div>
+						
+					<div class="progressButtons">
+						<button onclick="previousQuestion()">Back</button>
+						<button onclick="submitForm()">Submit</button>
+					</div>
 
-					<button onclick="myFunction()">Back</button>
-					<button onclick="myFunction()">Submit</button>
 				</div>
 
 			<!--END OF OBSERVATION FORM-->
-			</div>
-			</div>
-			
+			</div>		
 							
-
 
 		</section>
 

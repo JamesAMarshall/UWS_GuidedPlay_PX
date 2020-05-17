@@ -1,8 +1,12 @@
+.thumbs {
+  float: middle;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /*------------------------------------------------------------------
 [ BOX BORDER]*/
-
 .boxes {
-
   padding-bottom: 0.25em;
   border-radius: 10px;
   margin: 1em auto;
@@ -35,9 +39,9 @@ img {
   width:170px;
   height:170px;
 }
+
 /*------------------------------------------------------------------
 [ RADIO BUTTON]*/
-
 .radioButton input[type="radio"] {
   display: none;
 }
@@ -49,7 +53,6 @@ img {
 	opacity: 0.7;
 	
 }
-
 
 .slider input[type="radio"] {
   display: none;

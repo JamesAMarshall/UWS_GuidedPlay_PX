@@ -135,38 +135,6 @@ function logResponseText(responseText){
 }
 
 //------------------------------------------
-// Limit selection of checkboxes
-
-$("input[name=healthiestPlants]").change(function(){
-    var max= 2;
-    if( $("input[name=healthiestPlants]:checked").length == max ){
-        $("input[name=healthiestPlants]").attr('disabled', 'disabled');
-        $("input[name=healthiestPlants]:checked").removeAttr('disabled');
-    }else{
-         $("input[name=healthiestPlants]").removeAttr('disabled');
-    }
-})
-
-$("input[name=plantA]").change(function(){
-    var max= 2;
-    if( $("input[name=plantA]:checked").length == max ){
-        $("input[name=plantA]").attr('disabled', 'disabled');
-        $("input[name=plantA]:checked").removeAttr('disabled');
-    }else{
-         $("input[name=plantA]").removeAttr('disabled');
-    }
-})
-
-$("input[name=plantB]").change(function(){
-    var max= 2;
-    if( $("input[name=plantB]:checked").length == max ){
-        $("input[name=plantB]").attr('disabled', 'disabled');
-        $("input[name=plantB]:checked").removeAttr('disabled');
-    }else{
-         $("input[name=plantB]").removeAttr('disabled');
-    }
-})
-//------------------------------------------
 // Page element hiding functions
 {
 	// Base functions

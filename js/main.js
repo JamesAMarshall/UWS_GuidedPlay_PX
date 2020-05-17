@@ -137,13 +137,33 @@ function logResponseText(responseText){
 //------------------------------------------
 // Limit selection of checkboxes
 
-$("input[name=plant]").change(function(){
+$("input[name=healthiestPlants]").change(function(){
     var max= 2;
-    if( $("input[name=plant]:checked").length == max ){
-        $("input[name=plant]").attr('disabled', 'disabled');
-        $("input[name=plant]:checked").removeAttr('disabled');
+    if( $("input[name=healthiestPlants]:checked").length == max ){
+        $("input[name=healthiestPlants]").attr('disabled', 'disabled');
+        $("input[name=healthiestPlants]:checked").removeAttr('disabled');
     }else{
-         $("input[name=plant]").removeAttr('disabled');
+         $("input[name=healthiestPlants]").removeAttr('disabled');
+    }
+})
+
+$("input[name=plantA]").change(function(){
+    var max= 2;
+    if( $("input[name=plantA]:checked").length == max ){
+        $("input[name=plantA]").attr('disabled', 'disabled');
+        $("input[name=plantA]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=plantA]").removeAttr('disabled');
+    }
+})
+
+$("input[name=plantB]").change(function(){
+    var max= 2;
+    if( $("input[name=plantB]:checked").length == max ){
+        $("input[name=plantB]").attr('disabled', 'disabled');
+        $("input[name=plantB]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=plantB]").removeAttr('disabled');
     }
 })
 //------------------------------------------

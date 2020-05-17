@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
     </head>
-	<body onload="SetupSchoolPage()">
+	<body onload="SetupSchoolPage(), hideAllQuestions()">
 	
 	<main>
 		<header class="container mt-5">
@@ -69,7 +69,7 @@
 		<section class="container startHidden mt-4" id="submitObservation">
 			<div class="d-flex">
 				<h2 class="flex-grow-1">Observation</h2>	
-				<button onclick="loadQuestion1();"
+				<button onclick="startForm()"
 					class="btn btn-primary-outline btn-sm" 
 					type="button" 
 					data-toggle="collapse" 
@@ -84,8 +84,8 @@
 			<!--BEGINNING OF OBSERVATION FORM-->
 			<!--QUESTION 1 -->
 				<div id="q1">
-					<h4>Today's the weather was...</h4>
-					<div class="container outerBoxes icon">
+					<h4>Today, the weather was...</h4>
+					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="sunny" type="radio" name="weather">
 							<label for="sunny">
@@ -93,8 +93,8 @@
 								<br>
 								Sunny
 							</label>
-							<input id="partCloudy" type="radio" name="weather">
-							<label for="partCloudy">
+							<input id="partlyCloudy" type="radio" name="weather">
+							<label for="partlyCloudy">
 								<img src="../images/observation/weather/partlycloud.png">
 								<br>
 								Partly cloudy
@@ -120,7 +120,7 @@
 						</div>	
 					</div>					
 					<br>
-					<div class="container outerBoxes icon">
+					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="hot" type="radio" name="degree">
 							<label for="hot">
@@ -156,8 +156,8 @@
 						</div>
 					</div>
 					<br>
-					<div class="container outerBoxes icon">
-						<div class=" boxes slider">
+					<div class="container icon">
+						<div class="boxes slider">
 							<input id="noWind" type="radio" name="wind">
 							<label for="noWind">
 							<img src="../images/observation/weather/wind1.png">
@@ -191,34 +191,33 @@
 						</div>
 					</div>
 					<br>
-						<div class="progressButtons">
-							<button onclick="nextQuestion()">Next</button>
-						</div>
-					<br>
+					<div class="progressButtons" id="nextButton">
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q1','q2');">Next</button>
+					</div>
 				</div>
 			<!--QUESTION 2 -->
 				<div id="q2">
 					<h4>Did any creatures visit the plants today?</h4>
-					<div class="container icon outerBoxes radioButton">
-						<label for ="yesvisit">
+					<div class="container icon radioButton thumbs">
+					
+						<label class="space" for ="yesvisit">
 							<input id="yesvisit" type="radio" name="visit">
 							<img src="../images/observation/thumbUp.jpg">
 							<br>
 							Yes
 						</label>
-						<label for ="novisit">
+						<label class="space" for ="novisit">
 							<input id="novisit" type="radio" name="visit">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
 						</label>
 					</div>
-					<br/>
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
 					</div>
-					<br/>
 				</div>
 			<!--QUESTION 3 -->
 				<div id="q3">
@@ -297,12 +296,11 @@
 							Fly
 						</label>					
 					</div>
-					
-					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
-					</div>
 					<br>
+					<div class="progressButtons">
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
+					</div>
 				</div>
 			<!--QUESTION 4 -->	
 				<div id="q4">
@@ -333,34 +331,34 @@
 							Fruits
 						</label>
 					</div>
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
 					</div>
-					<br/>
 				</div>
-		<!--QUESTION 5 -->
+			<!--QUESTION 5 -->
 				<div id="q5">
 					<h4>Were any plants ready for harvest today?</h4>
-						<div class="container icon boxes radioButton">
-							<label for ="ready">
-								<input id="ready" type="radio" name="harvestReady">
-								<img src="../images/observation/thumbUp.jpg">
-								<br>
-								Yes
-							</label>
-							<label for ="notReady">
-								<input id="notReady" type="radio" name="harvestReady">
-								<img src="../images/observation/thumbDown.jpg">
-								<br>
-								Not today
-							</label>
-					</div>					
+					<div class="container icon radioButton thumbs">
+						<label for ="ready">
+							<input class="space" id="ready" type="radio" name="harvestReady">
+							<img src="../images/observation/thumbUp.jpg">
+							<br>
+							Yes
+						</label>
+						<label class="space" for ="notReady">
+							<input id="notReady" type="radio" name="harvestReady">
+							<img src="../images/observation/thumbDown.jpg">
+							<br>
+							Not today
+						</label>
+					</div>		
+					<br>			
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
 					</div>
-					<br/>
 				</div>
 			<!--QUESTION 6 -->
 				<div id="q6">
@@ -391,15 +389,13 @@
 							Fruits
 						</label>
 					</div>
-					
-							
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
 					</div>
-					<br/>
 				</div>
-		<!--QUESTION 7 -->
+			<!--QUESTION 7 -->
 				<div id="q7">
 					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
 					<div class="container icon">
@@ -436,15 +432,11 @@
 							</label>
 						</div>
 					</div>
-						<br/>
-						<div class="progressButtons">
-							<button onclick="previousQuestion()">Back</button>
-							<button onclick="nextQuestion()">Next</button>
-						</div>
-						<br/>
-						
+
+					<br>						
+					
 					<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
-					<div class="container outerBoxes icon">
+					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="alwaysSun" type="radio" name="plantLocation">
 							<label for="alwaysSun">
@@ -479,12 +471,11 @@
 						</div>
 					</div>
 					<br/>
-						
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
 					</div>
-					<br/>
 				</div>
 			<!--QUESTION 8 -->
 				<div id="q8">
@@ -515,16 +506,15 @@
 							Fruits
 						</label>
 					</div>
-
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
 					</div>
-					<br/>
 				</div>
-		<!--QUESTION 9-->
+			<!--QUESTION 9-->
 				<div id="q9">
-					<h4>What are the 2 main reasons PLANT A is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+					<h4>What are the 2 main reasons PLANT A is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantA">
@@ -558,14 +548,15 @@
 							The water in the soil
 						</label>
 					</div>
-					
+					<br>					
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="nextQuestion()">Next</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
 					</div>
-					<br/>
-
-					<h4>What are the 2 main reasons PLANT B is healthy? [SHOULD RESTRICT TO 2 REASONS PER PLANT] </h4>
+				</div>
+			<!--QUESTION 10-->
+				<div id="q10">
+					<h4>What are the 2 main reasons PLANT B is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantB">
@@ -599,12 +590,11 @@
 							The water in the soil
 						</label>
 					</div>
-						
+					<br>
 					<div class="progressButtons">
-						<button onclick="previousQuestion()">Back</button>
-						<button onclick="submitForm()">Submit</button>
+						<button type="button" class="btn btn-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="submitForm()">Submit</button>
 					</div>
-
 				</div>
 
 			<!--END OF OBSERVATION FORM-->

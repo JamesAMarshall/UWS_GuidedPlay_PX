@@ -1,8 +1,40 @@
 /*------------------------------------------------------------------
+[ STYLING FOR YES/NO THUMBS QUESTIONS]*/
+.thumbs {
+  float: middle;
+  text-align: center;
+  margin: 0 auto;
+
+  
+}
+
+.thumbs input[type="radio"] {
+  display: none;
+}
+
+.thumbs label:hover {
+  font-size: 20px;
+  color: rgba(40,168,99);
+}
+
+.thumbs input:checked + label {
+  font-size: 1.2em;
+  color: rgba(40,168,99);
+}
+.thumbs .space{
+	padding-right: 30px;
+	padding-left: 30px;
+
+}
+
+.thumbs label {
+  cursor: pointer;
+  transition: color .5s;
+}
+
+/*------------------------------------------------------------------
 [ BOX BORDER]*/
-
 .boxes {
-
   padding-bottom: 0.25em;
   border-radius: 10px;
   margin: 1em auto;
@@ -28,29 +60,22 @@
   display: table; width: 100%; clear: both;
 }
 
-.rangeslider{
-	padding-bottom: 0.25em;
-	border: 4px solid #606060;
-	padding-bottom: 0.25em;
-	border-radius: 10px;
-	margin: 1em auto;
-	width: 100%;
-}
 img {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px;
   width:170px;
   height:170px;
-}
-/*------------------------------------------------------------------
-[ RADIO BUTTON]*/
 
+}
+
+/*------------------------------------------------------------------
+[RADIO BUTTON]*/
 .radioButton input[type="radio"] {
   display: none;
 }
 
-/*checked styles*/
+/*Style when radio button is checked*/
 .radioButton [type=radio]:checked + img {
 	padding: 2px;
 	outline: 5px solid rgba(40,168,99);
@@ -58,22 +83,20 @@ img {
 	
 }
 
-
 .slider input[type="radio"] {
   display: none;
 }
 
-
-
 .slider label:hover {
   font-size: 1.2em;
   color: rgba(40,168,99);
- /* text-decoration: underline;*/
 }
+
 .slider input:checked + label {
   font-size: 1.2em;
   color: rgba(40,168,99);
 }
+
 .slider label:last-of-type::after {
   display: block;
   width: 0;
@@ -88,6 +111,7 @@ img {
   margin-left: -0.6em;
   transition: left 0.5s;
 }
+
 .slider input:checked:nth-of-type(1) ~ label:last-of-type::after {
   left: 10%;
 }
@@ -104,6 +128,7 @@ img {
   left: 90%;
 }
 
+
 /*------------------------------------------------------------------
 [CHECK BOX]*/
 
@@ -116,17 +141,22 @@ img {
 .checkbox label:hover {
   font-size: 1.0em;
   color: rgba(40,168,99);
- /* text-decoration: underline;*/
 }
 
 /*checked styles*/
 .checkbox [type=checkbox]:checked + img {
 	padding: 2px;
 	outline: 5px solid rgba(40,168,99);
-	opacity: 0.7;
-	
+	opacity: 0.7;	
 }
 
+/*----------------------------------------
+[ NEXT AND BACK BUTTON STYLING]*/
+
+.progressButtons{
+	float: middle;
+	text-align: center;
+}
 
 /*----------------------------------------
 [ MEDIA QUERIES]*/

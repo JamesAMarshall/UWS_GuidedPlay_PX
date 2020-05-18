@@ -1,16 +1,16 @@
-/* STYLING FOR YES/NO THUMBS QUESTIONS */
+/*------------------------------------------------------------------
+[ STYLING FOR YES/NO THUMBS QUESTIONS]*/
 .thumbs {
   float: middle;
   text-align: center;
   margin: 0 auto;
+
+  
 }
 
-.thumbs input[type="radio"] {
-  display: none;
-}
 
 .thumbs label:hover {
-  font-size: 1.2em;
+  font-size: 25px;
   color: rgba(40,168,99);
 }
 
@@ -18,20 +18,15 @@
   font-size: 1.2em;
   color: rgba(40,168,99);
 }
+.thumbs .space{
+	padding-right: 30px;
+	padding-left: 30px;
 
-.thumbs label:last-of-type::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: "";
-  border: 0.6em solid transparent;
-  border-top-width: 0;
-  border-bottom-color: rgba(40,168,99);
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  margin-left: -0.6em;
-  transition: left 0.5s;
+}
+
+.thumbs label {
+  cursor: pointer;
+  transition: color .5s;
 }
 
 /*------------------------------------------------------------------
@@ -128,6 +123,7 @@ img {
 .slider input:checked:nth-of-type(5) ~ label:last-of-type::after {
   left: 90%;
 }
+
 
 /*------------------------------------------------------------------
 [CHECK BOX]*/

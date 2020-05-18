@@ -84,7 +84,7 @@
 			<!--BEGINNING OF OBSERVATION FORM-->
 			<!--QUESTION 1 -->
 				<div id="q1">
-					<h4>Today, the weather was...</h4>
+					<h4>1. Today, the weather was...</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="sunny" type="radio" name="weather">
@@ -197,15 +197,15 @@
 				</div>
 			<!--QUESTION 2 -->
 				<div id="q2">
-					<h4>Did any creatures visit the plants today?</h4>
+					<h4>2. Did any creatures visit the plants today?</h4>
 					<div class="container icon radioButton thumbs">
-						<label for ="yesvisit">
-							<input id="yesvisit" type="radio" name="visit">
+						<label for = "yesvisit">
+							<input id= "yesvisit" type="radio" name="visit">
 							<img src="../images/observation/thumbUp.jpg">
 							<br>
 							Yes
 						</label>
-						<label for ="novisit">
+						<label for = "novisit">
 							<input id="novisit" type="radio" name="visit">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
@@ -216,13 +216,14 @@
 					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q2','q1')">Back</button>
-						<button onclick="nextQuestion('q2','q3')">Next</button>
+						<button onclick="nextQuestion('q2', 'q3')">Next</button>
+
+						<!-- <button onclick="forkedQuestion(document.getElementById('yesvisit').value, 'q2','q3')">Next</button> -->
 					</div>
-					<br/>
 				</div>
 			<!--QUESTION 3 -->
 				<div id="q3">
-					<h4>The plants were visited by a:</h4>
+					<h4>3. The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="honeybee">
@@ -303,9 +304,9 @@
 						<button onclick="nextQuestion('q3','q4')">Next</button>
 					</div>
 				</div>
-			<!--QUESTION 4 -->	
+			<!--QUESTION 4 -->
 				<div id="q4">
-					<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
+					<h4>4. Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="visitedPlants">
@@ -340,7 +341,7 @@
 				</div>
 			<!--QUESTION 5 -->
 				<div id="q5">
-					<h4>Were any plants ready for harvest today?</h4>
+					<h4>5. Were any plants ready for harvest today?</h4>
 					<div class="container icon radioButton thumbs">
 						<label for ="ready">
 							<input id="ready" type="radio" name="harvestReady">
@@ -363,7 +364,7 @@
 				</div>
 			<!--QUESTION 6 -->
 				<div id="q6">
-					<h4>Which plants are ready for harvest?</h4>
+					<h4>6. Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="readyPlants" value="1">
@@ -398,7 +399,7 @@
 				</div>
 			<!--QUESTION 7 -->
 				<div id="q7">
-					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
+					<h4>7. How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="tinyAmount" type="radio" name="harvest">
@@ -480,7 +481,7 @@
 				</div>
 			<!--QUESTION 8 -->
 				<div id="q8">
-					<h4>Which 2 plants are the healthiest?</h4>
+					<h4>8. Which 2 plants are the healthiest?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="healthiestPlants">
@@ -515,7 +516,7 @@
 				</div>
 			<!--QUESTION 9-->
 				<div id="q9">
-					<h4>What are the 2 main reasons PLANT A is healthy?</h4>
+					<h4>9. What are the 2 main reasons PLANT A is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantA">
@@ -557,7 +558,7 @@
 				</div>
 			<!--QUESTION 10-->
 				<div id="q10">
-					<h4>What are the 2 main reasons PLANT B is healthy?</h4>
+					<h4>10. What are the 2 main reasons PLANT B is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantB">

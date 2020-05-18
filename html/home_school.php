@@ -17,6 +17,7 @@
 
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/observation.css"/>
+		
 		<!-- icon -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -82,7 +83,15 @@
 
 			<div id="observation_collapse" class="collapse">
 			<!--BEGINNING OF OBSERVATION FORM-->
+			<!--PROGRESS BAR-->
+					<h3>Progress: </h3>
+					<div class="progress">
+
+                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> 
+					<br>
 			<!--QUESTION 1 -->
+			<fieldset>
 				<div id="q1">
 					<h4>Today, the weather was...</h4>
 					<div class="container icon">
@@ -191,11 +200,13 @@
 						</div>
 					</div>
 					<br>
-					<div class="progressButtons" id="nextButton">
-						<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q1','q2');">Next</button>
+					<div class="progressButtons" >
+						<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q1','q2')">Next</button>
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 2 -->
+			<fieldset>
 				<div id="q2">
 					<h4>Did any creatures visit the plants today?</h4>
 					<div class="container icon radioButton thumbs">
@@ -216,14 +227,16 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
+							<button type="button" name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
+							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
 						</div>
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 3 -->
+			<fieldset>
 				<div id="q3">
 					<h4>The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
@@ -304,14 +317,16 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
+							<button type="button" name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
+							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
 						</div>						
 					</div>
 				</div>
-			<!--QUESTION 4 -->	
+			</fieldset>
+			<!--QUESTION 4 -->
+			<fieldset>
 				<div id="q4">
 					<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
@@ -344,14 +359,16 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
+							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
+							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
 						</div>						
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 5 -->
+			<fieldset>
 				<div id="q5">
 					<h4>Were any plants ready for harvest today?</h4>
 					<div class="container icon radioButton thumbs">
@@ -372,14 +389,16 @@
 				<!-- back and next button-->					
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
+							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
+							<button type="button"  name="next" class="next btn btn-outline-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
 						</div>						
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 6 -->
+			<fieldset>
 				<div id="q6">
 					<h4>Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
@@ -412,15 +431,17 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
+							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
+							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
 						</div>						
 					</div>
 
 				</div>
+			</fieldset>
 			<!--QUESTION 7 -->
+			<fieldset>
 				<div id="q7">
 					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
 					<div class="container icon">
@@ -500,14 +521,16 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
+							<button type="button"  name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
+							<button type="button"  name="next" class="next btn btn-outline-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
 						</div>						
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 8 -->
+			<fieldset>
 				<div id="q8">
 					<h4>Which 2 plants are the healthiest?</h4>
 					<div class="container icon boxes checkbox">
@@ -540,15 +563,17 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
+							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
 							
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
+							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
 						</div>						
 					</div>
 				</div>
+			</fieldset>
 			<!--QUESTION 9-->
+			<fieldset>
 				<div id="q9">
 					<h4>What are the 2 main reasons PLANT A is healthy?</h4>
 					<div class="container icon boxes checkbox">
@@ -588,15 +613,17 @@
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
+							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
 							
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
+							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
 						</div>						
 					</div>					
 				</div>
+			</fieldset>
 			<!--QUESTION 10-->
+			<fieldset>
 				<div id="q10">
 					<h4>What are the 2 main reasons PLANT B is healthy?</h4>
 					<div class="container icon boxes checkbox">
@@ -636,7 +663,7 @@
 				<!-- next and submit button-->
 					<div class="form-group row progressButtons">
 						<div class="col-md-6">
-						<button type="button" class="btn btn-outline-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
+						<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
 							
 						</div>
 						<div class="col-md-6">
@@ -647,7 +674,7 @@
 
 			<!--END OF OBSERVATION FORM-->
 			</div>	
-			
+		</fieldset>	
 		</section>
 
 		
@@ -719,7 +746,7 @@
 		<script type="text/javascript" src="../libs/BootstrapTables/js/bootstrap-table.min.js"></script>
 		<script type="text/javascript" src="../libs/BootstrapTables/extensions/export/bootstrap-table-export.min.js"></script>
 		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
-
+			
 		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
    	 	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->

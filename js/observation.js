@@ -70,3 +70,53 @@ $("input[name=plantB]").change(function(){
          $("input[name=plantB]").removeAttr('disabled');
     }
 })
+
+// Progress Bar Function
+$(document).ready(function(){
+
+	var current_fs, next_fs, previous_fs; //fieldsets
+	var opacity;
+	var current = 1;
+	var steps = $("fieldset").length;
+
+	setProgressBar(current);
+
+/*Increment the progress bar*/
+$(".next").click(function(){
+
+	current_fs = $(this).parent();
+	next_fs = $(this).parent().next();
+
+	//show the next fieldset
+		next_fs.show();
+	
+
+setProgressBar(++current);
+});
+
+/* decrementing the progress bar*/
+$(".previous").click(function(){
+
+	current_fs = $(this).parent();
+	previous_fs = $(this).parent().prev();
+
+
+	//show the previous fieldset
+	previous_fs.show();
+
+	
+	setProgressBar(--current);
+});
+
+	function setProgressBar(curStep){
+		var percent = parseFloat(100 / steps) * curStep;
+		percent = percent.toFixed();
+		$(".progress-bar")
+		.css("width",percent+"%")
+	}
+
+	$(".submit").click(function(){
+		return false;
+	})
+
+});

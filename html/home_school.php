@@ -93,7 +93,7 @@
 			<!--QUESTION 1 -->
 			<fieldset>
 				<div id="q1">
-					<h4>Today, the weather was...</h4>
+					<h4>1. Today, the weather was...</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="sunny" type="radio" name="weather">
@@ -208,7 +208,7 @@
 			<!--QUESTION 2 -->
 			<fieldset>
 				<div id="q2">
-					<h4>Did any creatures visit the plants today?</h4>
+					<h4>2. Did any creatures visit the plants today?</h4>
 					<div class="container icon radioButton thumbs">
 					
 						<label class="space" for ="yesvisit">
@@ -218,7 +218,7 @@
 							Yes
 						</label>
 						<label class="space" for ="novisit">
-							<input id="novisit" type="radio" name="visit" onclick="skipQuestion('q2','q5')">
+							<input id="novisit" type="radio" name="visit">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
@@ -238,7 +238,7 @@
 			<!--QUESTION 3 -->
 			<fieldset>
 				<div id="q3">
-					<h4>The plants were visited by a:</h4>
+					<h4>3. The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="honeybee">
@@ -328,7 +328,7 @@
 			<!--QUESTION 4 -->
 			<fieldset>
 				<div id="q4">
-					<h4>Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
+					<h4>4. Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="visitedPlants">
@@ -369,8 +369,9 @@
 			</fieldset>
 			<!--QUESTION 5 -->
 			<fieldset>
+			
 				<div id="q5">
-					<h4>Were any plants ready for harvest today?</h4>
+					<h4>5. Were any plants ready for harvest today?</h4>
 					<div class="container icon radioButton thumbs">
 						<label for ="ready">
 							<input class="space" id="ready" type="radio" name="harvestReady">
@@ -379,7 +380,7 @@
 							Yes
 						</label>
 						<label class="space" for ="notReady">
-							<input id="notReady" type="radio" name="harvestReady" onclick="skipQuestion('q5','q8')">
+							<input id="notReady" type="radio" name="harvestReady" class="harvestReady">
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
@@ -400,7 +401,7 @@
 			<!--QUESTION 6 -->
 			<fieldset>
 				<div id="q6">
-					<h4>Which plants are ready for harvest?</h4>
+					<h4>6. Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="readyPlants" value="1">
@@ -443,7 +444,7 @@
 			<!--QUESTION 7 -->
 			<fieldset>
 				<div id="q7">
-					<h4>How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
+					<h4>7. How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="tinyAmount" type="radio" name="harvest">
@@ -532,7 +533,7 @@
 			<!--QUESTION 8 -->
 			<fieldset>
 				<div id="q8">
-					<h4>Which 2 plants are the healthiest?</h4>
+					<h4>8. Which 2 plants are the healthiest?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="healthiestPlants">
@@ -575,7 +576,7 @@
 			<!--QUESTION 9-->
 			<fieldset>
 				<div id="q9">
-					<h4>What are the 2 main reasons PLANT A is healthy?</h4>
+					<h4>9. What are the 2 main reasons PLANT A is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantA">
@@ -625,7 +626,7 @@
 			<!--QUESTION 10-->
 			<fieldset>
 				<div id="q10">
-					<h4>What are the 2 main reasons PLANT B is healthy?</h4>
+					<h4>10. What are the 2 main reasons PLANT B is healthy?</h4>
 					<div class="container icon boxes checkbox">
 						<label>
 							<input type="checkbox" name="plantB">

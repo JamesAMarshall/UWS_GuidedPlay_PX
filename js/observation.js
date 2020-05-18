@@ -17,22 +17,64 @@ function startForm() {
     ShowElement("q1");
 }
 
-function nextQuestion(currentQuestion, nextQuestion) {
-    HideElement(currentQuestion);
-    ShowElement(nextQuestion);
+//Pagination
+function nextQuestion(current, next) {
+
+    //Special cases: question 2 and question 5 can skip next questions
+    if(current == "q2") {
+        if(document.getElementById('yesvisit').checked) {
+            HideElement(current);
+            ShowElement(next);
+        } else {
+            HideElement(current);
+            ShowElement("q5");
+        }
+        return;
+    }
+
+    if (current == "q5") {
+        if(document.getElementById('ready').checked) {
+            HideElement(current);
+            ShowElement(next);
+        } else {
+            HideElement(current);
+            ShowElement("q8");
+        }
+        return;
+    }
+
+    HideElement(current);
+    ShowElement(next);
 }
 
-function previousQuestion(currentQuestion, previousQuestion) {
-    HideElement(currentQuestion);
-    ShowElement(previousQuestion);
+function previousQuestion(current, previous) {
+    
+    //Special cases: question 5 and question 8 can skip previous questions
+    if(current == "q5") {
+        if(document.getElementById('yesvisit').checked) {
+            HideElement(current);
+            ShowElement(previous);
+            } else {
+            HideElement(current);
+            ShowElement("q2");
+        }
+        return;
+    }
+
+    if (current == "q8") {
+        if(document.getElementById('ready').checked) {
+            HideElement(current);
+            ShowElement(previous);
+            } else {
+            HideElement(current);
+            ShowElement("q5");
+        }
+        return;
+    }
+
+    HideElement(current);
+    ShowElement(previous);
 }
-
-function skipQuestion(currentQuestion, specificQuestion){
-	HideElement(currentQuestion);
-    ShowElement(specificQuestion);
-}
-
-
 function submitForm() {
     alert("End of form! Data from all inputs should go to database.");
 }
@@ -71,7 +113,7 @@ $("input[name=plantB]").change(function(){
     }
 })
 
-// Progress Bar Function
+//----------------------- Progress Bar Function---------------------//
 $(document).ready(function(){
 
 	var current_fs, next_fs, previous_fs; //fieldsets
@@ -81,32 +123,82 @@ $(document).ready(function(){
 
 	setProgressBar(current);
 
-/*Increment the progress bar*/
-$(".next").click(function(){
+	/*Increment the progress bar*/
+	$(".next").click(function(){
 
-	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next();
 
-	//show the next fieldset
-		next_fs.show();
-	
+		//show the next fieldset
+			next_fs.show();
+		
 
-setProgressBar(++current);
-});
+	setProgressBar(++current);
+	});
 
-/* decrementing the progress bar*/
-$(".previous").click(function(){
+	/* decrementing the progress bar*/
+	$(".previous").click(function(){
 
-	current_fs = $(this).parent();
-	previous_fs = $(this).parent().prev();
+		current_fs = $(this).parent();
+		previous_fs = $(this).parent().prev();
 
 
-	//show the previous fieldset
-	previous_fs.show();
+		//show the previous fieldset
+		previous_fs.show();
 
-	
-	setProgressBar(--current);
-});
+		
+		setProgressBar(--current);
+	});
+
+	/*Skipping progress bar forward */
+	$("#q2 .next").click(function(){
+
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next().next();
+		//show the next fieldset
+			next_fs.show();
+		setProgressBar(++current);
+		setProgressBar(++current);
+	});
+
+	$("#q5 .next").click(function(){
+
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next().next();
+		//show the next fieldset
+			next_fs.show();
+		
+		setProgressBar(++current);
+		setProgressBar(++current);
+
+	});
+
+	/*skipping progress bar backward*/
+	$("#q5 .previous").click(function(){
+
+		current_fs = $(this).parent();
+		previous_fs = $(this).parent().prev().prev();
+
+
+		//show the previous fieldset
+		previous_fs.show();
+		setProgressBar(--current);
+		setProgressBar(--current);
+
+	});
+
+	$("#q8 .previous").click(function(){
+
+		current_fs = $(this).parent();
+		previous_fs = $(this).parent().prev().prev();
+
+		//show the previous fieldset
+		previous_fs.show();
+
+		setProgressBar(--current);
+		setProgressBar(--current);
+	});
+
 
 	function setProgressBar(curStep){
 		var percent = parseFloat(100 / steps) * curStep;

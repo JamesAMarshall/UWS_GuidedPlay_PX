@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<div id="q1" class="container  page">
+			<div id="q1" class="container page">
 				<h4>Question 1: How was today's weather?</h4>
 				<div id="" class="row">
 						<input id="q1-1" class="input-hidden" type="radio" name="q1" value="sunny">
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 
-			<div id="q2" class="container  page">
+			<div id="q2" class="container d-none page">
 				<h4>Question 2: How was today's weather?</h4>
 				<div id="" class="row">
 						<input id="q2-1" class="input-hidden" type="radio" name="q2" value="hot">
@@ -104,7 +104,7 @@
 				</div>
 			</div>
 
-			<div id="q3" class="container  page">
+			<div id="q3" class="container d-none page">
 				<h4>Question 3: How was today's weather?</h4>
 				<div id="" class="row">
 						<input id="q3-1" class="input-hidden" type="radio" name="q3" value="wind_none">
@@ -136,7 +136,7 @@
 			</div>
 
 			<!-- Pick [0-12] Animals -->
-			<div id="q4" class="container  page">
+			<div id="q4" class="container d-none page">
 				<h4>Question 4: Which animals were visited the plants?</h4>
 				<div id="" class="row">
 						<input id="q4-1" class="input-hidden" type="checkbox" name="q4" value="bird">

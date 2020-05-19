@@ -186,13 +186,22 @@
 			{
 				switch (q) {
 					case "q1": {
+						weather.answer = $("input[name = " + q + "]:checked").val();
 						q="q2";
+						GoToPage(q);
+						break;
 					}
 					case "q2": {
+						temp.answer = $("input[name = " + q + "]:checked").val();
 						q="q3";
+						GoToPage(q);
+						break;
 					}
 					case "q3": {
+						wind.answer = $("input[name = " + q + "]:checked").val();
 						q="q4";
+						GoToPage(q);
+						break;
 					}
 					case "q4": {
 						$.each($("input[name='" + q + "']:checked"), function(){
@@ -202,8 +211,9 @@
 						// console.log(animals.answer.length);
 
 						animal_name.innerHTML = animals.answer[0].animal;
-						q5.classList.remove("d-none");
+						// q5.classList.remove("d-none");
 						q="q5";
+						GoToPage(q);
 						break;
 					}
 					case "q5": {
@@ -223,8 +233,9 @@
 							});
 							// console.log(animals.answer[q5_i].plants);
 							
-							q6.classList.remove("d-none");
+							// q6.classList.remove("d-none");
 							q="q6";
+							GoToPage(q);
 						}
 						break;
 					}
@@ -234,8 +245,9 @@
 						});
 						
 						harvest_plant.innerHTML = harvestable.answer[0].plant;
-						q7.classList.remove("d-none");
+						// q7.classList.remove("d-none");
 						q="q7";
+						GoToPage(q);
 						break;
 					}
 					case "q7": {
@@ -251,8 +263,9 @@
 							harvestable.answer[q7_i].size = $("input[name = " + q + "]:checked").val();
 							// console.log(harvestable.answer[q7_i].size);	
 							plant_location.innerHTML = harvestable.answer[0].plant;						
-							q8.classList.remove("d-none");
+							// q8.classList.remove("d-none");
 							q="q8";
+							GoToPage(q);
 						}
 
 						break;
@@ -269,8 +282,9 @@
 						{
 							harvestable.answer[q7_i].location = $("input[name = " + q + "]:checked").val();
 							// console.log(harvestable.answer[q7_i].location);	
-							q9.classList.remove("d-none");
+							// q9.classList.remove("d-none");
 							q="q9";
+							GoToPage(q);
 						}
 						break;
 					}
@@ -280,8 +294,9 @@
 						});
 
 						healthy_plant.innerHTML = healthy.answer[0].plant;
-						q10.classList.remove("d-none");
+						// q10.classList.remove("d-none");
 						q="q10";
+						GoToPage(q);
 						break;
 					}
 					case "q10": {

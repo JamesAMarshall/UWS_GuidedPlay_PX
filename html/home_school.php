@@ -226,87 +226,87 @@
 					<h4>3. The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="honeybee">
+							<input type="checkbox" name="creature[]" value="Honeybee">
 							<img src="../images/observation/species/honeybee.png">
 							<br>
 							Honey Bee
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="nativeBee">
+							<input type="checkbox" name="creature[]" value="Native Bee">
 							<img src="../images/observation/species/nativebee.jpg">
 							<br>
 							Native Bee
 						</label>
 						<label>
-							<input type="checkbox" name="creature" value="bird">
+							<input type="checkbox" name="creature[]" value="Bird">
 							<img src="../images/observation/species/bird.jpg">
 							<br>
 							Bird
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="wasp">
+							<input type="checkbox" name="creature[]" value="Wasp">
 							<img src="../images/observation/species/wasp.jpg">
 							<br>
 							Wasp
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="moth">
+							<input type="checkbox" name="creature[]" value="Moth">
 							<img src="../images/observation/species/moth.jpg">
 							<br>
 							Moth
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="butterfly">
+							<input type="checkbox" name="creature[]" value="Butterfly">
 							<img src="../images/observation/species/butterfly.jpg">
 							<br>
 							Butterfly
 						</label>
 						<label>
-							<input type="checkbox" name="creature" value="lizard">
-							<img src="../images/observation/species/lizard.jpg">
-							<br>
-							Lizard
-						</label>
-						<label class="fourCol">
-							<input type="checkbox" name="creature" value="flyingFox">
-							<img src="../images/observation/species/flyingfox.jpg">
-							<br>
-							Flying fox
-						</label>
-						<label class="fourCol">
-							<input type="checkbox" name="creature" value="fruitBat">
-							<img src="../images/observation/species/fruitbat.jpg">
-							<br>
-							Fruit bat
-						</label>
-						<label class="fourCol">
-							<input type="checkbox" name="creature" value="possum">
-							<img src="../images/observation/species/possum.jpg">
-							<br>
-							Possum
-						</label>
-						<label>
-							<input type="checkbox" name="creature" value="beetle">
+							<input type="checkbox" name="creature[]" value="Beetle">
 							<img src="../images/observation/species/beetle.jpg">
 							<br>
 							Beetle
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="fly">
+							<input type="checkbox" name="creature[]" value="Fly">
 							<img src="../images/observation/species/fly.jpg">
 							<br>
 							Fly
 						</label>					
+						<label>
+							<input type="checkbox" name="creature[]" value="Lizard">
+							<img src="../images/observation/species/lizard.jpg">
+							<br>
+							Lizard
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature[]" value="Flying Fox">
+							<img src="../images/observation/species/flyingfox.jpg">
+							<br>
+							Flying Fox
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature[]" value="Fruit Bat">
+							<img src="../images/observation/species/fruitbat.jpg">
+							<br>
+							Fruit Bat
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature[]" value="Possum">
+							<img src="../images/observation/species/possum.jpg">
+							<br>
+							Possum
+						</label>
 					</div>
 					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q3','q2')">Back</button>
-						<button onclick="nextQuestion('q3','q4')">Next</button>
+						<button onclick="cycleChoices('q3', 'creature[]'); nextQuestion('q3','q4');">Next</button>
 					</div>
 				</div>
-			<!--QUESTION 4 -->
+			<!--QUESTION 4 - CYCLABLE QUESTION -->
 				<div id="q4">
-					<h4>4. Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
+					<h4>4. Which plants did [CREATURE repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="visitedPlants">
@@ -367,39 +367,39 @@
 					<h4>6. Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
-							<input type="checkbox" name="readyPlants" value="1">
+							<input type="checkbox" name="readyPlants[]" value="Salad Green">
 							<img src="../images/observation/plant/saladgreen.jpg">
 							<br>
-							Salad greens
+							Salad Green
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="readyPlants" value="2">
+							<input type="checkbox" name="readyPlants[]" value="Root Crop">
 							<img src="../images/observation/plant/roots.jpg">
 							<br>
-							Root crops
+							Root Crop
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="readyPlants" value="3">
+							<input type="checkbox" name="readyPlants[]" value="Herb">
 							<img src="../images/observation/plant/herb.jpg">
 							<br>
-							Herbs
+							Herb
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="readyPlants" value="4">
+							<input type="checkbox" name="readyPlants[]" value="Fruit">
 							<img src="../images/observation/plant/fruit.jpg">
 							<br>
-							Fruits
+							Fruit
 						</label>
 					</div>
 					<br>
 					<div class="progressButtons">
 						<button onclick="previousQuestion('q6','q5')">Back</button>
-						<button onclick="nextQuestion('q6','q7')">Next</button>
+						<button onclick="cycleChoices('q6','readyPlants[]'); nextQuestion('q6','q7');">Next</button>
 					</div>
 				</div>
-			<!--QUESTION 7 -->
+			<!--QUESTION 7 - CYCLABLE QUESTION -->
 				<div id="q7">
-					<h4>7. How big is the harvest from [PLANT 1, PLANT 2... repeatable]?</h4>
+					<h4>7. How big is the harvest from [PLANT repeatable]?</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="tinyAmount" type="radio" name="harvest">
@@ -437,7 +437,7 @@
 
 					<br>						
 					
-					<h4>Where did [PLANT 1, PLANT 2... repeatable] grow?</h4>
+					<h4>Where did [PLANT repeatable] grow?</h4>
 					<div class="container icon">
 						<div class=" boxes slider">
 							<input id="alwaysSun" type="radio" name="plantLocation">

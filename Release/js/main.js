@@ -242,7 +242,6 @@
 							});
 							// console.log(animals.answer[q5_i].plants);
 							
-							// q6.classList.remove("d-none");
 							q="q6";
 							GoToPage(q);
 						}
@@ -257,7 +256,6 @@
 						if(harvestable.answer.length > 0)
 						{
 							harvest_plant.innerHTML = harvestable.answer[0].plant;
-							// q7.classList.remove("d-none");
 							q="q7";
 							GoToPage(q);
 						}
@@ -281,7 +279,6 @@
 							harvestable.answer[q7_i].size = $("input[name = " + q + "]:checked").val();
 							// console.log(harvestable.answer[q7_i].size);	
 							plant_location.innerHTML = harvestable.answer[0].plant;						
-							// q8.classList.remove("d-none");
 							q="q8";
 							GoToPage(q);
 						}
@@ -300,7 +297,6 @@
 						{
 							harvestable.answer[q7_i].location = $("input[name = " + q + "]:checked").val();
 							// console.log(harvestable.answer[q7_i].location);	
-							// q9.classList.remove("d-none");
 							q="q9";
 							GoToPage(q);
 						}

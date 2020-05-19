@@ -18,10 +18,7 @@ img {
 	width:100px;
 }
 
-.page {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
+
 
 .question-card{
 	width: 18rem;
@@ -34,7 +31,7 @@ img {
 	margin: 0 auto;
 }
 
-.container{
+main.container, section.container{
 	border: 1px solid grey;
 	border-radius: 5px;
 }
@@ -59,13 +56,14 @@ img {
 	left: -9999px;
   }
   
-  input[type=radio]:checked + label {
+
+  input[type=radio]:checked + label{
 	border: 1px solid #fff;
 	box-shadow: 0 0 3px 3px #090;
   }
   
   /* Stuff after this is only to make things more pretty */
-  input[type=radio] + label {
+  input[type=radio]{
 	/* border: 1px dashed #444; */
 	/* width: 150px;
 	height: 150px; */

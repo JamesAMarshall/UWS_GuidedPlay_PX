@@ -210,10 +210,19 @@
 					
 						// console.log(animals.answer.length);
 
-						animal_name.innerHTML = animals.answer[0].animal;
-						// q5.classList.remove("d-none");
-						q="q5";
-						GoToPage(q);
+						if(animals.answer.length > 0)
+						{
+							animal_name.innerHTML = animals.answer[0].animal;
+							q="q5";
+							GoToPage(q);
+						}
+						else
+						{
+							q="q6";
+							GoToPage(q);
+						}
+
+
 						break;
 					}
 					case "q5": {
@@ -244,10 +253,19 @@
 							harvestable.answer.push( { plant:$(this).val(), size:"", location:""} );
 						});
 						
-						harvest_plant.innerHTML = harvestable.answer[0].plant;
-						// q7.classList.remove("d-none");
-						q="q7";
-						GoToPage(q);
+						
+						if(harvestable.answer.length > 0)
+						{
+							harvest_plant.innerHTML = harvestable.answer[0].plant;
+							// q7.classList.remove("d-none");
+							q="q7";
+							GoToPage(q);
+						}
+						else
+						{
+							q="q9"
+							GoToPage(q);
+						}
 						break;
 					}
 					case "q7": {
@@ -293,10 +311,18 @@
 							healthy.answer.push( { plant:$(this).val(), reason:[]} );
 						});
 
-						healthy_plant.innerHTML = healthy.answer[0].plant;
-						// q10.classList.remove("d-none");
-						q="q10";
-						GoToPage(q);
+						
+						if(healthy.answer.length > 0)
+						{
+							healthy_plant.innerHTML = healthy.answer[0].plant;
+							// q10.classList.remove("d-none");
+							q="q10";
+							GoToPage(q);
+						}
+						else
+						{
+							q_submit.classList.remove("d-none");
+						}
 						break;
 					}
 					case "q10": {

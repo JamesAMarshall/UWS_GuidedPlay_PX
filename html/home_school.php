@@ -85,9 +85,9 @@
 			<!--BEGINNING OF OBSERVATION FORM-->
 			<!--PROGRESS BAR-->
 					<h3>Progress: </h3>
-					<div class="progress">
+					<div class="progress" style="height: 32px;">
 
-                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:100%; font-size: xx-large;"></div>
                     </div> 
 					<br>
 			<!--QUESTION 1 -->
@@ -212,16 +212,18 @@
 					<div class="container icon radioButton thumbs">
 					
 						<label class="space" for ="yesvisit">
-							<input id="yesvisit" type="radio" name="visit">
+							<input id="yesvisit" type="radio" name="visit" value ="Yes" required>
 							<img src="../images/observation/thumbUp.jpg">
 							<br>
 							Yes
 						</label>
+
 						<label class="space" for ="novisit">
-							<input id="novisit" type="radio" name="visit">
+							<input id="novisit" type="radio" name="visit" value="No" required>
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
+						</label>
 					</div>
 					<br>
 				<!-- back and next button-->
@@ -369,18 +371,17 @@
 			</fieldset>
 			<!--QUESTION 5 -->
 			<fieldset>
-			
 				<div id="q5">
 					<h4>5. Were any plants ready for harvest today?</h4>
 					<div class="container icon radioButton thumbs">
-						<label for ="ready">
-							<input class="space" id="ready" type="radio" name="harvestReady">
+						<label class="space" for="ready">
+							<input class="space" id="ready" type="radio" name="harvestReady" value="positive" required>
 							<img src="../images/observation/thumbUp.jpg">
 							<br>
 							Yes
 						</label>
 						<label class="space" for ="notReady">
-							<input id="notReady" type="radio" name="harvestReady" class="harvestReady">
+							<input id="notReady" type="radio" name="harvestReady" class="harvestReady" value="negative" required>
 							<img src="../images/observation/thumbDown.jpg">
 							<br>
 							Not today
@@ -435,7 +436,7 @@
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
 						</div>
 						<div class="col-md-6">
-							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
+							<button type="button"  name="next" class=" next skipback btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
 						</div>						
 					</div>
 

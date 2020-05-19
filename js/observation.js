@@ -115,100 +115,66 @@ $("input[name=plantB]").change(function(){
 
 //----------------------- Progress Bar Function---------------------//
 $(document).ready(function(){
-
-	var current_fs, next_fs, previous_fs; //fieldsets
-	var opacity;
-	var current = 1;
-	var steps = $("fieldset").length;
-
-	setProgressBar(current);
-
-	/*Increment the progress bar*/
+	var current = 1,current_step,next_step,steps;
+	steps = $("fieldset").length;
+	
+	// progress bar moving forward
 	$(".next").click(function(){
-
-		current_fs = $(this).parent();
-		next_fs = $(this).parent().next();
-
-		//show the next fieldset
-			next_fs.show();
-		
-
-	setProgressBar(++current);
+    current_step = $(this).parent();
+		//Special cases: question 2 and question 5 can skip next questions along with progress bar
+		if(current=='2' && $('input[name="visit"]:checked').val()=='No') {
+			// increment progress bar by one stage at a time
+			next_step = $(this).parent().next().next();
+			++current;
+			++current;
+		}
+		//Special cases: question 5 and question 8 can skip next questions along with progress bar
+		else if(current=='5' && $('input[name="harvestReady"]:checked').val()=='negative') {
+			// increment progress bar by one stage at a time
+			next_step = $(this).parent().next().next();
+			++current;
+			++current;
+		}
+				
+		else {
+		next_step = $(this).parent().next();
+		}
+		next_step.show();
+		// normal increment by 1 if it doesnt applied to special cases
+		setProgressBar(++current);
 	});
-
-	/* decrementing the progress bar*/
+	
+	// Progress bar moving backward
 	$(".previous").click(function(){
-
-		current_fs = $(this).parent();
-		previous_fs = $(this).parent().prev();
-
-
-		//show the previous fieldset
-		previous_fs.show();
-
+		current_step = $(this).parent();
 		
+		if(current=='5' && $('input[name="visit"]:checked').val()=='No') {
+			next_step = $(this).parent().prev().prev();
+			--current;
+			--current;
+		} 
+		else if(current=='8' && $('input[name="harvestReady"]:checked').val()=='negative') {
+
+			next_step = $(this).parent().prev().prev();
+			--current;
+			--current;
+		}
+		else {
+		next_step = $(this).parent().prev();
+		}
+		next_step.show();
 		setProgressBar(--current);
 	});
-
-	/*Skipping progress bar forward */
-	$("#q2 .next").click(function(){
-
-		current_fs = $(this).parent();
-		next_fs = $(this).parent().next().next();
-		//show the next fieldset
-			next_fs.show();
-		setProgressBar(++current);
-		setProgressBar(++current);
-	});
-
-	$("#q5 .next").click(function(){
-
-		current_fs = $(this).parent();
-		next_fs = $(this).parent().next().next();
-		//show the next fieldset
-			next_fs.show();
-		
-		setProgressBar(++current);
-		setProgressBar(++current);
-
-	});
-
-	/*skipping progress bar backward*/
-	$("#q5 .previous").click(function(){
-
-		current_fs = $(this).parent();
-		previous_fs = $(this).parent().prev().prev();
-
-
-		//show the previous fieldset
-		previous_fs.show();
-		setProgressBar(--current);
-		setProgressBar(--current);
-
-	});
-
-	$("#q8 .previous").click(function(){
-
-		current_fs = $(this).parent();
-		previous_fs = $(this).parent().prev().prev();
-
-		//show the previous fieldset
-		previous_fs.show();
-
-		setProgressBar(--current);
-		setProgressBar(--current);
-	});
-
-
+	
+	
+	
+	setProgressBar(current);
+	// Change progress bar action
 	function setProgressBar(curStep){
 		var percent = parseFloat(100 / steps) * curStep;
 		percent = percent.toFixed();
 		$(".progress-bar")
-		.css("width",percent+"%")
+			.css("width",percent+"%")
+			.html(percent+"%");		
 	}
-
-	$(".submit").click(function(){
-		return false;
-	})
-
 });

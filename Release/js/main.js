@@ -36,7 +36,22 @@
 //------------------------------------------
 // @XHTTP Requests
 {
-	
+	function Request(method, path, callback, formData = null)
+	{
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				var obj = JSON.parse(xhttp.responseText);
+				callback(obj);
+			}
+		};
+		xhttp.open(method, path, true);
+
+		if(formData) xhttp.send(formData);
+		else 		 xhttp.send();
+	}
 }
 
 //------------------------------------------
@@ -54,166 +69,116 @@
 	// @Observation
 	{
 
+		var weather = { question:"q1", answer:""};
+		var temp = { question:"q2", answer:""};
+		var wind = { question:"q3", answer:""};
+		var animals = { question:"q4", answer:null};
+		var harvestable = { question:"q6", answer:null};
+		var healthy =  { question:"q9", answer:null};
+		
+		q5_i = -1;
+		q7_i = -1;
+		q8_i = -1;
+		q10_i = -1;
+
+		ClearSelection("q1");
+		ClearSelection("q2");
+		ClearSelection("q3");
+		ClearSelection("q4");
+		ClearSelection("q5");
+		ClearSelection("q6");
+		ClearSelection("q7");
+		ClearSelection("q8");
+		ClearSelection("q9");
+		ClearSelection("q10");
+
+		var q = "q1";
+
 		{
-			var weather = { question:"q1", answer:""};
-			var temp = { question:"q2", answer:""};
-			var wind = { question:"q3", answer:""};
-			var animals = { question:"q4", answer:[]};
-			var harvestable = { question:"q6", answer:[]};
-			var healthy =  { question:"q9", answer:[]};
-			
-			q5_i = -1;
-			q7_i = -1;
-			q8_i = -1;
-			q10_i = -1;
-
-			function Continue(question)
-			{
-				// switch (question) {
-				// 	case "q4": {
-				// 		$.each($("input[name='" + question + "']:checked"), function(){
-				// 			animals.answer.push( {animal:$(this).val(), plants:[]});
-				// 		});
-						
-				// 		console.log(animals.answer);
-
-				// 		animal_name.innerHTML = animals.answer[0].animal;
-				// 		q5.classList.remove("d-none");
-				// 		q4_continue.classList.add("d-none");
-				// 		q5_continue.classList.remove("d-none");
-				// 		break;
-				// 	}
-				// 	case "q5": {
-				// 		q5_i++;
-				// 		if(q5_i >= animals.answer.length)
-				// 		{
-				// 			q6.classList.remove("d-none");
-				// 			q6_continue.classList.remove("d-none");
-				// 			q5_continue.classList.add("d-none");
-				// 		}
-				// 		else
-				// 		{
-				// 			animal_name.innerHTML = animals.answer[q5_i].animal;						
-				// 		}
-				// 		break;
-				// 	}
-				// 	case "q6": {
-				// 		$.each($("input[name='" + question + "']:checked"), function(){
-				// 			harvestable.answer.push( { plant:$(this).val(), size:"", location:""} );
-				// 		});
-						
-				// 		console.log(harvestable.answer);
-
-				// 		harvest_plant.innerHTML = harvestable.answer[0].plant;
-				// 		q7.classList.remove("d-none");
-				// 		q7_continue.classList.remove("d-none");
-				// 		q6_continue.classList.add("d-none");
-				// 		break;
-				// 	}
-				// 	case "q7": {
-				// 		q7_i++;
-				// 		if(q7_i >= harvestable.answer.length)
-				// 		{
-				// 			plant_location.innerHTML = harvestable.answer[0].plant;						
-
-				// 			q8.classList.remove("d-none");
-				// 			q8_continue.classList.remove("d-none");
-				// 			q7_continue.classList.add("d-none");
-				// 		}
-				// 		else
-				// 		{
-				// 			harvest_plant.innerHTML = harvestable.answer[q7_i].plant;						
-				// 		}
-				// 		break;
-				// 	}
-				// 	case "q8": {
-				// 		q8_i++;
-				// 		if(q8_i >= harvestable.answer.length)
-				// 		{
-				// 			q9.classList.remove("d-none");
-				// 			q9_continue.classList.remove("d-none");
-				// 			q8_continue.classList.add("d-none");
-				// 		}
-				// 		else
-				// 		{
-				// 			plant_location.innerHTML = harvestable.answer[q8_i].plant;						
-				// 		}
-
-				// 		// harvestable.answer[0].size = $('input[name = "q3"]:checked').val();
-						
-				// 		// console.log(harvestable.answer);
-
-				// 		// harvest_plant.innerHTML = harvestable.answer[0].plant;
-				// 		// q7.classList.remove("d-none");
-				// 		// // q7_continue.classList.remove("d-none");
-				// 		// q6_continue.classList.add("d-none");
-				// 		break;
-				// 	}
-				// 	case "q9": {
-				// 		$.each($("input[name='" + question + "']:checked"), function(){
-				// 			healthy.answer.push( { plant:$(this).val(), reason:[]} );
-				// 		});
-						
-				// 		console.log(healthy.answer);
-
-				// 		healthy_plant.innerHTML = healthy.answer[0].plant;
-				// 		q10.classList.remove("d-none");
-				// 		q10_continue.classList.remove("d-none");
-				// 		q9_continue.classList.add("d-none");
-				// 		break;
-				// 	}
-				// 	case "q10": {
-				// 		q10_i++;
-				// 		if(q10_i >= healthy.answer.length)
-				// 		{
-				// 			q10_continue.classList.add("d-none");
-				// 			q_submit.classList.remove("d-none");
-				// 		}
-				// 		else
-				// 		{
-				// 			healthy_plant.innerHTML = healthy.answer[q10_i].plant;						
-				// 		}
-				// 		break;
-				// 	}
-				// 	default:
-				// 		break;
-				// }
-			}
-			
-			var q = "q1";
-
 			function Next()
 			{
+				console.log("Next called on "+q);
 				switch (q) {
 					case "q1": {
-						weather.answer = $("input[name = " + q + "]:checked").val();
-						q="q2";
-						GoToPage(q);
+						weather.answer = GetAnswer(q);
+						// console.log(weather.answer);
+
+						if(weather.answer)
+						{
+							q="q2";
+							GoToPage(q);
+							SetError("q1_invalid", false);
+						}
+						else { SetError("q1_invalid", true); }
 						break;
 					}
 					case "q2": {
-						temp.answer = $("input[name = " + q + "]:checked").val();
-						q="q3";
-						GoToPage(q);
+						temp.answer = GetAnswer(q);
+						console.log(temp.answer);
+						if(temp.answer)
+						{
+							q="q3";
+							GoToPage(q);
+							SetError("q2_invalid", false);
+						}
+						else { SetError("q2_invalid", true); }
+	
 						break;
 					}
 					case "q3": {
-						wind.answer = $("input[name = " + q + "]:checked").val();
-						q="q4";
-						GoToPage(q);
+						wind.answer =  GetAnswer(q);
+						// console.log(wind.answer);
+						if(wind.answer)
+						{
+							q="q4";
+							GoToPage(q);
+							SetError("q3_invalid", false);
+						}
+						else { SetError("q3_invalid", true); }
 						break;
 					}
 					case "q4": {
-						$.each($("input[name='" + q + "']:checked"), function(){
-							animals.answer.push( {animal:$(this).val(), plants:[]});
-						});
-					
-						// console.log(animals.answer.length);
+						if(!animals.answer)
+						{
+							animals.answer = GetAnswer(q, "animals");
+						}
+						else
+						{
+							var answer = GetAnswer(q, "animals");
 
-						if(animals.answer.length > 0)
+							for (let i = 0; i < animals.answer.length; i++) {
+								var isInAnswer = false;
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].animal == animals.answer[i].animal) {
+										isInAnswer = true;
+									}
+
+									if(!isInAnswer && j == answer.length-1)	{
+										console.log("spliced" + animals.answer[i].animal);
+										animals.answer.splice(i,1);
+									}	
+								}
+							}
+
+							for (let i = 0; i < animals.answer.length; i++) {
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].animal == animals.answer[i].animal) {
+										answer.splice(j,1);
+									}
+								}
+							}
+
+							for (let index = 0; index < answer.length; index++) {
+								const element = answer[index];
+								animals.answer.push(element);
+							}
+						}
+
+						if(animals.answer)
 						{
 							animal_name.innerHTML = animals.answer[0].animal;
 							q="q5";
+							q5_i=-1;
 							GoToPage(q);
 						}
 						else
@@ -221,44 +186,79 @@
 							q="q6";
 							GoToPage(q);
 						}
-
-
+	
 						break;
 					}
 					case "q5": {
-						var array = [];
 						q5_i++;
-						if(q5_i+1 < animals.answer.length)
+						
+						animals.answer[q5_i].plants = GetAnswer(q, "animal-plants");
+						if(animals.answer[q5_i].plants)
 						{
-							$.each($("input[name='" + q + "']:checked"), function(){
-								array[q5_i].plants.push( $(this).val() );
-							});
-							animals.answer = array;
-							// console.log(animals.answer[q5_i].plants);
-							animal_name.innerHTML = animals.answer[q5_i+1].animal;
+							if(q5_i+1 < animals.answer.length)
+							{	
+								animal_name.innerHTML = animals.answer[q5_i+1].animal;
+								SetSelection(q, animals.answer[q5_i+1].plants);
+							}
+							else
+							{
+								q="q6";
+								GoToPage(q);
+							}
+							SetError("q5_invalid", false);
 						}
 						else
 						{
-							$.each($("input[name='" + q + "']:checked"), function(){
-								array[q5_i].plants.push( $(this).val() );
-							});
-							animals.answer = array;
-							// console.log(animals.answer[q5_i].plants);
-							
-							q="q6";
-							GoToPage(q);
+							SetError("q5_invalid", true);
+							q5_i--;
 						}
 						break;
 					}
 					case "q6": {
-						var array = [];
-						$.each($("input[name='" + q + "']:checked"), function(){
-							array.push( { plant:$(this).val(), size:"", location:""} );
-						});
-						harvestable.answer = array;
+						if(!harvestable.answer)
+						{
+							harvestable.answer = GetAnswer(q, "harvestable");
+						}
+						else
+						{
+							var answer = GetAnswer(q, "harvestable");
+
+							for (let i = 0; i < harvestable.answer.length; i++) {
+								var isInAnswer = false;
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].plant == harvestable.answer[i].plant) {
+										isInAnswer = true;
+									}
+
+									if(!isInAnswer && j == answer.length-1)	{
+										console.log("spliced" + harvestable.answer[i].plant);
+										harvestable.answer.splice(i,1);
+									}	
+								}
+							}
+
+							for (let i = 0; i < harvestable.answer.length; i++) {
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].plant == harvestable.answer[i].plant) {
+										console.log("cleared" + answer[j].plant + " from answer");
+										answer.splice(j,1);
+									}
+								}
+							}
+
+							if(answer.length > 0)
+							{
+								for (let index = 0; index < answer.length; index++) {
+									const element = answer[index];
+									console.log("added" + harvestable.answer[index].plant + " to harvestable");
+									harvestable.answer.push(element);
+								}
+							}
+						}
+
+
 						
-						
-						if(harvestable.answer.length > 0)
+						if(harvestable.answer)
 						{
 							harvest_plant.innerHTML = harvestable.answer[0].plant;
 							q="q7";
@@ -274,105 +274,145 @@
 					}
 					case "q7": {
 						q7_i++;	
-						if(q7_i+1 < harvestable.answer.length)
+						harvestable.answer[q7_i].size = GetAnswer(q);
+
+						if(harvestable.answer[q7_i].size)
 						{
-							// console.log("Go To "+ q +  "[" + q7_i + "]");
-							harvestable.answer[q7_i].size = $("input[name = " + q + "]:checked").val();
-							// console.log(harvestable.answer[q7_i].size);	
-							harvest_plant.innerHTML = harvestable.answer[q7_i+1].plant;
-						}	
+							if(q7_i+1 < harvestable.answer.length)
+							{
+								harvest_plant.innerHTML = harvestable.answer[q7_i+1].plant;
+								SetSelection(q, harvestable.answer[q7_i+1].size);
+							}	
+							else
+							{
+								plant_location.innerHTML = harvestable.answer[0].plant;						
+								q="q8";
+								GoToPage(q);
+							}
+							SetError("q7_invalid", false);
+						}
 						else
 						{
-							harvestable.answer[q7_i].size = $("input[name = " + q + "]:checked").val();
-							// console.log(harvestable.answer[q7_i].size);	
-							plant_location.innerHTML = harvestable.answer[0].plant;						
-							q="q8";
-							// console.log("Go To "+ q +  "[" + q8_i + "]");
-							GoToPage(q);
+							SetError("q7_invalid", true);
+							q7_i--;
 						}
+
 						break;
 					}
 					case "q8": {
 						q8_i++;
-						if(q8_i+1 < harvestable.answer.length)
+						harvestable.answer[q8_i].location = GetAnswer(q);
+						if(harvestable.answer[q8_i].location)
 						{
-							// console.log("Go To "+ q +  "[" + q8_i + "]");
-							harvestable.answer[q7_i].location = $("input[name = " + q + "]:checked").val();
-							// console.log(harvestable.answer[q7_i].location);	
-							plant_location.innerHTML = harvestable.answer[q8_i+1].plant;
+							if(q8_i+1 < harvestable.answer.length)
+							{
+								plant_location.innerHTML = harvestable.answer[q8_i+1].plant;
+								SetSelection(q, harvestable.answer[q8_i+1].location);
+							}
+							else
+							{
+								q="q9";
+								GoToPage(q);
+							}
+							SetError("q8_invalid", false);
 						}
 						else
 						{
-							harvestable.answer[q7_i].location = $("input[name = " + q + "]:checked").val();
-							// console.log(harvestable.answer[q7_i].location);	
-							q="q9";
-							// console.log("Go To "+ q +  "[" + q8_i + "]");
-							GoToPage(q);
+							SetError("q8_invalid", true);
+							q8_i--;
 						}
+
 						break;
 					}
 					case "q9": {
-						var array = [];
-						$.each($("input[name='" + q + "']:checked"), function(){
-							array.push( { plant:$(this).val(), reason:[]} );
-						});
-						healthy.answer = array;
+						if(!healthy.answer)
+						{
+							healthy.answer = GetAnswer(q, "healthy");
+						}
+						else
+						{
+							var answer = GetAnswer(q, "healthy");
 
-						
-						if(healthy.answer.length > 0)
+							for (let i = 0; i < healthy.answer.length; i++) {
+								var isInAnswer = false;
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].plant == healthy.answer[i].plant) {
+										isInAnswer = true;
+									}
+
+									if(!isInAnswer && j == answer.length-1)	{
+										console.log("spliced" + healthy.answer[i].plant);
+										healthy.answer.splice(i,1);
+									}	
+								}
+							}
+
+							for (let i = 0; i < healthy.answer.length; i++) {
+								for (let j = 0; j < answer.length; j++) {
+									if(answer[j].plant == healthy.answer[i].plant) {
+										console.log("cleared" + answer[j].plant + " from answer");
+										answer.splice(j,1);
+									}
+								}
+							}
+
+							if(answer.length > 0)
+							{
+								for (let index = 0; index < answer.length; index++) {
+									const element = answer[index];
+									console.log("added" + healthy.answer[index].plant + " to healthy");
+									healthy.answer.push(element);
+								}
+							}
+						}
+
+
+						if(healthy.answer)
 						{
 							healthy_plant.innerHTML = healthy.answer[0].plant;
-							// q10.classList.remove("d-none");
 							q="q10";
 							GoToPage(q);
 						}
 						else
 						{
-							q_submit.classList.remove("d-none");
+							q="q_submit"
+							GoToPage(q);
 						}
 						break;
 					}
 					case "q10": {
 						q10_i++;
-						var array = [];
-						if(q10_i+1 >= healthy.answer.length)
+						healthy.answer[q10_i].reason = GetAnswer(q, "healthy-reasons");
+						if(healthy.answer[q10_i].reason)
 						{
-							q10_i = healthy.answer.length-2;
-							$.each($("input[name='" + q + "']:checked"), function(){
-								array.push( $(this).val() );
-							});
-							healthy.answer[q10_i].reason = array;
-							// console.log(healthy.answer[q10_i].reason);
-							q_submit.classList.remove("d-none");
-							break;
-						}
-						if(q10_i+1 < healthy.answer.length)
-						{
-							$.each($("input[name='" + q + "']:checked"), function(){
-								array.push( $(this).val() );
-							});
-							healthy.answer[q10_i].reason = array;
-							// console.log(healthy.answer[q10_i].reason);
-							healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;						
+							if(q10_i+1 < healthy.answer.length)
+							{
+								healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;
+								SetSelection(q, healthy.answer[q10_i+1].reason);
+							}
+							else
+							{
+								q="q_submit"
+								GoToPage(q);
+							}
+							SetError("q10_invalid",false);
 						}
 						else
 						{
-							$.each($("input[name='" + q + "']:checked"), function(){
-								array.push( $(this).val() );
-							});
-							healthy.answer[q10_i].reason = array;
-							// console.log(healthy.answer[q10_i].reason);
-							q_submit.classList.remove("d-none");
+							SetError("q10_invalid",true);
+							q10_i--;
 						}
+
 						break;
 					}
 					default:
 						break;
 				}
 			}
-
+	
 			function Previous()
 			{
+				console.log("Previous called on "+q);
 				switch (q) {
 					case "q1": {
 						break;
@@ -390,39 +430,26 @@
 					case "q4": {
 						q="q3";
 						GoToPage(q);
-						// if(animals.answer.length > 0)
-						// {
-						// 	animal_name.innerHTML = animals.answer[0].animal;
-						// 	q="q5";
-						// 	GoToPage(q);
-						// }
-						// else
-						// {
-						// 	q="q6";
-						// 	GoToPage(q);
-						// }
 						break;
 					}
 					case "q5": {
-						q5_i = -1;
-						q="q4";
-						GoToPage(q);
-						// q5_i++;
-						// if(q5_i+1 < animals.answer.length)
-						// {
-						// 	animal_name.innerHTML = animals.answer[q5_i+1].animal;
-						// }
-						// else
-						// {
-						// 	q="q6";
-						// 	GoToPage(q);
-						// }
+						if(q5_i < 0)
+						{
+							q="q4";
+							GoToPage(q);
+						}
+						else
+						{
+							animals.answer[q5_i+1].plants = GetAnswer(q, "heatlhy-reasons");
+							console.log();
+							animal_name.innerHTML = animals.answer[q5_i].animal;
+							SetSelection(q, animals.answer[q5_i].plants);
+							q5_i--;
+						}
 						break;
 					}
 					case "q6": {
-						// if(animals.answer = "none")
-						console.log(animals.answer.length);
-						if(animals.answer.length == 0)
+						if(!animals.answer)
 						{
 							q="q4";
 							GoToPage(q);
@@ -430,60 +457,46 @@
 						else
 						{
 							q="q5";
+							q5_i--;
 							GoToPage(q);
 						}
-						// if(harvestable.answer.length > 0)
-						// {
-						// 	harvest_plant.innerHTML = harvestable.answer[0].plant;
-						// 	q="q7";
-						// 	GoToPage(q);
-						// }
-						// else
-						// {
-						// 	q="q9"
-						// 	GoToPage(q);
-						// }
 						break;
 					}
 					case "q7": {
 						if(q7_i < 0)
 						{
-							plant_location.innerHTML = harvestable.answer[harvestable.answer.length-1].plant;	
-							q7_i = -1;					
 							q="q6";
-							// console.log("Go Back To "+ q);
 							GoToPage(q);
-						}	
+						}
 						else
 						{
+							harvestable.answer[q7_i+1].size = GetAnswer(q);
 							harvest_plant.innerHTML = harvestable.answer[q7_i].plant;
-							// console.log("Go Back To "+ q +  "[" + q7_i + "]");
-							q7_i--;	
+							SetSelection(q, harvestable.answer[q7_i].size);
+							q7_i--;
 						}
-
-
+	
 						break;
 					}
 					case "q8": {
 						if(q8_i < 0)
 						{
-							harvest_plant.innerHTML = harvestable.answer[harvestable.answer.length-1].plant;
-							q8_i = -1;
-							q7_i--;
 							q="q7";
-							// console.log("Go Back To "+ q +  "[" + q8_i + "]");
+							q7_i--;
+							harvest_plant.innerHTML = harvestable.answer[harvestable.answer.length-1].plant;
 							GoToPage(q);
 						}
 						else
 						{
-							plant_location.innerHTML = harvestable.answer[q8_i].plant;
-							// console.log("Go Back To "+ q +  "[" + q8_i + "]");
-							q8_i--;	
+							harvestable.answer[q8_i+1].location = GetAnswer(q);
+							harvest_plant.innerHTML = harvestable.answer[q8_i].location;
+							SetSelection(q, harvestable.answer[q8_i].location);
+							q8_i--;
 						}
 						break;
 					}
 					case "q9": {
-						if(harvestable.answer.length == 0)
+						if(!harvestable.answer)
 						{
 							q="q6";
 							GoToPage(q);
@@ -494,186 +507,201 @@
 							q8_i--;
 							GoToPage(q);
 						}
-						// if(healthy.answer.length > 0)
-						// {
-						// 	healthy_plant.innerHTML = healthy.answer[0].plant;
-						// 	q="q10";
-						// 	GoToPage(q);
-						// }
-						// else
-						// {
-						// 	q_submit.classList.remove("d-none");
-						// }
 						break;
 					}
 					case "q10": {
-
 						if(q10_i < 0)
 						{
-							plant_location.innerHTML = harvestable.answer[harvestable.answer.length-1].plant;
-							q10_i = -1;
 							q="q9";
 							GoToPage(q);
-							q_submit.classList.add("d-none");
 						}
 						else
 						{
+							healthy.answer[q10_i+1].reason = GetAnswer(q, "healthy-reasons");
 							healthy_plant.innerHTML = healthy.answer[q10_i].plant;
-							// console.log("Go Back To "+ q +  "[" + q8_i + "]");
-							q10_i--;	
-							q_submit.classList.add("d-none");
+							SetSelection(q, healthy.answer[q10_i].reason);
+							q10_i--;
 						}
-
-						// q10_i++;
-						// if(q10_i+1 < healthy.answer.length)
-						// {
-						// 	healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;						
-						// }
-						// else
-						// {
-						// 	q_submit.classList.remove("d-none");
-						// }
+						break;
+					}
+					case "q_submit": {
+						if(!healthy.answer){
+							q="q9";
+							GoToPage(q);
+						}
+						else
+						{
+							q10_i--;
+							q="q10";
+							GoToPage(q);
+						}
 						break;
 					}
 					default:
 						break;
 				}
 			}
-
 		}
 
+		function SubmitObservation()
+		{
+			var formData = new FormData();
+			formData.append("weather", weather.answer);
+			formData.append("temp", temp.answer);
+			formData.append("wind", wind.answer);
+			formData.append("animals", animals.answer);
+			formData.append("harvestable", harvestable.answer);
+			formData.append("healthy", healthy.answer);
 
-		{ // In Progress
-			// var question = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9"]
-			// var question = ["q1", "q2", "q3", "q4", "q5"]
-			// var questions = {
-			// 	q1:"empty",
-			// 	q2:"empty",
-			// 	q3:"empty",
-			// 	q4
-			// };
-			// var weather = { question:"q1", answer:""};
-			// var temp = { question:"q2", answer:""};
-			// var wind = { question:"q3", answer:""};
-			// var animals = { question:"q4", answer:[]};
+			var results = [weather, temp, wind, animals, harvestable, healthy];
+			console.log(results);
 
-			// var q6 = { question:"q6", answer:[]};
-			// var q7 = { question:"q7", answer:[]};
-			// var q8 = { question:"q8", answer:[]};
-			// var q9 = { question:"q9", answer:[]};
-
-			// var questions = [weather, temp, wind, animals, q6, q7, q8, q9];
-			// console.log(questions);
-
-			// var q_index = -1;
-			// var q4_index = 0;
-		
-			// function Next()
-			// {
-			// 	q_index++;
-			// 	if(q_index >= questions.length)
-			// 		q_index = questions.length-1;
-			// 	GoToPage(questions[q_index].question);
-			// }
-
-			// function Next_old()
-			// {
-			// 	switch(question[q_index]){
-			// 		case "q4":
-			// 		{
-			// 			questions[3] = [];
-			// 			$.each($("input[name='" + question[q_index] + "']:checked"), function(){
-			// 				questions[q_index].push( {animal:$(this).val(), plants:[]});
-			// 			});
-		
-			// 			if(questions[3].length == 0)
-			// 			{
-			// 				q_index++;
-			// 			}
-
-			// 			q_index++;
-			// 			if(q_index >= question.length)
-			// 				q_index = question.length-1;
-			// 			GoToPage(question[q_index]);
-			// 			break;
-			// 		}
-			// 		case "q5":
-			// 		{
-			// 			if(q4_index < questions[3].length)
-			// 			{
-			// 				console.log(questions[3]);
-			// 				questions[3][q4_index].plants = GetArrayAnswers(question[4], true);
-			// 				console.log(q4_index);
-			// 				q4_index++;
-			// 			}
-			// 			else
-			// 			{
-			// 				q_index++;
-			// 				if(q_index >= question.length)
-			// 					q_index = question.length-1;
-			// 				GoToPage(question[q_index]);
-			// 			}
-			// 			break;
-			// 		}
-			// 		default:
-			// 		{
-			// 			questions[q_index] = GetArrayAnswers(question[q_index], false);
-			// 			q_index++;
-			// 			if(q_index >= question.length)
-			// 				q_index = question.length-1;
-			// 			GoToPage(question[q_index]);
-			// 			break;
-			// 		}
-			// 	}
-			// }
-
-			// function Previous()
-			// {
-			// 	q_index--;
-			// 	if(q_index < 0)
-			// 		q_index = 0;
-			// 	GoToPage(questions[q_index].question);
-			// }
-
-			// function GetFormData()
-			// {
-			// 	// var data = new FormData();
-
-			// 	// Q1
-			// 	// var answers = {q1, q2, q3, q4, q5, q6, q7, q8, q9};
-			// 	// answers.q1 = $('input[name = "q1"]:checked').val();
-			// 	// answers.q2 = $('input[name = "q2"]:checked').val();
-			// 	// answers.q3 = $('input[name = "q3"]:checked').val();
-			// 	// answers.q4 = GetArrayAnswers("q4");
-			// 	// answers.q5 = GetArrayAnswers("q5");
-			// 	// answers.q6 = $('input[name = "q6"]:checked').val();
-			// 	// answers.q7 = $('input[name = "q7"]:checked').val();
-			// 	// answers.q8 = $('input[name = "q8"]:checked').val();
-			// 	// answers.q9 = $('input[name = "q9"]:checked').val();
-			// 	console.log(questions);
-			// }
-
-			// function GetArrayAnswers(question, isArray)
-			// {
-			// 	var answer;
-			// 	if(isArray)
-			// 	{
-			// 		answer = [];
-			// 		$.each($("input[name='" + question + "']:checked"), function(){
-			// 			answer.push($(this).val());
-			// 		});
-
-			// 	}
-			// 	else
-			// 	{
-			// 		answer = $("input[name = '" + question + "']:checked").val();
-			// 	}
-			// 	return answer;
-			// }
+			// Request("POST", "../../php/requests/", console.log,  formData);
 		}
 
+		function ValidateSelection(name, checkbox)  
+		{  
+			var checkboxes = document.getElementsByName(name);  
+			
+			var numberOfCheckedItems = 0;
+			for(var i = 0; i < checkboxes.length; i++)  
+			{  
+				if(checkboxes[i].checked)  
+					numberOfCheckedItems++;  
+			}  
 
-		
+			if(numberOfCheckedItems > 2)
+			{
+				checkbox.checked = false;
+				return false;
+			}
+		} 
+
+		function SetError(errorId, visible)
+		{
+			var error = document.getElementById(errorId);
+			error.style.visibility = (visible) ? "visible" : "hidden";
+		}
+
+		function SetSelection(name, selections)
+		{
+			console.log("Set " + name + "'s selection to ");
+			console.log(selections);
+			if(selections)
+			{
+				if(Array.isArray(selections))
+				{
+					$.each($("input[name='" + name + "']"), function(){
+						if(selections.length > 0)
+						{
+							for (let index = 0; index < selections.length; index++) {
+								// const element = selections[index];
+								if($(this).val() == selections[index])
+								{
+									$(this).prop('checked',true);
+									return;
+								}
+								else
+								{
+									$(this).prop('checked',false);	
+								}
+							}
+						}
+						else
+						{
+							$.each($("input[name='" + name + "']:checked"), function(){ $(this).prop('checked',false);	});
+						}
+					});
+
+
+				}
+				else
+				{
+					$.each($("input[name='" + name + "']"), function(){
+						if($(this).val() == selections)
+						{
+							$(this).prop('checked',true);	
+						}
+						else
+						{
+							$(this).prop('checked',false);	
+						}
+					});			
+				}
+			}
+			else
+			{
+				$.each($("input[name='" + name + "']:checked"), function(){ $(this).prop('checked',false);	});
+			}
+		}
+
+		function ClearSelection(name)
+		{
+			$.each($("input[name='" + name + "']:checked"), function(){ $(this).prop('checked',false);	});
+		}
+
+		function GetAnswer(name, answerToGet = "")
+		{
+
+				switch(answerToGet){
+					case"animals":{
+						var array = [];
+						$.each($("input[name='" + name + "']:checked"), function(){
+							array.push( {animal:$(this).val(), plants:null});
+						});
+						if(array.length == 0) return null;
+						else return array;
+						break;
+					}
+					case"animal-plants":{
+						var array = [];
+						$.each($("input[name='" + name + "']:checked"), function(){
+							array.push( $(this).val() );
+						});
+						if(array.length == 0) return null;
+						else return array;
+						break;
+					}
+					case"harvestable":{
+						var array = [];
+						$.each($("input[name='" + name + "']:checked"), function(){
+							array.push( { plant:$(this).val(), size:"", location:""} );
+						});
+						if(array.length == 0) return null;
+						else return array;
+						break;
+					}
+					case"healthy":{
+						var array = [];
+						$.each($("input[name='" + name + "']:checked"), function(){
+							array.push( { plant:$(this).val(), reason:null} );
+						});
+						if(array.length == 0) return null;
+						else return array;
+						break;
+					}
+					case"healthy-reasons":{
+						var array = [];
+						$.each($("input[name='" + name + "']:checked"), function(){
+							array.push( $(this).val() );
+						});
+						if(array.length == 0) return null;
+						else return array;
+						break;
+					}
+
+					default: {
+						return $("input[name = " + name + "]:checked").val();
+						break;
+					}
+				}
+
+
+				
+			
+
+
+		}
 
 	}
 	

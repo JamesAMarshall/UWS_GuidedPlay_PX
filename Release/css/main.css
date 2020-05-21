@@ -18,7 +18,14 @@ img {
 	width:100px;
 }
 
-
+.error{
+	visibility: hidden;
+	color: red;
+	border: 1px solid red;
+	border-radius: 5px;
+	margin: 2px;
+	padding: 5px;
+}
 
 .question-card{
 	width: 18rem;
@@ -43,6 +50,7 @@ main.container, section.container{
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
+
 
 /* Combinations ---------------------------------------- */
 

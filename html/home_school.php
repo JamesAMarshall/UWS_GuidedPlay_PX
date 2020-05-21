@@ -228,10 +228,10 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button" name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q2','q1')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q2','q3')">Next</button>
 						</div>
 					</div>
@@ -243,28 +243,53 @@
 					<h4>3. The plants were visited by a:</h4>
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
+							<input type="checkbox" name="creature" value="wasp">
+							<img src="../images/observation/species/wasp.jpg">
+							<br>
+							Wasp
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature" value="stinglessBee">
+							<img src="../images/observation/species/stinglessBee.jpg">
+							<br>
+							Stingless Bee
+						</label>
+						<label class="fourCol">
 							<input type="checkbox" name="creature" value="honeybee">
 							<img src="../images/observation/species/honeybee.png">
 							<br>
 							Honey Bee
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="nativeBee">
-							<img src="../images/observation/species/nativebee.jpg">
+							<input type="checkbox" name="creature" value="blueBanded">
+							<img src="../images/observation/species/blueBanded.jpg">
 							<br>
-							Native Bee
+							Blue banded bee
 						</label>
-						<label>
+						<label class="fourCol">
 							<input type="checkbox" name="creature" value="bird">
 							<img src="../images/observation/species/bird.jpg">
 							<br>
 							Bird
 						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="wasp">
-							<img src="../images/observation/species/wasp.jpg">
+							<input type="checkbox" name="creature" value="possum">
+							<img src="../images/observation/species/possum.jpg">
 							<br>
-							Wasp
+							Possum
+
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature" value="flyingFox">
+							<img src="../images/observation/species/flyingfox.jpg">
+							<br>
+							Flying fox
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature" value="lizard">
+							<img src="../images/observation/species/lizard.jpg">
+							<br>
+							Lizard
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="moth">
@@ -278,31 +303,7 @@
 							<br>
 							Butterfly
 						</label>
-						<label>
-							<input type="checkbox" name="creature" value="lizard">
-							<img src="../images/observation/species/lizard.jpg">
-							<br>
-							Lizard
-						</label>
 						<label class="fourCol">
-							<input type="checkbox" name="creature" value="flyingFox">
-							<img src="../images/observation/species/flyingfox.jpg">
-							<br>
-							Flying fox
-						</label>
-						<label class="fourCol">
-							<input type="checkbox" name="creature" value="fruitBat">
-							<img src="../images/observation/species/fruitbat.jpg">
-							<br>
-							Fruit bat
-						</label>
-						<label class="fourCol">
-							<input type="checkbox" name="creature" value="possum">
-							<img src="../images/observation/species/possum.jpg">
-							<br>
-							Possum
-						</label>
-						<label>
 							<input type="checkbox" name="creature" value="beetle">
 							<img src="../images/observation/species/beetle.jpg">
 							<br>
@@ -313,15 +314,27 @@
 							<img src="../images/observation/species/fly.jpg">
 							<br>
 							Fly
-						</label>					
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature" value="hoverFly">
+							<img src="../images/observation/species/hoverFly.jpg">
+							<br>
+							Hoverfly
+						</label>
+						<label class="fourCol">
+							<input type="checkbox" name="creature" value="others">
+							<img src="../images/observation/species/others.jpg">
+							<br>
+							Others
+						</label>								
 					</div>
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button" name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q3','q2')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q3','q4')">Next</button>
 						</div>						
 					</div>
@@ -360,10 +373,10 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q4','q3')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button" name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q4','q5')">Next</button>
 						</div>						
 					</div>
@@ -390,10 +403,10 @@
 					<br>
 				<!-- back and next button-->					
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q5','q4')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="next" class="next btn btn-outline-success btn-lg" onclick="nextQuestion('q5','q6')">Next</button>
 						</div>						
 					</div>
@@ -432,10 +445,10 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q6','q5')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="next" class=" next skipback btn btn-outline-success btn-lg" onclick="nextQuestion('q6','q7')">Next</button>
 						</div>						
 					</div>
@@ -522,10 +535,10 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class="previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q7','q6')">Back</button>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="next" class="next btn btn-outline-success btn-lg" onclick="nextQuestion('q7','q8')">Next</button>
 						</div>						
 					</div>
@@ -564,11 +577,11 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q8','q7')">Back</button>
 							
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q8','q9')">Next</button>
 						</div>						
 					</div>
@@ -614,11 +627,11 @@
 					<br>
 				<!-- back and next button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q9','q8')">Back</button>
 							
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<button type="button"  name="next" class=" next btn btn-outline-success btn-lg" onclick="nextQuestion('q9','q10')">Next</button>
 						</div>						
 					</div>					
@@ -664,11 +677,11 @@
 					<br>
 				<!-- next and submit button-->
 					<div class="form-group row progressButtons">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 						<button type="button"  name="previous" class=" previous btn btn-outline-secondary btn-lg" onclick="previousQuestion('q10','q9')">Back</button>
 							
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 						<button type="button" class="btn btn-outline-success btn-lg" onclick="submitForm()">Submit</button>
 						</div>						
 					</div>	

@@ -410,7 +410,7 @@
 					</label>
 				</div>
 				<div class="row">
-					<div id="q10_invalid" class="error">You must choose and option.</div>
+					<div id="q10_invalid" class="error">You must choose 2 options.</div>
 				</div>
 			</div>
 

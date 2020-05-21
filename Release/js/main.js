@@ -146,31 +146,38 @@
 						{
 							var answer = GetAnswer(q, "animals");
 
-							for (let i = 0; i < animals.answer.length; i++) {
-								var isInAnswer = false;
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].animal == animals.answer[i].animal) {
-										isInAnswer = true;
-									}
-
-									if(!isInAnswer && j == answer.length-1)	{
-										console.log("spliced" + animals.answer[i].animal);
-										animals.answer.splice(i,1);
-									}	
-								}
-							}
-
-							for (let i = 0; i < animals.answer.length; i++) {
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].animal == animals.answer[i].animal) {
-										answer.splice(j,1);
+							if(answer)
+							{
+								for (let i = 0; i < animals.answer.length; i++) {
+									var isInAnswer = false;
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].animal == animals.answer[i].animal) {
+											isInAnswer = true;
+										}
+	
+										if(!isInAnswer && j == answer.length-1)	{
+											console.log("spliced" + animals.answer[i].animal);
+											animals.answer.splice(i,1);
+										}	
 									}
 								}
+	
+								for (let i = 0; i < animals.answer.length; i++) {
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].animal == animals.answer[i].animal) {
+											answer.splice(j,1);
+										}
+									}
+								}
+	
+								for (let index = 0; index < answer.length; index++) {
+									const element = answer[index];
+									animals.answer.push(element);
+								}
 							}
-
-							for (let index = 0; index < answer.length; index++) {
-								const element = answer[index];
-								animals.answer.push(element);
+							else
+							{
+								animals.answer = answer;
 							}
 						}
 
@@ -222,37 +229,43 @@
 						else
 						{
 							var answer = GetAnswer(q, "harvestable");
-
-							for (let i = 0; i < harvestable.answer.length; i++) {
-								var isInAnswer = false;
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].plant == harvestable.answer[i].plant) {
-										isInAnswer = true;
-									}
-
-									if(!isInAnswer && j == answer.length-1)	{
-										console.log("spliced" + harvestable.answer[i].plant);
-										harvestable.answer.splice(i,1);
-									}	
-								}
-							}
-
-							for (let i = 0; i < harvestable.answer.length; i++) {
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].plant == harvestable.answer[i].plant) {
-										console.log("cleared" + answer[j].plant + " from answer");
-										answer.splice(j,1);
-									}
-								}
-							}
-
-							if(answer.length > 0)
+							if(answer)
 							{
-								for (let index = 0; index < answer.length; index++) {
-									const element = answer[index];
-									console.log("added" + harvestable.answer[index].plant + " to harvestable");
-									harvestable.answer.push(element);
+								for (let i = 0; i < harvestable.answer.length; i++) {
+									var isInAnswer = false;
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].plant == harvestable.answer[i].plant) {
+											isInAnswer = true;
+										}
+
+										if(!isInAnswer && j == answer.length-1)	{
+											console.log("spliced" + harvestable.answer[i].plant);
+											harvestable.answer.splice(i,1);
+										}	
+									}
 								}
+
+								for (let i = 0; i < harvestable.answer.length; i++) {
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].plant == harvestable.answer[i].plant) {
+											console.log("cleared" + answer[j].plant + " from answer");
+											answer.splice(j,1);
+										}
+									}
+								}
+
+								if(answer.length > 0)
+								{
+									for (let index = 0; index < answer.length; index++) {
+										const element = answer[index];
+										console.log("added" + harvestable.answer[index].plant + " to harvestable");
+										harvestable.answer.push(element);
+									}
+								}
+							}
+							else
+							{
+								harvestable.answer = answer;
 							}
 						}
 
@@ -332,37 +345,43 @@
 						else
 						{
 							var answer = GetAnswer(q, "healthy");
-
-							for (let i = 0; i < healthy.answer.length; i++) {
-								var isInAnswer = false;
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].plant == healthy.answer[i].plant) {
-										isInAnswer = true;
-									}
-
-									if(!isInAnswer && j == answer.length-1)	{
-										console.log("spliced" + healthy.answer[i].plant);
-										healthy.answer.splice(i,1);
-									}	
-								}
-							}
-
-							for (let i = 0; i < healthy.answer.length; i++) {
-								for (let j = 0; j < answer.length; j++) {
-									if(answer[j].plant == healthy.answer[i].plant) {
-										console.log("cleared" + answer[j].plant + " from answer");
-										answer.splice(j,1);
-									}
-								}
-							}
-
-							if(answer.length > 0)
+							if(answer)
 							{
-								for (let index = 0; index < answer.length; index++) {
-									const element = answer[index];
-									console.log("added" + healthy.answer[index].plant + " to healthy");
-									healthy.answer.push(element);
+								for (let i = 0; i < healthy.answer.length; i++) {
+									var isInAnswer = false;
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].plant == healthy.answer[i].plant) {
+											isInAnswer = true;
+										}
+	
+										if(!isInAnswer && j == answer.length-1)	{
+											console.log("spliced" + healthy.answer[i].plant);
+											healthy.answer.splice(i,1);
+										}	
+									}
 								}
+	
+								for (let i = 0; i < healthy.answer.length; i++) {
+									for (let j = 0; j < answer.length; j++) {
+										if(answer[j].plant == healthy.answer[i].plant) {
+											console.log("cleared" + answer[j].plant + " from answer");
+											answer.splice(j,1);
+										}
+									}
+								}
+	
+								if(answer.length > 0)
+								{
+									for (let index = 0; index < answer.length; index++) {
+										const element = answer[index];
+										console.log("added" + healthy.answer[index].plant + " to healthy");
+										healthy.answer.push(element);
+									}
+								}
+							}
+							else
+							{
+								healthy.answer = answer;
 							}
 						}
 
@@ -385,17 +404,25 @@
 						healthy.answer[q10_i].reason = GetAnswer(q, "healthy-reasons");
 						if(healthy.answer[q10_i].reason)
 						{
-							if(q10_i+1 < healthy.answer.length)
+							if(healthy.answer[q10_i].reason.length == 2)
 							{
-								healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;
-								SetSelection(q, healthy.answer[q10_i+1].reason);
+								if(q10_i+1 < healthy.answer.length)
+								{
+									healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;
+									SetSelection(q, healthy.answer[q10_i+1].reason);
+								}
+								else
+								{
+									q="q_submit"
+									GoToPage(q);
+								}
+								SetError("q10_invalid",false);
 							}
 							else
 							{
-								q="q_submit"
-								GoToPage(q);
+								SetError("q10_invalid",true);
+								q10_i--;
 							}
-							SetError("q10_invalid",false);
 						}
 						else
 						{

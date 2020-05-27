@@ -10,18 +10,122 @@
 	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
 
 </head>
-<body class="">
+<body class=""  onload="SetResearchPage()">
 	<main class="container vh-100">
-		<section id="" class="">
-			<h1>Research</h1>
+		<header id="" class="">
+
+			<div class="container">
+				<h1 class="">Research</h1>
+			</div>
+
+			<nav id="" class="navbar navbar-expand-lg">
+
+				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload">Upload</button>
+				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view">Data View</button>
+				<button class="btn btn-std-4 btn-secondary mr-auto">Manage Accounts</button>
+				
+				<a id="username" class="nav-link" href="#">(User)</a>
+				<button class="btn btn-std-2 btn-secondary" onclick="Logout()">Logout</button>
+			</nav>
+		</header>
+
+		<section id="upload" class="container collapse">
+			<div class="d-flex">	
+				<h2 class="flex-grow-1">Upload</h2>	
+			</div>
+
+
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Create device</span>
+					</div>
+					
+					<!-- <input id="input_deviceId" type="text" class="form-control" placeholder="Device Id"> -->
+					<!-- Set the PHP script to increment to the MAX + 1 -->
+					<input id="input_deviceName" type="text" class="form-control" placeholder="Device Name">
+					<!-- Device Type -->
+					<select id="devicetype-dropdown" class="custom-select" name="devices" onchange="ClearDefaultOption('devicetype-dropdown')">
+					</select>	
+
+					<button class="btn btn-primary ml-2 col-auto btn-std-3" type="submit" onclick="AddNewDevice()">Add New</button>
+				</div>
+				<span id="newdevicename_error" class="invalid-feedback">Please enter the new name</span>
+				<span id="newdevicetype_error" class="invalid-feedback">Please select a device type</span>
+				<span id="newdevice_message" class=""></span>
+			</div>
+
+
+			<div class="form-row">
+
+				<div class="form-group col-5">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">Device</span>
+						</div>
+						<select id="deviceId-dropdown" class="custom-select" name="devices" onchange="ClearDefaultOption('deviceId-dropdown')">
+						</select>			
+					</div>
+					<span id="deviceId_error" class="invalid-feedback">Please select a device Id</span>
+				</div>
+				<div class="form-group col">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">File</span>
+						</div>
+						<div class="custom-file">
+							<label id="CSVFilelabel" class="custom-file-label" for="CSVFileInput">Choose file</label>
+							<input type="file" class="custom-file-input btn btn-primary " id="CSVFileInput" onchange="UpdateChosenFile('CSVFilelabel','CSVFileInput')">
+						</div>
+						<button class="btn btn-success ml-2 col-auto btn-std-3" onclick="Upload_SensorData()" type="button">Upload File</button>
+					</div>
+					<span id="csvnofile_error" class="invalid-feedback">Please select a csv file to upload</span>
+					<span id="csv_error" class="invalid-feedback">The file you chose is not a .csv file, please select a csv file</span>
+				</div>
+
+			</div>
+
+
+			<p id="demo"></p>
 		</section>
+
+
+		<section id="data_view" class="container collapse pt-2">
+
+			<div id="sensordata_toolbar">
+				<a class="navbar-brand mr-auto">Sensor Data</a>
+			</div>
+			<table id="sensordata_table"></table>	
+
+			<div id="observation_toolbar">
+				<a class="navbar-brand">Observation Data</a>
+			</div>
+			<table id="observation_table"></table>
+		</section>
+
+		
 	</main>
 </body>
 		<!-- JS -->
 		<!-- Libraries -->
-		<!-- <script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script> -->
-		<!-- <script type="text/javascript" src="../libs/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../libs/Bootstrap-4-4.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/extensions/export/bootstrap-table-export.min.js"></script>
+		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
+
+		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+
+		<!-- CDN Libraries -->
+		<!-- Graph Lib -->
+		<!-- <script src="https://www.amcharts.com/lib/4/core.js"></script>
+		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script> -->
+		
 
 		<!-- Our Code -->
-		<!-- <script src="../js/main.js"></script> -->
+		<script>page="research";</script>
+		<script src="../js/main.js"></script>
 </html>

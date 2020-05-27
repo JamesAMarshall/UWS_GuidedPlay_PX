@@ -2,7 +2,6 @@
 // @Global Variables 
 
 
-
 //------------------------------------------
 // @Page Management 
 {
@@ -21,22 +20,11 @@
 
 }
 
-//------------------------------------------
-// @Validation
-{
-
-}
-
-//------------------------------------------
-// @Table Code
-{
-	
-}
 
 //------------------------------------------
 // @XHTTP Requests
 {
-	function Request(method, path, callback, formData = null)
+	function PHP_Request(method, path, callback, formData = null)
 	{
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() 
@@ -52,12 +40,632 @@
 		if(formData) xhttp.send(formData);
 		else 		 xhttp.send();
 	}
+
+	function CheckSession()
+	{
+		PHP_Request("GET", "../php/requests/check_session.php", DirectTo);
+	}
+}
+
+//------------------------------------------
+// @Validation
+{
+
+	function SetError(errorId, visible)
+	{
+		var error = document.getElementById(errorId);
+		
+		if(error.classList.contains("invalid-feedback"))
+		{
+			error.style.display = (visible) ? "inline" : "none";
+		}
+		else
+		{
+			error.style.visibility = (visible) ? "visible" : "hidden";
+		}
+	}
+
+	{ // Input Validation Functions
+		// Default validation checks if input element is empty
+		function DefaultValidation(elementId) 
+		{ 
+			var input = document.getElementById(elementId);
+			var isInputValid;
+			
+			// Does input element contain a value
+			isInputValid = CheckRequired(input);
+
+			// Show or hide the corresponding error span based on isInputValid
+			SetError(elementId + "_error", !isInputValid);
+
+			return isInputValid;
+		}
+
+		// Default validation checks if input element is empty
+		function ValidateUsername(elementId) 
+		{ 	
+			console.log("Currently username is validation just uses DefaultValidation(). To be changed in the future");
+			return DefaultValidation(elementId);
+		}
+
+		// Validates an input to meet the requirements of a passowrd
+		function ValidatePassword(elementId)
+		{
+			var passwordConditions = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=\S+$).{6,20}$/;
+			var input = document.getElementById(elementId);
+			var isInputValid;
+			
+			// Does the input value match the regular expression
+			isInputValid = input.value.match(passwordConditions);
+			
+			// Show or hide the corresponding error span based on isInputValid
+			SetError(elementId + "_error", !isInputValid);
+
+			return isInputValid;
+		} 
+
+		// Validates a password with another to ensure they match
+		function ValidateConfirmPassword(elementId, passwordId)
+		{
+			var passwordConditions = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=\S+$).{6,20}$/;
+			var input = document.getElementById(elementId);
+			var password = document.getElementById(passwordId);
+			var isInputValid;
+			
+			// Does the input value match the regular expression
+			isInputValid = input.value.match(passwordConditions);
+			
+			// Compare Confirm password with password input
+			if(input.value != password.value) isInputValid = false;
+
+			// Show or hide the corresponding error span based on isInputValid
+			SetError(elementId + "_error", !isInputValid);
+
+			return isInputValid;
+		}
+	}
+
+	// Check the input element isn't empty
+	function CheckRequired(val) 
+	{ 
+		var val_len = val.value.length;
+		if (val_len == 0 || val.value ==  null) {
+				val.focus();
+				return false;
+		}
+		return true;
+	}
+
+	function ValidateFile(){}
+	
+}
+
+//------------------------------------------
+// @Table Code
+{
+	var table = [];
+	var emptydata = {};
+
+	{	// Handlers and formatters 
+		function responseHandler(res) {
+			$.each(res.rows, function (i, row) {
+				row.lastLoggedIn = JSON.stringify(lastLoggedIn);
+				row.id = "0";
+			})
+			return res
+		}
+		
+		function actionFormatter(value, row, index) {
+			return [
+				'<a class="log" href="javascript:void(0)" title="remove">',
+				'<i class="fa fa-trash"></i>',
+				'</a>'
+			].join('')
+		}
+	
+		function dateTimeFormatter(value, row, index) {
+			return JSON.stringify(value);
+		}
+		
+		function accountTypeFormatter(value, row, index) {
+			var type;
+			switch (value) {
+				case "0" : type = "Student"; break;
+				case "1" : type = "Teacher"; break;
+				case "2" : type = "Community"; break;
+				case "3" : type = "Researcher"; break;
+				case "4" : type = "Admin Researcher"; break;
+				case "5" : type = "Admin Teacher"; break;
+				default: type = "Error"; break;
+			}
+			return type;
+		}
+	
+		function class_operatorFormatter(value, row, index) {
+			return [
+				'<a class="log" href="javascript:void(0)" title="Log">',
+				'<i class="fa fa-minus"></i>',
+				'</a>'
+			].join('')
+		}
+		
+		function class_actionFormatter(value, row, index) {
+			return [
+				'<a class="reset btn btn-primary btn-sm mx-1" href="javascript:void(0)" title="reset">',
+				'Reset Password',
+				'</a>'
+			].join('')
+		}
+		
+		function s_admin_actionFormatter(value, row, index) {
+			return [
+				'<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Set Account Type </button>',
+				'<div class="dropdown-menu">',
+				'<a class="set_to_student dropdown-item" href="javascript:void(0)" title="">Student</a>',
+				'<a class="set_to_teacher dropdown-item" href="javascript:void(0)" title="">Teacher</a>',
+				'<a class="set_to_teacherAdmin dropdown-item" href="javascript:void(0)" title="">Admin</a>',
+				'</div>',
+				'<a class="reset btn btn-primary btn-sm mx-1" href="javascript:void(0)" title="reset">',
+				'Reset Password',
+				'</a>',
+				'<a class="log btn btn-sm border-danger" href="javascript:void(0)" title="Log">',
+				'<i class="fa fa-trash mx-1"></i>',
+				'</a>'
+			].join('')
+		}
+		
+		function r_admin_actionFormatter(value, row, index) {
+			return [
+				'<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Set Account Type </button>',
+				'<div class="dropdown-menu">',
+				'<a class="set_to_researcher dropdown-item" href="javascript:void(0)" title="">Researcher</a>',
+				'<a class="set_to_researcherAdmin dropdown-item" href="javascript:void(0)" title="">Admin</a>',
+				'</div>',
+				'<a class="reset btn btn-primary btn-sm mx-1" href="javascript:void(0)" title="reset">',
+				'Reset Password',
+				'</a>',
+				'<a class="log btn btn-sm border-danger" href="javascript:void(0)" title="Log">',
+				'<i class="fa fa-trash mx-1"></i>',
+				'</a>'
+			].join('')
+		}
+	
+	
+		function studentActionFormatter(value, row, index) {
+			return [
+				'<a class="add_student btn btn-primary btn-sm mx-1" href="javascript:void(0)" title="add">',
+				'Add to Class',
+				'</a>'
+			].join('')
+		}
+	
+		window.operateEvents = {
+			'click .log': function (e, value, row, index) {
+				Deactivate(row.username);
+			},
+			'click .set_to_student': function (e, value, row, index) {
+				SetAccount(0,row.username);
+			},
+			'click .set_to_teacher': function (e, value, row, index) {
+				SetAccount(1,row.username);
+			},
+			'click .set_to_teacherAdmin': function (e, value, row, index) {
+				SetAccount(5,row.username);
+			},
+			'click .set_to_researcherAdmin': function (e, value, row, index) {
+				SetAccount(4,row.username);
+			},
+			'click .set_to_researcher': function (e, value, row, index) {
+				SetAccount(3,row.username);
+			},
+			'click .reset': function (e, value, row, index) {
+				ResetPassword(row.username);
+			},
+			'click .add_student': function (e, value, row, index) {
+				var c = document.getElementById("input_classId").value;
+				AddStudentToClass(row.username, c);
+			}
+		}
+	}	
+
+	if(page == "school")
+	{
+		table['schoolaccounts'] = { table : $('#school_accounts'), selections : [], parameters: {} };
+
+		table['schoolaccounts'].parameters = {
+			data:emptydata,
+			toolbar:'#toolbar_school_accounts',
+			search:"true",
+			classes:'table table-bordered table-sm',
+			sortable: "true",
+			showRefresh:"true",
+			detailFormatter:"detailFormatter",
+			minimumCountColumns:"1",
+			pagination:"true",
+			idField:"id",
+			pageList:"[10, 25, 50, 100, all]",
+			sidePagination:"client",
+			responseHandler:"responseHandler"
+		}
+		table['schoolaccounts'].parameters.columns = [
+			{	
+				field: 'state', 
+				align: 'center', 
+				valign: 'middle',
+				width: 50,	
+				widthUnit: "px", 
+				checkbox: true
+			},{	
+				field: 'username',	
+				title: 'Username',
+				sortable: "true",
+				align: 'center'
+			},{
+				field: 'accountType',	
+				title: 'Account Type',	
+				align: 'center',
+				width: 15,
+				widthUnit: "%",
+				sortable: "true",
+				formatter: accountTypeFormatter
+			},{	
+				field: 'lastLoggedIn', 
+				title: 'Last Logged In', 
+				align: 'center',
+				sortable: "true",
+				width: 20,
+				widthUnit: "%"
+			},{	
+				field: 'actions', 
+				title: 'Actions', 
+				align: 'center',
+				width: 29,
+				widthUnit: "%",
+				events: window.operateEvents, 
+				formatter: s_admin_actionFormatter
+		}]
+	}
+
+	if(page == "research")
+	{
+		table['sensordata'] = { table : $('#sensordata_table'), selections : [], parameters: {} };
+		table['observationdata'] = { table : $('#observation_table'), selections : [], parameters: {} };
+
+		{ // LightTemp Table
+			table['sensordata'].parameters = {
+				data:emptydata,
+				toolbar:'#sensordata_toolbar',
+				search:"true",
+				classes:'table table-bordered table-sm',
+				showColumns:"true",
+				showExport:"true",
+				detailFormatter:"detailFormatter",
+				minimumCountColumns:"1",
+				pagination:"true",
+				idField:"id",
+				pageList:"[10, 25, 50, 100, all]",
+				sidePagination:"client"
+			}
+			table['sensordata'].parameters.columns = [
+				{	
+					field: 'deviceId',	
+					title: 'Device',
+					align: 'center'
+				},{
+					field: 'username',	
+					title: 'Uploader'
+				},{	
+					field: 'plotNumber', 
+					title: 'Plot',
+					align: 'center'
+				},{	
+					field: 'dateTime', 
+					title: 'Date Time',
+					align: 'center'
+					// formatter: dateTimeFormatter
+				},{	
+					field: 'temp', 
+					title: 'Temp C',
+					width: '80',
+					widthUnit:'px'
+				},{	
+					field: 'intensity', 
+					title: 'Light'
+				},{	
+					field: 'couplerDetached', 
+					title: 'Detached',
+					align: 'center'
+				},{	
+					field: 'couplerAttached', 
+					title: 'Attached',
+					align: 'center'
+				},{	
+					field: 'hostConnected', 
+					title: 'Host Connected',
+					align: 'center'
+				},{	
+					field: 'stopped', 
+					title: 'Stopped',
+					align: 'center'
+				},{	
+					field: 'endOfFile', 
+					title: 'End Of File',
+					align: 'center'
+			}]
+		}
+
+		{ // Observation Table
+			table['observationdata'].parameters = {
+				data:emptydata,
+				toolbar:'#observation_toolbar',
+				search:"true",
+				classes:'table table-bordered table-sm',
+				showColumns:"true",
+				showExport:"true",
+				detailFormatter:"detailFormatter",
+				minimumCountColumns:"1",
+				pagination:"true",
+				idField:"id",
+				pageList:"[10, 25, 50, 100, all]",
+				sidePagination:"client"
+			}
+			table['observationdata'].parameters.columns = [
+				{	
+					field: 'observationId',	
+					title: 'Id',
+					align: 'center'
+				},{
+					field: 'username',	
+					title: 'User'
+				},{
+					field: 'weather',	
+					title: 'Weather'
+				},{
+					field: 'temperature',	
+					title: 'Temperature'
+				},{
+					field: 'wind',	
+					title: 'Wind'
+				},{
+					field: 'animal',	
+					title: 'Animals'
+				},{
+					field: 'anim_plant',	
+					title: 'Plants Visited'
+				},{
+					field: 'harvest_plant',	
+					title: 'Harvestable Plants'
+				},{
+					field: 'size',	
+					title: 'Size'
+				},{
+					field: 'location',	
+					title: 'Location'
+				},{
+					field: 'healthy_plant',	
+					title: 'Healthy Plant'
+				},{
+					field: 'reason',	
+					title: 'Reason'
+			}]
+		}
+		
+	}
+
+	function InitTable(table, data)
+	{
+		table.parameters.data = data;
+		table.table.bootstrapTable('destroy').bootstrapTable(table.parameters);
+
+		table.table.on('check.bs.table uncheck.bs.table ' + 'check-all.bs.table uncheck-all.bs.table', function () {
+			table.selections = $.map(table.table.bootstrapTable('getSelections'), function (row) { return row.username })
+		});
+
+		table.table.bootstrapTable('hideLoading');
+	}
+
+	function Set_Table_LightTempData(response)
+	{
+		if(response.success)
+		{
+			if(response.result)
+			{
+				console.log("Setting Up table");
+				InitTable(table['sensordata'], response.result);
+			}
+		}
+	}
+
+	function Set_Table_SchoolAccounts(response)
+	{
+		if(response.success)
+		{
+			if(response.result)
+			{
+				console.log("Setting Up table");
+				InitTable(table['schoolaccounts'], response.result);
+			}
+		}
+	}
+
+	function Set_Table_ObservationData(response)
+	{
+		if(response.success)
+		{
+			if(response.result)
+			{
+				console.log("Setting Up table");
+				InitTable(table['observationdata'], response.result);
+			}
+		}
+	}
+
+	function GetClass()
+	{
+		var classId = document.getElementById("input_classId");
+		var formData = new FormData();
+		formData.append("classId", classId.value);
+
+
+		PHP_Request("POST", "../php/requests/get_class.php", console.log, formData);
+
+	}
+
+	function SetAccount(accountType, user)
+	{
+		console.log("Set:" + JSON.stringify(user) + "'s accountType To: Student");
+				
+		var formData = new FormData();
+		formData.append("username", user);
+		formData.append("accountType", accountType);
+
+		PHP_Request("POST", "../php/requests/set_accounttype.php", console.log, formData);
+	}
+
+	function ResetPassword(user)
+	{
+		console.log("Reset:" + JSON.stringify(user) + "'s Password");
+				
+		var formData = new FormData();
+		formData.append("username", user);
+
+		PHP_Request("POST", "../php/requests/set_password.php", console.log, formData);
+	}
+
+	function Deactivate(user)
+	{
+		console.log("Deactivate:" + JSON.stringify(user) + "'s Account");
+				
+		var formData = new FormData();
+		formData.append("username", user);
+
+		PHP_Request("POST", "../php/requests/set_accountdeactive.php", console.log, formData);
+	}
+
+	function AddStudentToClass(user, classId)
+	{
+		console.log("Add:" + JSON.stringify(user) + "To class");
+				
+		var formData = new FormData();
+		formData.append("username", user);
+		formData.append("classId", classId);
+
+		PHP_Request("POST", "../php/requests/set_addStudentToClass.php", console.log, formData);
+	}
+	
 }
 
 //------------------------------------------
 // @Account Management
 {
+	function Login()
+	{
+		var valid = true;
 
+		valid = ValidateUsername("login_username") ? valid : false;
+		valid = ValidatePassword("login_password") ? valid : false;
+	
+		if(!valid) return;
+		else console.log("LogIn credentials are valid");
+
+		var username = document.getElementById("login_username").value;
+		var password = document.getElementById("login_password").value;
+	
+		var formData = new FormData();
+		formData.append("username", username);
+		formData.append("password", password);
+
+		PHP_Request("POST", "../php/requests/check_login.php", DirectTo,  formData);
+	}
+
+	function Signup()
+	{
+		var valid = true;
+
+		valid = ValidateUsername("signup_username") ? valid : false;
+		valid = ValidatePassword("signup_password") ? valid : false;
+		valid = ValidateConfirmPassword("signup_confirmPassword", "signup_password") ? valid : false;
+	
+		if(!valid) return;
+		else console.log("SignUp credentials are valid");
+
+		var username = document.getElementById("signup_username").value;
+		var password = document.getElementById("signup_password").value;
+	
+		var formData = new FormData();
+		formData.append("username", username);
+		formData.append("password", password);
+
+		PHP_Request("POST", "../php/requests/set_newaccount.php", DirectTo,  formData);
+	}
+
+	function Logout()
+	{
+		PHP_Request("GET", "../php/requests/set_logout.php", DirectTo);
+	}
+
+	function DirectTo(response)
+	{
+		// console.log(response);
+
+		if(response.success)
+		{
+			if(response.session.accountType != null)
+			{
+				if(response.session.user)
+				{
+					user = response.session.user;
+					// console.log(user);
+				}
+
+
+				switch (response.session.accountType) {
+					case "0":
+					case "1":
+					case "5":{
+						window.location.assign("../html/school.php");
+						break;
+					}
+					case "3":
+					case "4":{
+						window.location.assign("../html/research.php");
+						break;
+					}
+					case 0:
+						case 1:
+						case 2:{
+							window.location.assign("../html/school.php");
+							break;
+						}
+						case 3:
+						case 4:{
+							window.location.assign("../html/research.php");
+							break;
+						}
+					default:
+						break;
+				}
+			}
+			else
+			{
+				return;
+			}
+		}
+		else { window.location.assign("../index.php"); }
+		
+
+
+	}
+
+	function GetUser(response)
+	{
+		if(response.result)
+		{
+			var user_element = document.getElementById("username");
+			user_element.innerHTML = response.result;
+			// console.log("Set");
+		}
+	}
 }
 
 
@@ -65,6 +673,13 @@
 // @School
 //------------------------------------------
 {
+	function SetSchoolPage()
+	{
+		CheckSession();
+		PHP_Request("GET", "../php/requests/get_currentuser.php", GetUser);
+		PHP_Request("GET", "../php/requests/get_schoolaccounts.php", Set_Table_SchoolAccounts);
+	}
+
 	//------------------------------------------
 	// @Observation
 	{
@@ -81,16 +696,20 @@
 		q8_i = -1;
 		q10_i = -1;
 
-		ClearSelection("q1");
-		ClearSelection("q2");
-		ClearSelection("q3");
-		ClearSelection("q4");
-		ClearSelection("q5");
-		ClearSelection("q6");
-		ClearSelection("q7");
-		ClearSelection("q8");
-		ClearSelection("q9");
-		ClearSelection("q10");
+		if(page == "school")
+		{
+			ClearSelection("q1");
+			ClearSelection("q2");
+			ClearSelection("q3");
+			ClearSelection("q4");
+			ClearSelection("q5");
+			ClearSelection("q6");
+			ClearSelection("q7");
+			ClearSelection("q8");
+			ClearSelection("q9");
+			ClearSelection("q10");
+		}
+
 
 		var q = "q1";
 
@@ -573,17 +1192,13 @@
 		function SubmitObservation()
 		{
 			var formData = new FormData();
-			formData.append("weather", weather.answer);
-			formData.append("temp", temp.answer);
-			formData.append("wind", wind.answer);
-			formData.append("animals", animals.answer);
-			formData.append("harvestable", harvestable.answer);
-			formData.append("healthy", healthy.answer);
 
-			var results = [weather, temp, wind, animals, harvestable, healthy];
-			console.log(results);
+			var answers = [weather.answer, temp.answer, wind.answer, animals.answer, harvestable.answer, healthy.answer];
+			var json = JSON.stringify(answers);
 
-			// Request("POST", "../../php/requests/", console.log,  formData);
+			formData.append("answers", json);
+
+			PHP_Request("POST", "../../php/requests/set_observation.php", console.log,  formData);
 		}
 
 		function ValidateSelection(name, checkbox)  
@@ -603,12 +1218,6 @@
 				return false;
 			}
 		} 
-
-		function SetError(errorId, visible)
-		{
-			var error = document.getElementById(errorId);
-			error.style.visibility = (visible) ? "visible" : "hidden";
-		}
 
 		function SetSelection(name, selections)
 		{
@@ -744,10 +1353,195 @@
 // @Research
 //------------------------------------------
 {
+	function SetResearchPage()
+	{
+		CheckSession();
+		page="research";
+		PHP_Request("GET", "../php/requests/get_currentuser.php", GetUser);
+		PHP_Request("GET", "../php/requests/get_sensordata.php", Set_Table_LightTempData);
+		PHP_Request("GET", "../php/requests/get_allobservationdata.php", Set_Table_ObservationData);
+		PHP_Request("GET", "../php/requests/get_devices.php", SetDeviceId_ToDropdown);
+		PHP_Request("GET", "../php/requests/get_devicetype.php", SetDeviceType_ToDropdown);
+		document.getElementById('CSVFileInput').value = null;
+	}
+
+
 	//------------------------------------------
 	// @File Uploading
 	{
+		function Upload(result, deviceId)
+		{
+			var formData = new FormData();
+			formData.append("file", JSON.stringify(result.data));
+			formData.append("deviceId", deviceId);
 	
+			PHP_Request("POST", "../php/requests/upload_csv.php", console.log, formData);
+		}
+
+		function UploadCSV(file, deviceId) {
+			Papa.parse(file, { complete: function(results) {
+					Upload(results, deviceId);
+				}
+			});
+		}
+
+		function Upload_SensorData()
+		{
+			var file = document.querySelector("#CSVFileInput").files[0];
+			var deviceinput = document.getElementById("deviceId-dropdown");
+
+			if(deviceinput.value != 'Choose a Device')
+			{
+				SetError("deviceId_error", false);
+			}
+			else{
+				SetError("deviceId_error", true);
+				ValidateSensorFile(file);
+				return;
+			}
+
+			if(ValidateSensorFile(file))
+			{
+				UploadCSV(file, deviceinput.value);
+			}
+			else return false;
+		}
+
+		function UpdateChosenFile(labelelement, input){
+			var label = document.getElementById(labelelement);
+			var selectedFile = document.getElementById(input);
+			
+			if(selectedFile.files[0].name)
+			{
+				label.innerHTML = selectedFile.files[0].name;
+				ValidateSensorFile(selectedFile.files[0]);
+			}
+			
+		}
+
+		function ValidateSensorFile(file){
+			if(file)
+			{
+				SetError('csvnofile_error', false);
+				if(file.name.slice((file.name.lastIndexOf(".") - 1 >>> 0) + 2) == "csv")
+				{ 
+					SetError("csv_error", false);
+					return true; 
+				}
+				else
+				{
+					SetError("csv_error", true);
+					return false;
+				}
+			}
+			else
+			{
+				SetError('csvnofile_error', true);
+			}
+		}
+
+		function UpdateDeviceIds()
+		{
+			PHP_Request("GET", "../php/requests/get_devices.php", SetDeviceId_ToDropdown)
+		}
+
+		function SetDeviceId_ToDropdown(response)
+		{
+			var input = document.getElementById('deviceId-dropdown');
+			
+			input.length = 0;
+
+			let defaultOption = document.createElement('option');
+			defaultOption.text = 'Choose a Device';
+			
+			input.add(defaultOption);
+			input.selectedIndex = 0;
+
+			if(response.success)
+			{
+				var data = response.result;
+				for (let i = 0; i < data.length; i++) {
+					option = document.createElement('option');
+					option.text = data[i].deviceLabel;
+					option.value = data[i].deviceId;
+					input.add(option);
+				}
+
+			}
+		}
+
+		function SetDeviceType_ToDropdown(response)
+		{
+			var input = document.getElementById('devicetype-dropdown');
+			
+			input.length = 0;
+
+			let defaultOption = document.createElement('option');
+			defaultOption.text = 'Choose a Device Type';
+			
+			input.add(defaultOption);
+			input.selectedIndex = 0;
+
+			if(response.success)
+			{
+				var data = response.result;
+				for (let i = 0; i < data.length; i++) {
+					option = document.createElement('option');
+					option.text = data[i].name;
+					option.value = data[i].deviceTypeId;
+					input.add(option);
+				}
+
+			}
+		}
+
+		function ClearDefaultOption(id)
+		{
+			document.getElementById(id).options[0].disabled = true;
+		}
+
+		function AddNewDevice()
+		{
+			var name = document.getElementById('input_deviceName');
+			var type = document.getElementById('devicetype-dropdown');
+
+			if(name.value) {
+				SetError('newdevicename_error', false);
+				if(type.value != 'Choose a Device Type')
+				{
+					SetError('newdevicetype_error', false);
+					var formData = new FormData;
+					formData.append("deviceLabel", name.value);
+					formData.append("deviceType", type.value);
+					PHP_Request("POST", "../php/requests/set_newdevice.php", SetNewDeviceReponse, formData)
+				}
+				else
+				{
+					SetError('newdevicetype_error', true);
+					document.getElementById('newdevice_message').innerHTML = null;
+				}
+			}
+			else
+			{
+				SetError('newdevicename_error', true);
+				document.getElementById('newdevice_message').innerHTML = null;
+			}
+
+		}
+
+		function SetNewDeviceReponse(response)
+		{
+			var messsageElement = document.getElementById('newdevice_message');
+
+			if(response.success) {
+				messsageElement.innerHTML = response.result;
+				PHP_Request("GET", "../php/requests/get_devices.php", SetDeviceId_ToDropdown);
+			}
+			else
+			{
+				messsageElement.innerHTML = response.result;
+			}
+		}
 	}
 	//------------------------------------------
 	// @Database Interface

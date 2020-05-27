@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,422 +11,478 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../css/obs.css"/> -->
 
 </head>
-<body class="">
+<body class="" onload="SetSchoolPage()">
 	<main class="container vh-100"> 
 	<!-- vh-100 -->
+
 		<header>
-			<h1>School</h1>
+			<div class="container">
+				<h1 class="">School</h1>
+			</div>
+			
+			<nav id="" class="navbar navbar-expand-lg">
+				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#observation">Observations</button>
+				<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse">Manage Accounts</button>
+				<a id="username" class="nav-link" href="#">(User)</a>
+				<button class="btn btn-std-2 btn-secondary" onclick="Logout()">Logout</button>
+			</nav>
 		</header>
 		
-		<nav id="" class="navbar navbar-expand-lg navbar-light bg-light">
-			<a href="">Observation</a>
-		</nav>
 		
-		<section id="observation" class="container">
-			<div class="row">
-				<h3 class="col">Observation</h3>
-			</div>
+		<section id="observation" class="container pt-1 collapse">
 
-			<!-- <div class="d-flex justify-content-end"><button id="" class="btn btn-primary" onclick="GoToPage('q1')">Start</button></div> -->
+			<div id="questions">
 
+				<div class="row my-2">
+					<div class="col-auto">
+						<button id="" class="btn btn-std-2 btn-outline-secondary" onclick="Previous()">Previous</button>
+					</div>
+					<div class="col-auto mx-auto">
+						<h3 class="col">Observation</h3>
+					</div>
+					<div class="col-auto">
+						<button id="" class="btn btn-std-2 btn-outline-secondary" onclick="Next()">Next</button>
+					</div>
+				</div>
 
-			<div class="row">
-				<div class="col-auto">
-					<button id="" class="btn btn-primary" onclick="Previous()">Previous</button>
-				</div>
-				<div class="col-auto mx-auto">
-					<span>Bread Crumbs</span>
-				</div>
-				<div class="col-auto">
-					<button id="" class="btn btn-primary" onclick="Next()">Next</button>
-					<!-- <button id="" class="btn btn-primary" onclick="GetFormData()">Submit</button> -->
-				</div>
-			</div>
-
-			<div id="q1" class="container page">
-				<h4 class="row">How was today's weather?</h4>
-				<div id="" class="row">
-					<input id="q1-1" class="input-hidden" type="radio" name="q1" value="sunny">
-					<label class="card bg-light text-center col mr-3 p-0" for="q1-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Sunny</span>
-					</label>
-					<input id="q1-2" class="input-hidden" type="radio" name="q1" value="partly_cloudy">
-					<label class="card bg-light text-center col mr-3 p-0" for="q1-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Partly Cloudy</span>
-					</label>
-					<input id="q1-3" class="input-hidden" type="radio" name="q1" value="cloudy">
-					<label class="card bg-light text-center col mr-3 p-0" for="q1-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Cloudy</span>
-					</label>
-					<input id="q1-4" class="input-hidden" type="radio" name="q1" value="rainy">
-					<label class="card bg-light text-center col mr-3 p-0" for="q1-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Rainy</span>
-					</label>
-					<input id="q1-5" class="input-hidden" type="radio" name="q1" value="stormy">
-					<label class="card bg-light text-center col  p-0" for="q1-5">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Stormy</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q1_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<div id="q2" class="container  d-none page">
-				<h4 class="row">How was today's weather?</h4>
-				<div id="" class="row">
-						<input id="q2-1" class="input-hidden" type="radio" name="q2" value="hot">
-						<label class="card bg-light text-center col mr-3 p-0" for="q2-1">
+				<div id="q1" class="container page">
+					<h4 class="row">How was today's weather?</h4>
+					<div id="" class="row">
+						<input id="q1-1" class="input-hidden" type="radio" name="q1" value="Sunny">
+						<label class="card bg-light text-center col mr-3 p-0" for="q1-1">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Hot</span>
+							<span class="card-header">Sunny</span>
 						</label>
-						<input id="q2-2" class="input-hidden" type="radio" name="q2" value="hot_little">
-						<label class="card bg-light text-center col mr-3 p-0" for="q2-2">
+						<input id="q1-2" class="input-hidden" type="radio" name="q1" value="Partly Cloudy">
+						<label class="card bg-light text-center col mr-3 p-0" for="q1-2">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">A Bit Hot</span>
+							<span class="card-header">Partly Cloudy</span>
 						</label>
-						<input id="q2-3" class="input-hidden" type="radio" name="q2" value="warm">
-						<label class="card bg-light text-center col mr-3 p-0" for="q2-3">
+						<input id="q1-3" class="input-hidden" type="radio" name="q1" value="Cloudy">
+						<label class="card bg-light text-center col mr-3 p-0" for="q1-3">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-							<span class="card-header">Warm</span>
+							<span class="card-header">Cloudy</span>
 						</label>
-						<input id="q2-4" class="input-hidden" type="radio" name="q2" value="cold_litte">
-						<label class="card bg-light text-center col mr-3 p-0" for="q2-4">
+						<input id="q1-4" class="input-hidden" type="radio" name="q1" value="Rainy">
+						<label class="card bg-light text-center col mr-3 p-0" for="q1-4">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-							<span class="card-header">A Bit Cold</span>
+							<span class="card-header">Rainy</span>
 						</label>
-						<input id="q2-5" class="input-hidden" type="radio" name="q2" value="cold">
-						<label class="card bg-light text-center col p-0" for="q2-5">
+						<input id="q1-5" class="input-hidden" type="radio" name="q1" value="Stormy">
+						<label class="card bg-light text-center col  p-0" for="q1-5">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-							<span class="card-header">Cold</span>
+							<span class="card-header">Stormy</span>
 						</label>
+					</div>
+					<div class="row">
+						<div id="q1_invalid" class="error">You must choose and option.</div>
+					</div>
 				</div>
-				<div class="row">
-					<div id="q2_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
 
-			<div id="q3" class="container d-none page">
-				<h4 class="row">How was today's weather?</h4>
-				<div id="" class="row">
-					<input id="q3-1" class="input-hidden" type="radio" name="q3" value="wind_none">
-					<label class="card bg-light text-center col mr-3 p-0" for="q3-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">No Wind</span>
-					</label>
-					<input id="q3-2" class="input-hidden" type="radio" name="q3" value="wind_little">
-					<label class="card bg-light text-center col mr-3 p-0" for="q3-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">A Little Wind</span>
-					</label>
-					<input id="q3-3" class="input-hidden" type="radio" name="q3" value="wind_windy">
-					<label class="card bg-light text-center col mr-3 p-0" for="q3-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Windy</span>
-					</label>
-					<input id="q3-4" class="input-hidden" type="radio" name="q3" value="wind_very">
-					<label class="card bg-light text-center col mr-3 p-0" for="q3-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Very Windy</span>
-					</label>
-					<input id="q3-5" class="input-hidden" type="radio" name="q3" value="wind_extremely">
-					<label class="card bg-light text-center col  p-0" for="q3-5">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Extremely Windy</span>
-					</label>
+				<div id="q2" class="container d-none page">
+					<h4 class="row">How was today's weather?</h4>
+					<div id="" class="row">
+							<input id="q2-1" class="input-hidden" type="radio" name="q2" value="Hot">
+							<label class="card bg-light text-center col mr-3 p-0" for="q2-1">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+								<span class="card-header">Hot</span>
+							</label>
+							<input id="q2-2" class="input-hidden" type="radio" name="q2" value="A Little Warm">
+							<label class="card bg-light text-center col mr-3 p-0" for="q2-2">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+								<span class="card-header">A Bit Warm</span>
+							</label>
+							<input id="q2-3" class="input-hidden" type="radio" name="q2" value="Warm">
+							<label class="card bg-light text-center col mr-3 p-0" for="q2-3">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+								<span class="card-header">Warm</span>
+							</label>
+							<input id="q2-4" class="input-hidden" type="radio" name="q2" value="A Little Cold">
+							<label class="card bg-light text-center col mr-3 p-0" for="q2-4">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+								<span class="card-header">A Bit Cold</span>
+							</label>
+							<input id="q2-5" class="input-hidden" type="radio" name="q2" value="Cold">
+							<label class="card bg-light text-center col p-0" for="q2-5">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+								<span class="card-header">Cold</span>
+							</label>
+					</div>
+					<div class="row">
+						<div id="q2_invalid" class="error">You must choose and option.</div>
+					</div>
 				</div>
-				<div class="row">
-					<div id="q3_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
 
-			<!-- Pick [0-12] Animals -->
-			<div id="q4" class="container d-none page">
-				<h4 class="row">Which animals were visited the plants?</h4>
-				<div id="" class="row">
-						<input id="q4-1" class="input-hidden" type="checkbox" name="q4" value="bird">
+				<div id="q3" class="container d-none page">
+					<h4 class="row">How was today's weather?</h4>
+					<div id="" class="row">
+						<input id="q3-1" class="input-hidden" type="radio" name="q3" value="No Wind">
+						<label class="card bg-light text-center col mr-3 p-0" for="q3-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">No Wind</span>
+						</label>
+						<input id="q3-2" class="input-hidden" type="radio" name="q3" value="Little Wind">
+						<label class="card bg-light text-center col mr-3 p-0" for="q3-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">A Little Wind</span>
+						</label>
+						<input id="q3-3" class="input-hidden" type="radio" name="q3" value="Windy">
+						<label class="card bg-light text-center col mr-3 p-0" for="q3-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Windy</span>
+						</label>
+						<input id="q3-4" class="input-hidden" type="radio" name="q3" value="Very Windy">
+						<label class="card bg-light text-center col mr-3 p-0" for="q3-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Very Windy</span>
+						</label>
+						<input id="q3-5" class="input-hidden" type="radio" name="q3" value="Extremely Windy">
+						<label class="card bg-light text-center col  p-0" for="q3-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Extremely Windy</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q3_invalid" class="error">You must choose and option.</div>
+					</div>
+				</div>
+
+				<!-- Pick [0-12] Animals -->
+				<div id="q4" class="container d-none page">
+					<h4 class="row">Which animals were visited the plants?</h4>
+					<div class="row my-2">
+							<button class="col btn btn-secondary text-center d-block w-100">
+								None
+							</button>
+					</div>
+					<h5 class="row">Bees</h5>
+					<div id="" class="row">
+						<input id="q4-1" class="input-hidden" type="checkbox" name="q4" value="European Honey Bee">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-1">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Bird</span>
+							<span class="card-header">European Honey Bee</span>
 						</label>
-						<input id="q4-2" class="input-hidden" type="checkbox" name="q4" value="wasp">
+						<input id="q4-2" class="input-hidden" type="checkbox" name="q4" value="Native Stingless Bee">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-2">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Wasp</span>
+							<span class="card-header">Native Stingless Bee</span>
 						</label>
-						<input id="q4-3" class="input-hidden" type="checkbox" name="q4" value="native_bee">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-3">
+						<input id="q4-3" class="input-hidden" type="checkbox" name="q4" value="Native Blue Banded Bee">
+						<label class="card bg-light text-center col p-0" for="q4-3">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-							<span class="card-header">Native Bee</span>
+							<span class="card-header">Native Blue Banded Bee</span>
 						</label>
-						<input id="q4-4" class="input-hidden" type="checkbox" name="q4" value="honey_bee">
+
+					</div>
+					<h5 class="row">Insects</h5>
+					<div id="" class="row">
+						<input id="q4-4" class="input-hidden" type="checkbox" name="q4" value="Hoverfly">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-4">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-							<span class="card-header">Honey Bee</span>
+							<span class="card-header">Hoverfly</span>
 						</label>
-				</div>
-				<div id="" class="row">
-						<input id="q4-5" class="input-hidden" type="checkbox" name="q4" value="lizard">
+						<input id="q4-5" class="input-hidden" type="checkbox" name="q4" value="Fly">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-5">
-							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Lizard</span>
-						</label>
-						<input id="q4-6" class="input-hidden" type="checkbox" name="q4" value="flying_fox">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-6">
-							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Flying Fox</span>
-						</label>
-						<input id="q4-7" class="input-hidden" type="checkbox" name="q4" value="butterfly">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-7">
-							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-							<span class="card-header">Butterfly</span>
-						</label>
-						<input id="q4-8" class="input-hidden" type="checkbox" name="q4" value="moth">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-8">
-							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-							<span class="card-header">Moth</span>
-						</label>
-				</div>
-				<div id="" class="row">
-						<input id="q4-9" class="input-hidden" type="checkbox" name="q4" value="beetle">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-9">
-							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-							<span class="card-header">Beetle</span>
-						</label>
-						<input id="q4-10" class="input-hidden" type="checkbox" name="q4" value="fly">
-						<label class="card bg-light text-center col mr-3 p-0" for="q4-10">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
 							<span class="card-header">Fly</span>
 						</label>
-						<input id="q4-11" class="input-hidden" type="checkbox" name="q4" value="possum">
+						<input id="q4-6" class="input-hidden" type="checkbox" name="q4" value="Wasp">
+						<label class="card bg-light text-center col mr-3 p-0" for="q4-6">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Wasp</span>
+						</label>
+						<input id="q4-7" class="input-hidden" type="checkbox" name="q4" value="Moth">
+						<label class="card bg-light text-center col mr-3 p-0" for="q4-7">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Moth</span>
+						</label>
+						<input id="q4-8" class="input-hidden" type="checkbox" name="q4" value="Butterfly">
+						<label class="card bg-light text-center col mr-3 p-0" for="q4-8">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Butterfly</span>
+						</label>
+						<input id="q4-9" class="input-hidden" type="checkbox" name="q4" value="LadyBird">
+						<label class="card bg-light text-center col p-0" for="q4-9">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Ladybird</span>
+						</label>
+					</div>
+					<h5 class="row">Vertabrates</h5>
+					<div id="" class="row">
+						<input id="q4-10" class="input-hidden" type="checkbox" name="q4" value="Bird">
+						<label class="card bg-light text-center col mr-3 p-0" for="q4-10">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Bird</span>
+						</label>
+						<input id="q4-11" class="input-hidden" type="checkbox" name="q4" value="Lizard">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-11">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-							<span class="card-header">Possum</span>
+							<span class="card-header">Lizard</span>
 						</label>
-						<input id="q4-12" class="input-hidden" type="checkbox" name="q4" value="fruit_bat">
+						<input id="q4-12" class="input-hidden" type="checkbox" name="q4" value="Possum">
 						<label class="card bg-light text-center col mr-3 p-0" for="q4-12">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-							<span class="card-header">Fruit Bat</span>
+							<span class="card-header">Possum</span>
 						</label>
+						<input id="q4-13" class="input-hidden" type="checkbox" name="q4" value="Flying Fox">
+						<label class="card bg-light text-center col p-0" for="q4-13">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Flying Fox</span>
+						</label>
+					</div>
+
+			
+					<!-- <div id="" class="row">
+							<input id="q4-13" class="input-hidden" type="checkbox" name="q4" value="other">
+							<label class="card bg-light text-center col mr-3 p-0" for="q4-13">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+								<span class="card-header">Other</span>
+							</label>
+							<input id="q4-13" class="input-hidden" type="checkbox" name="q4" value="other">
+							<label class="card bg-light text-center col mr-3 p-0" for="q4-13">
+								<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+								<span class="card-header">Other</span>
+							</label>
+					</div> -->
+
+					<div class="row">
+						<div id="q4_invalid" class="error">You must choose and option.</div>
+					</div>
 				</div>
-				<div class="row">
-					<div id="q4_invalid" class="error">You must choose and option.</div>
+
+				<!-- Repeatable [0-12] Animals-->
+				<div id="q5" class="container d-none page">
+					<h4 class="row">Which plants did the <span id="animal_name" class="px-1"></span> visit?</h4>
+					<div id="" class="row">
+						<!-- <input id="q5-0" class="input-hidden" type="checkbox" name="q5" value="none">
+						<label class="card bg-light text-center col mr-3 p-0" for="q5-0">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">None</span>
+						</label> -->
+						<input id="q5-1" class="input-hidden" type="checkbox" name="q5" value="Fruits">
+						<label class="card bg-light text-center col mr-3 p-0" for="q5-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Fruits</span>
+						</label>
+						<input id="q5-2" class="input-hidden" type="checkbox" name="q5" value="Herbs">
+						<label class="card bg-light text-center col mr-3 p-0" for="q5-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Herbs</span>
+						</label>
+						<input id="q5-3" class="input-hidden" type="checkbox" name="q5" value="Root Crops">
+						<label class="card bg-light text-center col mr-3 p-0" for="q5-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Root Crops</span>
+						</label>
+						<input id="q5-4" class="input-hidden" type="checkbox" name="q5" value="Salad Greens">
+						<label class="card bg-light text-center col mr-3 p-0" for="q5-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Salad Greens</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q5_invalid" class="error">You must choose and option.</div>
+					</div>
 				</div>
+
+				<!-- Repeatable [4] Plants -->
+				<div id="q6" class="container d-none page">
+					<h4 class="row">Which edible items were ready for harvest from the garden?</h4>
+					<div id="" class="row">
+						<input id="q6-1" class="input-hidden" type="checkbox" name="q6" value="Fruits">
+						<label class="card bg-light text-center col mr-3 p-0" for="q6-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Fruit</span>
+						</label>
+						<input id="q6-2" class="input-hidden" type="checkbox" name="q6" value="Herbs">
+						<label class="card bg-light text-center col mr-3 p-0" for="q6-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Herbs</span>
+						</label>
+						<input id="q6-3" class="input-hidden" type="checkbox" name="q6" value="Root Crops">
+						<label class="card bg-light text-center col mr-3 p-0" for="q6-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Root Crops</span>
+						</label>
+						<input id="q6-4" class="input-hidden" type="checkbox" name="q6" value="Salad Greens">
+						<label class="card bg-light text-center col p-0" for="q6-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Salad Greens</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q6_invalid" class="error">You must choose and option.</div>
+					</div>
+				</div>
+
+				<!-- Repeatable [4] Plants -->
+				<div id="q7" class="container d-none page">
+					<h4 class="row">How big was the harvest from <span id="harvest_plant" class="pl-1"></span>?</h4>
+					<div id="" class="row">
+						<input id="q7-1" class="input-hidden" type="radio" name="q7" value="Tiny Amount">
+						<label class="card bg-light text-center col mr-3 p-0" for="q7-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">A Tiny Amount</span>
+						</label>
+						<input id="q7-2" class="input-hidden" type="radio" name="q7" value="Small Snack">
+						<label class="card bg-light text-center col mr-3 p-0" for="q7-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">A Small Snack</span>
+						</label>
+						<input id="q7-3" class="input-hidden" type="radio" name="q7" value="Big Snack">
+						<label class="card bg-light text-center col mr-3 p-0" for="q7-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">A Big Snack</span>
+						</label>
+						<input id="q7-4" class="input-hidden" type="radio" name="q7" value="Small Meal">
+						<label class="card bg-light text-center col mr-3 p-0" for="q7-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">A Small Meal</span>
+						</label>
+						<input id="q7-5" class="input-hidden" type="radio" name="q7" value="Big Meal">
+						<label class="card bg-light text-center col p-0" for="q7-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">A Big Meal</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q7_invalid" class="error">You must choose and option.</div>
+					</div>
+				</div>
+
+				<div id="q8" class="container d-none page">
+					<h4 class="row">Where did the <span id="plant_location" class="px-1"></span> grow?</h4>
+					<div id="" class="row">
+						<input id="q8-1" class="input-hidden" type="radio" name="q8" value="Always Sunny">
+						<label class="card bg-light text-center col mr-3 p-0" for="q8-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Always in Sun</span>
+						</label>
+						<input id="q8-2" class="input-hidden" type="radio" name="q8" value="Mostly Sunny">
+						<label class="card bg-light text-center col mr-3 p-0" for="q8-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Mostly in Sun</span>
+						</label>
+						<input id="q8-3" class="input-hidden" type="radio" name="q8" value="Half and Half">
+						<label class="card bg-light text-center col mr-3 p-0" for="q8-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Half Sun and Shade</span>
+						</label>
+						<input id="q8-4" class="input-hidden" type="radio" name="q8" value="Mostly Shade">
+						<label class="card bg-light text-center col mr-3 p-0" for="q8-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Mostly Shade</span>
+						</label>
+						<input id="q8-5" class="input-hidden" type="radio" name="q8" value="Always Shade">
+						<label class="card bg-light text-center col p-0" for="q8-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Always Shade</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q8_invalid" class="error">You must choose and option.</div>
+					</div>
+				</div>
+
+				<!-- Pick only 2 Plants -->
+				<div id="q9" class="container d-none page">
+					<h4 class="row">Which are the healthiest two plants?</h4>
+					<div id="" class="row">
+						<input id="q9-1" class="input-hidden" type="checkbox" name="q9" value="Fruits" onclick="ValidateSelection('q9', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q9-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Fruit</span>
+						</label>
+						<input id="q9-2" class="input-hidden" type="checkbox" name="q9" value="Herbs" onclick="ValidateSelection('q9', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q9-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">Herbs</span>
+						</label>
+						<input id="q9-3" class="input-hidden" type="checkbox" name="q9" value="Root Crops" onclick="ValidateSelection('q9', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q9-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">Root Crops</span>
+						</label>
+						<input id="q9-4" class="input-hidden" type="checkbox" name="q9" value="Salad Greens" onclick="ValidateSelection('q9', this)">
+						<label class="card bg-light text-center col p-0" for="q9-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Salad Greens</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q9_invalid" class="error">You must choose and option.</div>
+					</div>
+				</div>
+
+				<!-- Repeatable Plant A,B -->
+				<div id="q10" class="container d-none page">
+					<h4 class="row">What two main reasons plant <span id="healthy_plant" class="px-1"></span> is healthy?</h4>
+					<div id="" class="row">
+						<input id="q10-1" class="input-hidden" type="checkbox" name="q10" value="Sunlight" onclick="ValidateSelection('q10', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q10-1">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">The amound of sunlight</span>
+						</label>
+						<input id="q10-2" class="input-hidden" type="checkbox" name="q10" value="Wind" onclick="ValidateSelection('q10', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q10-2">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
+							<span class="card-header">The amount of wind</span>
+						</label>
+						<input id="q10-3" class="input-hidden" type="checkbox" name="q10" value="Soil" onclick="ValidateSelection('q10', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q10-3">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
+							<span class="card-header">The nutrients in the soil</span>
+						</label>
+						<input id="q10-4" class="input-hidden" type="checkbox" name="q10" value="Time in Sun" onclick="ValidateSelection('q10', this)">
+						<label class="card bg-light text-center col mr-3 p-0" for="q10-4">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">The amount of time in the sun</span>
+						</label>
+						<input id="q10-5" class="input-hidden" type="checkbox" name="q10" value="Soil Water Amount" onclick="ValidateSelection('q10', this)">
+						<label class="card bg-light text-center col  p-0" for="q10-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">The water in the soil</span>
+						</label>
+					</div>
+					<div class="row">
+						<div id="q10_invalid" class="error">You must choose 2 options.</div>
+					</div>
+				</div>
+
+				<div id="q_submit" class="container d-none page px-0">
+					<button class="btn btn-primary w-100" onclick="SubmitObservation()">Submit</button>
+				</div>
+
 			</div>
 
-			<!-- Repeatable [0-12] Animals-->
-			<div id="q5" class="container d-none page">
-				<h4 class="row">Which plants did the <span id="animal_name"></span> visit?</h4>
-				<div id="" class="row">
-					<input id="q5-1" class="input-hidden" type="checkbox" name="q5" value="fruits">
-					<label class="card bg-light text-center col mr-3 p-0" for="q5-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Fruits</span>
-					</label>
-					<input id="q5-2" class="input-hidden" type="checkbox" name="q5" value="herbs">
-					<label class="card bg-light text-center col mr-3 p-0" for="q5-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Herbs</span>
-					</label>
-					<input id="q5-3" class="input-hidden" type="checkbox" name="q5" value="root_crops">
-					<label class="card bg-light text-center col mr-3 p-0" for="q5-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Root Crops</span>
-					</label>
-					<input id="q5-4" class="input-hidden" type="checkbox" name="q5" value="salad_greens">
-					<label class="card bg-light text-center col mr-3 p-0" for="q5-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Salad Greens</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q5_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<!-- Repeatable [4] Plants -->
-			<div id="q6" class="container d-none page">
-				<h4 class="row">Which edible items were ready for harvest from the garden?</h4>
-				<div id="" class="row">
-					<input id="q6-1" class="input-hidden" type="checkbox" name="q6" value="fruits">
-					<label class="card bg-light text-center col mr-3 p-0" for="q6-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Fruit</span>
-					</label>
-					<input id="q6-2" class="input-hidden" type="checkbox" name="q6" value="herbs">
-					<label class="card bg-light text-center col mr-3 p-0" for="q6-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Herbs</span>
-					</label>
-					<input id="q6-3" class="input-hidden" type="checkbox" name="q6" value="root_crops">
-					<label class="card bg-light text-center col mr-3 p-0" for="q6-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Root Crops</span>
-					</label>
-					<input id="q6-4" class="input-hidden" type="checkbox" name="q6" value="salad_greens">
-					<label class="card bg-light text-center col mr-3 p-0" for="q6-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Salad Greens</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q6_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<!-- Repeatable [4] Plants -->
-			<div id="q7" class="container d-none page">
-				<h4 class="row">How big was the harvest from plant <span id="harvest_plant"></span>?</h4>
-				<div id="" class="row">
-					<input id="q7-1" class="input-hidden" type="radio" name="q7" value="tiny_amount">
-					<label class="card bg-light text-center col mr-3 p-0" for="q7-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">A Tiny Amount</span>
-					</label>
-					<input id="q7-2" class="input-hidden" type="radio" name="q7" value="small_snack">
-					<label class="card bg-light text-center col mr-3 p-0" for="q7-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">A Small Snack</span>
-					</label>
-					<input id="q7-3" class="input-hidden" type="radio" name="q7" value="big_snack">
-					<label class="card bg-light text-center col mr-3 p-0" for="q7-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">A Big Snack</span>
-					</label>
-					<input id="q7-4" class="input-hidden" type="radio" name="q7" value="small_meal">
-					<label class="card bg-light text-center col mr-3 p-0" for="q7-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">A Small Meal</span>
-					</label>
-					<input id="q7-5" class="input-hidden" type="radio" name="q7" value="big_meal">
-					<label class="card bg-light text-center col mr-3 p-0" for="q7-5">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">A Big Meal</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q7_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<div id="q8" class="container d-none page">
-				<h4 class="row">Where did the <span id="plant_location"></span> grow?</h4>
-				<div id="" class="row">
-					<input id="q8-1" class="input-hidden" type="radio" name="q8" value="always_sun">
-					<label class="card bg-light text-center col mr-3 p-0" for="q8-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Always in Sun</span>
-					</label>
-					<input id="q8-2" class="input-hidden" type="radio" name="q8" value="mostly_sun">
-					<label class="card bg-light text-center col mr-3 p-0" for="q8-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Mostly in Sun</span>
-					</label>
-					<input id="q8-3" class="input-hidden" type="radio" name="q8" value="half">
-					<label class="card bg-light text-center col mr-3 p-0" for="q8-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Half Sun and Shade</span>
-					</label>
-					<input id="q8-4" class="input-hidden" type="radio" name="q8" value="mostly_shade">
-					<label class="card bg-light text-center col mr-3 p-0" for="q8-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Mostly Shade</span>
-					</label>
-					<input id="q8-5" class="input-hidden" type="radio" name="q8" value="always_shade">
-					<label class="card bg-light text-center col mr-3 p-0" for="q8-5">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Always Shade</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q8_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<!-- Pick only 2 Plants -->
-			<div id="q9" class="container d-none page">
-				<h4 class="row">Which are the healthiest two plants?</h4>
-				<div id="" class="row">
-					<input id="q9-1" class="input-hidden" type="checkbox" name="q9" value="fruits" onclick="ValidateSelection('q9', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q9-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Fruit</span>
-					</label>
-					<input id="q9-2" class="input-hidden" type="checkbox" name="q9" value="herbs" onclick="ValidateSelection('q9', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q9-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">Herbs</span>
-					</label>
-					<input id="q9-3" class="input-hidden" type="checkbox" name="q9" value="root_crops" onclick="ValidateSelection('q9', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q9-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">Root Crops</span>
-					</label>
-					<input id="q9-4" class="input-hidden" type="checkbox" name="q9" value="salad_greens" onclick="ValidateSelection('q9', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q9-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">Salad Greens</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q9_invalid" class="error">You must choose and option.</div>
-				</div>
-			</div>
-
-			<!-- Repeatable Plant A,B -->
-			<div id="q10" class="container d-none page">
-				<h4 class="row">What two main reasons plant <span id="healthy_plant"></span> is healthy?</h4>
-				<div id="" class="row">
-					<input id="q10-1" class="input-hidden" type="checkbox" name="q10" value="sunglight" onclick="ValidateSelection('q10', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q10-1">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">The amound of sunlight</span>
-					</label>
-					<input id="q10-2" class="input-hidden" type="checkbox" name="q10" value="wind" onclick="ValidateSelection('q10', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q10-2">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >		
-						<span class="card-header">The amount of wind</span>
-					</label>
-					<input id="q10-3" class="input-hidden" type="checkbox" name="q10" value="soil" onclick="ValidateSelection('q10', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q10-3">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >
-						<span class="card-header">The nutrients in the soil</span>
-					</label>
-					<input id="q10-4" class="input-hidden" type="checkbox" name="q10" value="time_sun" onclick="ValidateSelection('q10', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q10-4">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">The amount of time in the sun</span>
-					</label>
-					<input id="q10-5" class="input-hidden" type="checkbox" name="q10" value="water_soil" onclick="ValidateSelection('q10', this)">
-					<label class="card bg-light text-center col mr-3 p-0" for="q10-5">
-						<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
-						<span class="card-header">The water in the soil</span>
-					</label>
-				</div>
-				<div class="row">
-					<div id="q10_invalid" class="error">You must choose 2 options.</div>
-				</div>
-			</div>
-
-			<div id="q_submit" class="container d-none page px-0">
-				<button class="btn btn-primary w-100" onclick="SubmitObservation()">Submit</button>
-			</div>
 
 		</section>
 
+		<div id="accounts_collapse" class="collapse">
+			<div id="toolbar_school_accounts">
+				<h2>Accounts</h2>
+			</div>
+
+			<table id="school_accounts"></table>	
+		</div>
+
+
 	</main>
-</body>
+</body">
 		<!-- JS -->
 		<!-- Libraries -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		
 		<script type="text/javascript" src="../libs/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="../libs/Bootstrap-4-4.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="../libs/BootstrapTables/extensions/export/bootstrap-table-export.min.js"></script>
+		<script type="text/javascript" src="../libs/PapaParse/papaparse.js"></script>
+
+		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
 
 		<!-- Our Code -->
+		<script>page = "school"</script>
 		<script src="../js/main.js"></script>
 		<!-- <script src="../js/range_slider.js"></script> -->
 

@@ -309,6 +309,11 @@
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
 							<span class="card-header">Salad Greens</span>
 						</label>
+						<input id="q6-5" class="input-hidden" type="checkbox" name="q6" value="Greens">
+						<label class="card bg-light text-center col p-0" for="q6-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Greens</span>
+						</label>
 					</div>
 					<div class="row">
 						<div id="q6_invalid" class="error">You must choose and option.</div>
@@ -407,6 +412,11 @@
 						<label class="card bg-light text-center col p-0" for="q9-4">
 							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
 							<span class="card-header">Salad Greens</span>
+						</label>
+						<input id="q9-5" class="input-hidden" type="checkbox" name="q9" value="Salad Greens" onclick="ValidateSelection('q9', this)">
+						<label class="card bg-light text-center col p-0" for="q9-5">
+							<img id="" class="img-thumbnail" dragable="false" src="../images/logo.gif" alt="" >	
+							<span class="card-header">Greens</span>
 						</label>
 					</div>
 					<div class="row">

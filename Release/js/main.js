@@ -330,6 +330,7 @@
 	{
 		table['sensordata'] = { table : $('#sensordata_table'), selections : [], parameters: {} };
 		table['observationdata'] = { table : $('#observation_table'), selections : [], parameters: {} };
+		table['research_accounts'] = { table : $('#research_accounts'), selections : [], parameters: {} };
 
 		{ // LightTemp Table
 			table['sensordata'].parameters = {
@@ -450,6 +451,70 @@
 			}]
 		}
 		
+		{ // Accounts
+			table['research_accounts'].parameters = {
+				data:emptydata,
+				toolbar:'#toolbar_research_accounts',
+				search:"true",
+				classes:'table table-bordered table-sm',
+				showRefresh:"true",
+				// showToggle:"true",
+				// showFullscreen:"true",
+				// showColumns:"true",
+				// showColumnsToggleAll:"true",
+				// detailView:"true",
+				// showExport:"true",
+				// clickToSelect:"true",
+				detailFormatter:"detailFormatter",
+				minimumCountColumns:"1",
+				// showPaginationSwitch:"true",
+				pagination:"true",
+				// onlyInfoPagination:"true",
+				idField:"id",
+				pageList:"[10, 25, 50, 100, all]",
+				// showFooter:"true",
+				sidePagination:"client",
+				responseHandler:"responseHandler"
+			}
+			table['research_accounts'].parameters.columns = [
+				{	
+					field: 'state', 
+					align: 'center', 
+					valign: 'middle',
+					width: 50,	
+					widthUnit: "px", 
+					checkbox: true
+				},{	
+					field: 'username',	
+					title: 'Username',
+					sortable: "true",
+					align: 'center'
+				},{
+					field: 'accountType',	
+					title: 'Account Type',	
+					align: 'center',
+					width: 15,
+					widthUnit: "%",
+					sortable: "true",
+					formatter: accountTypeFormatter
+				},{	
+					field: 'lastLoggedIn', 
+					title: 'Last Logged In', 
+					align: 'center',
+					sortable: "true",
+					width: 20,
+					widthUnit: "%"
+				},{	
+					field: 'actions', 
+					title: 'Actions', 
+					align: 'center',
+					width: 29,
+					widthUnit: "%",
+					events: window.operateEvents, 
+					formatter: r_admin_actionFormatter
+			}]
+		}
+
 	}
 
 	function InitTable(table, data)
@@ -484,6 +549,18 @@
 			{
 				console.log("Setting Up table");
 				InitTable(table['schoolaccounts'], response.result);
+			}
+		}
+	}
+
+	function Set_Table_ResearchAccounts(response)
+	{
+		if(response.success)
+		{
+			if(response.result)
+			{
+				console.log("Setting Up table");
+				InitTable(table['research_accounts'], response.result);
 			}
 		}
 	}
@@ -1360,6 +1437,7 @@
 		PHP_Request("GET", "../php/requests/get_currentuser.php", GetUser);
 		PHP_Request("GET", "../php/requests/get_sensordata.php", Set_Table_LightTempData);
 		PHP_Request("GET", "../php/requests/get_allobservationdata.php", Set_Table_ObservationData);
+		PHP_Request("GET", "../php/requests/get_researchaccounts.php", Set_Table_ResearchAccounts);
 		PHP_Request("GET", "../php/requests/get_devices.php", SetDeviceId_ToDropdown);
 		PHP_Request("GET", "../php/requests/get_devicetype.php", SetDeviceType_ToDropdown);
 		document.getElementById('CSVFileInput').value = null;

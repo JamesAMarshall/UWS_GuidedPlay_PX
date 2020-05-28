@@ -22,7 +22,7 @@
 
 				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload">Upload</button>
 				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view">Data View</button>
-				<button class="btn btn-std-4 btn-secondary mr-auto">Manage Accounts</button>
+				<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse">Manage Accounts</button>
 				
 				<a id="username" class="nav-link" href="#">(User)</a>
 				<button class="btn btn-std-2 btn-secondary" onclick="Logout()">Logout</button>
@@ -102,6 +102,14 @@
 			</div>
 			<table id="observation_table"></table>
 		</section>
+
+		<div id="accounts_collapse" class="collapse">
+			<div id="toolbar_research_accounts">
+				<!-- <button id="logAll" class="btn btn-primary">Log Selected</button> -->
+			</div>
+
+			<table id="research_accounts"></table>	
+		</div>
 
 		
 	</main>

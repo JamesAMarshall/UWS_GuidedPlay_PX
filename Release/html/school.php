@@ -45,6 +45,12 @@
 					</div>
 				</div>
 
+				
+				<div id="Progressbar" class="">
+					<div id="bar"></div>
+				</div>
+
+
 				<div id="q1" class="container page">
 					<h4 class="row">How was today's weather?</h4>
 					<div id="" class="row">

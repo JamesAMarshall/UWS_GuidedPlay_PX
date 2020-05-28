@@ -803,6 +803,7 @@
 						{
 							q="q2";
 							GoToPage(q);
+							SetBar('bar', 10);
 							SetError("q1_invalid", false);
 						}
 						else { SetError("q1_invalid", true); }
@@ -815,6 +816,7 @@
 						{
 							q="q3";
 							GoToPage(q);
+							SetBar('bar', 20);
 							SetError("q2_invalid", false);
 						}
 						else { SetError("q2_invalid", true); }
@@ -828,6 +830,7 @@
 						{
 							q="q4";
 							GoToPage(q);
+							SetBar('bar', 30);
 							SetError("q3_invalid", false);
 						}
 						else { SetError("q3_invalid", true); }
@@ -881,6 +884,7 @@
 						{
 							animal_name.innerHTML = animals.answer[0].animal;
 							q="q5";
+							SetBar('bar', 40);
 							q5_i=-1;
 							GoToPage(q);
 						}
@@ -902,10 +906,13 @@
 							{	
 								animal_name.innerHTML = animals.answer[q5_i+1].animal;
 								SetSelection(q, animals.answer[q5_i+1].plants);
+								console.log(((q5_i+1)/animals.answer.length) / 0.1);
+								SetBar('bar', 40 + ((q5_i+1)/animals.answer.length) / 0.1);
 							}
 							else
 							{
 								q="q6";
+								SetBar('bar', 50);
 								GoToPage(q);
 							}
 							SetError("q5_invalid", false);
@@ -972,11 +979,13 @@
 							harvest_plant.innerHTML = harvestable.answer[0].plant;
 							q="q7";
 							// console.log("Go To "+ q +  "[" + q7_i + "]");
+							SetBar('bar', 60);
 							GoToPage(q);
 						}
 						else
 						{
 							q="q9"
+							SetBar('bar', 80);
 							GoToPage(q);
 						}
 						break;
@@ -991,11 +1000,13 @@
 							{
 								harvest_plant.innerHTML = harvestable.answer[q7_i+1].plant;
 								SetSelection(q, harvestable.answer[q7_i+1].size);
+								SetBar('bar', 60 + ((q7_i+1)/harvestable.answer.length) / 0.1);
 							}	
 							else
 							{
 								plant_location.innerHTML = harvestable.answer[0].plant;						
 								q="q8";
+								SetBar('bar', 70);
 								GoToPage(q);
 							}
 							SetError("q7_invalid", false);
@@ -1017,10 +1028,12 @@
 							{
 								plant_location.innerHTML = harvestable.answer[q8_i+1].plant;
 								SetSelection(q, harvestable.answer[q8_i+1].location);
+								SetBar('bar', 70 + ((q8_i+1)/harvestable.answer.length) / 0.1);
 							}
 							else
 							{
 								q="q9";
+								SetBar('bar', 80);
 								GoToPage(q);
 							}
 							SetError("q8_invalid", false);
@@ -1085,11 +1098,13 @@
 						if(healthy.answer)
 						{
 							healthy_plant.innerHTML = healthy.answer[0].plant;
+							SetBar('bar', 90);
 							q="q10";
 							GoToPage(q);
 						}
 						else
 						{
+							SetBar('bar', 100);
 							q="q_submit"
 							GoToPage(q);
 						}
@@ -1106,9 +1121,11 @@
 								{
 									healthy_plant.innerHTML = healthy.answer[q10_i+1].plant;
 									SetSelection(q, healthy.answer[q10_i+1].reason);
+									SetBar('bar', 90 + ((q10_i+1)/healthy.answer.length) / 0.1);
 								}
 								else
 								{
+									SetBar('bar', 100);
 									q="q_submit"
 									GoToPage(q);
 								}
@@ -1138,21 +1155,25 @@
 				console.log("Previous called on "+q);
 				switch (q) {
 					case "q1": {
+						SetBar('bar', 0);
 						break;
 					}
 					case "q2": {
 						q="q1";
 						GoToPage(q);
+						SetBar('bar', 10);
 						break;
 					}
 					case "q3": {
 						q="q2";
 						GoToPage(q);
+						SetBar('bar', 20);
 						break;
 					}
 					case "q4": {
 						q="q3";
 						GoToPage(q);
+						SetBar('bar', 30);
 						break;
 					}
 					case "q5": {
@@ -1160,6 +1181,7 @@
 						{
 							q="q4";
 							GoToPage(q);
+							SetBar('bar', 40);
 						}
 						else
 						{
@@ -1167,6 +1189,7 @@
 							console.log();
 							animal_name.innerHTML = animals.answer[q5_i].animal;
 							SetSelection(q, animals.answer[q5_i].plants);
+							SetBar('bar', 40 + ((q5_i+1)/animals.answer.length) / 0.1);
 							q5_i--;
 						}
 						break;
@@ -1176,12 +1199,14 @@
 						{
 							q="q4";
 							GoToPage(q);
+							SetBar('bar', 40);
 						}
 						else
 						{
 							q="q5";
 							q5_i--;
 							GoToPage(q);
+							SetBar('bar',50);
 						}
 						break;
 					}
@@ -1190,12 +1215,14 @@
 						{
 							q="q6";
 							GoToPage(q);
+							SetBar('bar', 60);
 						}
 						else
 						{
 							harvestable.answer[q7_i+1].size = GetAnswer(q);
 							harvest_plant.innerHTML = harvestable.answer[q7_i].plant;
 							SetSelection(q, harvestable.answer[q7_i].size);
+							SetBar('bar', 60 + ((q7_i+1)/harvestable.answer.length) / 0.1);
 							q7_i--;
 						}
 	
@@ -1207,6 +1234,7 @@
 							q="q7";
 							q7_i--;
 							harvest_plant.innerHTML = harvestable.answer[harvestable.answer.length-1].plant;
+							SetBar('bar', 70);
 							GoToPage(q);
 						}
 						else
@@ -1214,6 +1242,7 @@
 							harvestable.answer[q8_i+1].location = GetAnswer(q);
 							harvest_plant.innerHTML = harvestable.answer[q8_i].location;
 							SetSelection(q, harvestable.answer[q8_i].location);
+							SetBar('bar', 70 + ((q8_i+1)/harvestable.answer.length) / 0.1);
 							q8_i--;
 						}
 						break;
@@ -1223,12 +1252,14 @@
 						{
 							q="q6";
 							GoToPage(q);
+							SetBar('bar', 60);
 						}
 						else
 						{
 							q="q8";
 							q8_i--;
 							GoToPage(q);
+							SetBar('bar', 80);
 						}
 						break;
 					}
@@ -1237,12 +1268,14 @@
 						{
 							q="q9";
 							GoToPage(q);
+							SetBar('bar', 90);
 						}
 						else
 						{
 							healthy.answer[q10_i+1].reason = GetAnswer(q, "healthy-reasons");
 							healthy_plant.innerHTML = healthy.answer[q10_i].plant;
 							SetSelection(q, healthy.answer[q10_i].reason);
+							SetBar('bar', 90 + ((q10_i+1)/healthy.answer.length) / 0.1);
 							q10_i--;
 						}
 						break;
@@ -1250,12 +1283,14 @@
 					case "q_submit": {
 						if(!healthy.answer){
 							q="q9";
+							SetBar('bar', 90);
 							GoToPage(q);
 						}
 						else
 						{
 							q10_i--;
 							q="q10";
+							SetBar('bar', 100);
 							GoToPage(q);
 						}
 						break;
@@ -1414,6 +1449,32 @@
 			
 
 
+		}
+
+		// var i = 0;
+		// function MoveBar(bar, percent) {
+		// 	if (i == 0) {
+		// 		i = 1;
+		// 		var elem = document.getElementById(bar);
+		// 		var width = 10;
+		// 		var id = setInterval(frame, 10);
+		// 		function frame() {
+		// 			if (width >= 50) {
+		// 				clearInterval(id);
+		// 				i = 0;
+		// 			} else {
+		// 				width++;
+		// 				elem.style.width = width + "%";
+		// 				elem.innerHTML = width  + "%";
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		function SetBar(bar, percent) {
+			var elem = document.getElementById(bar);
+			elem.style.width = percent + "%";
+			elem.innerHTML = percent  + "%";
 		}
 
 	}

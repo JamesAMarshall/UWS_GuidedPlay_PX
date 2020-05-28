@@ -6,12 +6,12 @@
 		sendOutput($output); 	
 		exit; 
 	}
-	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/DbConnection.php");
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/sharedDbConnection.php");
 
-	$sql = "SELECT username, lastLoggedIn FROM pa2004_Accounts WHERE accountType = 0";	
+	$sql = "SELECT username, lastLoggedIn FROM pa2004_Accounts WHERE active=1 AND accountType = 0";	
 	debug("Get Users: SQL: ". $sql, $output);
 
-	$result = mysqli_query($db, $sql);
+	$result = mysqli_query($shared_db, $sql);
 	$accounts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	
 	$output['result'] = $accounts;
@@ -19,5 +19,5 @@
 	debug("Query Complete", $output);
 	$temp = array('data' => $output['result']);
 	echo json_encode($temp);
-	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/close.php");
+	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/sharedDb_close.php");
 ?>

@@ -1,52 +1,43 @@
 /* body{ visibility: hidden; } */
 /* .startHidden{ display: none; } */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 hr.container{ border-top: 1px solid rgb(255, 0, 0);}
 
 .container{
-	border: 1px solid #d2d2d2;
+	border: 2px solid #d2d2d2;
 	border-radius: 5px;
 	padding: 15px;
-	background: rgba(255,255,255,.8);
-	box-shadow:0 5px 15px rgba(0,0,0,.5);
 }
 
 #main_index{
 	border: 2px solid #d2d2d2;
 	border-radius: 5px;
+	padding: 15px;
 }
+
+#login{}
 
 #signup{ display: none;}
 
-
-body{
-	background-image:url(../images/landscape2.png);
-	background-size:cover;
-	background-attachment:fixed;
-	font-family: 'Caveat Brush', cursive;
-	font-size: 25px;
-    /*background: linear-gradient(-135deg,#205072, #329D9C, #56C596,#F9C449) fixed;
-	background-repeat: no-repeat;*/
+div#students_collapse input.search-input{
+	display: none;
 }
 
-.btn-primary:hover{
-	text-shadow: 2px 2px 4px black;
-	box-shadow: 5px 5px 10px gray;
-
+div#students_collapse .fixed-table-toolbar{
+	display: none;
 }
 
-/*------------------------------------------------------------------
-[ ERROR MESSAGE ]*/
-.invalid-feedback{
-	color: #c80000;
-    padding: 1px;
-	background-color: white;
-	border: 1px solid #c80000;
-	border-radius: 5px;
-	text-align: center;	
+.redLink{
+	
 }
+
+
+a.large{
+	width: 100px;
+	height: 100px;
+}
+
 
 i.fa-trash{
 	color: red;
@@ -63,28 +54,3 @@ i.fa-minus{
 th i.fa-minus{
 	color: black;
 }
-
-
-/*------------------------------------------------------------------
-[ GEESE LOGO  ]*/
-.login100-pic {
-  width: 200px;
-}
-
-.login100-pic img {
-  max-width: 75%;
- 
-}
-
-/*------------------------------------------------------------------
-[ MEDIA QUERIES ]*/
-@media (min-width: 950px) { 
-	.login100-pic{
-		 width:250px;
-	}
-	.login100-pic img {
-	  max-width: 100%;
-	  margin: 0 10px;
-	}
-}
-

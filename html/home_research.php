@@ -16,9 +16,7 @@
 		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
-		
-		<!-- icon -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
 	<body onload="SetupResearchPage()">
 	
@@ -28,10 +26,10 @@
 
 			<nav class="navbar navbar-expand-sm p-0">
 			<div class="navbar-collapse collapse">
-			<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadResearch();"><i class="fas fa-file-upload"></i> Upload Data</button>
-			<button class="btn btn-primary mr-1" id="button_research" onclick="Database();"><i class="fas fa-database"></i> View Database</button>
-			<button class="btn btn-primary mr-1" id="button_manageResearchers" onclick="ManageResearchers();"><i class="fas fa-tasks"></i> Manage Researchers</button>
-			<button class="btn btn-primary mr-1" id="button_graph" onclick="Graph();"><i class="far fa-chart-bar"></i> Graph Data</button>
+			<button class="btn btn-primary mr-1" id="button_upload" onclick="UploadResearch();">Upload Data</button>
+			<button class="btn btn-primary mr-1" id="button_research" onclick="Database();">View Database</button>
+			<button class="btn btn-primary mr-1" id="button_manageResearchers" onclick="ManageResearchers();">Manage Researchers</button>
+			<button class="btn btn-primary mr-1" id="button_graph" onclick="Graph();">Graph Data</button>
 			</div>
 
 			<div class="nav justify-content-end navbar-collapse collapse">	
@@ -50,14 +48,31 @@
 				</button>
 			</div>
 
-			<div id="upload_collapse" class="collapse">
-				<div class="input-group">
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" id="CSVFileInput">
-						<label class="custom-file-label" for="CSVFileInput">Choose file</label>
+			<div id="upload_collapse" class="">
+
+
+				<div class="form-row">
+					<div class="form-group col-4">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Device ID</span>
+							</div>
+							<input id="input_classId" type="text" class="form-control" aria-describedby="basic-addon1">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" type="submit" onclick="">Create New Device</button>
+							</div>				
+						</div>
 					</div>
-					<div class="input-group-append">
-						<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+					<div class="form-group col">
+						<div class="input-group">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="CSVFileInput">
+								<label class="custom-file-label" for="CSVFileInput">Choose file</label>
+							</div>
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary"onclick="UploadFile()" type="button">Upload File</button>
+							</div>
+						</div>
 					</div>
 				</div>
             	<p id="demo"></p>
@@ -184,6 +199,7 @@
 		<script src="../js/graph.js"></script>   
 		<script src="../js/phpManager.js"></script>   
 		<script src="../js/main.js"></script> 
+		<script>page = "research";</script>
 		<script src="../js/tables.js"></script> 
 
 </html>

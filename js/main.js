@@ -1,4 +1,5 @@
 var accountType = 0;
+var page = "index";
 
 //------------------------------------------
 // Search dropdown
@@ -13,20 +14,37 @@ var accountType = 0;
 // 	});
 //   });
 
+function FilterStudents(){
+	var search = document.getElementById("search_students").value;
+	var section = document.getElementById("students_collapse");
+	console.log(search);
+
+	if(search == "")
+	{
+		section.classList.add("collapse");
+	}
+	else
+	{
+		table['students'].table.bootstrapTable('resetSearch',  search);
+		section.classList.remove("collapse");
+	}
+
+}
 
 //------------------------------------------
 // Generic functions
-
-function goBack() {
-	window.history.back()
-}
-
-function logResponseText(responseText){
-	var obj = JSON.parse(responseText);
-	// console.log(obj.debug.replace(/<br>/gi,"\n"));
-	console.log(obj);
-	// console.log(obj.session);
-	return obj;
+{
+	function goBack() {
+		window.history.back()
+	}
+	
+	function logResponseText(responseText){
+		var obj = JSON.parse(responseText);
+		// console.log(obj.debug.replace(/<br>/gi,"\n"));
+		console.log(obj);
+		// console.log(obj.session);
+		return obj;
+	}
 }
 
 //------------------------------------------
@@ -38,7 +56,7 @@ function logResponseText(responseText){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() 
 		{
-			if (this.readyState == 4 && this.status == 200) 
+			if (xhttp.readyState == 4 && xhttp.status == 200) 
 			{
 				var obj = logResponseText(xhttp.responseText);
 
@@ -52,6 +70,9 @@ function logResponseText(responseText){
 						case "1":
 							document.body.style.visibility = "visible";
 							break;
+						case "5":
+								document.body.style.visibility = "visible";
+								break;
 						default:
 							break;
 					}
@@ -71,7 +92,7 @@ function logResponseText(responseText){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() 
 		{
-			if (this.readyState == 4 && this.status == 200) 
+			if (xhttp.readyState == 4 && xhttp.status == 200) 
 			{
 
 				var obj = logResponseText(xhttp.responseText);
@@ -116,7 +137,7 @@ function logResponseText(responseText){
 					formData.append("file", dataString);
 					var xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) 
+					if (xhttp.readyState == 4 && xhttp.status == 200) 
 					{
 						// Typical action to be performed when the document is ready:
 						document.getElementById("demo").innerHTML = xhttp.responseText;
@@ -152,35 +173,34 @@ function logResponseText(responseText){
 	{
 		HideElement("login");
 		ShowElement("signup");
-		document.body.style.backgroundImage = "url(images/landscape1.png)";
-
-
 	}
 
 	function SwitchToLogin()
 	{
 		HideElement("signup");
 		ShowElement("login");
-		document.body.style.backgroundImage = "url(images/landscape2.png)";
 	}
 
 	// School page functions
 	function Observation(){
 		HideElement("manageClasses");
-		HideElement("uploadDataSchool");
+		HideElement("manageAccounts");
+		// HideElement("uploadDataSchool");
 		ShowElement("submitObservation");
 	}
 
 	function ManageClass(){
 		ShowElement("manageClasses");
-		HideElement("uploadDataSchool");
+		HideElement("manageAccounts");
+		// HideElement("uploadDataSchool");
 		HideElement("submitObservation");
 	}
 
-	function UploadSchool(){
+	function ManageAccounts(){
 		HideElement("manageClasses");
-		ShowElement("uploadDataSchool");
+		// ShowElement("uploadDataSchool");
 		HideElement("submitObservation");
+		ShowElement("manageAccounts");
 	}
 
 	// Research page functions
@@ -213,3 +233,34 @@ function logResponseText(responseText){
 	}
 }
 
+//------------------------------------------
+// Table functions
+{
+
+	
+}
+
+//------------------------------------------
+// Manage Classes Funtions
+{
+	function NewClass()
+	{
+		var classname = document.getElementById("input-classname").value;
+
+		var formData = new FormData();
+		formData.append("className", classname);
+
+		var xhttp1 = new XMLHttpRequest();
+		xhttp1.onreadystatechange = function() 
+		{
+			if (xhttp1.readyState == 4 && xhttp1.status == 200) 
+			{
+				var obj = JSON.parse(xhttp1.responseText);
+				console.log(obj);
+				
+			}
+		};
+		xhttp1.open("POST", "../php/requests/set_addClass.php", true);
+		xhttp1.send(formData);
+	}
+}

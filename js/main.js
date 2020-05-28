@@ -152,12 +152,16 @@ function logResponseText(responseText){
 	{
 		HideElement("login");
 		ShowElement("signup");
+		document.body.style.backgroundImage = "url(images/landscape1.png)";
+
+
 	}
 
 	function SwitchToLogin()
 	{
 		HideElement("signup");
 		ShowElement("login");
+		document.body.style.backgroundImage = "url(images/landscape2.png)";
 	}
 
 	// School page functions

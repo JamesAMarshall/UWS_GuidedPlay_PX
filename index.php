@@ -32,7 +32,7 @@
 			<div class="row">
 				<div class="col-sm-5">
 					<div class="login100-pic js-tilt center" data-tilt>
-						<img src="images/GEESE4.gif" alt="IMG">
+						<img src="images/GEESE3.gif" alt="IMG">
 					</div>
 				</div>
 
@@ -74,7 +74,7 @@
 			<div class="row">
 				<div class="col-sm-5">
 						<div class="login100-pic js-tilt " data-tilt>
-						<img src="images/GEESE4.gif" alt="IMG">
+						<img src="images/GEESE3.gif" alt="IMG">
 					</div>
 				</div>
 				<div class="col-sm-7">

@@ -244,52 +244,52 @@
 					<div class="container icon boxes checkbox">
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="wasp">
-							<img src="../images/observation/species/wasp.jpg">
+							<img class="image1" src="../images/observation/species/wasp.jpg">
 							<br>
 							Wasp
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="stinglessBee">
-							<img src="../images/observation/species/stinglessBee.jpg">
+							<img class="image1" src="../images/observation/species/stinglessBee.jpg">
 							<br>
-							Stingless Bee
+							Native Bee (Stingless Bee)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="honeybee">
 							<img src="../images/observation/species/honeybee.png">
 							<br>
-							Honey Bee
+							European Honeybee
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="blueBanded">
 							<img src="../images/observation/species/blueBanded.jpg">
 							<br>
-							Blue banded bee
+							Native Bee (Blue Banded Bee)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="bird">
 							<img src="../images/observation/species/bird.jpg">
 							<br>
-							Bird
+							Bird (Rainbow Lorikeet)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="possum">
 							<img src="../images/observation/species/possum.jpg">
 							<br>
-							Possum
+							Possum (Brushtail Possum)
 
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="flyingFox">
 							<img src="../images/observation/species/flyingfox.jpg">
 							<br>
-							Flying fox
+							Flying Fox (Grey-headed)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="lizard">
 							<img src="../images/observation/species/lizard.jpg">
 							<br>
-							Lizard
+							Lizard (Eastern Water Skink)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="moth">
@@ -301,13 +301,13 @@
 							<input type="checkbox" name="creature" value="butterfly">
 							<img src="../images/observation/species/butterfly.jpg">
 							<br>
-							Butterfly
+							Butterfly (Bushbrown)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="beetle">
 							<img src="../images/observation/species/beetle.jpg">
 							<br>
-							Beetle
+							Beetle (Ladybird)
 						</label>
 						<label class="fourCol">
 							<input type="checkbox" name="creature" value="fly">
@@ -345,29 +345,35 @@
 				<div id="q4">
 					<h4>4. Which plants did [Creature 1, Creature 2... repeatable] visit?</h4>
 					<div class="container icon boxes checkbox">
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="visitedPlants">
-							<img src="../images/observation/plant/saladgreen.jpg">
+							<img src="../images/observation/plant/greens.jpg">
 							<br>
-							Salad greens
+							Greens
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="visitedPlants">
 							<img src="../images/observation/plant/roots.jpg">
 							<br>
 							Root crops
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="visitedPlants">
-							<img src="../images/observation/plant/herb.jpg">
+							<img src="../images/observation/plant/herbs.jpg">
 							<br>
 							Herbs
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="visitedPlants">
-							<img src="../images/observation/plant/fruit.jpg">
+							<img src="../images/observation/plant/fruits.jpg">
 							<br>
 							Fruits
+						</label>
+						<label>
+							<input type="checkbox" name="visitedPlants">
+							<img src="../images/observation/plant/vegetables.jpg">
+							<br>
+							Vegetables
 						</label>
 					</div>
 					<br>
@@ -417,29 +423,35 @@
 				<div id="q6">
 					<h4>6. Which plants are ready for harvest?</h4>
 					<div class="container icon boxes checkbox">
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="readyPlants" value="1">
-							<img src="../images/observation/plant/saladgreen.jpg">
+							<img src="../images/observation/plant/greens.jpg">
 							<br>
-							Salad greens
+							Greens
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="readyPlants" value="2">
 							<img src="../images/observation/plant/roots.jpg">
 							<br>
 							Root crops
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="readyPlants" value="3">
-							<img src="../images/observation/plant/herb.jpg">
+							<img src="../images/observation/plant/herbs.jpg">
 							<br>
 							Herbs
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="readyPlants" value="4">
-							<img src="../images/observation/plant/fruit.jpg">
+							<img src="../images/observation/plant/fruits.jpg">
 							<br>
 							Fruits
+						</label>
+						<label>
+							<input type="checkbox" name="readyPlants" value="5">
+							<img src="../images/observation/plant/vegetables.jpg">
+							<br>
+							Vegetables
 						</label>
 					</div>
 					<br>
@@ -549,29 +561,35 @@
 				<div id="q8">
 					<h4>8. Which 2 plants are the healthiest?</h4>
 					<div class="container icon boxes checkbox">
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="healthiestPlants">
-							<img src="../images/observation/plant/saladgreen.jpg">
+							<img src="../images/observation/plant/greens.jpg">
 							<br>
-							Salad greens
+							Greens
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="healthiestPlants">
 							<img src="../images/observation/plant/roots.jpg">
 							<br>
 							Root crops
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="healthiestPlants">
-							<img src="../images/observation/plant/herb.jpg">
+							<img src="../images/observation/plant/herbs.jpg">
 							<br>
 							Herbs
 						</label>
-						<label class="fourCol">
+						<label>
 							<input type="checkbox" name="healthiestPlants">
-							<img src="../images/observation/plant/fruit.jpg">
+							<img src="../images/observation/plant/fruits.jpg">
 							<br>
 							Fruits
+						</label>
+						<label>
+							<input type="checkbox" name="healthiestPlants">
+							<img src="../images/observation/plant/vegetables.jpg">
+							<br>
+							Vegetables
 						</label>
 					</div>
 					<br>

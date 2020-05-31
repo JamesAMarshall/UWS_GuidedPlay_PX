@@ -62,7 +62,24 @@
 
 //------------------------------------------
 // @Validation
+
+
 {
+	/*Uncheck All checkboxes  by clicking 'NONE' button */
+	function toggle_Check()
+	{
+		var checkboxes= document.getElementsByName('q4');
+		var button = document.getElementById('toggle');
+		
+		if(button.value == 'select'){
+			for (var i in checkboxes){
+				checkboxes[i].checked = '';
+			}
+			button.value = 'select';
+			
+		}
+
+	}
 
 	function SetError(errorId, visible)
 	{

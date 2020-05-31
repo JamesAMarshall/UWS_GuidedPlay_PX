@@ -161,3 +161,11 @@ input[type=checkbox] + label {
   color: rgba(40,168,99);
 }
 
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active {
+    background-color: #6c757d;
+	border-color: 1px solid #6c757d;
+	color: white;
+}
+

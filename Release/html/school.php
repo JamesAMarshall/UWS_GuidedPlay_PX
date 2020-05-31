@@ -83,7 +83,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q1_invalid" class="error">You must choose and option.</div>
+						<div id="q1_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -117,7 +117,7 @@
 							</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q2_invalid" class="error">You must choose and option.</div>
+						<div id="q2_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -151,15 +151,15 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q3_invalid" class="error">You must choose and option.</div>
+						<div id="q3_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
 				<!-- Pick [0-12] Animals -->
 				<div id="q4" class="container d-none page">
-					<h4 class="row ml-1">Which animals were visited the plants?</h4>
+					<h4 class="row ml-1">Which creatures came to visit the plants today?</h4>
 					<div class="row my-2 pl-3">
-							<button class="btn btn-secondary text-center d-block w-25 btn-lg">
+							<button id="toggle" value="select" class="btn btn-outline-secondary text-center d-block w-25 btn-lg" onclick="toggle_Check()">
 								None
 							</button>
 					</div>
@@ -256,7 +256,7 @@
 					</div> -->
 
 					<div class="row pl-2">
-						<div id="q4_invalid" class="error">You must choose and option.</div>
+						<div id="q4_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -300,7 +300,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q5_invalid" class="error">You must choose and option.</div>
+						<div id="q5_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -340,7 +340,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q6_invalid" class="error">You must choose and option.</div>
+						<div id="q6_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -375,7 +375,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q7_invalid" class="error">You must choose and option.</div>
+						<div id="q7_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -409,7 +409,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q8_invalid" class="error">You must choose and option.</div>
+						<div id="q8_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 
@@ -444,7 +444,7 @@
 						</label>
 					</div>
 					<div class="row pl-2">
-						<div id="q9_invalid" class="error">You must choose and option.</div>
+						<div id="q9_invalid" class="error">You must choose an option.</div>
 					</div>
 				</div>
 

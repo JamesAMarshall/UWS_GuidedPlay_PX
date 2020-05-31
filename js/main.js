@@ -14,6 +14,10 @@ var page = "index";
 // 	});
 //   });
 
+//------------------------------------------
+// change button background colour onclick
+
+
 function FilterStudents(){
 	var search = document.getElementById("search_students").value;
 	var section = document.getElementById("students_collapse");

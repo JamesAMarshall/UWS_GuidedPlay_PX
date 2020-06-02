@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+	<title>Research Site</title>
 
 	<link rel="stylesheet" type="text/css" href="../libs/Bootstrap-4-4.4.1/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -11,24 +12,25 @@
 
 </head>
 <body class=""  onload="SetResearchPage()">
-	<main class="container vh-100">
+	<main class="container mt-3">
 		<header id="" class="">
 
 			<div class="container">
-				<h1 class="">Research</h1>
+				<h1 class="pl-3">Research</h1>
+			
+
+				<nav id="" class="navbar navbar-expand-lg">
+					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload"><i class="fas fa-file-upload"></i> Upload</button>
+					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view"><i class="fas fa-database"></i> Data View</button>
+					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-tasks"></i> Manage Accounts</button>
+					<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#"><i class="far fa-chart-bar"></i> Graph Data</button>
+					
+					<a id="username" class="nav-link" href="#">(User)</a>
+					<button class="btn btn-std-2 btn-secondary" onclick="Logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+				</nav>
 			</div>
-
-			<nav id="" class="navbar navbar-expand-lg">
-
-				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload">Upload</button>
-				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view">Data View</button>
-				<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse">Manage Accounts</button>
-				
-				<a id="username" class="nav-link" href="#">(User)</a>
-				<button class="btn btn-std-2 btn-secondary" onclick="Logout()">Logout</button>
-			</nav>
 		</header>
-
+		<br/>
 		<section id="upload" class="container collapse">
 			<div class="d-flex">	
 				<h2 class="flex-grow-1">Upload</h2>	
@@ -55,7 +57,7 @@
 				<span id="newdevice_message" class=""></span>
 			</div>
 
-
+			
 			<div class="form-row">
 
 				<div class="form-group col-5">
@@ -88,7 +90,6 @@
 
 			<p id="demo"></p>
 		</section>
-
 
 		<section id="data_view" class="container collapse pt-2">
 

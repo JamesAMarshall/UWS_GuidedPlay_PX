@@ -1,12 +1,48 @@
+/*Font style*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+body{
+	background-image:url(../images/landscape5.png);
+	background-size:cover;
+	background-attachment:fixed;
+	
+	font-family: 'Caveat Brush', cursive;
+	font-size: 20px;
+    /*background: linear-gradient(-135deg,#205072, #329D9C, #56C596,#F9C449) fixed;
+	background-repeat: no-repeat;*/
+}
+
+.container {
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    padding: 15px;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+.customContainer{
+	max-height: 1000px;
+	max-width: 500px;
+}
 /* Elements ------------------------------------------- */
+
+.logo{
+	max-height: 200px;
+	max-width: 200px;
+}
 img {
-	/* width: 400px;
-	height: 400px; */
+	width: 400px;
+	height: 400px;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
+	transition: transform 0.5s;
+}
+
+img:hover{
+		transform: scale(0.9);
 }
 
 /* Ids ------------------------------------------------ */
@@ -27,6 +63,13 @@ img {
 	text-align: center;
 	line-height: 30px;
 	color: white;
+}
+
+.submitButton{
+	float: middle;
+	text-align: center;
+	justify-content: space between;
+}
 }
 
 /* Classes -------------------------------------------- */
@@ -109,5 +152,20 @@ input[type=checkbox] + label {
 	transition: 1ms all;
 }
 
+/*Radio button Text animation ---------------------------*/
+.row label:hover {
+  color: rgba(40,168,99);
+}
 
+.row input:checked + label {
+  color: rgba(40,168,99);
+}
+
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active {
+    background-color: #6c757d;
+	border-color: 1px solid #6c757d;
+	color: white;
+}
 

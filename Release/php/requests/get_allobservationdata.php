@@ -1,5 +1,21 @@
 <?php 
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
+
+	if(isset($_SESSION['accountType'])) 
+	{
+		switch ($_SESSION['accountType']) {
+			case 3:
+			case 4:
+				break;
+			
+			default:
+				error("Invalid Session accountType", $output); 
+				sendOutput($output); 	
+				exit; 
+				break;
+		}
+	}
+
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/connect.php");
 
 	$result = $conn->query("SELECT a.*, b.animal, b.plant AS anim_plant, c.plant AS harvest_plant, c.size, c.location, d.plant AS healthy_plant, d.reason

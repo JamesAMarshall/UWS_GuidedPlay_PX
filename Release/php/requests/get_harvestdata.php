@@ -1,5 +1,19 @@
 <?php 
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
+	if(isset($_SESSION['accountType'])) 
+	{
+		switch ($_SESSION['accountType']) {
+			case 4:
+			case 3:
+				break;
+			
+			default:
+				error("Invalid Session accountType", $output); 
+				sendOutput($output); 	
+				exit; 
+				break;
+		}
+	}
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/connect.php");
 
 	$result = $conn->query("SELECT * FROM pa2004_HarvestablePlants");

@@ -1,5 +1,18 @@
 <?php 
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/session.php");
+	if(isset($_SESSION['accountType'])) 
+	{
+		switch ($_SESSION['accountType']) {
+			case 4:
+				break;
+			
+			default:
+				error("Invalid Session accountType", $output); 
+				sendOutput($output); 	
+				exit; 
+				break;
+		}
+	}
 	include($_SERVER['DOCUMENT_ROOT'] ."/php/includes/connect.php");
 
 	if($conn->select_db('pa2004SharedDB')) { debug("Using pa2004SharedDB"); }

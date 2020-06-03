@@ -12,10 +12,10 @@
 
 </head>
 <body class=""  onload="SetResearchPage()">
-	<main class="container mt-3">
+	<main>
 		<header id="" class="">
 
-			<div class="container">
+			<div class="container mt-3">
 				<h1 class="pl-3">Research</h1>
 			
 
@@ -90,14 +90,14 @@
 
 			<p id="demo"></p>
 		</section>
-
+		<br/>
 		<section id="data_view" class="container collapse pt-2">
 
 			<div id="sensordata_toolbar">
 				<a class="navbar-brand mr-auto">Sensor Data</a>
 			</div>
 			<table id="sensordata_table"></table>	
-
+			<br/>
 			<div id="observation_toolbar">
 				<a class="navbar-brand">Observation Data</a>
 			</div>

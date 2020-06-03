@@ -23,7 +23,7 @@
 // @Change Background Page
 {
 	function logInBackground(){
-		document.body.style.backgroundImage = "url(images/landscape5.png)";
+		document.body.style.backgroundImage = "url(images/landscape2.png)";
 	}
 }
 
@@ -710,7 +710,9 @@
 	{
 		PHP_Request("GET", "../php/requests/set_logout.php", DirectTo);
 	}
-
+	function LogOutPage(){
+		window.location.assign("../signOut.php");
+	}
 	function DirectTo(response)
 	{
 		// console.log(response);

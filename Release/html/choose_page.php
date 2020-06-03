@@ -19,6 +19,16 @@
 		<link rel="stylesheet" type="text/css" href="../css/switch.css"/>
         
     </head>
+	<style>
+		body{
+			background-image:url(../images/landscape5.png);
+			background-size:cover;
+			background-attachment:fixed;
+			
+			font-family: 'Caveat Brush', cursive;
+			font-size: 20px;
+		}
+	</style>
 	<body onload="">
 	
 	<main class="vh-100 d-flex align-content-center flex-wrap">

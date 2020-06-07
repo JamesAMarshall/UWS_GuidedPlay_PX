@@ -3,7 +3,7 @@
 	if(isset($_SESSION['accountType'])) 
 	{
 		switch ($_SESSION['accountType']) {
-			case 3:
+			case 5:
 			case 4:
 				break;
 			

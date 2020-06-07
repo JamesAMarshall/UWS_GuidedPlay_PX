@@ -22,8 +22,7 @@
 				<nav id="" class="navbar navbar-expand-lg">
 					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload"><i class="fas fa-file-upload"></i> Upload</button>
 					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view"><i class="fas fa-database"></i> Data View</button>
-					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-tasks"></i> Manage Accounts</button>
-					<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#"><i class="far fa-chart-bar"></i> Graph Data</button>
+					<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-tasks"></i> Manage Accounts</button>
 					
 					<a id="username" class="nav-link" href="#">(User)</a>
 					<button class="btn btn-std-2 btn-secondary" onclick="Logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>

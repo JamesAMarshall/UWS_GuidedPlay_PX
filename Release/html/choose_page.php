@@ -25,11 +25,9 @@
 	<main class="vh-100 d-flex align-content-center flex-wrap">
 	
 		<div class="container col-7">
-			<div class="overlay-panel overlay-left" onclick="">
-				<button class="btn" onclick="DirectFromChoose()">
-					<img class="image1" src="../images/choosePage/data.png">
-					<h1>Greenscape</h1>
-				</button>
+			<div class="overlay-panel overlay-left" onclick="DirectFromChoose()">
+				<img class="image1" src="../images/choosePage/data.png">
+				<h1>Greenscape</h1>
 			</div>
 			
 			<div class="overlay-panel overlay-right" onClick="">
@@ -37,7 +35,6 @@
 					<img class="image1" src="../images/choosePage/survey.png">
 					<h1>Survey</h1>
 				</a>
-
 			</div>
 		</div>
 	

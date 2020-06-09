@@ -45,6 +45,11 @@ img:hover{
 		transform: scale(0.9);
 }
 
+.signout{
+	background-image: url("/images/landscape5.png");
+}
+
+
 /* Ids ------------------------------------------------ */
 
 #manageaccount{

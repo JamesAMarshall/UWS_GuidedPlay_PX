@@ -704,9 +704,9 @@ var accountType;
 
 	function Logout()
 	{
-		PHP_Request("GET", "../php/requests/set_logout.php", DirectTo);
+		PHP_Request("GET", "../php/requests/set_logout.php", LogOutPage);
 	}
-	function LogOutPage(){
+	function LogOutPage(response){
 		window.location.assign("../signOut.php");
 	}
 	function DirectTo(response)

@@ -22,8 +22,8 @@
 			
 			
 			<nav id="" class="navbar navbar-expand-lg">
-				<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#observation"><i class="fa fa-tasks" aria-hidden="true"></i> Observations</button>
-				<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-users"></i> Manage Accounts</button>
+				<button class="btn btn-std-4 btn-success mr-1" type="button" data-toggle="collapse" data-target="#observation"><i class="fa fa-tasks" aria-hidden="true"></i> Observations</button>
+				<button id="manageaccount" class="btn btn-std-4 btn-success mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-users"></i> Manage Accounts</button>
 				<a id="username" class="nav-link" href="#">(User)</a>
 				<button class="btn btn-std-2 btn-secondary" onclick="Logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
 			</nav>

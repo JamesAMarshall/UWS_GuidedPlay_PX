@@ -20,7 +20,7 @@
 			
 		<section id="login_section" class="page">
 		<br/>
-			<div class="border border-secondary rounded w-100 mb-3">
+			<div class="border rounded w-100 mb-3 bg-white">
 				<h2 class=" px-2 py-1">Log In</h2>
 			</div>
 
@@ -35,15 +35,15 @@
 			</div>
 
 			<!-- <div id="" class="d-flex justify-content-end"> -->
-				<button id="login_sumbit" class="btn btn-primary w-100 mb-2" type="submit" onclick="Login()">Log In</button>
-				<button id="login_sumbit" class="btn btn-outline-secondary w-100" type="submit" onclick="GoToPage('signup_section'); signUpBackground();">Sign Up</button>
+				<button id="login_sumbit" class="btn btn-success w-100 mb-2" type="submit" onclick="Login()">Log In</button>
+				<button id="login_sumbit" class="btn btn-secondary w-100" type="submit" onclick="GoToPage('signup_section')">Sign Up</button>
 			<!-- </div> -->
 
 		</section>
 
 		<section id="signup_section" class="page d-none">
 		<br/>
-			<div class="border border-secondary rounded w-100 mb-3">
+			<div class="border rounded bg-white w-100 mb-3">
 				<h2 class="px-2 py-1">Sign Up</h2>
 			</div>
 
@@ -63,8 +63,8 @@
 			</div>
 
 			<!-- <div id="" class="d-flex justify-content-end"> -->
-				<button id="signup_sumbit" class="btn btn-primary w-100 mb-2" type="submit" onclick="Signup()">Sign Up</button>
-				<button id="login_sumbit" class="btn btn-outline-secondary w-100" type="submit" onclick="GoToPage('login_section'); logInBackground(); ">Log In</button>
+				<button id="signup_sumbit" class="btn btn-success w-100 mb-2" type="submit" onclick="Signup()">Sign Up</button>
+				<button id="login_sumbit" class="btn btn-secondary w-100" type="submit" onclick="GoToPage('login_section')">Log In</button>
 			<!-- </div> -->
 
 		</section>
@@ -78,6 +78,9 @@
 		<!-- <script type="text/javascript" src="libs/DataTables-1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
 
 		<!-- Our Code -->
-		<script>page="index"</script>
+		<script>
+			page="index";
+			accountType = null;
+		</script>
 		<script src="js/main.js"></script>
 </html>

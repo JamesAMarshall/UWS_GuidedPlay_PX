@@ -12,17 +12,17 @@
 
 </head>
 <body class=""  onload="SetResearchPage()">
-	<main class="container mt-3">
+	<main>
 		<header id="" class="">
 
-			<div class="container">
+			<div class="container mt-3">
 				<h1 class="pl-3">Research</h1>
 			
 
 				<nav id="" class="navbar navbar-expand-lg">
-					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#upload"><i class="fas fa-file-upload"></i> Upload</button>
-					<button class="btn btn-std-4 btn-secondary mr-1" type="button" data-toggle="collapse" data-target="#data_view"><i class="fas fa-database"></i> Data View</button>
-					<button class="btn btn-std-4 btn-secondary mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-tasks"></i> Manage Accounts</button>
+					<button class="btn btn-std-4 btn-success mr-1" type="button" data-toggle="collapse" data-target="#upload"><i class="fas fa-file-upload"></i> Upload</button>
+					<button class="btn btn-std-4 btn-success mr-1" type="button" data-toggle="collapse" data-target="#data_view"><i class="fas fa-database"></i> Data View</button>
+					<button id="manageaccount" class="btn btn-std-4 btn-success mr-auto" type="button" data-toggle="collapse" data-target="#accounts_collapse"><i class="fas fa-tasks"></i> Manage Accounts</button>
 					
 					<a id="username" class="nav-link" href="#">(User)</a>
 					<button class="btn btn-std-2 btn-secondary" onclick="Logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
@@ -89,21 +89,21 @@
 
 			<p id="demo"></p>
 		</section>
-
+		<br/>
 		<section id="data_view" class="container collapse pt-2">
 
 			<div id="sensordata_toolbar">
 				<a class="navbar-brand mr-auto">Sensor Data</a>
 			</div>
 			<table id="sensordata_table"></table>	
-
+			<br/>
 			<div id="observation_toolbar">
 				<a class="navbar-brand">Observation Data</a>
 			</div>
 			<table id="observation_table"></table>
 		</section>
 
-		<div id="accounts_collapse" class="collapse">
+		<div id="accounts_collapse" class="collapse container">
 			<div id="toolbar_research_accounts">
 				<!-- <button id="logAll" class="btn btn-primary">Log Selected</button> -->
 			</div>

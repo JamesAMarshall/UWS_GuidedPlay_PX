@@ -10,7 +10,7 @@
 		if($conn->select_db('pa2004SharedDB')) { debug("Using pa2004SharedDB"); }
 		else { error($conn->error); }
 
-		if ($conn->query("INSERT INTO pa2004_Accounts VALUES ('$username', '$password', $accountType, null, NOW(), NOW(), 1)") === TRUE) {
+		if ($conn->query("INSERT INTO pa2004_Accounts VALUES ('$username', '$password', $accountType, null, NOW(), NOW(), 1,1)") === TRUE) {
 			
 			session_start();
 			$_SESSION['user'] = $username;

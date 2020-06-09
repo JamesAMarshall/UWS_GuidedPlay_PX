@@ -19,19 +19,24 @@
 		<link rel="stylesheet" type="text/css" href="../css/switch.css"/>
         
     </head>
-	<body onload="">
+
+	<body onload="SetUpChoose()">
 	
 	<main class="vh-100 d-flex align-content-center flex-wrap">
 	
 		<div class="container col-7">
-			<div class="overlay-panel overlay-left" onclick="location.href='../php/requests/directAccount'">
-				<img class="image1" src="../images/choosePage/data.png">
+			<div class="overlay-panel overlay-left" onclick="">
+				<button class="btn" onclick="DirectFromChoose()">
+					<img class="image1" src="../images/choosePage/data.png">
 					<h1>Greenscape</h1>
+				</button>
 			</div>
 			
-			<div class="overlay-panel overlay-right" onClick="location.href='../html/school.php'">
-				<img class="image1" src="../images/choosePage/survey.png">
+			<div class="overlay-panel overlay-right" onClick="">
+				<a href="http://pa2007.scem.westernsydney.edu.au/">
+					<img class="image1" src="../images/choosePage/survey.png">
 					<h1>Survey</h1>
+				</a>
 
 			</div>
 		</div>
@@ -50,7 +55,8 @@
 	</body>
 
 		<!-- Our Code -->
-		<script src="../js/phpManager.js"></script> 
+		<!-- <script src="../js/phpManager.js"></script>  -->
+		<script>page="choose"</script>
 		<script src="../js/main.js"></script> 
 		<!-- <script src="../js/tables.js"></script>  -->
 

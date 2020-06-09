@@ -1,6 +1,6 @@
 //------------------------------------------
 // @Global Variables 
-
+var accountType;
 
 //------------------------------------------
 // @Page Management 
@@ -23,16 +23,14 @@
 // @Change Background Page
 {
 	function logInBackground(){
-		document.body.style.backgroundImage = "url(images/landscape5.png)";
+		document.body.style.backgroundImage = "url(images/landscape2.png)";
 	}
-}
 
-{
 	function signUpBackground(){
 		document.body.style.backgroundImage = "url(images/landscape1.png)";
 	}
-}
 
+}
 
 //------------------------------------------
 // @XHTTP Requests
@@ -62,8 +60,6 @@
 
 //------------------------------------------
 // @Validation
-
-
 {
 	/*Uncheck All checkboxes  by clicking 'NONE' button */
 	function toggle_Check()
@@ -682,7 +678,7 @@
 		formData.append("username", username);
 		formData.append("password", password);
 
-		PHP_Request("POST", "../php/requests/check_login.php", DirectTo,  formData);
+		PHP_Request("POST", "../php/requests/check_login.php", DirectToChoose,  formData);
 	}
 
 	function Signup()
@@ -703,14 +699,16 @@
 		formData.append("username", username);
 		formData.append("password", password);
 
-		PHP_Request("POST", "../php/requests/set_newaccount.php", DirectTo,  formData);
+		PHP_Request("POST", "../php/requests/set_newaccount.php", DirectToChoose,  formData);
 	}
 
 	function Logout()
 	{
 		PHP_Request("GET", "../php/requests/set_logout.php", DirectTo);
 	}
-
+	function LogOutPage(){
+		window.location.assign("../signOut.php");
+	}
 	function DirectTo(response)
 	{
 		// console.log(response);
@@ -719,6 +717,7 @@
 		{
 			if(response.session.accountType != null)
 			{
+				accountType = response.session.accountType;
 				if(response.session.user)
 				{
 					user = response.session.user;
@@ -764,6 +763,34 @@
 
 	}
 
+	function DirectToChoose(response)
+	{
+		// console.log(response);
+
+		if(response.success)
+		{
+			if(response.session.accountType != null)
+			{
+				accountType = response.session.accountType;
+				if(response.session.user)
+				{
+					user = response.session.user;
+					window.location.assign("../html/choose_page.php");
+					// console.log(user);
+				}
+			}
+			else
+			{
+				return;
+			}
+		}
+		else { window.location.assign("../index.php"); }
+		
+
+
+	}
+
+
 	function GetUser(response)
 	{
 		if(response.result)
@@ -775,6 +802,15 @@
 	}
 }
 
+function SetUpChoose()
+{
+	CheckSession();
+}
+
+function DirectFromChoose()
+{
+	PHP_Request("GET", "../php/requests/get_sessiondetails.php", DirectTo);
+}
 
 //------------------------------------------
 // @School
@@ -785,6 +821,27 @@
 		CheckSession();
 		PHP_Request("GET", "../php/requests/get_currentuser.php", GetUser);
 		PHP_Request("GET", "../php/requests/get_schoolaccounts.php", Set_Table_SchoolAccounts);
+		document.body.style.backgroundImage = "url(../images/landscape1.png)";
+
+		PHP_Request("GET", "../php/requests/get_sessiondetails.php", HideSchool);
+
+	}
+
+	function HideSchool(response)
+	{
+		if(response.success)
+		{
+			switch(response.session.accountType)
+			{
+				case 5:
+				case "5":
+					document.getElementById("manageaccount").style.visibility = "visible";
+				break;
+				default:
+					document.getElementById("manageaccount").style.visibility = "hidden";
+					break;
+			}
+		}
 	}
 
 	//------------------------------------------
@@ -1532,6 +1589,27 @@
 		PHP_Request("GET", "../php/requests/get_devices.php", SetDeviceId_ToDropdown);
 		PHP_Request("GET", "../php/requests/get_devicetype.php", SetDeviceType_ToDropdown);
 		document.getElementById('CSVFileInput').value = null;
+		document.body.style.backgroundImage = "url(../images/landscape1.png)";
+
+		PHP_Request("GET", "../php/requests/get_sessiondetails.php", HideResearch);
+
+	}
+
+	function HideResearch(response)
+	{
+		if(response.success)
+		{
+			switch(response.session.accountType)
+			{
+				case 4:
+				case "4":
+					document.getElementById("manageaccount").style.visibility = "visible";
+				break;
+				default:
+					document.getElementById("manageaccount").style.visibility = "hidden";
+					break;
+			}
+		}
 	}
 
 
